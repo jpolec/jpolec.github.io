@@ -1,0 +1,242 @@
+---
+// Layout.astro
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+	title: string;
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{title}</title>
+	<meta name="description" content="A personal website.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+		body {
+			font-family: 'Inter', sans-serif;
+			color: #111827; /* Dark text */
+			background-color: #f9fafb; /* Very light gray background */
+		}
+		h1 {
+			font-size: 3rem;
+			font-weight: 700;
+			color: #10b981; /* A vibrant green */
+			margin-bottom: 1.5rem;
+			line-height: 1.1;
+		}
+		h2 {
+			font-size: 2.25rem;
+			font-weight: 600;
+			color: #2563eb; /* A bright blue */
+			margin-bottom: 1rem;
+			line-height: 1.2;
+		}
+		p {
+			font-size: 1.125rem;
+			font-weight: 400;
+			color: #4b5563; /* A slightly darker gray */
+			line-height: 1.75;
+			margin-bottom: 1rem;
+		}
+		a {
+			color: #6366f1; /* A strong purple */
+			text-decoration: none;
+			font-weight: 500;
+			transition: color 0.2s ease;
+		}
+		a:hover {
+			color: #d946ef;  /* A magenta/purple */
+		}
+
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0.75rem 1.5rem;
+			border-radius: 0.5rem;
+			font-size: 1.125rem;
+			font-weight: 600;
+			color: white;
+			background-color: #10b981; /* Green */
+			transition: background-color 0.3s ease, transform 0.2s ease;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			border: none;
+			text-decoration: none;
+		}
+
+		.btn:hover {
+			background-color: #059669; /* A darker shade of green */
+			transform: translateY(-2px);
+			box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+		}
+    .btn-secondary{
+      @apply bg-blue-500 hover:bg-blue-700
+    }
+
+		.container {
+			max-width: 80rem; /* Increased max-width */
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 2rem;
+			padding-right: 2rem;
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+		}
+    .section{
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+		.hero {
+			text-align: center;
+			margin-bottom: 4rem;
+		}
+		.about {
+			text-align: left;
+			margin-bottom: 4rem;
+		}
+
+		.projects {
+			text-align: center;
+			margin-bottom: 4rem;
+		}
+
+    .contact {
+      text-align: center;
+    }
+
+		.project-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+			gap: 2rem;
+			margin-top: 2rem;
+		}
+
+		.project-card {
+			background-color: white;
+			border-radius: 0.75rem;
+			padding: 2rem;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			text-align: left;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+		}
+
+		.project-card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+		}
+
+		.project-card h3 {
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin-bottom: 1rem;
+			color: #1e293b;
+		}
+    .project-card p{
+      margin-bottom: 0;
+    }
+
+		.project-link {
+			margin-top: 1.5rem;
+			display: inline-block;
+		}
+
+    .tally-questionnaire{
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px){
+      .c-buttons{
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+      .c-buttons > * {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+    }
+	</style>
+</head>
+<body>
+	<ViewTransitions />
+	<header>
+		<div class="container">
+			<h1>Hi, I'm [Your Name]</h1>
+			<p>I'm a [Your Profession/Passion]. Welcome to my personal site!</p>
+		</div>
+	</header>
+
+	<main>
+		<section class="section">
+			<div class="container about">
+				<h2>About Me</h2>
+				<p>
+					Here's a brief introduction about myself.  I'm passionate about
+					[Your Interests].  I love creating things and sharing them with the world.
+				</p>
+				<p>
+					I'm always learning and exploring new technologies.  My goal is to
+					[Your Goal/Mission].
+				</p>
+			</div>
+		</section>
+
+		<section class="section bg-light">
+			<div class="container projects">
+				<h2>My Work</h2>
+				<p>Here are some things I've worked on:</p>
+				<div class="project-grid">
+					<div class="project-card">
+						<h3>Project 1</h3>
+						<p>A short description of project 1.  This project was about...</p>
+						<a href="#" class="project-link">View Project</a>
+					</div>
+					<div class="project-card">
+						<h3>Project 2</h3>
+						<p>A short description of project 2.  I used [technologies] to build this.</p>
+						<a href="#" class="project-link">View Project</a>
+					</div>
+          <div class="project-card">
+						<h3>Project 3</h3>
+						<p>A short description of project 3.</p>
+						<a href="#" class="project-link">View Project</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+      <div class="container contact">
+        <h2>Get In Touch</h2>
+        <p>
+          I'd love to hear from you!  Use the link below to get in touch.
+        </p>
+        <div class="c-buttons">
+          <a href="YOUR_NOTION_FORM_URL" class="btn btn-main">Contact Me</a>
+          <a href="YOUR_TALLY_QUESTIONNAIRE_URL" class="btn btn-secondary">Questionnaire 1</a>
+          <a href="YOUR_TALLY_QUESTIONNAIRE_URL" class="btn btn-secondary">Questionnaire 2</a>
+        </div>
+      </div>
+    </section>
+	</main>
+
+	<footer class="bg-gray-100 text-gray-500 text-center py-4 mt-8">
+		<div class="container">
+			&copy; {new Date().getFullYear()} [Your Name]. All rights reserved.
+		</div>
+	</footer>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+---
+import Nav from '../components/Nav.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import projects from '../data/projects';
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Personal Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <Nav />
+    <main class="container">
+      <section class="c-center">
+        <h2>My Portfolio</h2>
+        <div class="c-columns-3">
+          {projects.map((project) => (
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              link={project.link}
+            />
+          ))}
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>© 2025 [Your Name]. <a href="/contact">Contact Me</a></p>
+    </footer>
+  </body>
+</html>

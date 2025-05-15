@@ -1,0 +1,205 @@
+/* Global Styles from JSON */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px; /* From global_settings.body_text */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #2b2c28; /* color(11) - Text */
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6fe; /* color(65) - Grey-Background */
+}
+
+.container {
+  max-width: 1120px; /* From global_settings.max-width */
+  margin: 0 auto;
+  padding: 75px 20px; /* From global_settings.sections */
+}
+
+/* Typography */
+.c-h1 {
+  font-size: 64px; /* From global_settings.headings.H1 */
+  font-weight: 600; /* From c-h1 */
+  line-height: 1.3;
+  text-transform: capitalize;
+  color: #0f0f0f; /* color(60) - Heading Dark */
+  margin: 0 0 12px;
+}
+
+.c-h2 {
+  font-size: 48px; /* From global_settings.headings.H2 */
+  font-weight: 600; /* From c-h2 */
+  line-height: 1.3;
+  text-transform: capitalize;
+  color: #0f0f0f; /* color(60) */
+  margin: 0 0 12px;
+}
+
+.c-h3 {
+  font-size: 36px; /* From global_settings.headings.H3 */
+  font-weight: 600; /* From c-h3 */
+  line-height: 1.3;
+  color: #0f0f0f; /* color(60) */
+  margin: 0 0 12px;
+}
+
+.c-text-m {
+  font-weight: 300; /* From c-text-m */
+  line-height: 1.6;
+  color: #686868; /* color(62) - Text Dark */
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+/* Buttons */
+.btn-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4353ff; /* color(53) - Accent 1 */
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 25px;
+  border-radius: 7px; /* From c-btn-main */
+  text-decoration: none;
+  box-shadow: 0 10px 20px -15px rgba(0,0,0,0.5);
+  transition: all 0.4s; /* From c-transition */
+}
+
+.btn-main:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 25px -10px rgba(0,0,0,0.5);
+}
+
+/* Layouts */
+.c-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* From c-center */
+}
+
+.c-columns-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* From c-columns-3 */
+  gap: 20px;
+  width: 100%;
+}
+
+/* Cards */
+.c-card-light {
+  background-color: #ffffff; /* color(57) - Background Light Alternative */
+  padding: 20px;
+  border-radius: 7px; /* From c-rounded */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* From c-shadow */
+  text-align: left;
+}
+
+/* Links */
+.c-link-m {
+  font-size: 16px; /* From c-link-m */
+  font-weight: 500;
+  color: #4353ff; /* color(53) - Accent 1 */
+  text-decoration: none;
+  transition: opacity 0.4s;
+}
+
+.c-link-m:hover {
+  opacity: 0.8; /* From c-link-m hover */
+}
+
+.c-link-accent {
+  color: #4353ff; /* color(53) - Accent 1 */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.c-link-accent:hover {
+  color: #cf71ca; /* color(42) - Primary B */
+}
+
+/* Footer */
+.footer {
+  background-color: #191919; /* color(56) - Background Dark */
+  color: #a7a9b2; /* color(28) - Mischka */
+  font-size: 12px; /* From freelance-footer-text */
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer a {
+  color: #f66061; /* color(23) - Color A */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline; /* From freelance-footer-link */
+}
+
+/* Skills List */
+.skills {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.skills li {
+  padding: 15px;
+}
+
+/* Contact Links */
+.contact-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-links li {
+  padding: 10px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 992px) {
+  .c-h1 {
+    font-size: 48px;
+  }
+  .c-h2 {
+    font-size: 36px;
+  }
+  .c-columns-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c-h1 {
+    font-size: 40px;
+  }
+  .c-h2 {
+    font-size: 32px;
+  }
+  .btn-main {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+  .c-columns-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .c-h1 {
+    font-size: 32px;
+  }
+  .c-h2 {
+    font-size: 28px;
+  }
+  .container {
+    padding: 40px 15px;
+  }
+}

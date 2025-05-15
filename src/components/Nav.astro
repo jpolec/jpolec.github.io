@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+---
+
+<nav class="nav c-bg-light">
+  <div class="container">
+    <a href="/" class="logo">[Your Name]</a>
+    <ul class="nav-links">
+      <li><a href="/" class="c-link-m">Home</a></li>
+      <li><a href="/about" class="c-link-m">About</a></li>
+      <li><a href="/portfolio" class="c-link-m">Portfolio</a></li>
+      <li><a href="/contact" class="c-link-m">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0f0f0f; /* color(60) */
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
