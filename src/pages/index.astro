@@ -35,7 +35,10 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <img src="/jpbg.jpeg" alt="Background" class="background-image" />
+    <div class="image-container">
+      <img src="/jpbg.jpeg" alt="Background" class="background-image" />
+      <div class="image-overlay">Who's he? A friend?</div>
+    </div>
 
     <section id="quant" class="section">
       <h2 class="c-h2">Quant Finance & AI Infrastructure</h2>
@@ -423,15 +426,34 @@ import '../styles/global.css';
     color: var(--accent-color);
   }
 
-  .background-image {
+  .image-container {
+    position: relative;
     width: 100%;
     max-width: 800px;
+    margin: 3.25rem auto;
+  }
+
+  .background-image {
+    width: 100%;
     height: auto;
-    margin: 4rem auto;
     display: block;
     border-radius: 20px;
     border: 1px solid var(--accent-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
   }
 
   .white-section {
