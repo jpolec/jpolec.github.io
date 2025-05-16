@@ -539,7 +539,8 @@ const meta = {
     align-items: center;
     gap: 3rem;
     margin: 3rem 0;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    padding: 0 1rem;
   }
 
   .company-logo {
@@ -556,13 +557,141 @@ const meta = {
   }
 
   @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+
+    .hero {
+      padding: 4rem 0 2rem;
+    }
+
+    .c-h1 {
+      font-size: 2.5rem;
+    }
+
+    .c-h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+    }
+
+    .social-stats {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
     .company-logos {
       gap: 2rem;
-      margin: 2.5rem 0;
+      margin: 2rem 0;
     }
     
     .company-logo {
-      height: 35px;
+      height: 30px;
+    }
+
+    .section {
+      margin: 3rem 0;
+    }
+
+    .section-text {
+      font-size: 1.1rem;
+    }
+
+    .content-block {
+      padding: 1rem;
+    }
+
+    .feature-list li {
+      font-size: 1rem;
+      margin: 1rem 0;
+    }
+
+    .quote {
+      font-size: 1.1rem;
+      padding-left: 1rem;
+    }
+
+    .cta-container {
+      padding: 1.5rem;
+    }
+
+    .cta-title {
+      font-size: 1.5rem;
+    }
+
+    .cta-subtitle {
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+
+    .tech-logos {
+      gap: 1.5rem;
+      padding: 0 1rem;
+    }
+    
+    .tech-logo {
+      height: 30px;
+    }
+
+    .contact-stats {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 1rem;
+    }
+
+    .social-links-row {
+      gap: 1rem;
+    }
+
+    .social-link {
+      font-size: 0.9rem;
+    }
+
+    .image-container {
+      margin: 2rem auto;
+    }
+
+    .image-overlay {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-480px) {
+    .c-h1 {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+
+    .social-stats {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .company-logo {
+      height: 25px;
+    }
+
+    .tech-logo {
+      height: 25px;
+    }
+
+    .cta-title {
+      font-size: 1.3rem;
+    }
+
+    .cta-subtitle {
+      font-size: 0.9rem;
     }
   }
 
@@ -928,6 +1057,23 @@ const meta = {
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .theme-switch-wrapper {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 100;
+  }
+
+  @media (max-width: 768px) {
+    .theme-switch-wrapper {
+      display: none;
+    }
+
+    .container {
+      padding: 1rem;
+    }
   }
 </style>
 
