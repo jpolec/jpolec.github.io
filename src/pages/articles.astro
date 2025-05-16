@@ -1,0 +1,296 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const articles = [
+  {
+    title: "Decoding Successful Alphas: The Combinatory Approach",
+    url: "https://quantjourney.substack.com/p/decoding-successful-alphas-the-combinatory",
+    excerpt: "Understanding how to combine multiple alpha signals for optimal performance",
+    date: "March 2024",
+    readTime: "8 min read"
+  },
+  {
+    title: "101 Financial Alpha Strategies",
+    url: "https://quantjourney.substack.com/p/decoding-101-financial-alpha-strategies",
+    excerpt: "A comprehensive guide to understanding and implementing alpha strategies",
+    date: "March 2024",
+    readTime: "10 min read"
+  },
+  {
+    title: "The Future of Quant Finance: AI, Infrastructure, and Innovation",
+    url: "https://quantjourney.substack.com/p/the-future-of-quant-finance-ai-infrastructure",
+    excerpt: "Exploring the intersection of artificial intelligence, infrastructure, and quantitative finance.",
+    date: "2024-03-15",
+    readTime: "5 min read"
+  },
+  {
+    title: "Building Scalable Quant Infrastructure: Lessons from the Field",
+    url: "https://quantjourney.substack.com/p/building-scalable-quant-infrastructure",
+    excerpt: "Practical insights and best practices for building robust quantitative trading systems.",
+    date: "2024-03-10",
+    readTime: "7 min read"
+  },
+  {
+    title: "Factor Investing in the Age of AI",
+    url: "https://quantjourney.substack.com/p/factor-investing-in-the-age-of-ai",
+    excerpt: "How artificial intelligence is transforming traditional factor investing strategies.",
+    date: "2024-03-05",
+    readTime: "6 min read"
+  },
+  {
+    title: "The Quant's Guide to Machine Learning Infrastructure",
+    url: "https://quantjourney.substack.com/p/the-quants-guide-to-machine-learning",
+    excerpt: "A comprehensive guide to building and maintaining ML infrastructure for quantitative trading.",
+    date: "2024-02-28",
+    readTime: "8 min read"
+  },
+  {
+    title: "Risk Management in Modern Quantitative Trading",
+    url: "https://quantjourney.substack.com/p/risk-management-in-modern-quantitative",
+    excerpt: "Advanced risk management techniques for contemporary quantitative trading systems.",
+    date: "2024-02-20",
+    readTime: "6 min read"
+  },
+  {
+    title: "High-Frequency Trading: Myths and Realities",
+    url: "https://quantjourney.substack.com/p/high-frequency-trading-myths-and-realities",
+    excerpt: "Debunking common misconceptions about high-frequency trading and market making.",
+    date: "2024-02-15",
+    readTime: "5 min read"
+  }
+];
+---
+
+<Layout title="Articles - Jakub Polec">
+  <div class="white-section"></div>
+  <main class="container">
+    <section class="hero">
+      <h1 class="c-h1">Selected Articles</h1>
+      <p class="subtitle">Deep dives into quantitative finance, factor investing, and strategy development</p>
+    </section>
+
+    <div class="articles-grid">
+      {articles.map((article, index) => (
+        <a href={article.url} target="_blank" class="article-card" data-index={index}>
+          <div class="article-content">
+            <div class="article-header">
+              <span class="article-number">{String(index + 1).padStart(2, '0')}</span>
+              <span class="article-date">{article.date}</span>
+            </div>
+            <h2 class="article-title">{article.title}</h2>
+            <p class="article-excerpt">{article.excerpt}</p>
+            <div class="article-meta">
+              <span class="read-time">{article.readTime}</span>
+              <span class="read-more">Read Article →</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  :root {
+    --primary-bg: #ffffff;
+    --text-color: #1a2b4c;
+    --text-secondary: #2c3e5d;
+    --accent-color: #d32f2f;
+    --border-color: #e0e0e0;
+    --transition: all 0.3s ease;
+  }
+
+  [data-theme="dark"] {
+    --primary-bg: #0a192f;
+    --text-color: #e6f1ff;
+    --text-secondary: #8892b0;
+    --accent-color: #ef5350;
+    --border-color: #1d2d50;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .c-h1 {
+    font-size: 3.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+  }
+
+  .articles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .article-card {
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .article-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .article-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .article-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    min-width: 40px;
+  }
+
+  .article-content {
+    flex: 1;
+  }
+
+  .article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .article-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .article-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.4;
+  }
+
+  .article-excerpt {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.5;
+  }
+
+  .article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+  }
+
+  .read-time {
+    color: var(--text-secondary);
+  }
+
+  .read-more {
+    color: var(--accent-color);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .article-card {
+      padding: 1rem;
+      gap: 1rem;
+    }
+
+    .article-number {
+      font-size: 1.25rem;
+      min-width: 30px;
+    }
+
+    .article-title {
+      font-size: 1.1rem;
+    }
+
+    .article-excerpt {
+      font-size: 0.9rem;
+    }
+  }
+
+  .white-section {
+    position: relative;
+    height: 100vh;
+    background-color: var(--primary-bg);
+    margin-top: -100vh;
+    z-index: -1;
+  }
+
+  .tech-logo {
+    height: 40px;
+    width: auto;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(1000%) hue-rotate(210deg) brightness(90%) contrast(95%);
+  }
+
+  .tech-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  .link-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+  }
+</style>
+
+<script>
+  // Progressive loading with intersection observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '50px'
+  });
+
+  // Add delay based on index
+  document.querySelectorAll('.article-card').forEach((card, index) => {
+    card.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(card);
+  });
+</script> 

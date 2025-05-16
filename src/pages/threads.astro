@@ -1,0 +1,302 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const threads = [
+  {
+    title: "The Evolution of Quantitative Trading",
+    url: "https://x.com/jakubpolec/status/1870064605491327087",
+    image: "/returs_cumulative.jpeg",
+    date: "2024-03-15",
+    readTime: "5 min read"
+  },
+  {
+    title: "Building Robust Trading Infrastructure",
+    url: "https://x.com/jakubpolec/status/1860626995207696386",
+    image: "/fundamentals_slippage.jpeg",
+    date: "2024-03-10",
+    readTime: "7 min read"
+  },
+  {
+    title: "Factor Investing in Modern Markets",
+    url: "https://x.com/jakubpolec/status/1869525895972593893",
+    image: "/factor_invest.jpeg",
+    date: "2024-03-05",
+    readTime: "6 min read"
+  },
+  {
+    title: "Machine Learning in Quantitative Finance",
+    url: "https://x.com/jakubpolec/status/1869025454864138506",
+    image: "/factor_based_investing.jpeg",
+    date: "2024-02-28",
+    readTime: "8 min read"
+  },
+  {
+    title: "Risk Management Strategies",
+    url: "https://x.com/jakubpolec/status/1868093166630371336",
+    image: "/signal_decay.jpeg",
+    date: "2024-02-20",
+    readTime: "6 min read"
+  },
+  {
+    title: "High-Frequency Trading Insights",
+    url: "https://x.com/jakubpolec/status/1860626995207696386",
+    image: "/jpbg.jpeg",
+    date: "2024-02-15",
+    readTime: "5 min read"
+  }
+];
+---
+
+<Layout title="Threads - Jakub Polec">
+  <div class="white-section"></div>
+  <main class="container">
+    <section class="hero">
+      <h1 class="c-h1">X Threads</h1>
+      <p class="subtitle">Quick insights and analysis on quantitative finance and trading</p>
+    </section>
+
+    <div class="threads-grid">
+      {threads.map((thread, index) => (
+        <a href={thread.url} target="_blank" class="thread-card" data-index={index}>
+          <div class="thread-image">
+            <img src={thread.image} alt={thread.title} loading="lazy" />
+            <div class="thread-overlay">
+              <span class="read-more">Read Thread →</span>
+            </div>
+          </div>
+          <div class="thread-content">
+            <div class="thread-header">
+              <span class="thread-number">{String(index + 1).padStart(2, '0')}</span>
+              <span class="thread-date">{thread.date}</span>
+            </div>
+            <h2 class="thread-title">{thread.title}</h2>
+            <div class="thread-meta">
+              <span class="read-time">{thread.readTime}</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  :root {
+    --primary-bg: #ffffff;
+    --text-color: #1a2b4c;
+    --text-secondary: #2c3e5d;
+    --accent-color: #d32f2f;
+    --border-color: #e0e0e0;
+    --transition: all 0.3s ease;
+  }
+
+  [data-theme="dark"] {
+    --primary-bg: #0a192f;
+    --text-color: #e6f1ff;
+    --text-secondary: #8892b0;
+    --accent-color: #ef5350;
+    --border-color: #1d2d50;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .c-h1 {
+    font-size: 3.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+  }
+
+  .threads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .thread-card {
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .thread-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .thread-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .thread-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .thread-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .thread-card:hover .thread-image img {
+    transform: scale(1.05);
+  }
+
+  .thread-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .thread-card:hover .thread-overlay {
+    opacity: 1;
+  }
+
+  .read-more {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .thread-content {
+    padding: 1.5rem;
+  }
+
+  .thread-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .thread-number {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+  }
+
+  .thread-date {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .thread-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+  }
+
+  .thread-meta {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .threads-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .c-h1 {
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+    }
+
+    .thread-image {
+      height: 180px;
+    }
+  }
+
+  .white-section {
+    position: relative;
+    height: 100vh;
+    background-color: var(--primary-bg);
+    margin-top: -100vh;
+    z-index: -1;
+  }
+
+  .tech-logo {
+    height: 40px;
+    width: auto;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(1000%) hue-rotate(210deg) brightness(90%) contrast(95%);
+  }
+
+  .tech-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  .link-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+  }
+</style>
+
+<script>
+  // Progressive loading with intersection observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '50px'
+  });
+
+  // Add delay based on index
+  document.querySelectorAll('.thread-card').forEach((card, index) => {
+    const element = card as HTMLElement;
+    element.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(card);
+  });
+</script> 

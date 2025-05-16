@@ -1,26 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+
+const meta = {
+  title: "Jakub Polec - Physicist & Technology Strategist",
+  description: "Quantitative finance expert, AI infrastructure architect, and technology strategist. Founder of QuantJourney, delivering enterprise-grade solutions for hedge funds and financial institutions.",
+  keywords: "quantitative finance, AI infrastructure, technology strategy, hedge funds, factor investing, portfolio optimization",
+  ogImage: "/jpbg.jpeg",
+  twitterHandle: "@jakubpolec",
+  siteUrl: "https://jakubpolec.com"
+};
 ---
 
-<Layout title="Jakub Polec - Physicist & Technology Strategist">
-  <nav class="main-nav">
-    <div class="nav-container">
-      <a href="#quant" class="nav-link">Quant Finance</a>
-      <span class="separator">|</span>
-      <a href="#development" class="nav-link">Development</a>
-      <span class="separator">|</span>
-      <a href="#startups" class="nav-link">Startups</a>
-      <span class="separator">|</span>
-      <a href="#corporate" class="nav-link">Corporate</a>
-      <span class="separator">|</span>
-      <a href="#contact" class="nav-link">Contact</a>
-    </div>
-  </nav>
+<Layout title={meta.title}>
+  <head>
+    <meta name="description" content={meta.description} />
+    <meta name="keywords" content={meta.keywords} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={meta.siteUrl} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:image" content={meta.ogImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={meta.siteUrl} />
+    <meta property="twitter:title" content={meta.title} />
+    <meta property="twitter:description" content={meta.description} />
+    <meta property="twitter:image" content={meta.ogImage} />
+    <meta property="twitter:creator" content={meta.twitterHandle} />
+
+    <!-- Additional Meta -->
+    <meta name="author" content="Jakub Polec" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={meta.siteUrl} />
+  </head>
 
   <div class="white-section"></div>
 
-    <main class="container">
+  <main class="container">
     <section id="about" class="hero">
       <div class="hero-content">
         <h1 class="c-h1">Jakub Polec</h1>
@@ -29,14 +50,14 @@ import '../styles/global.css';
           <a href="https://linkedin.com/in/jakubpolec" target="_blank" class="social-link">25,000+ LinkedIn followers</a>
           <a href="https://twitter.com/jakubpolec" target="_blank" class="social-link">7,500+ on X/Twitter</a>
           <a href="https://quantjourney.substack.com" target="_blank" class="social-link">5,000+ Substack subscribers</a>
-          <a href="https://medium.com/@jpolec_72972" target="_blank" class="social-link">1,500 on Medium</a>
+          <a href="https://medium.com/@jpolec_72972" target="_blank" class="social-link">1,500+ on Medium</a>
         </div>
       </div>
     </section>
 
     <div class="image-container">
       <img src="/jpbg.jpeg" alt="Background" class="background-image" />
-      <div class="image-overlay">Who's he? A friend?</div>
+      <div class="image-overlay">Who's the second?</div>
     </div>
 
     <div class="social-links-container">
@@ -88,68 +109,31 @@ import '../styles/global.css';
           Clients often respond with just one word: 'Wow.'"
         </blockquote>
         <div class="stats">
-          <a href="https://quantjourney.substack.com" class="link-button">quantjourney.substack.com</a>
-          <span class="stat-text">5,000+ blog readers | Live usage in US, EU, CH, UAE, and KSA</span>
+          <div class="cta-container">
+            <h3 class="cta-title">Join 5,000+ Quant Finance Professionals</h3>
+            <p class="cta-subtitle">Get weekly insights on quantitative finance, AI infrastructure, and strategy development</p>
+            <a href="https://quantjourney.substack.com" class="cta-button">
+              Subscribe to QuantJourney
+              <span class="arrow">→</span>
+            </a>
+            <p class="cta-stats">Active community across US, EU, CH, UAE, and KSA</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="development" class="section">
-      <h2 class="c-h2">Quant Development & Systems Engineering</h2>
+    <section id="corporate" class="section">
+      <h2 class="c-h2">Corporations, Science and Startups</h2>
       <div class="content-block">
-        <p class="section-text">I don't just write code. I build infrastructure that rivals top quant firms.</p>
-        <ul class="feature-list">
-          <li>Architected QuantJourney with a multi-cloud, horizontally scalable architecture.</li>
-          <li>Every client runs in a fully isolated environment — ensuring data security, compliance, and reproducibility — modeled after best practices at Tower Research and Two Sigma.</li>
-          <li>Supports 100+ parallel backtests across 5,000+ assets, with async execution, smart scheduling, and full observability.</li>
-          <li>Native support for multi-cloud deployments (Hetzner, AWS, GCP, Azure) and hybrid setups (on-prem + cloud) — enabling quant teams to scale flexibly.</li>
-          <li>Designed to empower lean quant teams to operate at Citadel-scale — without Citadel-size engineering teams.</li>
-        </ul>
-        <blockquote class="quote">
-          "Wow. This is world-class."
-        </blockquote>
-      </div>
-    </section>
-
-    <section id="articles" class="section">
-      <h2 class="c-h2">Some Articles on X<span class="external-link-arrow">↗</span></h2>
-      <div class="articles-grid">
-        <a href="https://x.com/jakubpolec/status/1870064605491327087" target="_blank" class="article-box">
-          <img src="/factor_based_investing.jpeg" alt="Factor Based Investing" class="article-image" />
-          <div class="article-overlay">
-            <span class="article-title">Read Article</span>
-          </div>
-        </a>
-        <a href="https://x.com/jakubpolec/status/1869525895972593893" target="_blank" class="article-box">
-          <img src="/factor_invest.jpeg" alt="Factor Invest" class="article-image" />
-          <div class="article-overlay">
-            <span class="article-title">Read Article</span>
-          </div>
-        </a>
-        <a href="https://x.com/jakubpolec/status/1869025454864138506" target="_blank" class="article-box">
-          <img src="/fundamentals_slippage.jpeg" alt="Fundamentals Slippage" class="article-image" />
-          <div class="article-overlay">
-            <span class="article-title">Read Article</span>
-          </div>
-        </a>
-        <a href="https://x.com/jakubpolec/status/1868093166630371336" target="_blank" class="article-box">
-          <img src="/returs_cumulative.jpeg" alt="Returns Cumulative" class="article-image" />
-          <div class="article-overlay">
-            <span class="article-title">Read Article</span>
-          </div>
-        </a>
-        <a href="https://x.com/jakubpolec/status/1860626995207696386" target="_blank" class="article-box">
-          <img src="/signal_decay.jpeg" alt="Signal Decay" class="article-image" />
-          <div class="article-overlay">
-            <span class="article-title">Read Article</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section id="startups" class="section">
-      <h2 class="c-h2">Startups & Innovation Leadership</h2>
-      <div class="content-block">
+        <p class="section-text">
+          Worked for T-Mobile, Orange, Microsoft, Oracle EMEA in Europe and Middle-East.
+        </p>
+        <div class="company-logos">
+          <img src="/src/assets/t-mobile.svg" alt="T-Mobile" class="company-logo" />
+          <img src="/src/assets/orange-3.svg" alt="Orange" class="company-logo" />
+          <img src="/src/assets/microsoft-6.svg" alt="Microsoft" class="company-logo" />
+          <img src="/src/assets/oracle-6.svg" alt="Oracle" class="company-logo" />
+        </div>
         <ul class="feature-list">
           <li>Founded 5 technology companies, with VC funding and successful exits — including one of the earliest AI startups in Central Europe, awarded Best Startup in CEE (2005).</li>
           <li>Delivered enterprise-grade solutions and digital architecture for:
@@ -162,55 +146,83 @@ import '../styles/global.css';
           </li>
           <li>Recipient of the Microsoft CEO Award for Best Marketing Campaign</li>
           <li>Led cross-functional global teams in high-stakes, fast-moving environments — always at the frontier of technology and innovation.</li>
-          <li>Pioneered early adoption of cloud technologies and AI solutions in enterprise environments.</li>
-          <li>Established successful technology partnerships across Europe, Middle East, and Asia.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="corporate" class="section">
-      <h2 class="c-h2">Corporations, Science and Physics</h2>
-      <div class="content-block">
-        <p class="section-text">
-          Worked for T-Mobile, Orange, Microsoft, Oracle EMEA in Europe and Middle-East.
-        </p>
-        <div class="company-logos">
-          <img src="/t-mobile-logo.png" alt="T-Mobile" class="company-logo" />
-          <img src="/microsoft-logo.png" alt="Microsoft" class="company-logo" />
-          <img src="/oracle-logo.png" alt="Oracle" class="company-logo" />
-        </div>
-        <ul class="feature-list">
           <li>Background in theoretical and applied physics, with early research work at CERN — where I developed the analytical mindset and systems discipline I now apply in finance and technology.</li>
           <li>I bring scientific precision to every layer of development — from model validation to infrastructure resilience — building systems that are explainable, testable, and robust under real-world volatility.</li>
         </ul>
       </div>
     </section>
 
+    <section id="development" class="section">
+      <h2 class="c-h2" style="margin-top: 30px;">Quant Development & Systems Engineering</h2>
+      <div class="content-block">
+        <p class="section-text">I don't just write code. I build infrastructure that rivals top quant firms.</p>
+        <ul class="feature-list">
+          <li>Architected QuantJourney with a multi-cloud, horizontally scalable architecture.</li>
+          <li>Every client runs in a fully isolated environment — ensuring data security, compliance, and reproducibility — modeled after best practices at Tower Research and Two Sigma.</li>
+          <li>Supports 100+ parallel backtests across 5,000+ assets, with async execution, smart scheduling, and full observability.</li>
+          <li>Native support for multi-cloud deployments (Hetzner, AWS, GCP, Azure) and hybrid setups (on-prem + cloud) — enabling quant teams to scale flexibly.</li>
+          <li>Designed to empower lean quant teams to operate at Citadel-scale — without Citadel-size engineering teams.</li>
+        </ul>
+        <blockquote class="quote">
+          "Wow. This is world-class."
+        </blockquote>
+        <div class="tech-logos">
+          <img src="/tech/oracle-corporation-logo.svg" alt="Oracle" class="tech-logo" />
+          <img src="/tech/hetzner-1.svg" alt="Hetzner" class="tech-logo" />
+          <img src="/tech/aws-2.svg" alt="AWS" class="tech-logo" />
+          <img src="/tech/prometheus.svg" alt="Prometheus" class="tech-logo" />
+          <img src="/tech/grafana.svg" alt="Grafana" class="tech-logo" />
+          <img src="/tech/mongodb-icon-1.svg" alt="MongoDB" class="tech-logo" />
+          <img src="/tech/kx-1.svg" alt="KX" class="tech-logo" />
+          <img src="/tech/hashicorp.svg" alt="HashiCorp" class="tech-logo" />
+          <img src="/tech/blloomberg.svg" alt="Bloomberg" class="tech-logo" />
+          <img src="/tech/factset-2.svg" alt="FactSet" class="tech-logo" />
+          <img src="/tech/docker-1.svg" alt="Docker" class="tech-logo" />
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="section">
-      <h2 class="c-h2">Contact Me</h2>
+      <h2 class="c-h2" style="margin-top: 40px;">Contact Me</h2>
       <div class="content-block">
         <p class="section-text">Interested in scaling quant research, automating strategy testing, or exploring AI-powered infrastructure?</p>
         <div class="cta-buttons">
-          <a href="https://tally.so/r/mVyLEj" class="btn-main">Contact Form</a>
-          <a href="#" class="btn-secondary">Strategy Questionnaire</a>
+          <a href="https://confirmed-damselfly-18b.notion.site/1f4e438e327480d8bdaae056cb0a1c3b?pvs=105" target="_blank" class="btn-main">
+            Get in Touch
+            <span class="external-link-arrow">↗</span>
+          </a>
+        </div>
+        <div class="contact-info">
+          <p class="section-text">Let's discuss how we can transform your quantitative trading infrastructure and strategy development process.</p>
+          <div class="contact-stats">
+            <span>✓ Enterprise-grade solutions</span>
+            <span>✓ Custom architecture</span>
+            <span>✓ Dedicated support</span>
+          </div>
         </div>
       </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-    <div class="footer-content">
-      <p class="copyright">© 2024 Jakub Polec. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="https://quantjourney.substack.com" target="_blank" class="footer-link">Blog<span class="external-link-arrow">↗</span></a>
-        <a href="https://linkedin.com/in/jakubpolec" target="_blank" class="footer-link">LinkedIn<span class="external-link-arrow">↗</span></a>
-        <a href="https://twitter.com/jakubpolec" target="_blank" class="footer-link">X/Twitter<span class="external-link-arrow">↗</span></a>
-      </div>
-    </div>
-    </footer>
-</Layout>
+    </section>
+  </main>
+  <Footer />
 
 <style>
+  :root {
+    --primary-bg: #ffffff;
+    --text-color: #1a2b4c;
+    --text-secondary: #2c3e5d;
+    --accent-color: #d32f2f;
+    --border-color: #e0e0e0;
+    --transition: all 0.3s ease;
+  }
+
+  [data-theme="dark"] {
+    --primary-bg: #0a192f;
+    --text-color: #e6f1ff;
+    --text-secondary: #8892b0;
+    --accent-color: #ef5350;
+    --border-color: #1d2d50;
+  }
+
   .container {
     max-width: 1020px;
     margin: 0 auto;
@@ -218,59 +230,11 @@ import '../styles/global.css';
     background-color: var(--primary-bg);
   }
 
-  .main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--primary-bg);
-    z-index: 90;
-  }
-
-  .nav-container {
-    max-width: 1020px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: var(--transition);
-    position: relative;
-    padding: 0.5rem 0;
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: var(--accent-color);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
-  }
-
-  .separator {
-    color: var(--text-secondary);
-  }
-
   .hero {
     text-align: center;
-    padding: 8rem 0 4rem;
+    padding: 6rem 0 4rem;
     background-color: var(--primary-bg);
+    margin-top: 0;
   }
 
   .hero-content {
@@ -284,7 +248,7 @@ import '../styles/global.css';
   }
 
   .subtitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--text-secondary);
     margin: 1rem 0;
   }
@@ -295,7 +259,7 @@ import '../styles/global.css';
     justify-content: center;
     margin: 1rem 0;
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: 1rem;
     flex-wrap: wrap;
   }
 
@@ -336,7 +300,7 @@ import '../styles/global.css';
   }
 
   .c-h2 {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
     color: var(--text-color);
   }
 
@@ -346,7 +310,7 @@ import '../styles/global.css';
   }
 
   .section-text {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     line-height: 1.7;
     color: var(--text-color);
     margin-bottom: 1.5rem;
@@ -365,7 +329,7 @@ import '../styles/global.css';
     padding-left: 1.5rem;
     position: relative;
     color: var(--text-color);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
   }
 
@@ -377,7 +341,7 @@ import '../styles/global.css';
 
   .sub-list li {
     margin: 0.5rem 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .feature-list li:before {
@@ -388,7 +352,7 @@ import '../styles/global.css';
   }
 
   .quote {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-style: italic;
     color: var(--text-color);
     border-left: 4px solid var(--accent-color);
@@ -412,19 +376,19 @@ import '../styles/global.css';
     color: white;
     text-decoration: none;
     border-radius: 6px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     transition: var(--transition);
   }
 
   .link-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(211, 84, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
   }
 
   .stat-text {
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .cta-buttons {
@@ -438,7 +402,7 @@ import '../styles/global.css';
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -467,41 +431,73 @@ import '../styles/global.css';
     background-color: var(--primary-bg);
     padding: 2rem;
     margin-top: 4rem;
+    text-align: center;
   }
 
   .footer-content {
     max-width: 1020px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 2rem;
   }
 
   .copyright {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-color);
   }
 
   .footer-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
-  .footer-links a {
+  .footer-link {
     color: var(--text-color);
     text-decoration: none;
     transition: var(--transition);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 0.5rem 0;
   }
 
-  .footer-links a:hover {
+  .footer-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .footer-link:hover {
     color: var(--accent-color);
+  }
+
+  .footer-link:hover::after {
+    width: 100%;
+  }
+
+  .footer-link .external-link-arrow {
+    font-size: 0.8em;
+    margin-left: 0.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 
   .image-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 640px;
     margin: 3.25rem auto;
     margin-top: -20px;
   }
@@ -521,7 +517,7 @@ import '../styles/global.css';
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -542,45 +538,31 @@ import '../styles/global.css';
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
+    margin: 3rem 0;
+    flex-wrap: nowrap;
   }
 
   .company-logo {
     height: 40px;
     width: auto;
-    filter: brightness(0);  /* Makes the logos black */
-    opacity: 0.8;
-    transition: var(--transition);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(1000%) hue-rotate(210deg) brightness(90%) contrast(95%);
   }
 
   .company-logo:hover {
     opacity: 1;
-  }
-
-  [data-theme="dark"] .company-logo {
-    filter: brightness(0) invert(1);  /* Makes the logos white in dark mode */
+    transform: scale(1.05);
   }
 
   @media (max-width: 768px) {
-    .nav-container {
-      flex-wrap: wrap;
-      gap: 0.5rem;
+    .company-logos {
+      gap: 2rem;
+      margin: 2.5rem 0;
     }
-
-    .footer-content {
-      flex-direction: column;
-      gap: 1rem;
-      text-align: center;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-    }
-
-    .social-stats {
-      flex-direction: column;
-      gap: 0.5rem;
+    
+    .company-logo {
+      height: 35px;
     }
   }
 
@@ -642,40 +624,6 @@ import '../styles/global.css';
     transform: scale(1.02);
   }
 
-  .footer-link {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: var(--transition);
-    font-size: 1.1rem;
-    position: relative;
-    padding: 0.5rem 0;
-  }
-
-  .footer-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: var(--accent-color);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-  }
-
-  .footer-link:hover {
-    color: var(--accent-color);
-  }
-
-  .footer-link:hover::after {
-    width: 100%;
-  }
-
-  .footer-link .external-link-arrow {
-    font-size: 0.8em;
-    margin-left: 0.2rem;
-  }
-
   .platform-features {
     margin-top: 4rem;
   }
@@ -703,12 +651,12 @@ import '../styles/global.css';
   .feature-card h4 {
     color: var(--accent-color);
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .feature-card p {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.6;
   }
 
@@ -803,7 +751,7 @@ import '../styles/global.css';
   }
 
   .article-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
   }
 
@@ -820,4 +768,155 @@ import '../styles/global.css';
       max-width: 280px;
     }
   }
+
+  .brand-container {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .brand-logo {
+    max-width: 200px;
+    height: auto;
+    filter: brightness(0);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+
+  .brand-logo:hover {
+    opacity: 1;
+  }
+
+  [data-theme="dark"] .brand-logo {
+    filter: brightness(0) invert(1);
+  }
+
+  .cta-container {
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin: 2rem 0;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+  }
+
+  .cta-button .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .cta-button:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  .cta-stats {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .notion-embed {
+    width: 100%;
+    height: 800px;
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .notion-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    .notion-embed {
+      height: 600px;
+    }
+  }
+
+  .tech-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tech-logo {
+    height: 40px;
+    width: auto;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(1000%) hue-rotate(210deg) brightness(90%) contrast(95%);
+  }
+
+  .tech-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .tech-logos {
+      gap: 2rem;
+    }
+    
+    .tech-logo {
+      height: 35px;
+    }
+
+    .contact-stats {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  }
+
+  .contact-info {
+    margin-top: 2rem;
+  }
+
+  .contact-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+  }
 </style>
+
