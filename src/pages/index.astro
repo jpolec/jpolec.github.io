@@ -42,7 +42,7 @@ const meta = {
   <div class="white-section"></div>
 
   <main class="container">
-    <section id="about" class="hero">
+    <section id="about" class="hero fade-in">
       <div class="hero-content">
         <h1 class="c-h1">Jakub Polec</h1>
         <p class="subtitle">Physicist | AI & Quant Infrastructure Architect | Entrepreneur | Global Technology Strategist</p>
@@ -55,12 +55,12 @@ const meta = {
       </div>
     </section>
 
-    <div class="image-container">
+    <div class="image-container fade-in">
       <img src="/jpbg.jpeg" alt="Background" class="background-image" />
       <div class="image-overlay">Who's the second?</div>
     </div>
 
-    <div class="social-links-container">
+    <div class="social-links-container fade-in">
       <div class="social-links-row">
         <a href="https://quantjourney.thinkific.com/" target="_blank" class="social-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
@@ -95,7 +95,7 @@ const meta = {
       </div>
     </div>
 
-    <section id="quant" class="section">
+    <section id="quant" class="section fade-in">
       <h2 class="c-h2">Quant Finance & AI Infrastructure</h2>
       <div class="content-block">
         <p class="section-text">QuantJourney was built to accelerate strategy discovery — from idea to backtest — using a flexible architecture for cross-sectional, multi-asset, and factor-based strategies.</p>
@@ -110,7 +110,7 @@ const meta = {
         </blockquote>
         <div class="stats">
           <div class="cta-container">
-            <h3 class="cta-title">Join 5,000+ Quant Finance Professionals</h3>
+            <h3 class="cta-title">Join 5,000+ Quant Finance Investors</h3>
             <p class="cta-subtitle">Get weekly insights on quantitative finance, AI infrastructure, and strategy development</p>
             <a href="https://quantjourney.substack.com" class="cta-button">
               Subscribe to QuantJourney
@@ -122,17 +122,17 @@ const meta = {
       </div>
     </section>
 
-    <section id="corporate" class="section">
+    <section id="corporate" class="section fade-in">
       <h2 class="c-h2">Corporations, Science and Startups</h2>
       <div class="content-block">
         <p class="section-text">
           Worked for T-Mobile, Orange, Microsoft, Oracle EMEA in Europe and Middle-East.
         </p>
         <div class="company-logos">
-          <img src="/src/assets/t-mobile.svg" alt="T-Mobile" class="company-logo" />
-          <img src="/src/assets/orange-3.svg" alt="Orange" class="company-logo" />
-          <img src="/src/assets/microsoft-6.svg" alt="Microsoft" class="company-logo" />
-          <img src="/src/assets/oracle-6.svg" alt="Oracle" class="company-logo" />
+          <img src="/tech/t-mobile.svg" alt="T-Mobile" class="company-logo" />
+          <img src="/tech/orange.svg" alt="Orange" class="company-logo" />
+          <img src="/tech/microsoft.svg" alt="Microsoft" class="company-logo" />
+          <img src="/tech/oracle.svg" alt="Oracle" class="company-logo" />
         </div>
         <ul class="feature-list">
           <li>Founded 5 technology companies, with VC funding and successful exits — including one of the earliest AI startups in Central Europe, awarded Best Startup in CEE (2005).</li>
@@ -152,7 +152,7 @@ const meta = {
       </div>
     </section>
 
-    <section id="development" class="section">
+    <section id="development" class="section fade-in">
       <h2 class="c-h2" style="margin-top: 30px;">Quant Development & Systems Engineering</h2>
       <div class="content-block">
         <p class="section-text">I don't just write code. I build infrastructure that rivals top quant firms.</p>
@@ -175,15 +175,15 @@ const meta = {
           <img src="/tech/mongodb-icon-1.svg" alt="MongoDB" class="tech-logo" />
           <img src="/tech/kx-1.svg" alt="KX" class="tech-logo" />
           <img src="/tech/hashicorp.svg" alt="HashiCorp" class="tech-logo" />
-          <img src="/tech/blloomberg.svg" alt="Bloomberg" class="tech-logo" />
-          <img src="/tech/factset-2.svg" alt="FactSet" class="tech-logo" />
+          <img src="/tech/blloomberg.svg" alt="Bloomberg" class="tech-logo" style="transform: translateY(15%) scale(0.85);" />
+          <img src="/tech/factset-2.svg" alt="FactSet" class="tech-logo" style="transform: translateY(15%) scale(0.75);" />
           <img src="/tech/docker-1.svg" alt="Docker" class="tech-logo" />
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2 class="c-h2" style="margin-top: 40px;">Contact Me</h2>
+    <section id="contact" class="section fade-in">
+      <h2 class="c-h2" style="margin-top: 100px;">Contact Me</h2>
       <div class="content-block">
         <p class="section-text">Interested in scaling quant research, automating strategy testing, or exploring AI-powered infrastructure?</p>
         <div class="cta-buttons">
@@ -918,5 +918,38 @@ const meta = {
     font-size: 1.1rem;
     color: var(--text-color);
   }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.1s ease-out, transform 0.4s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
+
+<script>
+  // Progressive loading with intersection observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '200px'
+  });
+
+  // Observe all sections with fade-in class
+  document.querySelectorAll('.fade-in').forEach((element, index) => {
+    const el = element as HTMLElement;
+    el.style.transitionDelay = `${index * 0.05}s`;
+    observer.observe(element);
+  });
+</script>
 
