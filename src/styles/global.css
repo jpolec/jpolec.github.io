@@ -4,7 +4,7 @@ body {
   font-size: 16px; /* From global_settings.body_text */
   font-weight: 400;
   line-height: 1.6;
-  color: #2b2c28; /* color(11) - Text */
+  color: #111111; /* even darker text */
   margin: 0;
   padding: 0;
   background-color: #f6f6fe; /* color(65) - Grey-Background */
@@ -46,7 +46,7 @@ body {
 .c-text-m {
   font-weight: 300; /* From c-text-m */
   line-height: 1.6;
-  color: #686868; /* color(62) - Text Dark */
+  color: #181818; /* even darker text for medium text */
   max-width: 700px;
   margin: 0 auto 20px;
 }

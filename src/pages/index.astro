@@ -130,9 +130,12 @@ const meta = {
         </p>
         <div class="company-logos">
           <img src="/tech/t-mobile.svg" alt="T-Mobile" class="company-logo" />
-          <img src="/tech/orange.svg" alt="Orange" class="company-logo" />
           <img src="/tech/microsoft.svg" alt="Microsoft" class="company-logo" />
+          <br style="flex-basis: 100%; height: 0; border: none;" />
           <img src="/tech/oracle.svg" alt="Oracle" class="company-logo" />
+          <img src="/tech/orange.svg" alt="Orange" class="company-logo" />
+          <br style="flex-basis: 100%; height: 0; border: none;" />
+          <img src="/CERN.png" alt="CERN" class="company-logo cern-logo" />
         </div>
         <ul class="feature-list">
           <li>Founded 5 technology companies, with VC funding and successful exits — including one of the earliest AI startups in Central Europe, awarded Best Startup in CEE (2005).</li>
@@ -175,6 +178,7 @@ const meta = {
           <img src="/tech/mongodb-icon-1.svg" alt="MongoDB" class="tech-logo" />
           <img src="/tech/kx-1.svg" alt="KX" class="tech-logo" />
           <img src="/tech/hashicorp.svg" alt="HashiCorp" class="tech-logo" />
+          <br style="flex-basis: 100%; height: 0; border: none;" />
           <img src="/tech/blloomberg.svg" alt="Bloomberg" class="tech-logo" style="transform: translateY(15%) scale(0.85);" />
           <img src="/tech/factset-2.svg" alt="FactSet" class="tech-logo" style="transform: translateY(15%) scale(0.75);" />
           <img src="/tech/docker-1.svg" alt="Docker" class="tech-logo" />
@@ -187,18 +191,13 @@ const meta = {
       <div class="content-block">
         <p class="section-text">Interested in scaling quant research, automating strategy testing, or exploring AI-powered infrastructure?</p>
         <div class="cta-buttons">
-          <a href="https://confirmed-damselfly-18b.notion.site/1f4e438e327480d8bdaae056cb0a1c3b?pvs=105" target="_blank" class="btn-main">
-            Get in Touch
+          <a href="https://calendar.notion.so/meet/jakubpolec/1-on-1" target="_blank" class="btn-main">
+            Set Up Meeting
             <span class="external-link-arrow">↗</span>
           </a>
         </div>
         <div class="contact-info">
-          <p class="section-text">Let's discuss how we can transform your quantitative trading infrastructure and strategy development process.</p>
-          <div class="contact-stats">
-            <span>✓ Enterprise-grade solutions</span>
-            <span>✓ Custom architecture</span>
-            <span>✓ Dedicated support</span>
-          </div>
+          <!-- Remove this block entirely -->
         </div>
       </div>
     </section>
@@ -206,6 +205,11 @@ const meta = {
   <Footer />
 
 <style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+  }
+
   :root {
     --primary-bg: #ffffff;
     --text-color: #1a2b4c;
@@ -302,6 +306,7 @@ const meta = {
   .c-h2 {
     font-size: 2.5rem;
     color: var(--text-color);
+    text-align: center;
   }
 
   .content-block {
@@ -554,6 +559,11 @@ const meta = {
   .company-logo:hover {
     opacity: 1;
     transform: scale(1.05);
+  }
+
+  .cern-logo {
+    height: 80px;
+    width: auto;
   }
 
   @media (max-width: 768px) {
@@ -1074,6 +1084,13 @@ const meta = {
     .container {
       padding: 1rem;
     }
+  }
+
+  p {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.75;
+    margin-bottom: 1rem;
   }
 </style>
 

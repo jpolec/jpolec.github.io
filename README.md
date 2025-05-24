@@ -7,6 +7,15 @@ The site is deployed automatically via GitHub Actions to GitHub Pages from the `
 origin  https://github.com/jpolec/jpolec.github.io.git (fetch)
 origin  https://github.com/jpolec/jpolec.github.io.git (push)
 
+Update repo:
+
+```bash
+git status
+git add .
+git commit -m "next"
+git push origin main
+```
+
 ---
 
 ## 🔧 Local Development
