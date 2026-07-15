@@ -1,6 +1,5 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
-import NavBar from '../components/NavBar.astro';
 
 const links = [
   {
@@ -45,8 +44,6 @@ const links = [
   title="Jakub Polec"
   description="Jakub Polec - physicist, founder of QuantJourney, and quantitative infrastructure builder."
 >
-  <NavBar />
-
   <main class="page-shell">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true"></div>
@@ -95,11 +92,6 @@ const links = [
         My background is a slightly unusual mix of physics, technology, and
         business. I have worked with Microsoft, Oracle, Orange, T-Mobile,
         organisations in the Middle East, and research teams connected to CERN.
-      </p>
-      <p>
-        I still like the same things I liked before I had a job title for them:
-        understanding difficult systems, finding the useful signal, and making
-        an idea work in the real world.
       </p>
     </section>
 
@@ -262,8 +254,8 @@ const links = [
     grid-template-columns: minmax(280px, 440px) minmax(0, 1fr);
     gap: clamp(28px, 5vw, 64px);
     align-items: center;
-    min-height: min(720px, calc(100vh - 84px));
-    padding: 88px 0 38px;
+    min-height: auto;
+    padding: 28px 0 24px;
   }
 
   .hero-bg {
@@ -434,7 +426,7 @@ const links = [
 
   /* ── Links Section ── */
   .links-section {
-    padding: 54px 0 20px;
+    padding: 30px 0 12px;
   }
 
   .links-section h2 {
