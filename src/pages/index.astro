@@ -68,14 +68,24 @@ const links = [
           polished demo.
         </p>
 
-        <a
-          href="https://quantjourney.cloud"
-          class="quantjourney-link animate-in"
-          target="_blank"
-          rel="noopener"
-        >
-          QuantJourney <span aria-hidden="true">↗</span>
-        </a>
+        <div class="hero-links animate-in">
+          <a
+            href="https://quantjourney.cloud"
+            class="quantjourney-link"
+            target="_blank"
+            rel="noopener"
+          >
+            QuantJourney <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="https://backtester.quantjourney.cloud"
+            class="quantjourney-link"
+            target="_blank"
+            rel="noopener"
+          >
+            Backtester <span aria-hidden="true">↗</span>
+          </a>
+        </div>
 
         <div class="action-row animate-in" aria-label="Primary links">
           <a
@@ -342,6 +352,12 @@ const links = [
   .quantjourney-link:hover {
     color: var(--muted);
     border-color: var(--muted);
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
   }
 
   .action-row {
