@@ -106,7 +106,6 @@ const links = [
 
     <section class="thinking animate-in" aria-labelledby="thinking-title">
       <div>
-        <p class="section-kicker">A few recurring questions</p>
         <h2 id="thinking-title">What I am thinking about</h2>
       </div>
       <div class="thinking-copy">
@@ -126,7 +125,6 @@ const links = [
     </section>
 
     <section class="links-section animate-in" aria-labelledby="links-title">
-      <p class="section-kicker">Follow along</p>
       <h2 id="links-title">Writing, projects, and occasional market thoughts</h2>
       <div class="links-grid">
         {links.map((link) => (
@@ -453,7 +451,8 @@ const links = [
   .links-section h2 {
     margin-bottom: 18px;
     color: var(--ink);
-    max-width: 620px;
+    max-width: none;
+    white-space: nowrap;
     font-size: clamp(1.35rem, 2vw, 1.8rem);
     font-weight: 600;
     line-height: 1.05;
@@ -570,6 +569,10 @@ const links = [
 
     .thinking h2 {
       max-width: none;
+    }
+
+    .links-section h2 {
+      white-space: normal;
     }
 
     .link-item {
