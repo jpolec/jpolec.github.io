@@ -614,7 +614,8 @@ const links = [
 
     .links-grid {
       display: flex;
-      max-width: 274px;
+      width: 100%;
+      max-width: 360px;
       flex-wrap: wrap;
       justify-content: center;
       gap: 8px;
@@ -622,24 +623,24 @@ const links = [
     }
 
     .links-grid .link-item {
-      flex: 0 0 86px;
-      min-height: 66px;
+      flex: 0 0 calc((100% - 16px) / 3);
+      min-height: 104px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 4px;
-      padding: 7px 3px;
+      gap: 7px;
+      padding: 11px 6px;
     }
 
     .links-grid .link-icon-wrap {
-      width: 30px;
-      height: 30px;
+      width: 38px;
+      height: 38px;
       margin: 0;
     }
 
     .links-grid .link-icon-wrap svg {
-      width: 17px;
-      height: 17px;
+      width: 21px;
+      height: 21px;
     }
 
     .links-grid .link-text {
@@ -649,11 +650,15 @@ const links = [
 
     .links-grid .link-label {
       margin: 0;
-      font-size: 0.6rem;
+      font-size: 0.68rem;
       text-align: center;
     }
 
-    .links-grid .link-count,
+    .links-grid .link-count {
+      margin-top: 2px;
+      font-size: 0.95rem;
+    }
+
     .links-grid .link-detail {
       display: none;
     }
