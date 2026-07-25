@@ -596,7 +596,6 @@ const links = [
     }
 
     .summary,
-    .links-grid,
     .thinking {
       grid-template-columns: 1fr;
     }
@@ -613,23 +612,50 @@ const links = [
       white-space: normal;
     }
 
-    .link-item {
-      min-height: 112px;
+    .links-grid {
+      display: flex;
+      max-width: 274px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-inline: auto;
     }
 
     .links-grid .link-item {
-      flex-direction: row;
+      flex: 0 0 86px;
+      min-height: 66px;
+      flex-direction: column;
       align-items: center;
-      gap: 16px;
-      min-height: 80px;
+      justify-content: center;
+      gap: 4px;
+      padding: 7px 3px;
     }
 
-    .link-icon-wrap {
-      margin-bottom: 0;
+    .links-grid .link-icon-wrap {
+      width: 30px;
+      height: 30px;
+      margin: 0;
     }
 
-    .link-text {
+    .links-grid .link-icon-wrap svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .links-grid .link-text {
+      align-items: center;
       margin-top: 0;
+    }
+
+    .links-grid .link-label {
+      margin: 0;
+      font-size: 0.6rem;
+      text-align: center;
+    }
+
+    .links-grid .link-count,
+    .links-grid .link-detail {
+      display: none;
     }
   }
 
@@ -646,49 +672,6 @@ const links = [
 
     .summary {
       padding: 32px 0;
-    }
-
-    .links-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .links-grid .link-item {
-      flex: 0 1 calc((100% - 16px) / 3);
-      max-width: 100px;
-      min-height: 70px;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      padding: 8px 3px;
-    }
-
-    .links-grid .link-icon-wrap {
-      width: 32px;
-      height: 32px;
-      margin: 0;
-    }
-
-    .links-grid .link-icon-wrap svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .links-grid .link-text {
-      align-items: center;
-    }
-
-    .links-grid .link-label {
-      margin: 0;
-      font-size: 0.62rem;
-      text-align: center;
-    }
-
-    .links-grid .link-count,
-    .links-grid .link-detail {
-      display: none;
     }
   }
 </style>
