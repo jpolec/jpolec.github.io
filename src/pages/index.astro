@@ -80,17 +80,6 @@ const links = [
           reproducible, and operationally sound.
         </p>
 
-        <div class="hero-actions animate-in" aria-label="Primary links">
-          <a
-            href="https://quantjourney.cloud"
-            class="button hero-primary"
-            target="_blank"
-            rel="noopener"
-          >
-            Explore QuantJourney
-          </a>
-          <a href="#selected-work" class="button hero-secondary">Read my work</a>
-        </div>
         <p class="hero-proof animate-in">
           CERN <span aria-hidden="true">·</span> Microsoft
           <span aria-hidden="true">·</span> Oracle
@@ -148,6 +137,32 @@ const links = [
             be reproducible, explainable, and traceable back to its data,
             assumptions, model, and execution context.
           </p>
+          <div class="project-links" aria-label="QuantJourney links">
+            <a
+              href="https://backtester.quantjourney.cloud"
+              class="project-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Backtester <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="https://api.quantjourney.cloud"
+              class="project-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Quant API <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="https://quantjourney.substack.com"
+              class="project-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Quant Blog <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </article>
         <article class="text-item">
           <h3>OneBook</h3>
@@ -165,6 +180,16 @@ const links = [
             and outcomes from thesis and signal generation through post-trade
             review.
           </p>
+          <div class="project-links" aria-label="OneBook link">
+            <a
+              href="https://quantjourney.cloud"
+              class="project-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Explore OneBook <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </article>
       </div>
     </section>
@@ -556,27 +581,11 @@ const links = [
     line-height: 1.58;
   }
 
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .hero-primary {
-    background: var(--ink);
-    color: var(--page-bg);
-  }
-
-  .hero-secondary {
-    background: var(--page-bg);
-    color: var(--ink);
-  }
-
   .hero-proof {
     display: flex;
     flex-wrap: wrap;
     gap: 4px 9px;
-    margin: 20px 0 0;
+    margin: 0;
     color: var(--ink);
     font-size: 0.72rem;
     font-weight: 600;
@@ -684,6 +693,26 @@ const links = [
 
   .text-item p:last-child {
     margin-bottom: 0;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-top: 14px;
+  }
+
+  .project-link {
+    color: var(--ink);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 160ms ease;
+  }
+
+  .project-link:hover {
+    border-color: var(--ink);
   }
 
   .opportunity-list {
