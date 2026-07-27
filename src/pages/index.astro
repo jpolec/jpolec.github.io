@@ -19,7 +19,7 @@ const links = [
   {
     label: 'GitHub',
     href: 'https://github.com/jpolec',
-    count: '350+',
+    count: '100+',
     detail: 'followers',
     icon: 'github',
   },
@@ -42,7 +42,8 @@ const links = [
 
 <SimpleLayout
   title="Jakub Polec"
-  description="Jakub Polec is a portfolio manager, quant systems architect, and founder of QuantJourney."
+  description="Jakub Polec is a portfolio manager, quant systems architect, founder of QuantJourney, and builder of OneBook."
+  canonical="https://jakubpolec.com/"
 >
   <main class="page-shell">
     <section class="hero" aria-labelledby="hero-title">
@@ -68,55 +69,35 @@ const links = [
           <a href="https://quantjourney.cloud" target="_blank" rel="noopener">
             QuantJourney
           </a>
+          and builder of
+          <a href="https://quantjourney.cloud" target="_blank" rel="noopener">
+            OneBook
+          </a>.
         </p>
         <p class="lead animate-in">
-          I manage proprietary capital and build systems for quantitative
-          research, portfolio management, risk, and AI-assisted decision-making
-          — usually where the real problems are too messy for a polished demo.
+          I invest proprietary capital and build research, portfolio, risk, and
+          AI infrastructure for decisions that must remain explainable,
+          reproducible, and operationally sound.
         </p>
 
-        <div class="hero-links animate-in">
+        <div class="hero-actions animate-in" aria-label="Primary links">
           <a
             href="https://quantjourney.cloud"
-            class="quantjourney-link"
+            class="button hero-primary"
             target="_blank"
             rel="noopener"
           >
-            OneBook <span aria-hidden="true">↗</span>
+            Explore QuantJourney
           </a>
-          <a
-            href="https://backtester.quantjourney.cloud"
-            class="quantjourney-link"
-            target="_blank"
-            rel="noopener"
-          >
-            Backtester <span aria-hidden="true">↗</span>
-          </a>
-          <a
-            href="https://api.quantjourney.cloud"
-            class="quantjourney-link"
-            target="_blank"
-            rel="noopener"
-          >
-            Quant API <span aria-hidden="true">↗</span>
-          </a>
-          <a
-            href="https://github.com/jpolec/quant-interviews"
-            class="quantjourney-link"
-            target="_blank"
-            rel="noopener"
-          >
-            Quant Interviews <span aria-hidden="true">↗</span>
-          </a>
-          <a
-            href="https://quantjourney.substack.com"
-            class="quantjourney-link"
-            target="_blank"
-            rel="noopener"
-          >
-            Quant Blog <span aria-hidden="true">↗</span>
-          </a>
+          <a href="#selected-work" class="button hero-secondary">Read my work</a>
         </div>
+        <p class="hero-proof animate-in">
+          CERN <span aria-hidden="true">·</span> Microsoft
+          <span aria-hidden="true">·</span> Oracle
+          <span aria-hidden="true">·</span> Quant Research
+          <span aria-hidden="true">·</span> IBOR/PMS
+          <span aria-hidden="true">·</span> Risk Infrastructure
+        </p>
       </div>
     </section>
 
@@ -339,7 +320,11 @@ const links = [
       </div>
     </section>
 
-    <section class="content-section animate-in" aria-labelledby="work-title">
+    <section
+      id="selected-work"
+      class="content-section animate-in"
+      aria-labelledby="work-title"
+    >
       <div>
         <h2 id="work-title">Selected work</h2>
       </div>
@@ -385,39 +370,41 @@ const links = [
       </div>
       <div class="section-copy">
         <p>
-          I am open to selected opportunities where investment thinking,
-          quantitative systems, AI, and technology leadership genuinely
-          overlap, including:
+          I work selectively with funds, family offices, and investment
+          technology teams where portfolio judgment, quantitative systems, and
+          institutional infrastructure genuinely overlap.
         </p>
         <div class="item-stack opportunity-list">
           <article class="text-item">
-            <h3>CTO, Chief Architect, or Head of Quant Infrastructure roles</h3>
+            <h3>Institutional design partnerships</h3>
             <p>
-              Leading technology strategy, architecture, engineering, and AI
-              adoption for investment firms, fintech companies, and
-              data-intensive organisations.
+              Working with buy-side teams to design research, signal, scenario,
+              IBOR/PMS, risk, OMS, and AI infrastructure around real operating
+              workflows.
             </p>
           </article>
           <article class="text-item">
-            <h3>Portfolio and investment technology leadership</h3>
+            <h3>Strategic advisory</h3>
             <p>
-              Building the systems connecting research, portfolio construction,
-              risk, execution, governance, and post-trade learning.
+              Advising founders, CIOs, and technology leaders on platform
+              strategy, architecture, operating models, and responsible AI
+              adoption.
             </p>
           </article>
           <article class="text-item">
-            <h3>Strategic advisory and technical due diligence</h3>
+            <h3>Technical due diligence</h3>
             <p>
-              Helping founders, funds, family offices, and investors assess
-              technology platforms, modernise investment infrastructure, or
-              evaluate complex technical assets.
+              Assessing data foundations, systems architecture, model
+              governance, security, and execution risk for investors, funds,
+              and boards.
             </p>
           </article>
           <article class="text-item">
-            <h3>Selected collaborations</h3>
+            <h3>Selected board or executive engagements</h3>
             <p>
-              Working with people building difficult, defensible products where
-              data quality, system design, and decision-making matter.
+              Supporting a small number of organisations where investment
+              judgment, quantitative systems, and technology leadership can
+              create durable value.
             </p>
           </article>
         </div>
@@ -569,25 +556,32 @@ const links = [
     line-height: 1.58;
   }
 
-  .quantjourney-link {
-    display: inline-block;
-    color: var(--ink);
-    font-size: 0.92rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-bottom: 1px solid var(--line);
-    transition: border-color 160ms ease, color 160ms ease;
-  }
-
-  .quantjourney-link:hover {
-    color: var(--muted);
-    border-color: var(--muted);
-  }
-
-  .hero-links {
+  .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 22px;
+    gap: 12px;
+  }
+
+  .hero-primary {
+    background: var(--ink);
+    color: var(--page-bg);
+  }
+
+  .hero-secondary {
+    background: var(--page-bg);
+    color: var(--ink);
+  }
+
+  .hero-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 9px;
+    margin: 20px 0 0;
+    color: var(--ink);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.025em;
   }
 
   .action-row {

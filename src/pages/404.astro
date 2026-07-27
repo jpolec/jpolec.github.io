@@ -1,0 +1,67 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+---
+
+<SimpleLayout
+  title="Page not found | Jakub Polec"
+  description="This address does not exist or has been retired."
+  noindex
+>
+  <main class="not-found-shell">
+    <p class="status">404</p>
+    <h1>Page not found</h1>
+    <p class="message">
+      This address does not exist or has been retired.
+    </p>
+    <a href="/" class="home-link">Back to homepage</a>
+  </main>
+</SimpleLayout>
+
+<style>
+  .not-found-shell {
+    display: grid;
+    width: min(720px, calc(100% - 40px));
+    min-height: 82vh;
+    align-content: center;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+
+  .status {
+    margin: 0 0 12px;
+    color: var(--ink);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  h1 {
+    margin: 0 0 18px;
+    color: var(--ink);
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+
+  .message {
+    max-width: 480px;
+    margin: 0 0 28px;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .home-link {
+    width: fit-content;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .home-link:hover {
+    border-color: var(--ink);
+  }
+</style>
