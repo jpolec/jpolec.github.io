@@ -42,7 +42,7 @@ const links = [
 
 <SimpleLayout
   title="Jakub Polec"
-  description="Jakub Polec - physicist, founder of QuantJourney, and quantitative infrastructure builder."
+  description="Jakub Polec is a portfolio manager, quant systems architect, and founder of QuantJourney."
 >
   <main class="page-shell">
     <section class="hero" aria-labelledby="hero-title">
@@ -62,10 +62,17 @@ const links = [
 
       <div class="hero-copy">
         <h1 id="hero-title" class="animate-in">Jakub Polec</h1>
+        <p class="role animate-in">Portfolio Manager &amp; Quant Systems Architect</p>
+        <p class="founder-line animate-in">
+          Founder of
+          <a href="https://quantjourney.cloud" target="_blank" rel="noopener">
+            QuantJourney
+          </a>
+        </p>
         <p class="lead animate-in">
-          I build things around quantitative finance, research infrastructure,
-          and AI — usually where the interesting problems are too messy for a
-          polished demo.
+          I manage proprietary capital and build systems for quantitative
+          research, portfolio management, risk, and AI-assisted decision-making
+          — usually where the real problems are too messy for a polished demo.
         </p>
 
         <div class="hero-links animate-in">
@@ -76,6 +83,14 @@ const links = [
             rel="noopener"
           >
             QuantJourney <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="https://quantjourney.cloud/platform/"
+            class="quantjourney-link"
+            target="_blank"
+            rel="noopener"
+          >
+            OneBook <span aria-hidden="true">↗</span>
           </a>
           <a
             href="https://backtester.quantjourney.cloud"
@@ -93,46 +108,100 @@ const links = [
           >
             Quant API <span aria-hidden="true">↗</span>
           </a>
-        </div>
-
-        <p class="contact-note animate-in">
-          If you’re interested in consulting, advisory work, or collaborating
-          on a challenging problem, feel free to get in touch.
-        </p>
-
-        <div class="action-row animate-in" aria-label="Primary links">
           <a
-            href="https://calendly.com/jpolec/30min"
-            class="button primary"
+            href="https://github.com/jpolec/quant-interviews"
+            class="quantjourney-link"
             target="_blank"
             rel="noopener"
           >
-            Set up meeting
+            Quant Interviews <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="summary animate-in" aria-label="Short profile">
-      <p>
-        I live in Dubai, UAE, and I am the founder of QuantJourney. I’m a dad to
-        three wonderful kids. I work on research infrastructure, systematic
-        trading, and tools for people who need to make better decisions with
-        imperfect information.
-      </p>
-      <p>
-        My background is a slightly unusual mix of physics, technology, and
-        business. I have worked with Microsoft, Oracle, Orange, T-Mobile, hedge
-        funds, proprietary trading firms, organisations in the Middle East, and
-        research teams connected to CERN.
-      </p>
+    <section class="content-section animate-in" aria-labelledby="about-title">
+      <div>
+        <h2 id="about-title">About</h2>
+      </div>
+      <div class="section-copy">
+        <p>
+          I live in Dubai, UAE, and I am the founder of QuantJourney. I’m also a
+          dad to three wonderful kids.
+        </p>
+        <p>
+          My work sits between portfolio management, quantitative research, and
+          technology. I manage a research-driven proprietary portfolio and build
+          tools for people who need to make better decisions with imperfect
+          information.
+        </p>
+        <p>
+          My background is a slightly unusual mix of physics, technology,
+          business, and financial markets. I have worked with Microsoft, Oracle,
+          Orange, T-Mobile, hedge funds, proprietary trading firms,
+          organisations across the Middle East, and research teams connected to
+          CERN.
+        </p>
+        <p>
+          Over the years, I have built companies, led international teams,
+          designed large technology platforms, and worked on problems spanning
+          research, data, software architecture, AI, and investment
+          decision-making.
+        </p>
+      </div>
     </section>
 
-    <section class="thinking animate-in" aria-labelledby="thinking-title">
+    <section class="content-section animate-in" aria-labelledby="working-title">
+      <div>
+        <h2 id="working-title">What I am working on</h2>
+      </div>
+      <div class="section-copy item-stack">
+        <article class="text-item">
+          <h3>QuantJourney</h3>
+          <p>
+            QuantJourney is a research and investment technology platform
+            connecting financial data, quantitative research, backtesting,
+            portfolio analytics, risk, and AI workflows.
+          </p>
+          <p>
+            It is built around a simple principle: every important result should
+            be reproducible, explainable, and traceable back to its data,
+            assumptions, model, and execution context.
+          </p>
+        </article>
+        <article class="text-item">
+          <h3>OneBook</h3>
+          <p>
+            OneBook connects investment theses, evidence, positions, cash,
+            portfolio risk, policy checks, approvals, orders, and outcomes in
+            one governed record.
+          </p>
+          <p>
+            The objective is not to replace every existing system. It is to
+            create a reliable decision layer above fragmented research,
+            portfolio, risk, and execution workflows.
+          </p>
+        </article>
+        <article class="text-item">
+          <h3>Open-source research and tools</h3>
+          <p>
+            I publish practical material on probability, statistics, systematic
+            trading, portfolio construction, risk, backtesting, and AI-native
+            quantitative infrastructure.
+          </p>
+          <p>
+            The accompanying code is designed to be tested and executed, not
+            merely shown in a notebook or presentation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section animate-in" aria-labelledby="thinking-title">
       <div>
         <h2 id="thinking-title">What I am thinking about</h2>
       </div>
-      <div class="thinking-copy">
+      <div class="section-copy">
         <p>
           AI is becoming cheap and plentiful. The hard part is moving from an
           answer to a useful decision: asking a worthwhile question, using data
@@ -140,16 +209,153 @@ const links = [
           with reality.
         </p>
         <p>
-          In finance, the model is only one piece of the system. The less visible
-          parts — data lineage, validation, execution, risk, and knowing when to
-          do nothing — usually decide whether the result is useful. The same
-          applies to most serious software.
+          In finance, the model is only one piece of the system. The less
+          visible parts — data lineage, point-in-time correctness, validation,
+          portfolio construction, execution, risk, and knowing when to do
+          nothing — usually decide whether the result is useful.
         </p>
+        <p>
+          The same applies to most serious software. A good system should not
+          merely produce an answer. It should preserve the evidence,
+          assumptions, uncertainty, constraints, and consequences behind the
+          decision.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section animate-in" aria-labelledby="work-title">
+      <div>
+        <h2 id="work-title">Selected work</h2>
+      </div>
+      <div class="section-copy item-grid">
+        <article class="text-item">
+          <h3>Portfolio management</h3>
+          <p>
+            Research-driven management of proprietary capital across public
+            markets, combining fundamental analysis, systematic signals,
+            portfolio construction, hedging, and risk management.
+          </p>
+        </article>
+        <article class="text-item">
+          <h3>Quantitative infrastructure</h3>
+          <p>
+            Financial data pipelines, point-in-time research environments,
+            backtesting, portfolio and risk analytics, instrument mastering,
+            and reproducible research workflows.
+          </p>
+        </article>
+        <article class="text-item">
+          <h3>AI and decision systems</h3>
+          <p>
+            AI agents connected to governed data and deterministic analytical
+            tools, with validation, audit trails, permissions, and human
+            oversight.
+          </p>
+        </article>
+        <article class="text-item">
+          <h3>Technology leadership</h3>
+          <p>
+            Architecture, product strategy, technical team building, platform
+            modernisation, and execution across complex international
+            organisations.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section animate-in" aria-labelledby="collaborate-title">
+      <div>
+        <h2 id="collaborate-title">Work with me</h2>
+      </div>
+      <div class="section-copy">
+        <p>
+          I am open to selected opportunities where investment thinking,
+          quantitative systems, AI, and technology leadership genuinely
+          overlap, including:
+        </p>
+        <div class="item-stack opportunity-list">
+          <article class="text-item">
+            <h3>CTO, Chief Architect, or Head of Quant Infrastructure roles</h3>
+            <p>
+              Leading technology strategy, architecture, engineering, and AI
+              adoption for investment firms, fintech companies, and
+              data-intensive organisations.
+            </p>
+          </article>
+          <article class="text-item">
+            <h3>Portfolio and investment technology leadership</h3>
+            <p>
+              Building the systems connecting research, portfolio construction,
+              risk, execution, governance, and post-trade learning.
+            </p>
+          </article>
+          <article class="text-item">
+            <h3>Strategic advisory and technical due diligence</h3>
+            <p>
+              Helping founders, funds, family offices, and investors assess
+              technology platforms, modernise investment infrastructure, or
+              evaluate complex technical assets.
+            </p>
+          </article>
+          <article class="text-item">
+            <h3>Selected collaborations</h3>
+            <p>
+              Working with people building difficult, defensible products where
+              data quality, system design, and decision-making matter.
+            </p>
+          </article>
+        </div>
+        <div class="action-row" aria-label="Contact links">
+          <a
+            href="https://calendly.com/jpolec/30min"
+            class="button primary"
+            target="_blank"
+            rel="noopener"
+          >
+            Set up a meeting
+          </a>
+          <a href="mailto:jpolec@gmail.com" class="button primary">Email me</a>
+          <a
+            href="https://linkedin.com/in/jakubpolec"
+            class="button primary"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </section>
 
     <section class="links-section animate-in" aria-labelledby="links-title">
       <h2 id="links-title">Writing, projects, and occasional market thoughts</h2>
+      <p class="writing-intro">
+        I write about quantitative finance, portfolio management, market
+        structure, AI, software architecture, and the less visible systems
+        behind investment decisions.
+      </p>
+      <div class="writing-links" aria-label="Writing and project links">
+        <a href="https://quantjourney.cloud" target="_blank" rel="noopener">
+          Read QuantJourney <span aria-hidden="true">↗</span>
+        </a>
+        <a
+          href="https://quantjourney.substack.com"
+          target="_blank"
+          rel="noopener"
+        >
+          Substack <span aria-hidden="true">↗</span>
+        </a>
+        <a
+          href="https://medium.com/@jpolec_72972"
+          target="_blank"
+          rel="noopener"
+        >
+          Medium <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://github.com/jpolec" target="_blank" rel="noopener">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </div>
       <div class="links-grid">
         {links.map((link) => (
           <a
@@ -319,23 +525,15 @@ const links = [
     max-width: 620px;
   }
 
-  .eyebrow {
-    margin: 0 0 18px;
-    color: var(--muted);
-    font-size: 0.74rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
   h1,
   h2,
+  h3,
   p {
     margin-top: 0;
   }
 
   h1 {
-    margin-bottom: 22px;
+    margin-bottom: 14px;
     color: var(--ink);
     font-size: clamp(2.35rem, 5vw, 4.4rem);
     font-weight: 700;
@@ -343,9 +541,31 @@ const links = [
     letter-spacing: -0.03em;
   }
 
+  .role {
+    margin-bottom: 5px;
+    color: var(--ink);
+    font-size: clamp(1.05rem, 1.75vw, 1.28rem);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+  }
+
+  .founder-line {
+    margin-bottom: 22px;
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+
+  .founder-line a {
+    font-weight: 600;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+  }
+
   .lead {
     max-width: 560px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     color: var(--muted);
     font-size: clamp(0.98rem, 1.45vw, 1.12rem);
     line-height: 1.58;
@@ -353,7 +573,6 @@ const links = [
 
   .quantjourney-link {
     display: inline-block;
-    margin: -10px 0 26px;
     color: var(--ink);
     font-size: 0.92rem;
     font-weight: 600;
@@ -370,21 +589,14 @@ const links = [
   .hero-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
-  }
-
-  .contact-note {
-    max-width: 540px;
-    margin: 0 0 18px;
-    color: var(--muted);
-    font-size: 0.92rem;
-    line-height: 1.55;
+    gap: 12px 22px;
   }
 
   .action-row {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    margin-top: 24px;
   }
 
   .button {
@@ -426,41 +638,17 @@ const links = [
     border-color: var(--ink);
   }
 
-  /* ── Summary ── */
-  .summary {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: clamp(20px, 4vw, 42px);
-    row-gap: 10px;
-    padding: 14px 0 18px;
-  }
-
-  .summary p {
-    margin-bottom: 0;
-    color: var(--ink);
-    font-size: clamp(0.94rem, 1.18vw, 1rem);
-    line-height: 1.58;
-  }
-
-  .thinking {
+  /* ── Content sections ── */
+  .content-section {
     display: grid;
     grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.3fr);
     gap: clamp(24px, 6vw, 90px);
-    margin-top: 46px;
-    padding: 34px 0 8px;
+    margin-top: 38px;
+    padding: 38px 0 4px;
     border-top: 1px solid var(--line);
   }
 
-  .section-kicker {
-    margin: 0 0 10px;
-    color: var(--muted);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .thinking h2 {
+  .content-section h2 {
     max-width: 260px;
     margin: 0;
     color: var(--ink);
@@ -470,20 +658,51 @@ const links = [
     letter-spacing: -0.025em;
   }
 
-  .thinking-copy {
+  .section-copy {
     max-width: 650px;
   }
 
-  .thinking-copy p {
+  .section-copy > p,
+  .text-item p {
     margin: 0 0 14px;
     color: var(--muted);
     font-size: clamp(0.94rem, 1.18vw, 1rem);
     line-height: 1.62;
   }
 
+  .item-stack {
+    display: grid;
+    gap: 26px;
+  }
+
+  .item-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 32px;
+  }
+
+  .text-item h3 {
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .text-item p:last-child {
+    margin-bottom: 0;
+  }
+
+  .opportunity-list {
+    margin-top: 26px;
+  }
+
   /* ── Links Section ── */
   .links-section {
-    padding: 30px 0 12px;
+    margin-top: 38px;
+    padding: 38px 0 12px;
+    border-top: 1px solid var(--line);
   }
 
   .links-section h2 {
@@ -495,6 +714,35 @@ const links = [
     font-weight: 600;
     line-height: 1.05;
     letter-spacing: -0.02em;
+  }
+
+  .writing-intro {
+    max-width: 760px;
+    margin-bottom: 16px;
+    color: var(--muted);
+    font-size: clamp(0.94rem, 1.18vw, 1rem);
+    line-height: 1.62;
+  }
+
+  .writing-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin-bottom: 26px;
+  }
+
+  .writing-links a {
+    color: var(--ink);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 160ms ease, color 160ms ease;
+  }
+
+  .writing-links a:hover {
+    color: var(--muted);
+    border-color: var(--muted);
   }
 
   .links-grid {
@@ -595,17 +843,21 @@ const links = [
       right: -20%;
     }
 
-    .summary,
-    .thinking {
+    .content-section {
       grid-template-columns: 1fr;
     }
 
-    .thinking {
+    .content-section {
       gap: 18px;
     }
 
-    .thinking h2 {
+    .content-section h2 {
       max-width: none;
+    }
+
+    .item-grid {
+      grid-template-columns: 1fr;
+      gap: 26px;
     }
 
     .links-section h2 {
@@ -675,8 +927,9 @@ const links = [
       padding-left: 14px;
     }
 
-    .summary {
-      padding: 32px 0;
+    .content-section {
+      margin-top: 26px;
+      padding-top: 32px;
     }
   }
 </style>
