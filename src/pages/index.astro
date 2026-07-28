@@ -545,23 +545,19 @@ const links = [
     position: relative;
     z-index: 1;
     margin: 0;
-    overflow: hidden;
-    border-radius: 8px;
-    border: 1px solid var(--line);
-    background: var(--surface);
-    box-shadow: 0 22px 80px rgba(0, 0, 0, 0.34);
-    transition: box-shadow 300ms ease;
   }
 
   .hero-image {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: 8px;
   }
 
   .hero-image-wrap figcaption {
     margin: 0;
-    padding: 10px 12px 11px;
+    padding: 8px 2px 0;
     color: var(--muted);
     font-size: 0.68rem;
     line-height: 1.4;
@@ -780,7 +776,7 @@ const links = [
     grid-template-columns: 170px minmax(0, 1fr);
     gap: clamp(24px, 4vw, 42px);
     align-items: center;
-    max-width: 780px;
+    max-width: 920px;
     margin-bottom: 38px;
   }
 
@@ -805,12 +801,12 @@ const links = [
   }
 
   .book-kicker {
-    margin: 0 0 8px;
-    color: var(--ink);
-    font-size: 0.78rem;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: 0.01em;
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: clamp(0.94rem, 1.18vw, 1rem);
+    font-weight: 400;
+    line-height: 1.62;
+    letter-spacing: normal;
   }
 
   .book-copy h2 {
@@ -824,7 +820,7 @@ const links = [
   }
 
   .book-copy > p:not(.book-kicker) {
-    max-width: 520px;
+    max-width: 680px;
     margin-bottom: 14px;
     color: var(--muted);
     font-size: clamp(0.94rem, 1.18vw, 1rem);
