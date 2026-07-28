@@ -49,17 +49,18 @@ const links = [
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true"></div>
 
-      <div class="hero-image-wrap animate-in">
+      <figure class="hero-image-wrap animate-in">
         <img
           src="/jpbg.jpeg"
-          alt="Jakub Polec"
+          alt="Jakub Polec with Bill Gates during his Microsoft years"
           class="hero-image"
           width="440"
           height="550"
           loading="eager"
           decoding="async"
         />
-      </div>
+        <figcaption>With Bill Gates, during my Microsoft years.</figcaption>
+      </figure>
 
       <div class="hero-copy">
         <h1 id="hero-title" class="animate-in">Jakub Polec</h1>
@@ -91,6 +92,26 @@ const links = [
           <span aria-hidden="true">·</span> IBOR/PMS
           <span aria-hidden="true">·</span> Risk Infrastructure
         </p>
+
+        <div class="action-row hero-actions animate-in" aria-label="Contact links">
+          <a
+            href="https://calendly.com/jpolec/30min"
+            class="button primary"
+            target="_blank"
+            rel="noopener"
+          >
+            Set up a meeting
+          </a>
+          <a href="mailto:jpolec@gmail.com" class="button primary">Email me</a>
+          <a
+            href="https://linkedin.com/in/jakubpolec"
+            class="button primary"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -217,11 +238,15 @@ const links = [
           />
         </a>
         <div class="book-copy">
-          <p class="book-kicker">Book project</p>
+          <p class="book-kicker">
+            I wrote an AI-native book — with a human firmly in the loop.
+          </p>
           <h2 id="book-title">Quant Interviews</h2>
           <p>
             From Mathematical Foundations to Production-Grade Quant Systems —
-            an AI-native implementation edition.
+            an implementation edition spanning over 1,200 pages, with worked
+            examples, production-minded code, mathematical derivations,
+            interview questions, and end-to-end system design.
           </p>
           <a
             href="https://github.com/jpolec/quant-interviews"
@@ -491,7 +516,7 @@ const links = [
   .page-shell {
     width: min(1080px, calc(100% - 40px));
     margin: 0 auto;
-    padding: 42px 0 56px;
+    padding: 42px 0 100px;
   }
 
   /* ── Hero ── */
@@ -519,6 +544,7 @@ const links = [
   .hero-image-wrap {
     position: relative;
     z-index: 1;
+    margin: 0;
     overflow: hidden;
     border-radius: 8px;
     border: 1px solid var(--line);
@@ -531,6 +557,15 @@ const links = [
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+  }
+
+  .hero-image-wrap figcaption {
+    margin: 0;
+    padding: 10px 12px 11px;
+    color: var(--muted);
+    font-size: 0.68rem;
+    line-height: 1.4;
+    text-align: center;
   }
 
   .hero-copy {
@@ -595,6 +630,16 @@ const links = [
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: 0.025em;
+  }
+
+  .hero-actions {
+    margin-top: 18px;
+  }
+
+  .hero-actions .button {
+    min-height: 42px;
+    padding: 11px 15px;
+    font-size: 0.8rem;
   }
 
   .action-row {
@@ -761,11 +806,11 @@ const links = [
 
   .book-kicker {
     margin: 0 0 8px;
-    color: var(--muted);
-    font-size: 0.7rem;
+    color: var(--ink);
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    line-height: 1.45;
+    letter-spacing: 0.01em;
   }
 
   .book-copy h2 {
