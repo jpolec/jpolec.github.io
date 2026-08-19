@@ -248,41 +248,62 @@ const links = [
 
     <section class="links-section animate-in" aria-labelledby="book-title">
       <div class="book-feature">
-        <a
-          href="https://github.com/jpolec/quant-interviews"
-          class="book-cover-link"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            src="/quant-interviews-cover.webp"
-            alt="Quant Interviews book cover"
-            class="book-cover"
-            width="540"
-            height="763"
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
-        <div class="book-copy">
-          <p class="book-kicker">
-            I wrote an AI-native book — with a human firmly in the loop.
-          </p>
-          <h2 id="book-title">Quant Interviews</h2>
-          <p>
-            From Mathematical Foundations to Production-Grade Quant Systems —
-            an implementation edition spanning over 1,200 pages, with worked
-            examples, production-minded code, mathematical derivations,
-            interview questions, and end-to-end system design.
-          </p>
-          <a
-            href="https://github.com/jpolec/quant-interviews"
-            class="book-link"
-            target="_blank"
-            rel="noopener"
-          >
-            Explore Quant Interviews <span aria-hidden="true">↗</span>
-          </a>
+        <div class="book-overview">
+          <div class="book-heading">
+            <h2 id="book-title">Book Quant Interviews</h2>
+          </div>
+          <div class="book-copy">
+            <p class="book-kicker">
+              I wrote an AI-native book — with a human firmly in the loop.
+            </p>
+            <p class="book-stats">1,600 pages, 192 questions.</p>
+            <div class="book-cta">
+              <a
+                href="https://quant-interviews.quantjourney.cloud"
+                class="book-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Explore Quant Interviews <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <p>
+              From Mathematical Foundations to Production-Grade Quant Systems —
+              an implementation edition spanning over 1,600 pages, with worked
+              examples, production-minded code, mathematical derivations,
+              interview questions, and end-to-end system design.
+            </p>
+          </div>
+        </div>
+        <div class="book-volume-grid" aria-label="Quant Interviews volumes">
+          <article class="book-volume-card">
+            <img
+              src="/quant-interviews-cover.webp"
+              alt="Quant Interviews Volume I cover"
+              width="540"
+              height="763"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="book-volume-copy">
+              <span class="book-volume-label">Volume I</span>
+              <span class="book-volume-title">Mathematical Foundations</span>
+            </div>
+          </article>
+          <article class="book-volume-card">
+            <img
+              src="/quant-interviews-cover.webp"
+              alt="Quant Interviews Volume II cover"
+              width="540"
+              height="763"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="book-volume-copy">
+              <span class="book-volume-label">Volume II</span>
+              <span class="book-volume-title">Production-Grade Quant Systems</span>
+            </div>
+          </article>
         </div>
       </div>
       <div class="links-grid" aria-label="Social profiles">
@@ -801,32 +822,13 @@ const links = [
   }
 
   .book-feature {
-    display: grid;
-    grid-template-columns: 170px minmax(0, 1fr);
-    gap: clamp(24px, 4vw, 42px);
-    align-items: center;
-    max-width: 920px;
     margin-bottom: 38px;
   }
 
-  .book-cover-link {
-    display: block;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    overflow: hidden;
-    background: #ffffff;
-    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.13);
-    transition: transform 180ms ease, box-shadow 180ms ease;
-  }
-
-  .book-cover-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
-  }
-
-  .book-cover {
-    width: 100%;
-    height: auto;
+  .book-overview {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.43fr);
+    gap: clamp(24px, 6vw, 90px);
   }
 
   .book-kicker {
@@ -838,22 +840,80 @@ const links = [
     letter-spacing: normal;
   }
 
-  .book-copy h2 {
-    margin-bottom: 12px;
+  .book-heading h2 {
+    margin-bottom: 5px;
     color: var(--ink);
-    max-width: none;
-    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    max-width: 260px;
+    font-size: clamp(1.55rem, 2.6vw, 2.2rem);
     font-weight: 600;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
   }
 
-  .book-copy > p:not(.book-kicker) {
-    max-width: 680px;
+  .book-stats {
+    margin: 0 0 10px;
+    color: var(--ink);
+    font-size: 0.84rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .book-copy > p:not(.book-kicker):not(.book-stats) {
+    max-width: 715px;
     margin-bottom: 14px;
     color: var(--muted);
     font-size: clamp(0.94rem, 1.18vw, 1rem);
     line-height: 1.62;
+  }
+
+  .book-volume-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    max-width: 600px;
+    margin: 34px auto 20px;
+  }
+
+  .book-volume-card {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .book-volume-card img {
+    display: block;
+    width: min(100%, 220px);
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  }
+
+  .book-volume-copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .book-volume-label {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .book-volume-title {
+    color: var(--ink);
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.25;
   }
 
   .book-link {
@@ -868,6 +928,10 @@ const links = [
   .book-link:hover {
     color: var(--muted);
     border-color: var(--muted);
+  }
+
+  .book-cta {
+    margin-bottom: 18px;
   }
 
   .links-grid {
@@ -977,6 +1041,11 @@ const links = [
       gap: 18px;
     }
 
+    .book-overview {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
     .content-section h2 {
       max-width: none;
     }
@@ -1054,15 +1123,18 @@ const links = [
       padding-top: 32px;
     }
 
-    .book-feature {
-      grid-template-columns: 112px minmax(0, 1fr);
-      gap: 18px;
-      margin-bottom: 32px;
-    }
-
-    .book-copy > p:not(.book-kicker) {
+    .book-copy > p:not(.book-kicker):not(.book-stats) {
       font-size: 0.86rem;
       line-height: 1.48;
+    }
+
+    .book-volume-grid {
+      grid-template-columns: 1fr;
+      margin-top: 14px;
+    }
+
+    .book-volume-card img {
+      width: min(100%, 190px);
     }
   }
 </style>
