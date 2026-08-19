@@ -422,50 +422,6 @@ const links = [
       </div>
     </section>
 
-    <section
-      id="selected-work"
-      class="content-section animate-in"
-      aria-labelledby="work-title"
-    >
-      <div>
-        <h2 id="work-title">Selected work</h2>
-      </div>
-      <div class="section-copy item-grid">
-        <article class="text-item">
-          <h3>Portfolio management</h3>
-          <p>
-            Research-driven management of proprietary capital across public
-            markets, combining fundamental analysis, systematic signals,
-            portfolio construction, hedging, and risk management.
-          </p>
-        </article>
-        <article class="text-item">
-          <h3>Quantitative infrastructure</h3>
-          <p>
-            Financial data pipelines, point-in-time research environments,
-            backtesting, portfolio and risk analytics, instrument mastering,
-            and reproducible research workflows.
-          </p>
-        </article>
-        <article class="text-item">
-          <h3>AI and decision systems</h3>
-          <p>
-            AI agents connected to governed data and deterministic analytical
-            tools, with validation, audit trails, permissions, and human
-            oversight.
-          </p>
-        </article>
-        <article class="text-item">
-          <h3>Technology leadership</h3>
-          <p>
-            Architecture, product strategy, technical team building, platform
-            modernisation, and execution across complex international
-            organisations.
-          </p>
-        </article>
-      </div>
-    </section>
-
     <section class="content-section animate-in" aria-labelledby="collaborate-title">
       <div>
         <h2 id="collaborate-title">Work with me</h2>
@@ -771,12 +727,6 @@ const links = [
     gap: 26px;
   }
 
-  .item-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px 32px;
-  }
-
   .text-item h3 {
     margin-bottom: 8px;
     color: var(--ink);
@@ -1048,11 +998,6 @@ const links = [
 
     .content-section h2 {
       max-width: none;
-    }
-
-    .item-grid {
-      grid-template-columns: 1fr;
-      gap: 26px;
     }
 
     .links-grid {
