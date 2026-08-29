@@ -23,7 +23,8 @@ const {
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     {canonical && <link rel="canonical" href={canonical} />}
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {noindex && <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />}
+    <slot name="head" />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>

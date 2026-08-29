@@ -1,0 +1,346 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+
+const adminGroups = [
+  {
+    label: 'QuantJourney control plane',
+    description: 'Product operations, identity, customer access and developer surfaces.',
+    links: [
+      {
+        name: 'Cockpit',
+        href: 'https://cockpit.quantjourney.cloud',
+        domain: 'cockpit.quantjourney.cloud',
+        description: 'Staff control plane for customers, access requests, scopes and product configuration.',
+      },
+      {
+        name: 'Agents',
+        href: 'https://agents.quantjourney.cloud',
+        domain: 'agents.quantjourney.cloud',
+        description: 'Agent gateway, OAuth registration and controlled AI-tool access.',
+      },
+      {
+        name: 'Users',
+        href: 'https://users.quantjourney.cloud',
+        domain: 'users.quantjourney.cloud',
+        description: 'Customer accounts, service access and user settings.',
+      },
+      {
+        name: 'Auth',
+        href: 'https://auth.quantjourney.cloud',
+        domain: 'auth.quantjourney.cloud',
+        description: 'Central sign-in, registration, password reset and session management.',
+      },
+      {
+        name: 'Data Workspace',
+        href: 'https://data.quantjourney.cloud',
+        domain: 'data.quantjourney.cloud',
+        description: 'Data, research, portfolio and warehouse operational workflows.',
+      },
+      {
+        name: 'Backtester',
+        href: 'https://backtester.quantjourney.cloud',
+        domain: 'backtester.quantjourney.cloud',
+        description: 'Strategy, backtest and workspace administration.',
+      },
+      {
+        name: 'Quant API documentation',
+        href: 'https://api.quantjourney.cloud/docs',
+        domain: 'api.quantjourney.cloud/docs',
+        description: 'API routes, integration reference and public technical contract.',
+      },
+    ],
+  },
+  {
+    label: 'Operations and observability',
+    description: 'System health, monitoring and event-stream operations.',
+    links: [
+      {
+        name: 'Grafana',
+        href: 'https://grafana.quantjourney.cloud',
+        domain: 'grafana.quantjourney.cloud',
+        description: 'Infrastructure dashboards, alerting and metrics.',
+      },
+      {
+        name: 'Kafka Console',
+        href: 'https://kafka.quantjourney.cloud',
+        domain: 'kafka.quantjourney.cloud',
+        description: 'Redpanda/Kafka event-stream inspection and operations.',
+      },
+    ],
+  },
+  {
+    label: 'External control planes',
+    description: 'Hosting, delivery, billing, source code and network administration.',
+    links: [
+      {
+        name: 'GitHub workspace',
+        href: 'https://github.com/jpolec',
+        domain: 'github.com/jpolec',
+        description: 'Repositories, pull requests and public-source administration.',
+      },
+      {
+        name: 'GitHub Pages deployments',
+        href: 'https://github.com/jpolec/jpolec.github.io/actions',
+        domain: 'github.com/jpolec/jpolec.github.io/actions',
+        description: 'Build and deployment runs for jakubpolec.com.',
+      },
+      {
+        name: 'Stripe Dashboard',
+        href: 'https://dashboard.stripe.com/',
+        domain: 'dashboard.stripe.com',
+        description: 'Payments, subscriptions, payment links and customer records.',
+      },
+      {
+        name: 'Cloudflare Dashboard',
+        href: 'https://dash.cloudflare.com/',
+        domain: 'dash.cloudflare.com',
+        description: 'Domains, DNS, edge routing, Access policies and security controls.',
+      },
+      {
+        name: 'Tailscale Admin',
+        href: 'https://login.tailscale.com/admin/machines',
+        domain: 'login.tailscale.com/admin/machines',
+        description: 'Private network, device and access administration.',
+      },
+      {
+        name: 'Hetzner Cloud Console',
+        href: 'https://console.hetzner.cloud/',
+        domain: 'console.hetzner.cloud',
+        description: 'Compute, networking, firewalls and server infrastructure.',
+      },
+    ],
+  },
+];
+---
+
+<SimpleLayout
+  title="Admin | Jakub Polec"
+  description="Unlisted administrative directory."
+  noindex={true}
+>
+  <main class="admin-page">
+    <div class="admin-shell">
+      <header class="page-header">
+        <p class="kicker">PRIVATE ADMIN DIRECTORY</p>
+        <h1>Admin</h1>
+        <p class="intro">Direct links to product, infrastructure and external control planes.</p>
+        <p class="private-note">
+          This route is not linked in public navigation and is marked <code>noindex</code>.
+          It is a convenience directory, not an authentication layer: each destination must enforce its own login and access policy.
+        </p>
+      </header>
+
+      {adminGroups.map((group) => (
+        <section class="admin-group" aria-labelledby={`group-${group.label.toLowerCase().replaceAll(' ', '-')}`}>
+          <h2 id={`group-${group.label.toLowerCase().replaceAll(' ', '-')}`}>{group.label}</h2>
+          <p class="group-intro">{group.description}</p>
+          <ul class="link-list">
+            {group.links.map((link) => (
+              <li>
+                <a href={link.href} target="_blank" rel="noopener noreferrer">{link.name}</a>
+                <p><span>{link.domain}</span>{' — '}{link.description}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
+      <section class="unavailable" aria-labelledby="unavailable-title">
+        <h2 id="unavailable-title">Not linked until routing is restored</h2>
+        <p>
+          Dagster and the private Gitea registry are intentionally not linked here yet:
+          their public routes are not currently available. I will add them once their URL and access policy are live.
+        </p>
+      </section>
+
+      <footer><a href="/">Jakub Polec</a></footer>
+    </div>
+  </main>
+</SimpleLayout>
+
+<style>
+  .admin-page {
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--ink);
+  }
+
+  .admin-shell {
+    width: min(760px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 92px 0 64px;
+  }
+
+  .page-header {
+    margin-bottom: 66px;
+  }
+
+  .kicker {
+    margin: 0 0 14px;
+    color: var(--accent);
+    font-size: 0.73rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+  }
+
+  h1,
+  h2,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    margin-bottom: 15px;
+    color: var(--ink);
+    font-size: clamp(2.8rem, 8vw, 4.6rem);
+    font-weight: 800;
+    letter-spacing: -0.07em;
+    line-height: 0.96;
+  }
+
+  .intro {
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 1.12rem;
+    line-height: 1.55;
+  }
+
+  .private-note {
+    margin: 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.83rem;
+    line-height: 1.6;
+  }
+
+  code {
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    color: var(--ink);
+    background: var(--soft);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.9em;
+  }
+
+  .admin-group + .admin-group {
+    margin-top: 62px;
+  }
+
+  h2 {
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: clamp(1.55rem, 4vw, 2rem);
+    font-weight: 750;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+  }
+
+  .group-intro,
+  .unavailable p {
+    margin-bottom: 22px;
+    color: var(--muted);
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .link-list {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    list-style: none;
+  }
+
+  .link-list li {
+    padding: 19px 0 18px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .link-list a {
+    color: var(--ink);
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    text-decoration: none;
+    transition: color 180ms ease;
+  }
+
+  .link-list a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .link-list a:focus-visible {
+    border-radius: 3px;
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+
+  .link-list p {
+    margin: 7px 0 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .link-list p span {
+    color: var(--accent);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.8rem;
+  }
+
+  .unavailable {
+    margin-top: 64px;
+    padding: 24px 26px;
+    border-left: 3px solid var(--line);
+    background: var(--soft);
+  }
+
+  .unavailable h2 {
+    margin-bottom: 8px;
+    font-size: 1.08rem;
+  }
+
+  .unavailable p {
+    margin: 0;
+    font-size: 0.86rem;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+
+  footer a {
+    color: var(--muted);
+    font-size: 0.83rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 600px) {
+    .admin-shell {
+      width: min(100% - 30px, 760px);
+      padding-top: 58px;
+    }
+
+    .page-header {
+      margin-bottom: 48px;
+    }
+
+    .admin-group + .admin-group {
+      margin-top: 48px;
+    }
+
+    .link-list li {
+      padding: 17px 0;
+    }
+  }
+</style>

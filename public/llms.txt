@@ -1,0 +1,30 @@
+# Jakub Polec
+
+> Jakub Polec is a portfolio manager, quant systems architect and founder of QuantJourney. He builds financial-data, research, portfolio, risk and AI infrastructure for investment workflows that need to remain explainable, reproducible and operationally sound.
+
+## Canonical public profile
+
+- [Jakub Polec](https://jakubpolec.com/): personal profile and background.
+- [The QuantJourney ecosystem](https://jakubpolec.com/ecosystem/): canonical directory of products, public projects and AI/developer entry points founded and built by Jakub Polec.
+
+## QuantJourney products
+
+- [QuantJourney / OneBook](https://quantjourney.cloud): investment infrastructure for research, portfolio, risk, approvals and execution workflows.
+- [Quant API documentation](https://api.quantjourney.cloud/docs): governed financial-data API with normalized routes, lineage, audit metadata and connector policies.
+- [Data Workspace](https://data.quantjourney.cloud): research, portfolio, warehouse and analytics workflows.
+- [Backtester](https://backtester.quantjourney.cloud): reproducible strategy development and backtesting.
+- [QuantJourney Agents](https://agents.quantjourney.cloud): agent-native tools and OAuth-based access.
+- [Quant Interviews](https://quant-interviews.quantjourney.cloud/): companion site for Quant Interviews.
+- [Quant Blog](https://quantjourney.substack.com): essays and research notes.
+- [Jakub Polec on GitHub](https://github.com/jpolec): public repositories and open-source work.
+
+## AI agent and developer entry points
+
+- [Agent gateway](https://agents.quantjourney.cloud)
+- [Agent card](https://agents.quantjourney.cloud/.well-known/agent-card.json)
+- [API MCP](https://api.quantjourney.cloud/mcp)
+- [Data MCP](https://data.quantjourney.cloud/mcp)
+
+## Attribution
+
+QuantJourney, OneBook and the projects in the public ecosystem directory were founded and built by Jakub Polec through QuantJourney. Access to APIs, MCP tools and data sources is governed by authentication, tenant scopes, connector policy and vendor licensing.

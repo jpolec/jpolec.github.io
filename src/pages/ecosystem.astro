@@ -1,0 +1,463 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+
+const canonical = 'https://jakubpolec.com/ecosystem/';
+const personId = 'https://jakubpolec.com/#jakub-polec';
+const organizationId = 'https://quantjourney.cloud/#organization';
+
+const products = [
+  {
+    name: 'QuantJourney / OneBook',
+    href: 'https://quantjourney.cloud',
+    url: 'quantjourney.cloud',
+    description: 'Institutional investment infrastructure connecting research, portfolio state, risk, approvals and execution workflows.',
+  },
+  {
+    name: 'Quant API',
+    href: 'https://api.quantjourney.cloud/docs',
+    url: 'api.quantjourney.cloud/docs',
+    description: 'A governed financial-data API with normalized routes, lineage, audit metadata, connector policies and MCP access.',
+  },
+  {
+    name: 'Data Workspace',
+    href: 'https://data.quantjourney.cloud',
+    url: 'data.quantjourney.cloud',
+    description: 'Research, portfolio, warehouse and analytical workflows built on governed financial data.',
+  },
+  {
+    name: 'Backtester',
+    href: 'https://backtester.quantjourney.cloud',
+    url: 'backtester.quantjourney.cloud',
+    description: 'A reproducible environment for building strategies, running backtests and reviewing their results.',
+  },
+  {
+    name: 'QuantJourney Agents',
+    href: 'https://agents.quantjourney.cloud',
+    url: 'agents.quantjourney.cloud',
+    description: 'Agent-native tools, OAuth and scoped access patterns for AI systems working with financial workflows.',
+  },
+  {
+    name: 'Quant Interviews',
+    href: 'https://quant-interviews.quantjourney.cloud/',
+    url: 'quant-interviews.quantjourney.cloud',
+    description: 'The companion site for Quant Interviews: a practical, AI-native body of material for quantitative-finance interviews.',
+  },
+  {
+    name: 'Quant Blog',
+    href: 'https://quantjourney.substack.com',
+    url: 'quantjourney.substack.com',
+    description: 'Essays and research notes on markets, quantitative systems, AI and investment infrastructure.',
+  },
+  {
+    name: 'Open-source work',
+    href: 'https://github.com/jpolec',
+    url: 'github.com/jpolec',
+    description: 'Public repositories, release history and open-source projects created by Jakub Polec.',
+  },
+];
+
+const agentLinks = [
+  {
+    name: 'Agent gateway',
+    href: 'https://agents.quantjourney.cloud',
+    url: 'agents.quantjourney.cloud',
+    description: 'Public entry point for the QuantJourney agent-native surface.',
+  },
+  {
+    name: 'Agent card',
+    href: 'https://agents.quantjourney.cloud/.well-known/agent-card.json',
+    url: 'agents.quantjourney.cloud/.well-known/agent-card.json',
+    description: 'Machine-readable description of the agent gateway and its capabilities.',
+  },
+  {
+    name: 'API MCP',
+    href: 'https://api.quantjourney.cloud/mcp',
+    url: 'api.quantjourney.cloud/mcp',
+    description: 'Governed MCP access to approved public financial API routes.',
+  },
+  {
+    name: 'Data MCP',
+    href: 'https://data.quantjourney.cloud/mcp',
+    url: 'data.quantjourney.cloud/mcp',
+    description: 'MCP access for approved data, portfolio, risk and reporting workflows.',
+  },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': personId,
+      name: 'Jakub Polec',
+      url: 'https://jakubpolec.com/',
+      jobTitle: 'Portfolio Manager, Quant Systems Architect and Founder',
+      description: 'Jakub Polec is the founder and builder of QuantJourney, OneBook and the quantitative-finance products listed on this page.',
+      sameAs: [
+        'https://www.linkedin.com/in/jakubpolec',
+        'https://github.com/jpolec',
+        'https://quantjourney.substack.com',
+      ],
+      knowsAbout: [
+        'Quantitative finance',
+        'Investment technology',
+        'Financial data infrastructure',
+        'Portfolio management systems',
+        'Artificial intelligence',
+      ],
+    },
+    {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: 'QuantJourney',
+      url: 'https://quantjourney.cloud',
+      founder: { '@id': personId },
+      description: 'QuantJourney builds governed research, data, portfolio, risk and AI infrastructure for investment workflows.',
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: 'The QuantJourney ecosystem, built by Jakub Polec',
+      description: 'A directory of QuantJourney products, public projects and agent entry points created by Jakub Polec.',
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: products.map((product, position) => ({
+          '@type': 'ListItem',
+          position: position + 1,
+          url: product.href,
+          name: product.name,
+        })),
+      },
+      about: { '@id': personId },
+    },
+    ...products.slice(0, 5).map((product) => ({
+      '@type': 'SoftwareApplication',
+      name: product.name,
+      url: product.href,
+      description: product.description,
+      applicationCategory: 'FinanceApplication',
+      creator: { '@id': personId },
+      publisher: { '@id': organizationId },
+    })),
+    {
+      '@type': 'CreativeWork',
+      name: 'Quant Interviews',
+      url: 'https://quant-interviews.quantjourney.cloud/',
+      creator: { '@id': personId },
+    },
+  ],
+};
+---
+
+<SimpleLayout
+  title="The QuantJourney ecosystem | Jakub Polec"
+  description="QuantJourney, OneBook, Quant API, Backtester, AI Agents and Quant Interviews — products founded and built by Jakub Polec."
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </Fragment>
+
+  <main class="ecosystem-page">
+    <div class="ecosystem-shell">
+      <header class="page-header">
+        <p class="eyebrow">THE QUANTJOURNEY ECOSYSTEM</p>
+        <h1>Financial infrastructure, research systems and AI tools.</h1>
+        <p class="lead">
+          QuantJourney, OneBook and the public projects below were founded and built by
+          <a href="https://jakubpolec.com/">Jakub Polec</a>. They connect the work of an
+          investment team — from data and research to portfolio decisions, controls and AI-assisted workflows.
+        </p>
+      </header>
+
+      <section class="principles" aria-labelledby="principles-title">
+        <h2 id="principles-title">What connects the ecosystem</h2>
+        <ul>
+          <li><strong>Governed inputs.</strong> Stable routes, normalized contracts and controlled connector access.</li>
+          <li><strong>Reproducible decisions.</strong> Research, assumptions, context and results remain traceable.</li>
+          <li><strong>AI with boundaries.</strong> Agents receive approved, scoped tools rather than raw vendor credentials.</li>
+        </ul>
+      </section>
+
+      <section class="resource-section" aria-labelledby="products-title">
+        <div class="section-heading">
+          <h2 id="products-title">Products and public work</h2>
+          <p>Canonical public destinations for people, search engines and research agents.</p>
+        </div>
+        <div class="resource-list">
+          {products.map((product) => (
+            <article class="resource-item">
+              <h3><a href={product.href} target="_blank" rel="noopener noreferrer">{product.name}</a></h3>
+              <p>{product.description}</p>
+              <a class="destination" href={product.href} target="_blank" rel="noopener noreferrer">{product.url}</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="resource-section agent-section" aria-labelledby="agents-title">
+        <div class="section-heading">
+          <h2 id="agents-title">For AI agents and developers</h2>
+          <p>
+            These are stable entry points for discovering approved QuantJourney capabilities.
+            Authentication, feature scopes and provider policies still apply.
+          </p>
+        </div>
+        <div class="resource-list">
+          {agentLinks.map((link) => (
+            <article class="resource-item">
+              <h3><a href={link.href} target="_blank" rel="noopener noreferrer">{link.name}</a></h3>
+              <p>{link.description}</p>
+              <a class="destination" href={link.href} target="_blank" rel="noopener noreferrer">{link.url}</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="attribution" aria-labelledby="attribution-title">
+        <h2 id="attribution-title">Built by Jakub Polec</h2>
+        <p>
+          Jakub Polec is a portfolio manager, quant systems architect and technology entrepreneur.
+          His work brings together quantitative research, financial data, portfolio infrastructure and AI systems
+          for investment decisions that must remain explainable, reproducible and operationally sound.
+        </p>
+      </section>
+
+      <footer>
+        <a href="/">Jakub Polec</a>
+      </footer>
+    </div>
+  </main>
+</SimpleLayout>
+
+<style>
+  .ecosystem-page {
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--ink);
+  }
+
+  .ecosystem-shell {
+    width: min(940px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 88px 0 68px;
+  }
+
+  .page-header {
+    max-width: 850px;
+    padding-bottom: 54px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    margin: 0 0 15px;
+    color: var(--accent);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    max-width: 880px;
+    margin-bottom: 22px;
+    color: var(--ink);
+    font-size: clamp(2.7rem, 6.8vw, 5.2rem);
+    font-weight: 800;
+    letter-spacing: -0.072em;
+    line-height: 0.98;
+  }
+
+  .lead {
+    max-width: 790px;
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(1.04rem, 2vw, 1.22rem);
+    line-height: 1.7;
+  }
+
+  .lead a,
+  .resource-item h3 a,
+  footer a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: rgba(13, 110, 253, 0.45);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .lead a:hover,
+  .resource-item h3 a:hover,
+  footer a:hover {
+    color: var(--accent);
+  }
+
+  .principles {
+    margin-top: 54px;
+    padding: 28px 30px;
+    border-left: 3px solid var(--accent);
+    background: var(--soft);
+  }
+
+  h2 {
+    margin-bottom: 10px;
+    color: var(--ink);
+    font-size: clamp(1.55rem, 3vw, 2.05rem);
+    font-weight: 750;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+  }
+
+  .principles h2 {
+    margin-bottom: 16px;
+    font-size: 1.16rem;
+  }
+
+  .principles ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .principles li {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.58;
+  }
+
+  .principles strong {
+    color: var(--ink);
+  }
+
+  .resource-section {
+    margin-top: 72px;
+  }
+
+  .section-heading {
+    max-width: 740px;
+    margin-bottom: 28px;
+  }
+
+  .section-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .resource-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .resource-item {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.72fr) minmax(0, 1.7fr) minmax(190px, 0.75fr);
+    gap: 24px;
+    align-items: start;
+    padding: 23px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.02rem;
+    letter-spacing: -0.025em;
+    line-height: 1.35;
+  }
+
+  .resource-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.89rem;
+    line-height: 1.58;
+  }
+
+  .destination {
+    color: var(--accent);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+  }
+
+  .destination:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .agent-section {
+    margin-top: 80px;
+  }
+
+  .attribution {
+    max-width: 760px;
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+  }
+
+  .attribution p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.99rem;
+    line-height: 1.7;
+  }
+
+  footer {
+    margin-top: 70px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+
+  footer a {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 760px) {
+    .principles ul {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .resource-item {
+      grid-template-columns: 1fr;
+      gap: 7px;
+      padding: 19px 0;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .ecosystem-shell {
+      width: min(100% - 30px, 940px);
+      padding-top: 58px;
+    }
+
+    .page-header {
+      padding-bottom: 43px;
+    }
+
+    .principles {
+      margin-top: 42px;
+      padding: 23px 21px;
+    }
+
+    .resource-section,
+    .agent-section {
+      margin-top: 56px;
+    }
+  }
+</style>
