@@ -315,7 +315,6 @@ const structuredData = {
   <main class="ecosystem-page">
     <div class="ecosystem-shell">
       <header class="page-header">
-        <p class="eyebrow">THE QUANTJOURNEY ECOSYSTEM</p>
         <h1>Quant systems, systematic research, financial data and buy-side infrastructure.</h1>
         <p class="lead">
           <a href="https://jakubpolec.com/">Jakub Polec</a> is a portfolio manager, quant systems architect
@@ -328,8 +327,8 @@ const structuredData = {
           ))}
         </nav>
         <div class="header-actions" aria-label="Consulting contact options">
-          <a href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Discuss an engagement</a>
-          <a href="mailto:jakub@quantjourney.pro?subject=QuantJourney%20consulting%20enquiry">Email Jakub</a>
+          <a href="https://calendly.com/jpolec/30min" class="button primary" target="_blank" rel="noopener">Discuss an engagement</a>
+          <a href="mailto:jakub@quantjourney.pro?subject=QuantJourney%20consulting%20enquiry" class="button primary">Email Jakub</a>
         </div>
       </header>
 
@@ -532,7 +531,7 @@ const structuredData = {
   .profile-links a {
     color: var(--ink);
     text-decoration: underline;
-    text-decoration-color: rgba(13, 110, 253, 0.45);
+    text-decoration-color: var(--line);
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
   }
@@ -542,7 +541,8 @@ const structuredData = {
   footer a:hover,
   .agent-note a:hover,
   .profile-links a:hover {
-    color: var(--accent);
+    color: var(--ink);
+    text-decoration-color: var(--ink);
   }
 
   .profile-links {
@@ -568,26 +568,30 @@ const structuredData = {
   .header-actions a {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     min-height: 42px;
-    padding: 0 16px;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    font-size: 0.85rem;
-    font-weight: 750;
+    padding: 11px 15px;
+    border: 1px solid var(--ink);
+    border-radius: 8px;
+    color: var(--ink);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.1;
     text-decoration: none;
-  }
-
-  .header-actions a:first-child {
-    background: var(--accent);
-    color: var(--accent-ink);
+    transition: background 160ms ease, color 160ms ease, border-color 160ms ease,
+      transform 150ms ease, box-shadow 160ms ease;
   }
 
   .header-actions a:hover {
-    background: var(--soft);
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--page-bg);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
   }
 
-  .header-actions a:first-child:hover {
-    background: #0758c9;
+  .header-actions a:active {
+    transform: translateY(0);
   }
 
   .principles {
@@ -771,7 +775,7 @@ const structuredData = {
   }
 
   .destination {
-    color: var(--accent);
+    color: var(--ink);
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-size: 0.72rem;
     line-height: 1.45;
@@ -780,8 +784,7 @@ const structuredData = {
   }
 
   .destination:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration-color: var(--ink);
   }
 
   .resource-action {
@@ -789,16 +792,17 @@ const structuredData = {
   }
 
   .resource-action > a:not(.destination) {
-    color: var(--accent);
+    color: var(--ink);
     font-size: 0.82rem;
     font-weight: 750;
     line-height: 1.45;
     text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 160ms ease;
   }
 
   .resource-action > a:not(.destination):hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    border-color: var(--ink);
   }
 
   .agent-section {
