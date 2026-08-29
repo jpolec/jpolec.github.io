@@ -10,49 +10,122 @@ const products = [
     name: 'QuantJourney / OneBook',
     href: 'https://quantjourney.cloud',
     url: 'quantjourney.cloud',
-    description: 'Institutional investment infrastructure connecting research, portfolio state, risk, approvals and execution workflows.',
+    description: 'An investment-decision operating layer for hedge funds, asset managers and sophisticated family offices.',
+    detail: 'OneBook connects research, portfolio state, risk, policy checks, approvals, order intent and outcomes into a replayable decision record. It is designed to sit above the systems a firm already trusts — IBOR, PMS, OMS, custodians, administrators and risk tools — rather than force a risky front-to-back replacement.',
+    comparison: 'Traditional Tier-2 buy-side suites are broad systems of record that often require a long configuration or integration programme. OneBook is deliberately narrower: a governed overlay for the decision context those systems do not preserve — what was known, who approved it, what changed and what happened next.',
+    points: [
+      'A practical overlay for focused buy-side teams that need better controls without rebuilding their operating stack.',
+      'Same-book context for investment committee packs, pre-trade review, portfolio risk, exceptions and post-trade replay.',
+      'Private deployment patterns for family offices, hedge funds and investment teams with existing data and operational systems.',
+    ],
+    linkLabel: 'Explore OneBook',
   },
   {
     name: 'Quant API',
     href: 'https://api.quantjourney.cloud/docs',
     url: 'api.quantjourney.cloud/docs',
-    description: 'A governed financial-data API with normalized routes, lineage, audit metadata, connector policies and MCP access.',
+    description: 'A managed, governed financial-data API for teams that want to consume data rather than operate a data-integration estate.',
+    detail: 'Quant API provides 540+ stable routes across 60+ data-source integrations and growing. It standardizes request and response contracts while QuantJourney operates provider selection, server-side credentials, normalization, cache and fallback policy, lineage and audit context. REST, the Python SDK and MCP use the same governed layer.',
+    comparison: 'OpenBB is a strong choice for teams building and operating their own open-source provider stack. Quant API is the managed alternative for teams that want to outsource that operational work and call one tenant-scoped interface with metadata, controls and approved AI-agent tools.',
+    points: [
+      'Normalized routes, request IDs, provider metadata, warning propagation and point-in-time support where available.',
+      'MCP access gives Claude, Cursor, VS Code and internal agents scoped tools — never raw vendor credentials.',
+      'Enterprise engagements can include agreed SLA targets, onboarding, support, security review and private-deployment discussions, subject to the tenant and vendor terms.',
+    ],
+    linkLabel: 'Read API documentation',
   },
   {
     name: 'Data Workspace',
     href: 'https://data.quantjourney.cloud',
     url: 'data.quantjourney.cloud',
-    description: 'Research, portfolio, warehouse and analytical workflows built on governed financial data.',
+    description: 'A financial warehouse and research workspace for teams that need lineage-rich fundamentals, portfolio data and analytical outputs.',
+    detail: 'The warehouse turns SEC/EDGAR and approved vendor inputs into versioned, point-in-time financial statements, normalized entities, derived valuations, factors and analytics. Restatements, source context and calculation lineage remain part of the data contract instead of becoming spreadsheet archaeology.',
+    comparison: 'The catalog contains 600+ financial metrics, ratios and indicators across covered securities. Coverage and field availability depend on filings, source entitlement and instrument history; the service is not a promise that every issuer has every field at every point in time.',
+    points: [
+      'Financial ratios, valuation metrics, factor data and technical indicators ready for research, screening and portfolio workflows.',
+      'On-demand data products and integration work for funds, hedge funds and family offices that need an institutional financial warehouse without operating one alone.',
+      'Approved Data MCP tools for portfolio, risk, warehouse and reporting workflows.',
+    ],
+    linkLabel: 'Open Data Workspace',
   },
   {
     name: 'Backtester',
     href: 'https://backtester.quantjourney.cloud',
     url: 'backtester.quantjourney.cloud',
-    description: 'A reproducible environment for building strategies, running backtests and reviewing their results.',
+    description: 'Python-native, reproducible strategy research that turns a hypothesis into an inspectable evidence packet.',
+    detail: 'It combines target-weight and order-aware workflows with walk-forward validation, crisis and regime diagnostics, execution-cost analysis and generated reports. In the published five-strategy native benchmark, its calculation core was faster than pm/bt, Zipline and LEAN on every fixture, and faster than Backtrader on four of five fixtures.',
+    comparison: 'That is a defined benchmark, not a blanket speed claim: VectorBT remains faster for heavily vectorized parameter sweeps. QuantJourney is strongest when a team needs fast iteration together with execution semantics, diagnostics, source-controlled Python and a reviewable research record.',
+    points: [
+      'One local Python workflow for signal, factor, allocation and order-aware research.',
+      'Native walk-forward tooling, crisis diagnostics, 80+ research metrics and generated reports.',
+      'Validation reviews can examine data lineage, timing, bias, rebalancing, execution assumptions, costs and out-of-sample stability while code remains in the client environment.',
+    ],
+    linkLabel: 'See the benchmark',
+    linkHref: 'https://backtester.quantjourney.cloud/compare',
   },
   {
     name: 'QuantJourney Agents',
     href: 'https://agents.quantjourney.cloud',
     url: 'agents.quantjourney.cloud',
-    description: 'Agent-native tools, OAuth and scoped access patterns for AI systems working with financial workflows.',
+    description: 'Agent-native access patterns for AI systems working with governed financial and investment workflows.',
+    detail: 'Agents discover approved tools through an agent gateway, OAuth and MCP endpoints. They receive tenant-scoped capabilities, structured responses, connector policies and audit context rather than unbounded access to vendor credentials or internal records.',
+    points: [
+      'A practical surface for internal research assistants, developer tools and controlled investment operations.',
+      'Scopes, authentication, permissions and provider policy continue to apply to every request.',
+    ],
+    linkLabel: 'Open agent gateway',
   },
   {
     name: 'Quant Interviews',
     href: 'https://quant-interviews.quantjourney.cloud/',
     url: 'quant-interviews.quantjourney.cloud',
-    description: 'The companion site for Quant Interviews: a practical, AI-native body of material for quantitative-finance interviews.',
+    description: 'A senior quantitative-research review workbook for candidates preparing for quantitative roles at hedge funds, asset managers and systematic teams.',
+    detail: 'The public review edition contains 194 research questions across 14 chapters, two volumes and 1,600+ current PDF pages. It moves from mathematical foundations to production-grade quant systems: each topic can include derivations, intuition, Python, C++ or SQL implementation, tests, failure modes and validation.',
+    comparison: 'It is designed as a rigorous bridge between CFA or CQF theory and the research-review, coding and mathematical reasoning expected in demanding quant interviews. It is an independent QuantJourney publication, not affiliated with CFA Institute or CQF.',
+    points: [
+      'Useful for quant research, systematic trading, data, risk and research-engineering interview preparation.',
+      'A free public-review edition with executable learning and verification material.',
+    ],
+    linkLabel: 'Explore Quant Interviews',
   },
   {
     name: 'Quant Blog',
     href: 'https://quantjourney.substack.com',
     url: 'quantjourney.substack.com',
-    description: 'Essays and research notes on markets, quantitative systems, AI and investment infrastructure.',
+    description: 'A deep, practical publication on quantitative code, markets and the systems that make investment work reproducible.',
+    detail: 'The QuantJourney blog goes beyond signals and charts into the engineering choices investment teams actually face: data architecture, backtesting, IBOR and portfolio-management workflows, risk, instrument master, reporting, AI agents and research governance.',
+    comparison: 'It is written for people who need to move from an idea or notebook to a defensible operating process — not just consume market commentary.',
+    points: [
+      'Long-form technical notes, implementation patterns and research lessons from real quantitative workflows.',
+      'A public reference layer for developers, quants, investment teams and AI agents learning the QuantJourney vocabulary.',
+    ],
+    linkLabel: 'Read the Quant Blog',
   },
   {
     name: 'Open-source work',
     href: 'https://github.com/jpolec',
     url: 'github.com/jpolec',
-    description: 'Public repositories, release history and open-source projects created by Jakub Polec.',
+    description: 'Public repositories, release history and quantitative-finance projects created by Jakub Polec.',
+    detail: 'Open-source work provides inspectable code, examples and release history alongside the managed and institutional QuantJourney products.',
+    points: [
+      'A useful starting point for developers evaluating the technical approach behind the ecosystem.',
+    ],
+    linkLabel: 'Visit GitHub',
+  },
+];
+
+const services = [
+  {
+    name: 'Quantitative and systematic strategy audits',
+    description: 'Independent technical review of a research or systematic strategy: data lineage, point-in-time assumptions, leakage and bias, signal and portfolio construction, costs, execution assumptions, validation and reproducibility.',
+  },
+  {
+    name: 'STP and investment-infrastructure design',
+    description: 'Architecture and delivery work for straight-through processing, data flows, IBOR/PMS/OMS integration, instrument master, portfolio and risk workflows, controls, reporting and governed AI access.',
+  },
+  {
+    name: 'Family-office and fund operating infrastructure',
+    description: 'A practical route from fragmented data, spreadsheets and service providers to a private, reviewable investment operating model for family offices, hedge funds, managers and quant teams.',
   },
 ];
 
@@ -83,6 +156,25 @@ const agentLinks = [
   },
 ];
 
+const faqs = [
+  {
+    question: 'What consulting work is available?',
+    answer: 'Jakub Polec is available selectively for quantitative and systematic strategy audits, investment-infrastructure architecture and implementation, and family-office or fund operating-model work. Engagements focus on technology, research process and operating controls rather than investment recommendations, discretionary management or custody.',
+  },
+  {
+    question: 'How does OneBook differ from a traditional buy-side platform?',
+    answer: 'OneBook is an investment-decision operating layer, not a claim to replace every system of record. It works above an existing IBOR, PMS, OMS, administrator, custodian and risk stack to preserve the thesis, data snapshot, checks, approvals and outcome of a material decision.',
+  },
+  {
+    question: 'Why choose Quant API instead of operating a provider stack yourself?',
+    answer: 'Teams can use Quant API when they prefer a managed, governed interface over running providers, credentials, normalization, policy, fallback, cache and audit infrastructure internally. REST, the Python SDK and MCP share the same tenant-scoped controls.',
+  },
+  {
+    question: 'Does QuantJourney sell market data directly?',
+    answer: 'QuantJourney provides the software and governed data-infrastructure layer. Data-source access, licensing, coverage and availability remain subject to the relevant vendor agreements, tenant scopes and approved use cases.',
+  },
+];
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -92,7 +184,7 @@ const structuredData = {
       name: 'Jakub Polec',
       url: 'https://jakubpolec.com/',
       jobTitle: 'Portfolio Manager, Quant Systems Architect and Founder',
-      description: 'Jakub Polec is the founder and builder of QuantJourney, OneBook and the quantitative-finance products listed on this page.',
+      description: 'Jakub Polec is the founder and builder of QuantJourney, OneBook and the quantitative-finance products and consulting services listed on this page.',
       sameAs: [
         'https://www.linkedin.com/in/jakubpolec',
         'https://github.com/jpolec',
@@ -100,9 +192,11 @@ const structuredData = {
       ],
       knowsAbout: [
         'Quantitative finance',
+        'Systematic strategy research',
         'Investment technology',
         'Financial data infrastructure',
         'Portfolio management systems',
+        'Investment operations',
         'Artificial intelligence',
       ],
     },
@@ -118,8 +212,10 @@ const structuredData = {
       '@type': 'CollectionPage',
       '@id': `${canonical}#webpage`,
       url: canonical,
-      name: 'The QuantJourney ecosystem, built by Jakub Polec',
-      description: 'A directory of QuantJourney products, public projects and agent entry points created by Jakub Polec.',
+      name: 'Quant systems, data and buy-side consulting | Jakub Polec',
+      description: 'A directory of QuantJourney products, public projects, agent entry points and institutional consulting services created by Jakub Polec.',
+      dateModified: '2026-08-29',
+      inLanguage: 'en',
       mainEntity: {
         '@type': 'ItemList',
         itemListElement: products.map((product, position) => ({
@@ -129,7 +225,7 @@ const structuredData = {
           name: product.name,
         })),
       },
-      about: { '@id': personId },
+      about: [{ '@id': personId }, { '@id': organizationId }],
     },
     ...products.slice(0, 5).map((product) => ({
       '@type': 'SoftwareApplication',
@@ -140,35 +236,76 @@ const structuredData = {
       creator: { '@id': personId },
       publisher: { '@id': organizationId },
     })),
+    ...services.map((service) => ({
+      '@type': 'Service',
+      name: service.name,
+      description: service.description,
+      serviceType: service.name,
+      provider: { '@id': personId },
+      audience: {
+        '@type': 'Audience',
+        audienceType: 'Hedge funds, asset managers, family offices, investment offices and quantitative research teams',
+      },
+      areaServed: 'Worldwide',
+    })),
     {
-      '@type': 'CreativeWork',
-      name: 'Quant Interviews',
+      '@type': 'Book',
+      name: 'Quant Interviews: Mathematics, Markets, Research and Systems',
+      alternateName: 'Quant Interviews',
       url: 'https://quant-interviews.quantjourney.cloud/',
-      creator: { '@id': personId },
+      author: { '@id': personId },
+      publisher: { '@id': organizationId },
+      numberOfPages: 1600,
+      inLanguage: 'en',
+      isAccessibleForFree: true,
+      description: 'A senior quantitative-research review workbook with 194 questions, 14 chapters, executable labs and production-grade validation.',
+    },
+    {
+      '@type': 'Blog',
+      name: 'QuantJourney Blog',
+      url: 'https://quantjourney.substack.com',
+      author: { '@id': personId },
+      publisher: { '@id': organizationId },
+      description: 'Long-form quantitative code, markets and investment-infrastructure writing from QuantJourney.',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
     },
   ],
 };
 ---
 
 <SimpleLayout
-  title="The QuantJourney ecosystem | Jakub Polec"
-  description="QuantJourney, OneBook, Quant API, Backtester, AI Agents and Quant Interviews — products founded and built by Jakub Polec."
+  title="Quant systems, data & buy-side consulting | Jakub Polec"
+  description="QuantJourney ecosystem: OneBook for buy-side teams, a managed financial data API and MCP, SEC financial warehouse, backtesting and quant consulting by Jakub Polec."
   canonical={canonical}
 >
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </Fragment>
 
   <main class="ecosystem-page">
     <div class="ecosystem-shell">
       <header class="page-header">
         <p class="eyebrow">THE QUANTJOURNEY ECOSYSTEM</p>
-        <h1>Financial infrastructure, research systems and AI tools.</h1>
+        <h1>Quant systems, financial data and buy-side infrastructure.</h1>
         <p class="lead">
           QuantJourney, OneBook and the public projects below were founded and built by
           <a href="https://jakubpolec.com/">Jakub Polec</a>. They connect the work of an
           investment team — from data and research to portfolio decisions, controls and AI-assisted workflows.
         </p>
+        <div class="header-actions" aria-label="Consulting contact options">
+          <a href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Discuss an engagement</a>
+          <a href="mailto:jakub@quantjourney.pro?subject=QuantJourney%20consulting%20enquiry">Email Jakub</a>
+        </div>
       </header>
 
       <section class="principles" aria-labelledby="principles-title">
@@ -180,17 +317,55 @@ const structuredData = {
         </ul>
       </section>
 
+      <section class="consulting-section" aria-labelledby="consulting-title">
+        <div class="section-heading">
+          <p class="eyebrow">SELECTIVE CONSULTING</p>
+          <h2 id="consulting-title">Available for the work between a strategy and a dependable operating system.</h2>
+          <p>
+            Jakub is available for selected engagements with funds, hedge funds, family offices,
+            managers and systematic teams. The focus is practical diagnosis and delivery — what
+            should be trusted, what should be changed and how the investment workflow should operate.
+          </p>
+        </div>
+        <div class="service-list">
+          {services.map((service) => (
+            <article class="service-item">
+              <h3>{service.name}</h3>
+              <p>{service.description}</p>
+            </article>
+          ))}
+        </div>
+        <p class="service-note">
+          Consulting covers technology, research process and operating controls. It does not provide
+          investment advice, discretionary management, brokerage or custody.
+        </p>
+      </section>
+
       <section class="resource-section" aria-labelledby="products-title">
         <div class="section-heading">
           <h2 id="products-title">Products and public work</h2>
-          <p>Canonical public destinations for people, search engines and research agents.</p>
+          <p>Canonical public destinations for buyers, developers, search engines and research agents.</p>
         </div>
         <div class="resource-list">
           {products.map((product) => (
             <article class="resource-item">
-              <h3><a href={product.href} target="_blank" rel="noopener noreferrer">{product.name}</a></h3>
-              <p>{product.description}</p>
-              <a class="destination" href={product.href} target="_blank" rel="noopener noreferrer">{product.url}</a>
+              <div class="resource-name">
+                <h3><a href={product.href} target="_blank" rel="noopener noreferrer">{product.name}</a></h3>
+                <a class="destination" href={product.href} target="_blank" rel="noopener noreferrer">{product.url}</a>
+              </div>
+              <div class="resource-copy">
+                <p class="resource-summary">{product.description}</p>
+                <p>{product.detail}</p>
+                {product.comparison && <p class="resource-comparison">{product.comparison}</p>}
+                <ul>
+                  {product.points.map((point) => <li>{point}</li>)}
+                </ul>
+              </div>
+              <div class="resource-action">
+                <a href={product.linkHref ?? product.href} target="_blank" rel="noopener noreferrer">
+                  {product.linkLabel} <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </article>
           ))}
         </div>
@@ -200,17 +375,40 @@ const structuredData = {
         <div class="section-heading">
           <h2 id="agents-title">For AI agents and developers</h2>
           <p>
-            These are stable entry points for discovering approved QuantJourney capabilities.
-            Authentication, feature scopes and provider policies still apply.
+            These are stable, machine-readable entry points for discovering approved QuantJourney capabilities.
+            Authentication, feature scopes, data entitlements and provider policies still apply.
           </p>
         </div>
-        <div class="resource-list">
+        <div class="resource-list agent-list">
           {agentLinks.map((link) => (
             <article class="resource-item">
-              <h3><a href={link.href} target="_blank" rel="noopener noreferrer">{link.name}</a></h3>
-              <p>{link.description}</p>
-              <a class="destination" href={link.href} target="_blank" rel="noopener noreferrer">{link.url}</a>
+              <div class="resource-name">
+                <h3><a href={link.href} target="_blank" rel="noopener noreferrer">{link.name}</a></h3>
+              </div>
+              <div class="resource-copy"><p>{link.description}</p></div>
+              <div class="resource-action">
+                <a class="destination" href={link.href} target="_blank" rel="noopener noreferrer">{link.url}</a>
+              </div>
             </article>
+          ))}
+        </div>
+        <p class="agent-note">
+          This page is also summarized in <a href="/llms.txt">llms.txt</a> and
+          <a href="/llms-full.txt">llms-full.txt</a> for text-first discovery. Those files document public
+          destinations only; they do not expose private administration surfaces.
+        </p>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <h2 id="faq-title">Common questions</h2>
+        </div>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
           ))}
         </div>
       </section>
@@ -239,13 +437,13 @@ const structuredData = {
   }
 
   .ecosystem-shell {
-    width: min(940px, calc(100% - 40px));
+    width: min(1020px, calc(100% - 40px));
     margin: 0 auto;
     padding: 88px 0 68px;
   }
 
   .page-header {
-    max-width: 850px;
+    max-width: 880px;
     padding-bottom: 54px;
     border-bottom: 1px solid var(--line);
   }
@@ -266,7 +464,7 @@ const structuredData = {
   }
 
   h1 {
-    max-width: 880px;
+    max-width: 900px;
     margin-bottom: 22px;
     color: var(--ink);
     font-size: clamp(2.7rem, 6.8vw, 5.2rem);
@@ -276,7 +474,7 @@ const structuredData = {
   }
 
   .lead {
-    max-width: 790px;
+    max-width: 810px;
     margin: 0;
     color: var(--muted);
     font-size: clamp(1.04rem, 2vw, 1.22rem);
@@ -285,7 +483,8 @@ const structuredData = {
 
   .lead a,
   .resource-item h3 a,
-  footer a {
+  footer a,
+  .agent-note a {
     color: var(--ink);
     text-decoration: underline;
     text-decoration-color: rgba(13, 110, 253, 0.45);
@@ -295,8 +494,41 @@ const structuredData = {
 
   .lead a:hover,
   .resource-item h3 a:hover,
-  footer a:hover {
+  footer a:hover,
+  .agent-note a:hover {
     color: var(--accent);
+  }
+
+  .header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .header-actions a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 16px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 750;
+    text-decoration: none;
+  }
+
+  .header-actions a:first-child {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .header-actions a:hover {
+    background: var(--soft);
+  }
+
+  .header-actions a:first-child:hover {
+    background: #0758c9;
   }
 
   .principles {
@@ -339,12 +571,14 @@ const structuredData = {
     color: var(--ink);
   }
 
-  .resource-section {
-    margin-top: 72px;
+  .consulting-section,
+  .resource-section,
+  .faq-section {
+    margin-top: 76px;
   }
 
   .section-heading {
-    max-width: 740px;
+    max-width: 790px;
     margin-bottom: 28px;
   }
 
@@ -352,20 +586,33 @@ const structuredData = {
     margin: 0;
     color: var(--muted);
     font-size: 0.98rem;
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
-  .resource-list {
-    border-top: 1px solid var(--line);
+  .section-heading .eyebrow {
+    margin-bottom: 12px;
   }
 
-  .resource-item {
+  .service-list {
     display: grid;
-    grid-template-columns: minmax(180px, 0.72fr) minmax(0, 1.7fr) minmax(190px, 0.75fr);
-    gap: 24px;
-    align-items: start;
-    padding: 23px 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
+  }
+
+  .service-item {
+    min-height: 188px;
+    padding: 25px 24px 26px;
+    border-right: 1px solid var(--line);
+  }
+
+  .service-item:first-child {
+    padding-left: 0;
+  }
+
+  .service-item:last-child {
+    padding-right: 0;
+    border-right: 0;
   }
 
   h3 {
@@ -376,17 +623,74 @@ const structuredData = {
     line-height: 1.35;
   }
 
-  .resource-item p {
-    margin: 0;
+  .service-item p,
+  .service-note,
+  .agent-note {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.62;
+  }
+
+  .service-note {
+    max-width: 800px;
+    margin-top: 16px;
+    font-size: 0.8rem;
+  }
+
+  .resource-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .resource-item {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.68fr) minmax(0, 1.85fr) minmax(135px, 0.48fr);
+    gap: 28px;
+    align-items: start;
+    padding: 29px 0 30px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .resource-name {
+    display: grid;
+    gap: 10px;
+  }
+
+  .resource-copy p {
+    margin: 0 0 12px;
     color: var(--muted);
     font-size: 0.89rem;
+    line-height: 1.63;
+  }
+
+  .resource-copy .resource-summary {
+    color: var(--ink);
+    font-size: 0.98rem;
+    font-weight: 650;
+    line-height: 1.52;
+  }
+
+  .resource-copy .resource-comparison {
+    color: var(--ink);
+    font-size: 0.86rem;
+  }
+
+  .resource-copy ul {
+    margin: 15px 0 0;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: 0.84rem;
     line-height: 1.58;
+  }
+
+  .resource-copy li + li {
+    margin-top: 6px;
   }
 
   .destination {
     color: var(--accent);
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     line-height: 1.45;
     overflow-wrap: anywhere;
     text-decoration: none;
@@ -397,13 +701,87 @@ const structuredData = {
     text-underline-offset: 3px;
   }
 
+  .resource-action {
+    padding-top: 1px;
+  }
+
+  .resource-action > a:not(.destination) {
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 750;
+    line-height: 1.45;
+    text-decoration: none;
+  }
+
+  .resource-action > a:not(.destination):hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
   .agent-section {
-    margin-top: 80px;
+    margin-top: 84px;
+  }
+
+  .agent-list .resource-item {
+    padding: 22px 0;
+  }
+
+  .agent-list .resource-copy p {
+    margin: 0;
+  }
+
+  .agent-note {
+    max-width: 780px;
+  }
+
+  .faq-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .faq-list details {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq-list summary {
+    position: relative;
+    padding: 20px 32px 20px 0;
+    color: var(--ink);
+    cursor: pointer;
+    font-size: 0.96rem;
+    font-weight: 700;
+    line-height: 1.45;
+    list-style: none;
+  }
+
+  .faq-list summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-list summary::after {
+    position: absolute;
+    top: 19px;
+    right: 4px;
+    color: var(--accent);
+    content: '+';
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .faq-list details[open] summary::after {
+    content: '−';
+  }
+
+  .faq-list p {
+    max-width: 850px;
+    margin: -2px 0 21px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
   }
 
   .attribution {
-    max-width: 760px;
-    margin-top: 80px;
+    max-width: 790px;
+    margin-top: 82px;
     padding-top: 30px;
     border-top: 1px solid var(--line);
   }
@@ -427,7 +805,38 @@ const structuredData = {
     font-weight: 600;
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 820px) {
+    .service-list {
+      grid-template-columns: 1fr;
+    }
+
+    .service-item,
+    .service-item:first-child,
+    .service-item:last-child {
+      min-height: 0;
+      padding: 22px 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service-item:last-child {
+      border-bottom: 0;
+    }
+
+    .resource-item {
+      grid-template-columns: minmax(160px, 0.65fr) minmax(0, 1.6fr);
+    }
+
+    .resource-action {
+      grid-column: 2;
+    }
+
+    .agent-list .resource-action {
+      grid-column: 2;
+    }
+  }
+
+  @media (max-width: 620px) {
     .principles ul {
       grid-template-columns: 1fr;
       gap: 12px;
@@ -435,14 +844,20 @@ const structuredData = {
 
     .resource-item {
       grid-template-columns: 1fr;
-      gap: 7px;
-      padding: 19px 0;
+      gap: 10px;
+      padding: 23px 0;
+    }
+
+    .resource-action,
+    .agent-list .resource-action {
+      grid-column: auto;
+      padding-top: 2px;
     }
   }
 
   @media (max-width: 560px) {
     .ecosystem-shell {
-      width: min(100% - 30px, 940px);
+      width: min(100% - 30px, 1020px);
       padding-top: 58px;
     }
 
@@ -450,14 +865,25 @@ const structuredData = {
       padding-bottom: 43px;
     }
 
+    .header-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .header-actions a {
+      justify-content: center;
+    }
+
     .principles {
       margin-top: 42px;
       padding: 23px 21px;
     }
 
+    .consulting-section,
     .resource-section,
-    .agent-section {
-      margin-top: 56px;
+    .agent-section,
+    .faq-section {
+      margin-top: 58px;
     }
   }
 </style>

@@ -1,0 +1,62 @@
+# QuantJourney ecosystem — detailed public reference
+
+Canonical page: https://jakubpolec.com/ecosystem/
+
+Owner and builder: Jakub Polec, portfolio manager, quant systems architect and founder of QuantJourney.
+
+## What QuantJourney builds
+
+QuantJourney builds software and operating infrastructure for investment workflows that need to be explainable, reproducible and operationally controlled. The ecosystem covers governed financial data, quantitative research, backtesting, portfolio and risk context, decision records and controlled AI-agent access.
+
+## OneBook: investment decision operating layer
+
+OneBook is for hedge funds, boutique asset managers, emerging managers, investment offices and sophisticated family offices that already have some combination of IBOR, PMS, OMS, custodian, administrator, risk and research tools. It is not positioned as a front-to-back replacement for every system of record.
+
+OneBook sits above the existing stack. It links thesis and research evidence to portfolio state, pre-trade risk and policy checks, approvals, order intent and subsequent outcomes. This makes material investment decisions reviewable and replayable.
+
+Traditional Tier-2 buy-side platforms are broad systems of record and may be the right choice when a firm needs a large replacement programme. OneBook is a different proposition: a lower-risk governed overlay for the context that is otherwise fragmented across spreadsheets, research notes, reports, messages and point solutions.
+
+## Quant API: managed financial-data infrastructure
+
+Quant API is a managed alternative for teams that do not want to operate a data-integration estate themselves. It provides 540+ governed routes across 60+ source integrations and growing. QuantJourney operates connector selection, server-side credentials, normalization, policy, caching, fallback behavior, request lineage and audit context; clients consume a stable tenant-scoped interface.
+
+The same governed API layer is available through REST, Python SDK and MCP. It exposes normalized contracts, request IDs, provider metadata, warnings and point-in-time support where available. MCP is intended for approved tools in Claude, Cursor, VS Code and internal agents, without exposing raw vendor credentials.
+
+OpenBB is a strong option for organizations that want to build and operate their own open-source provider stack. Quant API is a better fit when the operational responsibility for sources, credentials, contract normalization, connector policy and audit controls should be outsourced to a managed platform. Enterprise engagements may include agreed SLA targets, onboarding, support, security review and private-deployment discussions; exact terms depend on the customer, vendor agreements and deployment scope.
+
+## Data Workspace: financial warehouse and data products
+
+Data Workspace brings SEC/EDGAR and approved vendor inputs into a versioned, point-in-time financial warehouse. It preserves source and restatement context while providing normalized financial statements, derived valuations, factors, financial ratios, technical indicators and data lineage for research, screening, portfolio, risk and reporting workflows.
+
+The warehouse catalog contains 600+ financial metrics, ratios and indicators across covered securities. This is a catalog-level count: a specific issuer and date may not have every metric because filing, entitlement, source and instrument-history coverage vary. Data products and integrations can be scoped on demand for funds, hedge funds and family offices that need institutional financial data infrastructure without operating the full warehouse themselves.
+
+## Backtester: reproducible strategy evidence
+
+QuantJourney Backtester is a Python-native research environment for signals, factors, target weights and order-aware strategies. It includes walk-forward validation, crisis/regime diagnostics, execution-cost analysis, 80+ research metrics and generated reports.
+
+Its public comparison benchmarks QJ Backtester against VectorBT, pmorissette/bt, Zipline, Backtrader and QuantConnect LEAN on five native research fixtures. QJ's calculation core was faster than pm/bt, Zipline and LEAN on every listed fixture, and faster than Backtrader on four of five. VectorBT remains faster for heavily vectorized parameter sweeps. The useful distinction is therefore not a universal speed slogan: QJ is built for fast iteration plus an inspectable research record, diagnostics and report generation.
+
+## Quant Interviews: quantitative-finance interview preparation
+
+Quant Interviews is a public-review workbook for candidates preparing for quantitative research, systematic trading, data, risk and research-engineering roles at hedge funds, funds and asset managers. The current public edition contains 194 research questions, 14 chapters, two volumes and 1,600+ PDF pages. It covers mathematical foundations through production-grade quant systems, with derivations, visual intuition, implementation in Python/C++/SQL, tests, failure modes and validation.
+
+It can complement CFA or CQF study by adding interview-grade mathematical, coding and research-review practice. It is an independent QuantJourney publication and is not affiliated with CFA Institute or CQF.
+
+## Quant Blog
+
+The QuantJourney blog publishes practical, technical work on quantitative code, markets and investment systems. Topics include market data, backtesting, portfolio and risk workflows, IBOR, PMS, instrument master, reporting, research governance and AI-agent infrastructure. It is intended for practitioners building durable investment workflows, not just consuming market commentary.
+
+## Consulting
+
+Jakub Polec is available selectively for quantitative/systematic strategy audits, STP and investment-infrastructure design, and family-office/fund operating infrastructure. Consulting engagements focus on technology, research process and operating controls; they do not provide investment advice, discretionary management, brokerage or custody.
+
+Contact: https://calendly.com/jpolec/30min or mailto:jakub@quantjourney.pro
+
+## Public machine entry points
+
+- Agent gateway: https://agents.quantjourney.cloud
+- Agent card: https://agents.quantjourney.cloud/.well-known/agent-card.json
+- API MCP: https://api.quantjourney.cloud/mcp
+- Data MCP: https://data.quantjourney.cloud/mcp
+
+Access is subject to authentication, tenant scopes, connector policy, vendor licensing and feature availability. Private administration links are intentionally not included.
