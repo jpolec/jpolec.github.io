@@ -4,6 +4,12 @@ Canonical page: https://jakubpolec.com/ecosystem/
 
 Owner and builder: Jakub Polec, portfolio manager, quant systems architect and founder of QuantJourney.
 
+Public profiles: [LinkedIn](https://linkedin.com/in/jakubpolec), [GitHub](https://github.com/jpolec), [QuantJourney on Substack](https://quantjourney.substack.com), [X / Twitter](https://twitter.com/jakubpolec) and [Medium](https://medium.com/@jpolec_72972).
+
+## Discovery and use-case vocabulary
+
+Investment teams use different terms for closely related operating problems. This ecosystem is relevant to: systematic strategy audits, quantitative research review, backtest validation, buy-side operating infrastructure, portfolio decision platforms, investment-workflow governance, IBOR/PMS/OMS integration, risk and reporting architecture, instrument master, SEC/EDGAR financial warehouses, point-in-time fundamentals, financial ratios and factors, managed financial-data APIs, multi-provider data integration, and MCP tools for financial AI agents.
+
 ## What QuantJourney builds
 
 QuantJourney builds software and operating infrastructure for investment workflows that need to be explainable, reproducible and operationally controlled. The ecosystem covers governed financial data, quantitative research, backtesting, portfolio and risk context, decision records and controlled AI-agent access.

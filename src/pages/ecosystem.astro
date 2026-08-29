@@ -5,6 +5,22 @@ const canonical = 'https://jakubpolec.com/ecosystem/';
 const personId = 'https://jakubpolec.com/#jakub-polec';
 const organizationId = 'https://quantjourney.cloud/#organization';
 
+const profileLinks = [
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/jakubpolec' },
+  { name: 'GitHub', href: 'https://github.com/jpolec' },
+  { name: 'Substack', href: 'https://quantjourney.substack.com' },
+  { name: 'X / Twitter', href: 'https://twitter.com/jakubpolec' },
+  { name: 'Medium', href: 'https://medium.com/@jpolec_72972' },
+];
+
+const discoveryTopics = [
+  'Systematic strategy audit, quantitative research review and backtest validation.',
+  'Buy-side operating layer, portfolio decision platform and investment-workflow governance.',
+  'IBOR, PMS and OMS integration; risk, reporting and instrument-master architecture.',
+  'Financial data warehouse, SEC/EDGAR fundamentals, point-in-time data, ratios and factors.',
+  'Managed financial-data API, multi-provider data integration and MCP tools for financial AI agents.',
+];
+
 const products = [
   {
     name: 'QuantJourney / OneBook',
@@ -185,10 +201,14 @@ const structuredData = {
       url: 'https://jakubpolec.com/',
       jobTitle: 'Portfolio Manager, Quant Systems Architect and Founder',
       description: 'Jakub Polec is the founder and builder of QuantJourney, OneBook and the quantitative-finance products and consulting services listed on this page.',
+      disambiguatingDescription: 'Founder of QuantJourney and builder of OneBook; portfolio manager and quant systems architect working on systematic research and buy-side investment infrastructure.',
+      worksFor: { '@id': organizationId },
       sameAs: [
         'https://www.linkedin.com/in/jakubpolec',
         'https://github.com/jpolec',
         'https://quantjourney.substack.com',
+        'https://twitter.com/jakubpolec',
+        'https://medium.com/@jpolec_72972',
       ],
       knowsAbout: [
         'Quantitative finance',
@@ -284,8 +304,8 @@ const structuredData = {
 ---
 
 <SimpleLayout
-  title="Quant systems, data & buy-side consulting | Jakub Polec"
-  description="QuantJourney ecosystem: OneBook for buy-side teams, a managed financial data API and MCP, SEC financial warehouse, backtesting and quant consulting by Jakub Polec."
+  title="Jakub Polec | Quant systems, data & buy-side consulting"
+  description="Jakub Polec's QuantJourney ecosystem: OneBook, systematic research, managed financial data API and MCP, SEC warehouse, backtesting and buy-side consulting."
   canonical={canonical}
 >
   <Fragment slot="head">
@@ -296,12 +316,17 @@ const structuredData = {
     <div class="ecosystem-shell">
       <header class="page-header">
         <p class="eyebrow">THE QUANTJOURNEY ECOSYSTEM</p>
-        <h1>Quant systems, financial data and buy-side infrastructure.</h1>
+        <h1>Quant systems, systematic research, financial data and buy-side infrastructure.</h1>
         <p class="lead">
-          QuantJourney, OneBook and the public projects below were founded and built by
-          <a href="https://jakubpolec.com/">Jakub Polec</a>. They connect the work of an
-          investment team — from data and research to portfolio decisions, controls and AI-assisted workflows.
+          <a href="https://jakubpolec.com/">Jakub Polec</a> is a portfolio manager, quant systems architect
+          and founder of QuantJourney. QuantJourney, OneBook and the public projects below connect the work of an
+          investment team — from systematic research and financial data to portfolio decisions, controls and AI-assisted workflows.
         </p>
+        <nav class="profile-links" aria-label="Jakub Polec public profiles">
+          {profileLinks.map((profile) => (
+            <a href={profile.href} target="_blank" rel="me noopener noreferrer">{profile.name}</a>
+          ))}
+        </nav>
         <div class="header-actions" aria-label="Consulting contact options">
           <a href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Discuss an engagement</a>
           <a href="mailto:jakub@quantjourney.pro?subject=QuantJourney%20consulting%20enquiry">Email Jakub</a>
@@ -314,6 +339,20 @@ const structuredData = {
           <li><strong>Governed inputs.</strong> Stable routes, normalized contracts and controlled connector access.</li>
           <li><strong>Reproducible decisions.</strong> Research, assumptions, context and results remain traceable.</li>
           <li><strong>AI with boundaries.</strong> Agents receive approved, scoped tools rather than raw vendor credentials.</li>
+        </ul>
+      </section>
+
+      <section class="discovery-section" aria-labelledby="discovery-title">
+        <div class="section-heading">
+          <p class="eyebrow">WHERE THIS WORK FITS</p>
+          <h2 id="discovery-title">What investment teams call the problem.</h2>
+          <p>
+            Different firms use different language for the same operational gaps. These are the
+            workstreams where QuantJourney, OneBook and Jakub's consulting are designed to help.
+          </p>
+        </div>
+        <ul class="discovery-list">
+          {discoveryTopics.map((topic) => <li>{topic}</li>)}
         </ul>
       </section>
 
@@ -416,10 +455,15 @@ const structuredData = {
       <section class="attribution" aria-labelledby="attribution-title">
         <h2 id="attribution-title">Built by Jakub Polec</h2>
         <p>
-          Jakub Polec is a portfolio manager, quant systems architect and technology entrepreneur.
-          His work brings together quantitative research, financial data, portfolio infrastructure and AI systems
+          Portfolio manager, quant systems architect, technology entrepreneur, founder of QuantJourney and builder of
+          OneBook. His work brings together systematic research, financial data, portfolio infrastructure and AI systems
           for investment decisions that must remain explainable, reproducible and operationally sound.
         </p>
+        <nav class="profile-links attribution-links" aria-label="Jakub Polec public profiles">
+          {profileLinks.map((profile) => (
+            <a href={profile.href} target="_blank" rel="me noopener noreferrer">{profile.name}</a>
+          ))}
+        </nav>
       </section>
 
       <footer>
@@ -484,7 +528,8 @@ const structuredData = {
   .lead a,
   .resource-item h3 a,
   footer a,
-  .agent-note a {
+  .agent-note a,
+  .profile-links a {
     color: var(--ink);
     text-decoration: underline;
     text-decoration-color: rgba(13, 110, 253, 0.45);
@@ -495,8 +540,22 @@ const structuredData = {
   .lead a:hover,
   .resource-item h3 a:hover,
   footer a:hover,
-  .agent-note a:hover {
+  .agent-note a:hover,
+  .profile-links a:hover {
     color: var(--accent);
+  }
+
+  .profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 19px;
+  }
+
+  .profile-links a {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 650;
   }
 
   .header-actions {
@@ -571,10 +630,33 @@ const structuredData = {
     color: var(--ink);
   }
 
+  .discovery-section,
   .consulting-section,
   .resource-section,
   .faq-section {
     margin-top: 76px;
+  }
+
+  .discovery-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0;
+    padding: 1px;
+    background: var(--line);
+    list-style: none;
+  }
+
+  .discovery-list li {
+    padding: 19px 20px;
+    background: var(--page-bg);
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.58;
+  }
+
+  .discovery-list li:last-child {
+    grid-column: 1 / -1;
   }
 
   .section-heading {
@@ -793,6 +875,10 @@ const structuredData = {
     line-height: 1.7;
   }
 
+  .attribution-links {
+    margin-top: 19px;
+  }
+
   footer {
     margin-top: 70px;
     padding-top: 20px;
@@ -848,6 +934,14 @@ const structuredData = {
       padding: 23px 0;
     }
 
+    .discovery-list {
+      grid-template-columns: 1fr;
+    }
+
+    .discovery-list li:last-child {
+      grid-column: auto;
+    }
+
     .resource-action,
     .agent-list .resource-action {
       grid-column: auto;
@@ -879,6 +973,7 @@ const structuredData = {
       padding: 23px 21px;
     }
 
+    .discovery-section,
     .consulting-section,
     .resource-section,
     .agent-section,

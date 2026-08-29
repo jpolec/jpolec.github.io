@@ -10,6 +10,18 @@ The canonical public ecosystem directory is https://jakubpolec.com/ecosystem/. I
 - [The QuantJourney ecosystem](https://jakubpolec.com/ecosystem/): canonical overview of public products, consulting and AI/developer entry points.
 - [Full text for language models](https://jakubpolec.com/llms-full.txt): expanded, text-first product and service descriptions.
 
+## Jakub Polec public profiles
+
+- [LinkedIn](https://linkedin.com/in/jakubpolec)
+- [GitHub](https://github.com/jpolec)
+- [QuantJourney on Substack](https://quantjourney.substack.com)
+- [X / Twitter](https://twitter.com/jakubpolec)
+- [Medium](https://medium.com/@jpolec_72972)
+
+## Discovery vocabulary
+
+The ecosystem is relevant to searches and agent tasks involving systematic strategy audits, quantitative research review, backtest validation, buy-side operating infrastructure, portfolio decision platforms, IBOR/PMS/OMS integration, risk and instrument-master architecture, SEC/EDGAR financial data warehouses, point-in-time fundamentals, multi-provider data APIs and MCP tools for financial AI agents.
+
 ## Products
 
 - [QuantJourney / OneBook](https://quantjourney.cloud): an investment-decision operating layer for hedge funds, asset managers and sophisticated family offices. It works above existing IBOR, PMS, OMS, risk and administrator systems to preserve the decision evidence that systems of record often do not: thesis, portfolio state, policy/risk checks, approvals and outcome replay.
