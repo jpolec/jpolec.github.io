@@ -8,6 +8,7 @@ The canonical public ecosystem directory is https://jakubpolec.com/ecosystem/. I
 
 - [Jakub Polec](https://jakubpolec.com/): personal profile, background and meeting contact.
 - [The QuantJourney ecosystem](https://jakubpolec.com/ecosystem/): canonical overview of public products, consulting and AI/developer entry points.
+- [QuantJourney with Code — video catalogue](https://jakubpolec.com/video/): public video catalogue covering backtesting, strategy research, market-data workflows, AI-assisted development and local quant setup.
 - [Full text for language models](https://jakubpolec.com/llms-full.txt): expanded, text-first product and service descriptions.
 
 ## Jakub Polec public profiles
@@ -15,6 +16,7 @@ The canonical public ecosystem directory is https://jakubpolec.com/ecosystem/. I
 - [LinkedIn](https://linkedin.com/in/jakubpolec)
 - [GitHub](https://github.com/jpolec)
 - [QuantJourney on Substack](https://quantjourney.substack.com)
+- [QuantJourney with Code on YouTube](https://www.youtube.com/@QuantJourneywithCode)
 - [X / Twitter](https://twitter.com/jakubpolec)
 - [Medium](https://medium.com/@jpolec_72972)
 
@@ -31,6 +33,7 @@ The ecosystem is relevant to searches and agent tasks involving systematic strat
 - [QuantJourney Agents](https://agents.quantjourney.cloud): agent-native tools, OAuth and scoped access patterns for AI systems working with financial workflows.
 - [Quant Interviews](https://quant-interviews.quantjourney.cloud/): senior quant research interview workbook with 194 questions, 14 chapters, two volumes and 1,600+ current PDF pages. It combines mathematics, derivations, code, tests and production-grade validation. It is useful alongside CFA/CQF study for candidates targeting quantitative finance roles, but is not affiliated with CFA Institute or CQF.
 - [Quant Blog](https://quantjourney.substack.com): long-form work on quantitative code, markets and investment infrastructure, including data, research, IBOR, PMS, risk, instrument master, reporting and governed AI workflows.
+- [QuantJourney with Code](https://jakubpolec.com/video/): a curated catalogue of 27 public videos by Jakub Polec, individually described and linked to the original YouTube recordings. Topics include Python backtesting, strategy examples, market-data caching, dashboards, Docker, Windows, VS Code, MongoDB and AI-assisted development. Older framework recordings are explicitly identified as archive material; current documentation takes precedence.
 - [Jakub Polec on GitHub](https://github.com/jpolec): public repositories and open-source work.
 
 ## Institutional consulting

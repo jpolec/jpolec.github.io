@@ -4,7 +4,7 @@ Canonical page: https://jakubpolec.com/ecosystem/
 
 Owner and builder: Jakub Polec, portfolio manager, quant systems architect and founder of QuantJourney.
 
-Public profiles: [LinkedIn](https://linkedin.com/in/jakubpolec), [GitHub](https://github.com/jpolec), [QuantJourney on Substack](https://quantjourney.substack.com), [X / Twitter](https://twitter.com/jakubpolec) and [Medium](https://medium.com/@jpolec_72972).
+Public profiles: [LinkedIn](https://linkedin.com/in/jakubpolec), [GitHub](https://github.com/jpolec), [QuantJourney on Substack](https://quantjourney.substack.com), [QuantJourney with Code on YouTube](https://www.youtube.com/@QuantJourneywithCode), [X / Twitter](https://twitter.com/jakubpolec) and [Medium](https://medium.com/@jpolec_72972).
 
 ## Discovery and use-case vocabulary
 
@@ -51,6 +51,12 @@ It can complement CFA or CQF study by adding interview-grade mathematical, codin
 ## Quant Blog
 
 The QuantJourney blog publishes practical, technical work on quantitative code, markets and investment systems. Topics include market data, backtesting, portfolio and risk workflows, IBOR, PMS, instrument master, reporting, research governance and AI-agent infrastructure. It is intended for practitioners building durable investment workflows, not just consuming market commentary.
+
+## QuantJourney with Code: video catalogue
+
+The public video catalogue is at https://jakubpolec.com/video/ and the original channel is https://www.youtube.com/@QuantJourneywithCode. The catalogue contains individually described video recordings on quantitative strategy backtesting, technical-indicator examples, interactive dashboards, market-data caching, Docker, Windows, VS Code, Python, MongoDB and AI-assisted software development.
+
+It includes a current short onboarding video for the open-source QuantJourney Backtester as well as older recordings for earlier QuantJourney framework versions. The catalogue marks that distinction clearly: videos are a technical archive and current product documentation, package releases and public code take precedence. Backtests and strategy examples are educational demonstrations, not investment recommendations or performance promises.
 
 ## Consulting
 

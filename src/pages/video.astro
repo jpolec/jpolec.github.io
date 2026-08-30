@@ -1,0 +1,729 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+
+const canonical = 'https://jakubpolec.com/video/';
+const channelUrl = 'https://www.youtube.com/@QuantJourneywithCode';
+const personId = 'https://jakubpolec.com/#jakub-polec';
+const organizationId = 'https://quantjourney.cloud/#organization';
+
+type Video = {
+  id: string;
+  title: string;
+  duration: string;
+  durationIso: string;
+  category: 'research' | 'ai' | 'setup' | 'training';
+  description: string;
+};
+
+const videos: Video[] = [
+  {
+    id: 'X_WF0-Nufdk',
+    title: 'Run Your First Quant Strategy in 5 Minutes | QuantJourney Backtester',
+    duration: '4:15',
+    durationIso: 'PT4M15S',
+    category: 'research',
+    description: 'A short, current starting point for the open-source QuantJourney Backtester: get the code, create an account and API key, run an example strategy, then inspect trades, drawdowns, risk metrics and the interactive dashboard. The strategy and research stay local to the user’s machine.',
+  },
+  {
+    id: 'eXAw37O36fs',
+    title: 'Using AI to speed up development',
+    duration: '2:06:14',
+    durationIso: 'PT2H6M14S',
+    category: 'ai',
+    description: 'A long-form practical session on using Cursor, Claude and Codex in development and quantitative workflows: planning, refactoring, testing, debugging, a stock-monitoring tool, a GUI conversion and technical-indicator work with the QuantJourney TI library.',
+  },
+  {
+    id: 'WHIBmBgji3o',
+    title: 'Strategy 6: Support Resistance',
+    duration: '3:45',
+    durationIso: 'PT3M45S',
+    category: 'research',
+    description: 'A compact strategy example centred on support and resistance. It is useful as a starting point for examining rule definition, signal confirmation, position management and backtest assumptions.',
+  },
+  {
+    id: 'r3aOZHF3dRQ',
+    title: 'Strategy 4: Using SuperTrend CCI',
+    duration: '3:07',
+    durationIso: 'PT3M7S',
+    category: 'research',
+    description: 'A brief implementation-oriented example combining SuperTrend and the Commodity Channel Index (CCI). The focus is on translating a technical-indicator idea into an executable strategy workflow.',
+  },
+  {
+    id: 'wJmAZx5E6M4',
+    title: 'Strategy 5: MACD & RSI with 8.5% CAGR',
+    duration: '3:13',
+    durationIso: 'PT3M13S',
+    category: 'research',
+    description: 'An example that combines MACD and RSI in a backtesting workflow. The CAGR in the title refers to the historical example shown in the video; it is not a performance promise or investment recommendation.',
+  },
+  {
+    id: 'EkcKW6KjRuw',
+    title: 'Strategy 3: EMA Crossover + ADX',
+    duration: '3:33',
+    durationIso: 'PT3M33S',
+    category: 'research',
+    description: 'A trend-following example using a 20/50-day EMA crossover with ADX as a trend-strength filter. It discusses directional bias, equal allocation, a holding period and example take-profit and stop-loss rules.',
+  },
+  {
+    id: 'hrCD2EUlAc8',
+    title: 'Strategy 2: Ichimoku Cloud + RSI',
+    duration: '3:43',
+    durationIso: 'PT3M43S',
+    category: 'research',
+    description: 'A strategy example that uses an Ichimoku-cloud breakout and RSI confirmation to investigate intermediate-term trend moves. It is a useful illustration of combining structural and momentum signals.',
+  },
+  {
+    id: 'J62SxwYboAs',
+    title: 'Strategy 1: Bollinger Bands + Stochastic Oscillator',
+    duration: '3:31',
+    durationIso: 'PT3M31S',
+    category: 'research',
+    description: 'A mean-reversion example that combines lower Bollinger Band events with Stochastic %K confirmation. The video walks through the entry, sizing and exit assumptions used for the shown historical experiment.',
+  },
+  {
+    id: 'rql6ru2kImM',
+    title: 'New Backtesting Dashboard: Fully Interactive Equity Visualisation',
+    duration: '3:52',
+    durationIso: 'PT3M52S',
+    category: 'research',
+    description: 'A tour of an interactive backtesting dashboard: trade markers, P&L and drawdown views, configurable indicators, chart formats, zoom and scroll, symbol search and theme switching.',
+  },
+  {
+    id: 'iifGx2zx6Aw',
+    title: 'Efficiently Reading and Writing Market Data for Backtesting Strategies with MongoDB Configuration',
+    duration: '3:26',
+    durationIso: 'PT3M26S',
+    category: 'research',
+    description: 'An explanation of market-data provider configuration for a strategy, including provider selection and MongoDB read/write flags. It shows how cached datasets can improve repeatability and avoid unnecessary provider calls.',
+  },
+  {
+    id: '9X6_GVm8yXk',
+    title: 'QuantJourney 1st Strategy',
+    duration: '2:58',
+    durationIso: 'PT2M58S',
+    category: 'research',
+    description: 'An early walk-through of running a first strategy in the QuantJourney framework. It is useful context for the progression from framework setup to a working research run.',
+  },
+  {
+    id: 'q0UBelsSRYw',
+    title: 'QuantJourney - start with docker installation',
+    duration: '2:32',
+    durationIso: 'PT2M32S',
+    category: 'setup',
+    description: 'A concise Docker-based installation walkthrough for the QuantJourney framework. It is part of the earlier setup archive and helps explain the local development workflow used in the tutorials.',
+  },
+  {
+    id: 'MowLM6SSAi8',
+    title: 'QuantJourneyGPT',
+    duration: '1:28',
+    durationIso: 'PT1M28S',
+    category: 'ai',
+    description: 'An introduction to QuantJourneyGPT, showing an LLM working with data connectors and a Swarm-style AI-agent approach using OpenAI and FMP data.',
+  },
+  {
+    id: 'noljw5I8a6s',
+    title: 'quantjourneyGPT',
+    duration: '1:33',
+    durationIso: 'PT1M33S',
+    category: 'ai',
+    description: 'A short demonstration of a multi-agent approach to retrieving fundamental and market data in QuantJourneyGPT, an earlier framework component for AI-assisted data work.',
+  },
+  {
+    id: 'zUOeRNikY34',
+    title: 'Running QuantJourney in Windows',
+    duration: '7:30',
+    durationIso: 'PT7M30S',
+    category: 'setup',
+    description: 'A Windows setup guide using Python, Git, Docker and Visual Studio Code, with the project’s PowerShell launcher. It aims to create a repeatable local environment across Windows, macOS and Linux.',
+  },
+  {
+    id: 'fAxv_0xFlaE',
+    title: 'QuantJourney Backtester with simple SMA strategy',
+    duration: '2:06',
+    durationIso: 'PT2M6S',
+    category: 'research',
+    description: 'An early vectorized-backtester example using a simple moving-average crossover, order blotter and performance plots. It demonstrates how local data caching and repeatable execution support research iteration.',
+  },
+  {
+    id: '8Py8AaOFVEw',
+    title: 'Running Strategy in QuantJourney and generating plots',
+    duration: '2:09',
+    durationIso: 'PT2M9S',
+    category: 'research',
+    description: 'A walkthrough of running a strategy and generating plots from a vectorized backtest. It connects the strategy run with the order blotter and reviewable performance output.',
+  },
+  {
+    id: '2hNZCFSqZuY',
+    title: 'How to run strategy in QuantJourney',
+    duration: '1:28',
+    durationIso: 'PT1M28S',
+    category: 'research',
+    description: 'A quick example of running a simple moving-average strategy with a configurable universe, volatility, trading range and maximum position. It illustrates a compact JSON-configured research workflow.',
+  },
+  {
+    id: 'usc6VoaQiO4',
+    title: 'Running Code in VSC',
+    duration: '1:32',
+    durationIso: 'PT1M32S',
+    category: 'setup',
+    description: 'A brief Visual Studio Code and Docker workflow covering framework execution, MongoDB connectivity and fetching data through a Yahoo Finance connector.',
+  },
+  {
+    id: 'gizwe-_-OaI',
+    title: 'QuantJourney Docker Installation',
+    duration: '2:45',
+    durationIso: 'PT2M45S',
+    category: 'setup',
+    description: 'An earlier Docker installation guide showing the project launcher and how to verify that the code and MongoDB services are running together.',
+  },
+  {
+    id: 'jZ3YZ2piThg',
+    title: 'QUANT ALGO TRAININGS by QuantJourney',
+    duration: '0:06',
+    durationIso: 'PT6S',
+    category: 'training',
+    description: 'A short channel trailer for QuantJourney quantitative-algorithm training material and the wider learning archive.',
+  },
+  {
+    id: 'CdCfw2lMs_o',
+    title: 'Learn Quant Finance with Experts',
+    duration: '0:09',
+    durationIso: 'PT9S',
+    category: 'training',
+    description: 'A short invitation to the QuantJourney learning material and quantitative-finance tutorial library.',
+  },
+  {
+    id: '5FTTv7A-3es',
+    title: 'How to prepare QuantJourney to run first strategy',
+    duration: '8:12',
+    durationIso: 'PT8M12S',
+    category: 'setup',
+    description: 'A fuller first-strategy setup: clone the repository, create a Python environment, install dependencies, configure API settings, validate the installation, bring up MongoDB and run a crossover example.',
+  },
+  {
+    id: 'fSaBKnuojvU',
+    title: 'Github Repo Installation of QuantJourney Framework',
+    duration: '4:36',
+    durationIso: 'PT4M36S',
+    category: 'setup',
+    description: 'A focused GitHub repository installation video for the earlier QuantJourney framework, useful alongside the Docker and Windows setup recordings.',
+  },
+  {
+    id: 'jsTGVXGx6cQ',
+    title: 'MongoDB installation for QuantJourney',
+    duration: '5:23',
+    durationIso: 'PT5M23S',
+    category: 'setup',
+    description: 'A dedicated MongoDB installation walkthrough for QuantJourney’s local framework environment and data-backed strategy examples.',
+  },
+  {
+    id: 'PPHW-xKZ1Cc',
+    title: 'backtester 1',
+    duration: '1:22',
+    durationIso: 'PT1M22S',
+    category: 'research',
+    description: 'An early short backtester recording from the QuantJourney tutorial archive.',
+  },
+  {
+    id: 'k3pK36vbqOY',
+    title: 'Backtester Results 20 years, 20 equities',
+    duration: '1:06',
+    durationIso: 'PT1M6S',
+    category: 'research',
+    description: 'An early result-viewing example covering a 20-year, 20-equity backtest. It is presented as a research demonstration rather than a statement of expected investment performance.',
+  },
+];
+
+const groups = [
+  {
+    id: 'backtesting',
+    category: 'research',
+    title: 'Backtesting and strategy research',
+    description: 'From the first local strategy run to indicator combinations, data caching, dashboards, plots and historical-result review.',
+  },
+  {
+    id: 'ai',
+    category: 'ai',
+    title: 'AI, coding and agent workflows',
+    description: 'Practical material on using AI tools for development and on earlier QuantJourneyGPT agent and data-connector experiments.',
+  },
+  {
+    id: 'setup',
+    category: 'setup',
+    title: 'Installation and local development',
+    description: 'Docker, Windows, VS Code, GitHub, Python and MongoDB setup recordings from the QuantJourney framework archive.',
+  },
+  {
+    id: 'training',
+    category: 'training',
+    title: 'Quant learning',
+    description: 'Short introductions to the quantitative-finance training and tutorial library.',
+  },
+] as const;
+
+const videoObjects = videos.map((video) => ({
+  '@type': 'VideoObject',
+  name: video.title,
+  description: video.description,
+  url: `https://www.youtube.com/watch?v=${video.id}`,
+  embedUrl: `https://www.youtube.com/embed/${video.id}`,
+  thumbnailUrl: `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
+  duration: video.durationIso,
+  inLanguage: 'en',
+  isFamilyFriendly: true,
+  creator: { '@id': personId },
+  publisher: { '@id': organizationId },
+}));
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: 'QuantJourney with Code — Quantitative Finance Videos',
+      description: 'A curated catalogue of public QuantJourney videos by Jakub Polec covering backtesting, quantitative strategy research, AI-assisted development, market-data workflows and local developer setup.',
+      inLanguage: 'en',
+      dateModified: '2026-08-30',
+      isPartOf: { '@id': personId },
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: videos.length,
+        itemListOrder: 'https://schema.org/ItemListOrderAscending',
+        itemListElement: videoObjects.map((video, position) => ({
+          '@type': 'ListItem',
+          position: position + 1,
+          item: video,
+        })),
+      },
+    },
+    {
+      '@type': 'Person',
+      '@id': personId,
+      name: 'Jakub Polec',
+      url: 'https://jakubpolec.com/',
+      sameAs: [channelUrl],
+    },
+    {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: 'QuantJourney',
+      url: 'https://quantjourney.cloud/',
+    },
+  ],
+};
+---
+
+<SimpleLayout
+  title="QuantJourney with Code — Quant Finance Videos | Jakub Polec"
+  description="QuantJourney with Code: public video tutorials by Jakub Polec on backtesting, quantitative strategies, market data, AI-assisted development, Docker and local quant research workflows."
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="keywords" content="quantitative finance videos, quant backtesting tutorial, Python trading strategy, financial data engineering, AI coding workflow, Docker quant research" />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </Fragment>
+
+  <main class="video-page">
+    <div class="video-shell">
+      <header class="page-header">
+        <p class="eyebrow">QUANTJOURNEY WITH CODE</p>
+        <h1>Quantitative finance, research infrastructure and code — on video.</h1>
+        <p class="lead">
+          A curated catalogue of {videos.length} public videos by <a href="https://jakubpolec.com/">Jakub Polec</a>.
+          The channel documents practical QuantJourney work: backtesting, strategy examples, market-data workflows,
+          developer setup and AI-assisted engineering.
+        </p>
+        <div class="header-actions" aria-label="Video catalogue links">
+          <a class="button primary" href={channelUrl} target="_blank" rel="noopener noreferrer">Open the YouTube channel <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="https://backtester.quantjourney.cloud" target="_blank" rel="noopener noreferrer">Explore Backtester <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="archive-note">This is a technical archive. Some older recordings refer to earlier QuantJourney framework versions; current product and package documentation takes precedence.</p>
+      </header>
+
+      <nav class="topic-nav" aria-label="Video topics">
+        {groups.map((group) => <a href={`#${group.id}`}>{group.title}</a>)}
+      </nav>
+
+      {groups.map((group) => {
+        const groupVideos = videos.filter((video) => video.category === group.category);
+        return (
+          <section class="video-section" id={group.id} aria-labelledby={`${group.id}-title`}>
+            <div class="section-heading">
+              <p class="eyebrow">{groupVideos.length} VIDEOS</p>
+              <h2 id={`${group.id}-title`}>{group.title}</h2>
+              <p>{group.description}</p>
+            </div>
+            <div class="video-list">
+              {groupVideos.map((video) => (
+                <article class="video-card">
+                  <a
+                    class="thumbnail-link"
+                    href={`https://www.youtube.com/watch?v=${video.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Watch ${video.title} on YouTube`}
+                  >
+                    <img
+                      src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+                      alt={`Thumbnail for ${video.title}`}
+                      width="480"
+                      height="360"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span class="duration">{video.duration}</span>
+                  </a>
+                  <div class="video-copy">
+                    <p class="video-kind">{group.title}</p>
+                    <h3><a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer">{video.title}</a></h3>
+                    <p>{video.description}</p>
+                    <a class="watch-link" href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+
+      <aside class="disclosure" aria-label="Educational disclosure">
+        <h2>Research education, not investment advice.</h2>
+        <p>Examples, backtests, data, code and results in these videos are educational illustrations. They are not investment recommendations, offers, solicitations or promises of future performance. Validate any methodology independently before using it in research, trading or production.</p>
+      </aside>
+
+      <footer>
+        <a href="/ecosystem/">QuantJourney ecosystem</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://jakubpolec.com/">Jakub Polec</a>
+      </footer>
+    </div>
+  </main>
+</SimpleLayout>
+
+<style>
+  .video-page {
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--ink);
+  }
+
+  .video-shell {
+    width: min(1060px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 86px 0 68px;
+  }
+
+  .page-header {
+    max-width: 900px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    margin: 0 0 13px;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    max-width: 920px;
+    margin-bottom: 16px;
+    color: var(--ink);
+    font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 0.97;
+  }
+
+  .lead {
+    max-width: 730px;
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(1rem, 1.45vw, 1.14rem);
+    line-height: 1.62;
+  }
+
+  .lead a,
+  h3 a,
+  footer a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .lead a:hover,
+  h3 a:hover,
+  footer a:hover {
+    text-decoration-color: var(--ink);
+  }
+
+  .header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 11px 15px;
+    border: 1px solid var(--ink);
+    border-radius: 8px;
+    color: var(--ink);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: background 160ms ease, color 160ms ease, transform 150ms ease;
+  }
+
+  .button.primary {
+    background: var(--ink);
+    color: var(--page-bg);
+  }
+
+  .button.secondary {
+    background: var(--page-bg);
+  }
+
+  .button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+    transform: translateY(-1px);
+  }
+
+  .archive-note {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: var(--muted);
+    font-size: 0.79rem;
+    line-height: 1.56;
+  }
+
+  .topic-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topic-nav a {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .topic-nav a:hover {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 4px;
+  }
+
+  .video-section {
+    margin-top: 76px;
+  }
+
+  .section-heading {
+    max-width: 760px;
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+    color: var(--ink);
+    font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+  }
+
+  .section-heading > p:last-child {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.96rem;
+    line-height: 1.62;
+  }
+
+  .video-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .video-card {
+    display: grid;
+    grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
+    gap: 26px;
+    align-items: start;
+    padding: 27px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .thumbnail-link {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--soft);
+    border: 1px solid var(--line);
+  }
+
+  .thumbnail-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 220ms ease;
+  }
+
+  .thumbnail-link:hover img {
+    transform: scale(1.025);
+  }
+
+  .duration {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    padding: 4px 6px;
+    background: rgba(5, 45, 87, 0.92);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .video-copy {
+    min-width: 0;
+  }
+
+  .video-kind {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-size: 0.69rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin: 0 0 10px;
+    color: var(--ink);
+    font-size: clamp(1.08rem, 1.7vw, 1.33rem);
+    font-weight: 700;
+    letter-spacing: -0.018em;
+    line-height: 1.25;
+  }
+
+  .video-copy > p:not(.video-kind) {
+    max-width: 700px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.89rem;
+    line-height: 1.63;
+  }
+
+  .watch-link {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--ink);
+    font-size: 0.79rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .watch-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .disclosure {
+    margin-top: 76px;
+    padding: 27px 29px;
+    border-left: 3px solid var(--accent);
+    background: var(--soft);
+  }
+
+  .disclosure h2 {
+    margin-bottom: 10px;
+    font-size: 1.16rem;
+  }
+
+  .disclosure p {
+    max-width: 860px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.62;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 54px;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 700px) {
+    .video-shell {
+      width: min(100% - 32px, 1060px);
+      padding-top: 56px;
+    }
+
+    .video-card {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .thumbnail-link {
+      width: min(100%, 460px);
+    }
+
+    .video-section,
+    .disclosure {
+      margin-top: 58px;
+    }
+  }
+
+  @media (max-width: 460px) {
+    h1 {
+      font-size: clamp(2.25rem, 12vw, 3rem);
+    }
+
+    .header-actions,
+    .header-actions .button {
+      width: 100%;
+    }
+
+    .topic-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .disclosure {
+      padding: 23px 20px;
+    }
+  }
+</style>
