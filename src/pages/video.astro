@@ -261,18 +261,12 @@ const groups = [
   },
 ] as const;
 
-const videoObjects = videos.map((video) => ({
-  '@type': 'VideoObject',
+const videoListItems = videos.map((video, position) => ({
+  '@type': 'ListItem',
+  position: position + 1,
   name: video.title,
   description: video.description,
   url: `https://www.youtube.com/watch?v=${video.id}`,
-  embedUrl: `https://www.youtube.com/embed/${video.id}`,
-  thumbnailUrl: `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
-  duration: video.durationIso,
-  inLanguage: 'en',
-  isFamilyFriendly: true,
-  creator: { '@id': personId },
-  publisher: { '@id': organizationId },
 }));
 
 const structuredData = {
@@ -291,11 +285,7 @@ const structuredData = {
         '@type': 'ItemList',
         numberOfItems: videos.length,
         itemListOrder: 'https://schema.org/ItemListOrderAscending',
-        itemListElement: videoObjects.map((video, position) => ({
-          '@type': 'ListItem',
-          position: position + 1,
-          item: video,
-        })),
+        itemListElement: videoListItems,
       },
     },
     {
