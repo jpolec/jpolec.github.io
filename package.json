@@ -6,6 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "deploy": "./deploy.sh",
+    "deploy:dry-run": "./deploy.sh --dry-run",
     "preview": "astro preview",
     "astro": "astro"
   },

@@ -1,74 +1,37 @@
-# 🌐 Jakub Polec Personal Website (Astro)
+# Jakub Polec Personal Website
 
-This is the source code for [https://jakubpolec.com](https://jakubpolec.com), built using the [Astro](https://astro.build/) static site generator.
+Source for [jakubpolec.com](https://jakubpolec.com), built with [Astro](https://astro.build/).
 
-The site is deployed automatically via GitHub Actions to GitHub Pages from the `main` branch.
+`main` contains the source. The public static build is published to the separate
+`gh-pages` branch and served behind Cloudflare. GitHub Actions is intentionally
+not part of the deployment path.
 
-origin  https://github.com/jpolec/jpolec.github.io.git (fetch)
-origin  https://github.com/jpolec/jpolec.github.io.git (push)
-
-Update repo:
-
-```bash
-git status
-git add .
-git commit -m "next"
-git push origin main
-```
-
----
-
-## 🔧 Local Development
-
-To start the development server locally:
+## Local development
 
 ```bash
 npm install
 npm run dev
-This runs the site at http://localhost:4321 by default.
+```
 
-## 🚀 Deployment
+## Publish
 
-This site is automatically deployed using a custom GitHub Actions workflow (`deploy-astro.yml`) that builds the site with Astro and publishes it to GitHub Pages.
+Commit and push the source first, then run:
 
-- Live site: https://jakubpolec.com
-- Deployment method: GitHub Actions
-- Branch: `main`
-- DNS: Managed via Hostinger
-- Custom domain: `jakubpolec.com`
-- HTTPS: Enforced (once DNS for `www.` is fixed)
+```bash
+./deploy.sh
+```
 
-⚠️ Note: GitHub Pages source **must be set to GitHub Actions**, not `main`, to avoid Jekyll conflicts.
+The script builds `dist/`, preserves the `CNAME` and `.nojekyll` deployment
+metadata, publishes only generated files to `gh-pages`, and removes its
+temporary worktree afterwards.
 
+To inspect the generated deployment diff without publishing:
 
-## 🌐 Custom Domain Setup
+```bash
+./deploy.sh --dry-run
+```
 
-The site is served at [https://jakubpolec.com](https://jakubpolec.com), using GitHub Pages and DNS managed via Hostinger.
+The equivalent npm commands are `npm run deploy` and `npm run deploy:dry-run`.
 
-DNS Records:
-- A records (`@`) point to GitHub Pages IPs:
-  - 185.199.108.153, .109.153, .110.153, .111.153
-- CNAME record (`www`) → `jpolec.github.io`
-
-Enforce HTTPS is enabled once DNS is valid.
-
-📁 Project Structure
-
-/
-├── public/               # Static assets (favicon, etc.)
-├── src/
-│   ├── layouts/          # Page templates
-│   └── pages/            # Routes (e.g. index.astro)
-├── astro.config.mjs      # Astro configuration
-├── package.json
-└── tsconfig.json
-✅ Status
-
-✅ GitHub Actions enabled
-✅ GitHub Pages configured with custom domain
-✅ HTTPS enforced
-✅ Fully automated deployments from main branch
-🧠 Notes
-
-Template repository: Not enabled (optional)
-Issues, Wikis, Discussions: Managed via GitHub if enabled in repo settings
+The custom domain is `jakubpolec.com`; GitHub remains the source-control and
+static-publication repository, while Cloudflare fronts the public site.
