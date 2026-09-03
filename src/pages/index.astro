@@ -173,8 +173,15 @@ const publicResearch = [
         {products.map((product) => (
           <article class="build-item">
             <div class="build-name">
-              <h3>{product.name}</h3>
-              <span class="build-destination">{product.destination}</span>
+              <a
+                class="build-identity"
+                href={product.href}
+                target={product.external ? '_blank' : undefined}
+                rel={product.external ? 'noopener' : undefined}
+              >
+                <h3>{product.name}</h3>
+                <span class="build-destination">{product.destination}</span>
+              </a>
             </div>
             <p class="build-summary">{product.description}</p>
             <div class="build-action">
@@ -458,7 +465,7 @@ const publicResearch = [
   .hero-about p {
     margin: 0 0 11px;
     color: var(--muted);
-    font-size: clamp(0.88rem, 1.12vw, 0.96rem);
+    font-size: clamp(0.98rem, 1.45vw, 1.12rem);
     line-height: 1.58;
   }
 
@@ -590,6 +597,14 @@ const publicResearch = [
     gap: 10px;
   }
 
+  .build-identity {
+    display: grid;
+    width: fit-content;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+  }
+
   .build-name h3 {
     margin: 0;
     color: #aa0a8b;
@@ -597,6 +612,12 @@ const publicResearch = [
     font-weight: 700;
     line-height: 1.35;
     letter-spacing: -0.01em;
+  }
+
+  .build-identity:hover h3 {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-underline-offset: 3px;
   }
 
   .build-destination {
