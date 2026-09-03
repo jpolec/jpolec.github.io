@@ -1,13 +1,13 @@
-# Jakub Polec and the QuantJourney ecosystem
+# Jakub Polec and QuantJourney
 
 > Jakub Polec is a proprietary portfolio manager, quant systems architect, founder of QuantJourney, and builder of OneBook. He builds financial-data, research, portfolio, risk and AI infrastructure for investment workflows that must remain explainable, reproducible and operationally sound.
 
-The canonical public ecosystem directory is https://jakubpolec.com/ecosystem/. It describes the products, public work, consulting services and stable AI/developer entry points below. It was created by Jakub Polec through QuantJourney.
+The canonical public profile and product overview is https://jakubpolec.com/. It describes the core products, selective Quant Infra work and stable AI/developer entry points below. It was created by Jakub Polec through QuantJourney.
 
 ## Canonical public profile
 
 - [Jakub Polec](https://jakubpolec.com/): personal profile, background and meeting contact.
-- [The QuantJourney ecosystem](https://jakubpolec.com/ecosystem/): canonical overview of public products, consulting and AI/developer entry points.
+- [What I build](https://jakubpolec.com/#what-i-build): OneBook, Quant API, Data Workspace, Backtester, Agents and Quant Infra.
 - [QuantJourney with Code — video catalogue](https://jakubpolec.com/video/): public video catalogue covering backtesting, strategy research, market-data workflows, AI-assisted development and local quant setup.
 - [Full text for language models](https://jakubpolec.com/llms-full.txt): expanded, text-first product and service descriptions.
 
@@ -22,7 +22,7 @@ The canonical public ecosystem directory is https://jakubpolec.com/ecosystem/. I
 
 ## Discovery vocabulary
 
-The ecosystem is relevant to searches and agent tasks involving systematic strategy audits, quantitative research review, backtest validation, buy-side operating infrastructure, portfolio decision platforms, IBOR/PMS/OMS integration, risk and instrument-master architecture, SEC/EDGAR financial data warehouses, point-in-time fundamentals, multi-provider data APIs and MCP tools for financial AI agents.
+This work is relevant to searches and agent tasks involving systematic strategy audits, quantitative research review, backtest validation, buy-side operating infrastructure, portfolio decision platforms, IBOR/PMS/OMS integration, risk and instrument-master architecture, SEC/EDGAR financial data warehouses, point-in-time fundamentals, multi-provider data APIs and MCP tools for financial AI agents.
 
 ## Products
 
@@ -31,6 +31,7 @@ The ecosystem is relevant to searches and agent tasks involving systematic strat
 - [Data Workspace](https://data.quantjourney.cloud): lineage-rich financial warehouse and research workspace. It normalizes SEC/EDGAR and approved vendor inputs into versioned point-in-time financial statements, derived valuations, factor data and a catalog of 600+ metrics, ratios and indicators across covered securities. Coverage depends on filings, entitlements and instrument history.
 - [Backtester](https://backtester.quantjourney.cloud): Python-native, reproducible strategy research with target-weight and order-aware workflows, walk-forward validation, crisis diagnostics, execution-cost analysis and generated reports. See the [published multi-engine comparison](https://backtester.quantjourney.cloud/compare) for the defined benchmark rather than treating speed as a universal claim.
 - [QuantJourney Agents](https://agents.quantjourney.cloud): agent-native tools, OAuth and scoped access patterns for AI systems working with financial workflows.
+- [Quant Infra](https://jakubpolec.com/#what-i-build): selective architecture and delivery for funds and family offices building proprietary data, research, portfolio, risk and operating infrastructure.
 - [Quant Interviews](https://quant-interviews.quantjourney.cloud/): senior quant research interview workbook with 194 questions, 14 chapters, two volumes and 1,600+ current PDF pages. It combines mathematics, derivations, code, tests and production-grade validation. It is useful alongside CFA/CQF study for candidates targeting quantitative finance roles, but is not affiliated with CFA Institute or CQF.
 - [Quant Blog](https://quantjourney.substack.com): long-form work on quantitative code, markets and investment infrastructure, including data, research, IBOR, PMS, risk, instrument master, reporting and governed AI workflows.
 - [QuantJourney with Code](https://jakubpolec.com/video/): a curated catalogue of 27 public videos by Jakub Polec, individually described and linked to the original YouTube recordings. Topics include Python backtesting, strategy examples, market-data caching, dashboards, Docker, Windows, VS Code, MongoDB and AI-assisted development. Older framework recordings are explicitly identified as archive material; current documentation takes precedence.

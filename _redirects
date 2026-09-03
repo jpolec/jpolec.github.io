@@ -1,3 +1,6 @@
+/ecosystem    /#what-i-build    301
+/ecosystem/   /#what-i-build    301
+/ecosystem/*  /#what-i-build    301
 /articles    /    301
 /articles/*  /    301
 /threads     /    301
