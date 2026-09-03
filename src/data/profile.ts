@@ -10,13 +10,13 @@ export const profile = {
   canonicalUrl: 'https://jakubpolec.com/',
   personId: 'https://jakubpolec.com/#jakub-polec',
   imageUrl: 'https://jakubpolec.com/jpbg.jpeg',
-  role: 'Proprietary Portfolio Manager & Quant Systems Architect',
-  rolePhrase: 'proprietary portfolio manager and quant systems architect',
-  jobTitle: 'Proprietary Portfolio Manager, Quant Systems Architect and Founder',
+  role: 'Quant Systems Architect & Founder of QuantJourney',
+  rolePhrase: 'quant systems architect and founder of QuantJourney',
+  jobTitle: 'Quant Systems Architect and Founder of QuantJourney',
   description:
-    'Jakub Połeć is a proprietary portfolio manager, quant systems architect, founder of QuantJourney, and builder of OneBook.',
+    'Jakub Połeć is a quant systems architect and founder of QuantJourney, working with investment teams on quantitative systems and investment-decision infrastructure.',
   disambiguatingDescription:
-    'Founder of QuantJourney and builder of OneBook; proprietary portfolio manager and quant systems architect working on systematic research and buy-side investment infrastructure.',
+    'Founder of QuantJourney and builder of OneBook; quant systems architect working on research, data, portfolio, risk, and AI infrastructure for investment teams.',
   location: 'Dubai, UAE',
   organisation: {
     name: 'QuantJourney',
@@ -26,7 +26,7 @@ export const profile = {
   career: {
     oracleTitle: 'Head of Industry and Innovation, Director, ECEMEA',
     startups: 'three award-winning startups',
-    microsoftAwards: 'two global marketing innovation awards from Microsoft’s CEO',
+    microsoftAwards: 'two global marketing innovation awards at Microsoft',
   },
   urls: {
     video: 'https://jakubpolec.com/video/',

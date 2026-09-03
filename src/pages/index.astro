@@ -100,21 +100,26 @@ const publicResearch = [
         <h1 id="hero-title" class="animate-in">{profile.name}</h1>
         <p class="role animate-in">{profile.role}</p>
         <p class="lead animate-in">
-          I invest proprietary capital independently and build institutional-grade research,
-          data, portfolio, risk, and AI infrastructure for hedge funds, family offices, and
-          investment teams.
+          I work with hedge funds, family offices, asset managers, and investment-technology
+          companies on quantitative systems and the operating infrastructure behind investment
+          decisions.
         </p>
 
         <div class="hero-about animate-in">
           <p>
-            I am the founder of {profile.organisation.name}, based in {profile.location}.
-            QuantJourney is a technology business; it does not manage client assets or provide
-            investment advice.
+            That includes research and data architecture, IBOR/PMS/OMS integration, portfolio
+            and risk workflows, AI-native systems, strategy validation, and technical due
+            diligence.
+          </p>
+          <p>
+            I also build {profile.organisation.name}, an investment-technology platform focused
+            on institutional research, data, portfolio, risk, and AI infrastructure. QuantJourney
+            is a technology business; it does not manage client assets or provide investment advice.
           </p>
           <p>
             My background spans high-energy physics, Microsoft, technology entrepreneurship,
-            Oracle, and quantitative finance. At Oracle, I served as {profile.career.oracleTitle},
-            leading technology and innovation teams across Europe and the Middle East.
+            Oracle, and quantitative finance. I have led technology and innovation teams across
+            Europe and the Middle East, including as {profile.career.oracleTitle} at Oracle.
           </p>
           <p>
             I have built {profile.career.startups} and received
@@ -358,6 +363,7 @@ const publicResearch = [
     width: min(1080px, calc(100% - 40px));
     margin: 0 auto;
     padding: 42px 0 100px;
+    font-family: inherit;
   }
 
   /* ── Hero ── */
@@ -620,8 +626,8 @@ const publicResearch = [
 
   .build-destination {
     color: var(--ink);
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-size: 0.72rem;
+    font-weight: 500;
     line-height: 1.45;
     overflow-wrap: anywhere;
   }
