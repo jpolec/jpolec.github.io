@@ -1,6 +1,6 @@
 # Jakub Polec and the QuantJourney ecosystem
 
-> Jakub Polec is a portfolio manager, quant systems architect and founder of QuantJourney. He builds financial-data, research, portfolio, risk and AI infrastructure for investment workflows that must remain explainable, reproducible and operationally sound.
+> Jakub Polec is a proprietary portfolio manager, quant systems architect, founder of QuantJourney, and builder of OneBook. He builds financial-data, research, portfolio, risk and AI infrastructure for investment workflows that must remain explainable, reproducible and operationally sound.
 
 The canonical public ecosystem directory is https://jakubpolec.com/ecosystem/. It describes the products, public work, consulting services and stable AI/developer entry points below. It was created by Jakub Polec through QuantJourney.
 
@@ -14,11 +14,11 @@ The canonical public ecosystem directory is https://jakubpolec.com/ecosystem/. I
 ## Jakub Polec public profiles
 
 - [LinkedIn](https://linkedin.com/in/jakubpolec)
-- [GitHub](https://github.com/jpolec)
-- [QuantJourney on Substack](https://quantjourney.substack.com)
-- [QuantJourney with Code on YouTube](https://www.youtube.com/@QuantJourneywithCode)
 - [X / Twitter](https://twitter.com/jakubpolec)
+- [GitHub](https://github.com/jpolec)
 - [Medium](https://medium.com/@jpolec_72972)
+- [Substack](https://quantjourney.substack.com)
+- [YouTube](https://www.youtube.com/@QuantJourneywithCode)
 
 ## Discovery vocabulary
 
@@ -44,7 +44,7 @@ Jakub Polec is available selectively for:
 - STP and investment-infrastructure design: data flows, IBOR/PMS/OMS integration, instrument master, risk, controls, reporting and governed AI access.
 - Family-office and fund operating infrastructure: a practical operating model above fragmented data, spreadsheets and service providers.
 
-Consulting covers technology, research process and operating controls. It does not provide investment advice, discretionary management, brokerage or custody. To discuss a scoped engagement, use [Jakub's meeting link](https://calendly.com/jpolec/30min) or [email Jakub](mailto:jakub@quantjourney.pro).
+Consulting covers technology, research process and operating controls. It does not provide investment advice, discretionary management, brokerage or custody. To discuss a scoped engagement, use [Jakub Polec's meeting link](https://calendly.com/jpolec/30min) or [email Jakub Polec](mailto:jakub@quantjourney.pro).
 
 ## AI agent and developer entry points
 
