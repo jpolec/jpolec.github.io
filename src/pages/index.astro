@@ -1,6 +1,57 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
 import { personStructuredData, profile } from '../data/profile';
+
+const products = [
+  {
+    name: 'OneBook',
+    destination: 'quantjourney.cloud',
+    description: 'A buy-side investment operating layer connecting research, portfolio state, risk, decisions, and execution.',
+    href: 'https://quantjourney.cloud',
+    action: 'Explore OneBook',
+    external: true,
+  },
+  {
+    name: 'Quant API',
+    destination: 'api.quantjourney.cloud',
+    description: 'Managed financial-data infrastructure with governed routes, normalized contracts, and approved MCP access.',
+    href: 'https://api.quantjourney.cloud',
+    action: 'Open Quant API',
+    external: true,
+  },
+  {
+    name: 'Data Workspace',
+    destination: 'data.quantjourney.cloud',
+    description: 'A financial-data workspace for approved market, fundamentals, portfolio, and analytical workflows.',
+    href: 'https://data.quantjourney.cloud',
+    action: 'Open Data Workspace',
+    external: true,
+  },
+  {
+    name: 'Backtester',
+    destination: 'backtester.quantjourney.cloud',
+    description: 'Python-native strategy research with reproducible workflows, diagnostics, and reviewable outputs.',
+    href: 'https://backtester.quantjourney.cloud',
+    action: 'Explore Backtester',
+    external: true,
+  },
+  {
+    name: 'Quant Infra',
+    destination: 'Selective consulting',
+    description: 'Proprietary infrastructure design and delivery for hedge funds, other investment funds, family offices, and investment teams.',
+    href: 'mailto:jakub@quantjourney.pro?subject=Quant%20Infra%20enquiry',
+    action: 'Discuss Quant Infra',
+    external: false,
+  },
+  {
+    name: 'Agents',
+    destination: 'agents.quantjourney.cloud',
+    description: 'Controlled tools for approved financial and investment workflows, with OAuth, scoped access, and MCP.',
+    href: 'https://agents.quantjourney.cloud',
+    action: 'Explore Agents',
+    external: true,
+  },
+];
 ---
 
 <SimpleLayout
@@ -32,9 +83,9 @@ import { personStructuredData, profile } from '../data/profile';
         <h1 id="hero-title" class="animate-in">{profile.name}</h1>
         <p class="role animate-in">{profile.role}</p>
         <p class="lead animate-in">
-          I invest proprietary capital independently and build research, portfolio, risk, and
-          AI infrastructure for decisions that must remain explainable,
-          reproducible, and operationally sound.
+          I invest proprietary capital independently and build institutional-grade research,
+          data, portfolio, risk, and AI infrastructure for hedge funds, other investment funds,
+          family offices, and investment teams.
         </p>
 
         <p class="hero-proof animate-in">
@@ -90,111 +141,33 @@ import { personStructuredData, profile } from '../data/profile';
       </div>
     </section>
 
-    <section id="what-i-build" class="content-section animate-in" aria-labelledby="working-title">
-      <div>
+    <section id="what-i-build" class="build-section animate-in" aria-labelledby="working-title">
+      <div class="build-heading">
         <h2 id="working-title">What I build</h2>
+        <p>
+          Products and proprietary infrastructure for research, portfolio workflows, data, and
+          controlled AI access.
+        </p>
       </div>
-      <div class="section-copy item-stack">
-        <article class="text-item">
-          <h3>OneBook</h3>
-          <p>
-            OneBook is a buy-side investment operating layer connecting research,
-            portfolio state, risk, decisions, and execution.
-          </p>
-          <div class="project-links" aria-label="OneBook link">
-            <a
-              href="https://quantjourney.cloud"
-              class="project-link"
-              target="_blank"
-              rel="noopener"
-            >
-              Explore OneBook <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-        <article class="text-item">
-          <h3>Quant API</h3>
-          <p>
-            Governed financial-data infrastructure for investment workflows, available through
-            REST, Python SDK, and approved MCP access.
-          </p>
-          <div class="project-links" aria-label="Quant API link">
-            <a
-              href="https://api.quantjourney.cloud/docs"
-              class="project-link"
-              target="_blank"
-              rel="noopener"
-            >
-              Read API documentation <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-        <article class="text-item">
-          <h3>Data Workspace</h3>
-          <p>
-            A financial-data workspace for approved market, fundamentals, portfolio, and
-            analytical workflows.
-          </p>
-          <div class="project-links" aria-label="Data Workspace link">
-            <a
-              href="https://data.quantjourney.cloud"
-              class="project-link"
-              target="_blank"
-              rel="noopener"
-            >
-              Open Data Workspace <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-        <article class="text-item">
-          <h3>Backtester</h3>
-          <p>
-            Python-native strategy research with reproducible workflows, diagnostics, and
-            reviewable outputs.
-          </p>
-          <div class="project-links" aria-label="Backtester link">
-            <a
-              href="https://backtester.quantjourney.cloud"
-              class="project-link"
-              target="_blank"
-              rel="noopener"
-            >
-              Explore Backtester <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-        <article class="text-item">
-          <h3>Agents</h3>
-          <p>
-            Controlled tools for approved financial and investment workflows, with OAuth,
-            scoped access, and MCP.
-          </p>
-          <div class="project-links" aria-label="Agents link">
-            <a
-              href="https://agents.quantjourney.cloud"
-              class="project-link"
-              target="_blank"
-              rel="noopener"
-            >
-              Explore Agents <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-        <article class="text-item">
-          <h3>Quant Infra</h3>
-          <p>
-            Selective infrastructure design and delivery for funds and family offices building
-            proprietary data, research, portfolio, risk, and operating systems.
-          </p>
-          <div class="project-links" aria-label="Quant Infra contact link">
-            <a
-              href="mailto:jakub@quantjourney.pro?subject=Quant%20Infra%20enquiry"
-              class="project-link"
-            >
-              Discuss Quant Infra <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
+      <div class="build-list">
+        {products.map((product) => (
+          <article class="build-item">
+            <div class="build-name">
+              <h3>{product.name}</h3>
+              <span class="build-destination">{product.destination}</span>
+            </div>
+            <p class="build-summary">{product.description}</p>
+            <div class="build-action">
+              <a
+                href={product.href}
+                target={product.external ? '_blank' : undefined}
+                rel={product.external ? 'noopener' : undefined}
+              >
+                {product.action} <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
 
@@ -260,8 +233,9 @@ import { personStructuredData, profile } from '../data/profile';
       </div>
       <div class="section-copy">
         <p>
-          I work selectively with funds, family offices, and investment-technology teams that
-          need proprietary infrastructure rather than another generic software layer.
+          I work selectively with hedge funds, other investment funds, family offices, and
+          investment teams on institutional-grade infrastructure, strategy research, and
+          independent technical review.
         </p>
         <div class="item-stack opportunity-list">
           <article class="text-item">
@@ -278,27 +252,13 @@ import { personStructuredData, profile } from '../data/profile';
               family offices, and investment-technology companies.
             </p>
           </article>
-        </div>
-        <div class="action-row" aria-label="Contact links">
-          <a
-            href="https://calendly.com/jpolec/30min"
-            class="button primary"
-            target="_blank"
-            rel="noopener"
-          >
-            Set up a meeting
-          </a>
-          <a href="mailto:jakub@quantjourney.pro" class="button primary">
-            Email me
-          </a>
-          <a
-            href="https://linkedin.com/in/jakubpolec"
-            class="button primary"
-            target="_blank"
-            rel="noopener"
-          >
-            LinkedIn <span aria-hidden="true">↗</span>
-          </a>
+          <article class="text-item">
+            <h3>Strategy &amp; backtest consulting</h3>
+            <p>
+              Research design, point-in-time data review, backtest validation, portfolio
+              construction, and execution-cost assumptions.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -503,6 +463,95 @@ import { personStructuredData, profile } from '../data/profile';
     border-color: var(--ink);
   }
 
+  /* ── What I build ── */
+  .build-section {
+    margin-top: 38px;
+    padding: 38px 0 4px;
+    border-top: 1px solid var(--line);
+  }
+
+  .build-heading {
+    max-width: 790px;
+    margin-bottom: 28px;
+  }
+
+  .build-heading h2 {
+    margin: 0 0 10px;
+    color: var(--ink);
+    font-size: clamp(1.55rem, 2.6vw, 2.2rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .build-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(0.94rem, 1.18vw, 1rem);
+    line-height: 1.62;
+  }
+
+  .build-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .build-item {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.68fr) minmax(0, 1.85fr) minmax(135px, 0.48fr);
+    gap: 28px;
+    align-items: start;
+    padding: 29px 0 30px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .build-name {
+    display: grid;
+    gap: 10px;
+  }
+
+  .build-name h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .build-destination {
+    color: var(--ink);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.72rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .build-summary {
+    margin: 0;
+    color: var(--ink);
+    font-size: 0.96rem;
+    font-weight: 600;
+    line-height: 1.58;
+  }
+
+  .build-action {
+    padding-top: 1px;
+  }
+
+  .build-action a {
+    color: var(--ink);
+    font-size: 0.82rem;
+    font-weight: 750;
+    line-height: 1.45;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 160ms ease;
+  }
+
+  .build-action a:hover {
+    border-color: var(--ink);
+  }
+
   /* ── Content sections ── */
   .content-section {
     display: grid;
@@ -551,26 +600,6 @@ import { personStructuredData, profile } from '../data/profile';
 
   .text-item p:last-child {
     margin-bottom: 0;
-  }
-
-  .project-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-    margin-top: 14px;
-  }
-
-  .project-link {
-    color: var(--ink);
-    font-size: 0.88rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-bottom: 1px solid var(--line);
-    transition: border-color 160ms ease;
-  }
-
-  .project-link:hover {
-    border-color: var(--ink);
   }
 
   .opportunity-list {
@@ -804,6 +833,11 @@ import { personStructuredData, profile } from '../data/profile';
       gap: 18px;
     }
 
+    .build-item {
+      grid-template-columns: minmax(155px, 0.68fr) minmax(0, 1.85fr) minmax(110px, 0.48fr);
+      gap: 20px;
+    }
+
     .book-overview {
       grid-template-columns: 1fr;
       gap: 18px;
@@ -879,6 +913,21 @@ import { personStructuredData, profile } from '../data/profile';
     .content-section {
       margin-top: 26px;
       padding-top: 32px;
+    }
+
+    .build-section {
+      margin-top: 26px;
+      padding-top: 32px;
+    }
+
+    .build-item {
+      grid-template-columns: 1fr;
+      gap: 9px;
+      padding: 22px 0;
+    }
+
+    .build-name {
+      gap: 4px;
     }
 
     .book-copy > p:not(.book-kicker):not(.book-stats) {
