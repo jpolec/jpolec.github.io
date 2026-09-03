@@ -57,7 +57,7 @@ const publicResearch = [
   {
     name: 'Quant Blog',
     destination: 'quantjourney.substack.com',
-    description: 'Long-form writing on quantitative research, markets, investment infrastructure, and applied AI.',
+    description: '200+ long-form posts on quantitative research, markets, investment infrastructure, and applied AI.',
     href: 'https://quantjourney.substack.com',
     action: 'Open Quant Blog',
   },
@@ -86,7 +86,7 @@ const publicResearch = [
       <figure class="hero-image-wrap animate-in">
         <img
           src="/jpbg.jpeg"
-          alt="Jakub Polec with Bill Gates during his Microsoft years"
+          alt="Jakub Połeć with Bill Gates during his Microsoft years"
           class="hero-image"
           width="440"
           height="550"
@@ -409,6 +409,7 @@ const publicResearch = [
     position: relative;
     z-index: 1;
     max-width: 620px;
+    transform: translateY(25px);
   }
 
   h1,
@@ -900,6 +901,10 @@ const publicResearch = [
 
     .hero-image-wrap {
       display: none;
+    }
+
+    .hero-copy {
+      transform: none;
     }
 
     .hero-bg {

@@ -6,7 +6,7 @@
  * rather than maintaining competing versions of the same biography.
  */
 export const profile = {
-  name: 'Jakub Polec',
+  name: 'Jakub Połeć',
   canonicalUrl: 'https://jakubpolec.com/',
   personId: 'https://jakubpolec.com/#jakub-polec',
   imageUrl: 'https://jakubpolec.com/jpbg.jpeg',
@@ -14,7 +14,7 @@ export const profile = {
   rolePhrase: 'proprietary portfolio manager and quant systems architect',
   jobTitle: 'Proprietary Portfolio Manager, Quant Systems Architect and Founder',
   description:
-    'Jakub Polec is a proprietary portfolio manager, quant systems architect, founder of QuantJourney, and builder of OneBook.',
+    'Jakub Połeć is a proprietary portfolio manager, quant systems architect, founder of QuantJourney, and builder of OneBook.',
   disambiguatingDescription:
     'Founder of QuantJourney and builder of OneBook; proprietary portfolio manager and quant systems architect working on systematic research and buy-side investment infrastructure.',
   location: 'Dubai, UAE',
