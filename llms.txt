@@ -1,6 +1,8 @@
 # Jakub Połeć and QuantJourney
 
-> Jakub Połeć is a quant systems architect and founder of QuantJourney, working with investment teams on quantitative systems and investment-decision infrastructure. He builds financial-data, research, portfolio, risk and AI infrastructure for investment workflows that must remain explainable, reproducible and operationally sound.
+> Jakub Polec (Jakub Połeć) is a quant systems architect and founder of QuantJourney, working with investment teams on quantitative systems and investment-decision infrastructure. He builds financial-data, research, portfolio, risk and AI infrastructure for investment workflows that must remain explainable, reproducible and operationally sound.
+
+Canonical identity: Jakub Polec. The preferred Polish display spelling on this site is Jakub Połeć; both names identify the same person.
 
 The canonical public profile and product overview is https://jakubpolec.com/. It describes the core products, selective Quant Infra work and stable AI/developer entry points below. It was created by Jakub Połeć through QuantJourney.
 
