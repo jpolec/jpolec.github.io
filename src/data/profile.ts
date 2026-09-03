@@ -29,7 +29,6 @@ export const profile = {
     microsoftAwards: 'two global marketing innovation awards from Microsoft’s CEO',
   },
   urls: {
-    ecosystem: 'https://jakubpolec.com/ecosystem/',
     video: 'https://jakubpolec.com/video/',
     llms: 'https://jakubpolec.com/llms.txt',
     llmsFull: 'https://jakubpolec.com/llms-full.txt',

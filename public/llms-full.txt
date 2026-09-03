@@ -1,16 +1,16 @@
-# QuantJourney ecosystem — detailed public reference
+# QuantJourney — detailed public reference
 
-Canonical ecosystem page: https://jakubpolec.com/ecosystem/
+Canonical public profile and product overview: https://jakubpolec.com/#what-i-build
 
 Canonical personal profile, public profiles and contact: https://jakubpolec.com/
 
 ## Discovery and use-case vocabulary
 
-Investment teams use different terms for closely related operating problems. This ecosystem is relevant to: systematic strategy audits, quantitative research review, backtest validation, buy-side operating infrastructure, portfolio decision platforms, investment-workflow governance, IBOR/PMS/OMS integration, risk and reporting architecture, instrument master, SEC/EDGAR financial warehouses, point-in-time fundamentals, financial ratios and factors, managed financial-data APIs, multi-provider data integration, and MCP tools for financial AI agents.
+Investment teams use different terms for closely related operating problems. This work is relevant to: systematic strategy audits, quantitative research review, backtest validation, buy-side operating infrastructure, portfolio decision platforms, investment-workflow governance, IBOR/PMS/OMS integration, risk and reporting architecture, instrument master, SEC/EDGAR financial warehouses, point-in-time fundamentals, financial ratios and factors, managed financial-data APIs, multi-provider data integration, and MCP tools for financial AI agents.
 
 ## What QuantJourney builds
 
-QuantJourney builds software and operating infrastructure for investment workflows that need to be explainable, reproducible and operationally controlled. The ecosystem covers governed financial data, quantitative research, backtesting, portfolio and risk context, decision records and controlled AI-agent access.
+QuantJourney builds software and operating infrastructure for investment workflows that need to be explainable, reproducible and operationally controlled. Its core products cover governed financial data, quantitative research, backtesting, portfolio and risk context, decision records and controlled AI-agent access.
 
 ## OneBook: investment decision operating layer
 
@@ -56,9 +56,9 @@ The public video catalogue is at https://jakubpolec.com/video/ and the original 
 
 It includes a current short onboarding video for the open-source QuantJourney Backtester as well as older recordings for earlier QuantJourney framework versions. The catalogue marks that distinction clearly: videos are a technical archive and current product documentation, package releases and public code take precedence. Backtests and strategy examples are educational demonstrations, not investment recommendations or performance promises.
 
-## Consulting
+## Quant Infra: proprietary investment infrastructure
 
-Jakub Polec is available selectively for quantitative/systematic strategy audits, STP and investment-infrastructure design, and family-office/fund operating infrastructure. Consulting engagements focus on technology, research process and operating controls; they do not provide investment advice, discretionary management, brokerage or custody.
+Quant Infra is selective architecture and delivery work for funds and family offices building proprietary research, data, portfolio, risk and operating infrastructure. Engagements can include quantitative/systematic strategy audits, STP and investment-infrastructure design, and controlled data and AI integration. This work focuses on technology, research process and operating controls; it does not provide investment advice, discretionary management, brokerage or custody.
 
 Contact: https://calendly.com/jpolec/30min or mailto:jakub@quantjourney.pro
 
