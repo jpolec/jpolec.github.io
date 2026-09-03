@@ -52,6 +52,23 @@ const products = [
     external: true,
   },
 ];
+
+const publicResearch = [
+  {
+    name: 'Quant Blog',
+    destination: 'quantjourney.substack.com',
+    description: 'Long-form writing on quantitative research, markets, investment infrastructure, and applied AI.',
+    href: 'https://quantjourney.substack.com',
+    action: 'Open Quant Blog',
+  },
+  {
+    name: 'GitHub',
+    destination: 'github.com/jpolec',
+    description: 'Public repositories, working examples, and release history behind my quant and infrastructure work.',
+    href: 'https://github.com/jpolec',
+    action: 'Open GitHub',
+  },
+];
 ---
 
 <SimpleLayout
@@ -164,6 +181,29 @@ const products = [
                 rel={product.external ? 'noopener' : undefined}
               >
                 {product.action} <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="research-section animate-in" aria-labelledby="research-title">
+      <div class="build-heading">
+        <h2 id="research-title">Public research</h2>
+        <p>Writing and public code for quantitative practitioners, researchers, and developers.</p>
+      </div>
+      <div class="build-list">
+        {publicResearch.map((resource) => (
+          <article class="build-item">
+            <div class="build-name">
+              <h3>{resource.name}</h3>
+              <span class="build-destination">{resource.destination}</span>
+            </div>
+            <p class="build-summary">{resource.description}</p>
+            <div class="build-action">
+              <a href={resource.href} target="_blank" rel="noopener">
+                {resource.action} <span aria-hidden="true">↗</span>
               </a>
             </div>
           </article>
@@ -468,6 +508,11 @@ const products = [
     margin-top: 38px;
     padding: 38px 0 4px;
     border-top: 1px solid var(--line);
+  }
+
+  .research-section {
+    margin-top: 38px;
+    padding: 0 0 4px;
   }
 
   .build-heading {
@@ -917,6 +962,10 @@ const products = [
     .build-section {
       margin-top: 26px;
       padding-top: 32px;
+    }
+
+    .research-section {
+      margin-top: 26px;
     }
 
     .build-item {
