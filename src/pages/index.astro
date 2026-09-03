@@ -105,6 +105,23 @@ const publicResearch = [
           family offices, and investment teams.
         </p>
 
+        <div class="hero-about animate-in">
+          <p>
+            I am the founder of {profile.organisation.name}, based in {profile.location}.
+            QuantJourney is a technology business: it does not manage client assets or provide
+            investment advice.
+          </p>
+          <p>
+            My background spans high-energy physics, Microsoft, technology entrepreneurship,
+            Oracle, and quantitative finance. I have led technology and innovation teams across
+            Europe and the Middle East, including as {profile.career.oracleTitle} at Oracle.
+          </p>
+          <p>
+            I have built {profile.career.startups} and received
+            {` ${profile.career.microsoftAwards}`}.
+          </p>
+        </div>
+
         <p class="hero-proof animate-in">
           Microsoft
           <span aria-hidden="true">·</span> Oracle
@@ -133,28 +150,6 @@ const publicResearch = [
             LinkedIn <span aria-hidden="true">↗</span>
           </a>
         </div>
-      </div>
-    </section>
-
-    <section class="content-section animate-in" aria-labelledby="about-title">
-      <div>
-        <h2 id="about-title">About</h2>
-      </div>
-      <div class="section-copy">
-        <p>
-          I am the founder of {profile.organisation.name}, based in {profile.location}.
-        </p>
-        <p>
-          My background spans high-energy physics, Microsoft, technology entrepreneurship,
-          Oracle, and quantitative finance. Today I invest proprietary capital independently
-          and build QuantJourney. QuantJourney is a technology business: it does not manage
-          client assets or provide investment advice.
-        </p>
-        <p>
-          I have led technology and innovation teams across Europe and the Middle East,
-          including as {profile.career.oracleTitle} at Oracle. I have built
-          {` ${profile.career.startups}`} and received {profile.career.microsoftAwards}.
-        </p>
       </div>
     </section>
 
@@ -188,29 +183,6 @@ const publicResearch = [
       </div>
     </section>
 
-    <section class="research-section animate-in" aria-labelledby="research-title">
-      <div class="build-heading">
-        <h2 id="research-title">Public research</h2>
-        <p>Writing and public code for quantitative practitioners, researchers, and developers.</p>
-      </div>
-      <div class="build-list">
-        {publicResearch.map((resource) => (
-          <article class="build-item">
-            <div class="build-name">
-              <h3>{resource.name}</h3>
-              <span class="build-destination">{resource.destination}</span>
-            </div>
-            <p class="build-summary">{resource.description}</p>
-            <div class="build-action">
-              <a href={resource.href} target="_blank" rel="noopener">
-                {resource.action} <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-
     <section class="links-section animate-in" aria-labelledby="book-title">
       <div class="book-feature">
         <div class="book-overview">
@@ -219,19 +191,18 @@ const publicResearch = [
           </div>
           <div class="book-copy">
             <p class="book-stats">1,600+ pages · 190+ problems · Python/C++/SQL</p>
-            <div class="book-cta">
-              <a
-                href="https://quant-interviews.quantjourney.cloud"
-                class="book-link"
-                target="_blank"
-                rel="noopener"
-              >
-                Open Quant Interviews <span aria-hidden="true">↗</span>
-              </a>
-            </div>
             <p>
               From mathematical foundations to production-grade quant systems.
             </p>
+          </div>
+          <div class="build-action book-action">
+            <a
+              href="https://quant-interviews.quantjourney.cloud"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Quant Interviews <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
         <div class="book-volume-grid" aria-label="Quant Interviews volumes">
@@ -264,6 +235,29 @@ const publicResearch = [
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="research-section animate-in" aria-labelledby="research-title">
+      <div class="build-heading">
+        <h2 id="research-title">Public research</h2>
+        <p>Writing and public code for quantitative practitioners, researchers, and developers.</p>
+      </div>
+      <div class="build-list">
+        {publicResearch.map((resource) => (
+          <article class="build-item">
+            <div class="build-name">
+              <h3>{resource.name}</h3>
+              <span class="build-destination">{resource.destination}</span>
+            </div>
+            <p class="build-summary">{resource.description}</p>
+            <div class="build-action">
+              <a href={resource.href} target="_blank" rel="noopener">
+                {resource.action} <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
 
@@ -435,11 +429,26 @@ const publicResearch = [
     line-height: 1.58;
   }
 
+  .hero-about {
+    max-width: 590px;
+  }
+
+  .hero-about p {
+    margin: 0 0 11px;
+    color: var(--muted);
+    font-size: clamp(0.88rem, 1.12vw, 0.96rem);
+    line-height: 1.58;
+  }
+
+  .hero-about p:last-child {
+    margin-bottom: 0;
+  }
+
   .hero-proof {
     display: flex;
     flex-wrap: wrap;
     gap: 4px 9px;
-    margin: 0;
+    margin: 22px 0 0;
     color: var(--ink);
     font-size: 0.72rem;
     font-weight: 600;
@@ -538,6 +547,11 @@ const publicResearch = [
 
   .build-list {
     border-top: 1px solid var(--line);
+  }
+
+  .build-section .build-list,
+  .research-section .build-list {
+    border-top: 0;
   }
 
   .build-item {
@@ -663,8 +677,8 @@ const publicResearch = [
 
   .book-overview {
     display: grid;
-    grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.43fr);
-    gap: clamp(24px, 6vw, 90px);
+    grid-template-columns: minmax(190px, 0.68fr) minmax(0, 1.85fr) minmax(135px, 0.48fr);
+    gap: 28px;
   }
 
   .book-kicker {
@@ -750,24 +764,6 @@ const publicResearch = [
     font-size: 0.98rem;
     font-weight: 700;
     line-height: 1.25;
-  }
-
-  .book-link {
-    color: var(--ink);
-    font-size: 0.92rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-bottom: 1px solid var(--line);
-    transition: border-color 160ms ease, color 160ms ease;
-  }
-
-  .book-link:hover {
-    color: var(--muted);
-    border-color: var(--muted);
-  }
-
-  .book-cta {
-    margin-bottom: 18px;
   }
 
   .links-grid {
