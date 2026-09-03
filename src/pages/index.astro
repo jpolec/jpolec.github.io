@@ -111,9 +111,9 @@ const publicResearch = [
             systems, strategy validation, and technical due diligence.
           </p>
           <p>
-            I build {profile.organisation.name} — an investment-technology platform for
-            institutional research, data, portfolio, risk, and AI infrastructure. QuantJourney
-            does not manage client assets or provide investment advice.
+            QuantJourney is investment technology: research tools, data infrastructure and
+            portfolio-decision software. Public research and open-source components are a separate
+            layer. QuantJourney does not manage client capital or provide investment advice.
           </p>
           <p>
             My background spans high-energy physics, Microsoft, Oracle, entrepreneurship, and
@@ -202,7 +202,16 @@ const publicResearch = [
       <div class="book-feature">
         <div class="book-overview">
           <div class="book-heading">
-            <h2 id="book-title">Book Quant Interviews</h2>
+            <h2 id="book-title">
+              <a
+                class="book-identity"
+                href="https://quant-interviews.quantjourney.cloud"
+                target="_blank"
+                rel="noopener"
+              >
+                Book Quant Interviews
+              </a>
+            </h2>
           </div>
           <div class="book-copy">
             <p class="book-stats">1,600+ pages · 190+ problems · Python/C++/SQL</p>
@@ -262,8 +271,15 @@ const publicResearch = [
         {publicResearch.map((resource) => (
           <article class="build-item">
             <div class="build-name">
-              <h3>{resource.name}</h3>
-              <span class="build-destination">{resource.destination}</span>
+              <a
+                class="build-identity"
+                href={resource.href}
+                target="_blank"
+                rel="noopener"
+              >
+                <h3>{resource.name}</h3>
+                <span class="build-destination">{resource.destination}</span>
+              </a>
             </div>
             <p class="build-summary">{resource.description}</p>
             <div class="build-action">
@@ -745,6 +761,17 @@ const publicResearch = [
     font-weight: 600;
     line-height: 1.08;
     letter-spacing: -0.025em;
+  }
+
+  .book-identity {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .book-identity:hover {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-underline-offset: 4px;
   }
 
   .book-stats {
