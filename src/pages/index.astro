@@ -7,7 +7,7 @@ const products = [
     name: 'OneBook',
     destination: 'onebook.quantjourney.cloud',
     description: 'A buy-side investment operating layer connecting research, portfolio state, risk, decisions, and execution.',
-    href: 'https://onebook.quantjourney.cloud/_vv7/',
+    href: 'https://onebook.quantjourney.cloud/',
     action: 'Open OneBook',
     external: true,
   },
@@ -101,20 +101,20 @@ const publicResearch = [
         <p class="role animate-in">{profile.role}</p>
         <p class="lead animate-in">
           I invest proprietary capital independently and build institutional-grade research,
-          data, portfolio, risk, and AI infrastructure for hedge funds, other investment funds,
-          family offices, and investment teams.
+          data, portfolio, risk, and AI infrastructure for hedge funds, family offices, and
+          investment teams.
         </p>
 
         <div class="hero-about animate-in">
           <p>
             I am the founder of {profile.organisation.name}, based in {profile.location}.
-            QuantJourney is a technology business: it does not manage client assets or provide
+            QuantJourney is a technology business; it does not manage client assets or provide
             investment advice.
           </p>
           <p>
             My background spans high-energy physics, Microsoft, technology entrepreneurship,
-            Oracle, and quantitative finance. I have led technology and innovation teams across
-            Europe and the Middle East, including as {profile.career.oracleTitle} at Oracle.
+            Oracle, and quantitative finance. At Oracle, I served as {profile.career.oracleTitle},
+            leading technology and innovation teams across Europe and the Middle East.
           </p>
           <p>
             I have built {profile.career.startups} and received
@@ -143,11 +143,27 @@ const publicResearch = [
           </a>
           <a
             href="https://linkedin.com/in/jakubpolec"
-            class="button primary"
+            class="button primary social-icon"
             target="_blank"
             rel="noopener"
+            aria-label="LinkedIn profile"
+            title="LinkedIn"
           >
-            LinkedIn <span aria-hidden="true">↗</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.94 8.5A1.72 1.72 0 1 0 6.94 5.06a1.72 1.72 0 0 0 0 3.44ZM5.48 18.94h2.93V10H5.48v8.94ZM10.25 10v8.94h2.92v-4.42c0-1.17.22-2.3 1.67-2.3 1.43 0 1.45 1.34 1.45 2.38v4.34h2.93v-4.93c0-2.42-.52-4.28-3.35-4.28-1.36 0-2.27.74-2.64 1.45h-.04V10h-2.94Z" />
+            </svg>
+          </a>
+          <a
+            href="https://x.com/jakubpolec"
+            class="button primary social-icon"
+            target="_blank"
+            rel="noopener"
+            aria-label="X profile"
+            title="X"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M18.9 2.25h3.68l-8.04 9.19L24 21.75h-7.41l-5.8-7.59-6.64 7.59H.46l8.6-9.83L0 2.25h7.6l5.24 6.93 6.06-6.93Zm-1.29 17.3h2.04L6.49 4.34H4.3L17.61 19.55Z" />
+            </svg>
           </a>
         </div>
       </div>
@@ -267,9 +283,8 @@ const publicResearch = [
       </div>
       <div class="section-copy">
         <p>
-          I work selectively with hedge funds, other investment funds, family offices, and
-          investment teams on institutional-grade infrastructure, strategy research, and
-          independent technical review.
+          I work selectively with hedge funds, family offices, and investment teams on
+          institutional-grade infrastructure, strategy research, and independent technical review.
         </p>
         <div class="item-stack opportunity-list">
           <article class="text-item">
@@ -477,6 +492,17 @@ const publicResearch = [
     min-height: 42px;
     padding: 11px 15px;
     font-size: 0.8rem;
+  }
+
+  .hero-actions .social-icon {
+    width: 42px;
+    padding: 9px;
+  }
+
+  .social-icon svg {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
   }
 
   .action-row {
@@ -961,6 +987,10 @@ const publicResearch = [
     .action-row,
     .button {
       width: 100%;
+    }
+
+    .hero-actions .social-icon {
+      width: 42px;
     }
 
     .button {
