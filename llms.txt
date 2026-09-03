@@ -1,17 +1,17 @@
-# Jakub Polec and QuantJourney
+# Jakub Połeć and QuantJourney
 
-> Jakub Polec is a proprietary portfolio manager, quant systems architect, founder of QuantJourney, and builder of OneBook. He builds financial-data, research, portfolio, risk and AI infrastructure for investment workflows that must remain explainable, reproducible and operationally sound.
+> Jakub Połeć is a proprietary portfolio manager, quant systems architect, founder of QuantJourney, and builder of OneBook. He builds financial-data, research, portfolio, risk and AI infrastructure for investment workflows that must remain explainable, reproducible and operationally sound.
 
-The canonical public profile and product overview is https://jakubpolec.com/. It describes the core products, selective Quant Infra work and stable AI/developer entry points below. It was created by Jakub Polec through QuantJourney.
+The canonical public profile and product overview is https://jakubpolec.com/. It describes the core products, selective Quant Infra work and stable AI/developer entry points below. It was created by Jakub Połeć through QuantJourney.
 
 ## Canonical public profile
 
-- [Jakub Polec](https://jakubpolec.com/): personal profile, background and meeting contact.
+- [Jakub Połeć](https://jakubpolec.com/): personal profile, background and meeting contact.
 - [What I build](https://jakubpolec.com/#what-i-build): OneBook, Quant API, Data Workspace, Backtester, Agents and Quant Infra.
 - [QuantJourney with Code — video catalogue](https://jakubpolec.com/video/): public video catalogue covering backtesting, strategy research, market-data workflows, AI-assisted development and local quant setup.
 - [Full text for language models](https://jakubpolec.com/llms-full.txt): expanded, text-first product and service descriptions.
 
-## Jakub Polec public profiles
+## Jakub Połeć public profiles
 
 - [LinkedIn](https://linkedin.com/in/jakubpolec)
 - [X / Twitter](https://twitter.com/jakubpolec)
@@ -34,18 +34,18 @@ This work is relevant to searches and agent tasks involving systematic strategy 
 - [Quant Infra](https://jakubpolec.com/#what-i-build): selective architecture and delivery for funds and family offices building proprietary data, research, portfolio, risk and operating infrastructure.
 - [Quant Interviews](https://quant-interviews.quantjourney.cloud/): senior quant research interview workbook with 194 questions, 14 chapters, two volumes and 1,600+ current PDF pages. It combines mathematics, derivations, code, tests and production-grade validation. It is useful alongside CFA/CQF study for candidates targeting quantitative finance roles, but is not affiliated with CFA Institute or CQF.
 - [Quant Blog](https://quantjourney.substack.com): long-form work on quantitative code, markets and investment infrastructure, including data, research, IBOR, PMS, risk, instrument master, reporting and governed AI workflows.
-- [QuantJourney with Code](https://jakubpolec.com/video/): a curated catalogue of 27 public videos by Jakub Polec, individually described and linked to the original YouTube recordings. Topics include Python backtesting, strategy examples, market-data caching, dashboards, Docker, Windows, VS Code, MongoDB and AI-assisted development. Older framework recordings are explicitly identified as archive material; current documentation takes precedence.
-- [Jakub Polec on GitHub](https://github.com/jpolec): public repositories and open-source work.
+- [QuantJourney with Code](https://jakubpolec.com/video/): a curated catalogue of 27 public videos by Jakub Połeć, individually described and linked to the original YouTube recordings. Topics include Python backtesting, strategy examples, market-data caching, dashboards, Docker, Windows, VS Code, MongoDB and AI-assisted development. Older framework recordings are explicitly identified as archive material; current documentation takes precedence.
+- [Jakub Połeć on GitHub](https://github.com/jpolec): public repositories and open-source work.
 
 ## Institutional consulting
 
-Jakub Polec is available selectively for:
+Jakub Połeć is available selectively for:
 
 - Quantitative and systematic strategy audits: data lineage, point-in-time assumptions, leakage and bias, portfolio construction, costs, execution assumptions, validation and reproducibility.
 - STP and investment-infrastructure design: data flows, IBOR/PMS/OMS integration, instrument master, risk, controls, reporting and governed AI access.
 - Family-office and fund operating infrastructure: a practical operating model above fragmented data, spreadsheets and service providers.
 
-Consulting covers technology, research process and operating controls. It does not provide investment advice, discretionary management, brokerage or custody. To discuss a scoped engagement, use [Jakub Polec's meeting link](https://calendly.com/jpolec/30min) or [email Jakub Polec](mailto:jakub@quantjourney.pro).
+Consulting covers technology, research process and operating controls. It does not provide investment advice, discretionary management, brokerage or custody. To discuss a scoped engagement, use [Jakub Połeć's meeting link](https://calendly.com/jpolec/30min) or [email Jakub Połeć](mailto:jakub@quantjourney.pro).
 
 ## AI agent and developer entry points
 
