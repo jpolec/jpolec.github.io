@@ -1,4 +1,6 @@
 ---
+import { profile } from '../data/profile';
+
 interface Props {
   title: string;
   description?: string;
@@ -8,7 +10,7 @@ interface Props {
 
 const {
   title,
-  description = 'Jakub Polec - physicist, technology entrepreneur, and quantitative finance builder.',
+  description = profile.description,
   canonical,
   noindex = false,
 } = Astro.props;

@@ -1,10 +1,8 @@
 # QuantJourney ecosystem — detailed public reference
 
-Canonical page: https://jakubpolec.com/ecosystem/
+Canonical ecosystem page: https://jakubpolec.com/ecosystem/
 
-Owner and builder: Jakub Polec, portfolio manager, quant systems architect and founder of QuantJourney.
-
-Public profiles: [LinkedIn](https://linkedin.com/in/jakubpolec), [GitHub](https://github.com/jpolec), [QuantJourney on Substack](https://quantjourney.substack.com), [QuantJourney with Code on YouTube](https://www.youtube.com/@QuantJourneywithCode), [X / Twitter](https://twitter.com/jakubpolec) and [Medium](https://medium.com/@jpolec_72972).
+Canonical personal profile, public profiles and contact: https://jakubpolec.com/
 
 ## Discovery and use-case vocabulary
 

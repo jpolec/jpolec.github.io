@@ -1,50 +1,16 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
-
-const links = [
-  {
-    label: 'LinkedIn',
-    href: 'https://linkedin.com/in/jakubpolec',
-    count: '30K+',
-    detail: 'followers',
-    icon: 'linkedin',
-  },
-  {
-    label: 'X / Twitter',
-    href: 'https://twitter.com/jakubpolec',
-    count: '3.5K+',
-    detail: 'followers',
-    icon: 'x',
-  },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/jpolec',
-    count: '100+',
-    detail: 'followers',
-    icon: 'github',
-  },
-  {
-    label: 'Medium',
-    href: 'https://medium.com/@jpolec_72972',
-    count: '1.25K+',
-    detail: 'followers',
-    icon: 'medium',
-  },
-  {
-    label: 'Substack',
-    href: 'https://quantjourney.substack.com',
-    count: '7.2K+',
-    detail: 'subscribers',
-    icon: 'substack',
-  },
-];
+import { personStructuredData, profile } from '../data/profile';
 ---
 
 <SimpleLayout
-  title="Jakub Polec"
-  description="Jakub Polec is a portfolio manager, quant systems architect, founder of QuantJourney, and builder of OneBook."
-  canonical="https://jakubpolec.com/"
+  title={profile.name}
+  description={profile.description}
+  canonical={profile.canonicalUrl}
 >
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personStructuredData)}></script>
+  </Fragment>
   <main class="page-shell">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true"></div>
@@ -63,20 +29,19 @@ const links = [
       </figure>
 
       <div class="hero-copy">
-        <h1 id="hero-title" class="animate-in">Jakub Polec</h1>
-        <p class="role animate-in">Portfolio Manager &amp; Quant Systems Architect</p>
+        <h1 id="hero-title" class="animate-in">{profile.name}</h1>
+        <p class="role animate-in">{profile.role}</p>
         <p class="lead animate-in">
-          I invest proprietary capital and build research, portfolio, risk, and
+          I invest proprietary capital independently and build research, portfolio, risk, and
           AI infrastructure for decisions that must remain explainable,
           reproducible, and operationally sound.
         </p>
 
         <p class="hero-proof animate-in">
-          CERN <span aria-hidden="true">·</span> Microsoft
+          Microsoft
           <span aria-hidden="true">·</span> Oracle
-          <span aria-hidden="true">·</span> Quant Research
-          <span aria-hidden="true">·</span> IBOR/PMS
-          <span aria-hidden="true">·</span> Risk Infrastructure
+          <span aria-hidden="true">·</span> Quantitative Finance
+          <span aria-hidden="true">·</span> Investment Infrastructure
         </p>
 
         <div class="action-row hero-actions animate-in" aria-label="Contact links">
@@ -109,46 +74,32 @@ const links = [
       </div>
       <div class="section-copy">
         <p>
-          I live in Dubai, UAE, and I am the founder of QuantJourney. I’m also a
-          dad to three wonderful kids.
+          I am the founder of {profile.organisation.name}, based in {profile.location}.
         </p>
         <p>
-          My work sits between portfolio management, quantitative research, and
-          technology. I manage a research-driven proprietary portfolio and build
-          tools for people who need to make better decisions with imperfect
-          information.
+          My background spans high-energy physics, Microsoft, technology entrepreneurship,
+          Oracle, and quantitative finance. Today I invest proprietary capital independently
+          and build QuantJourney. QuantJourney is a technology business: it does not manage
+          client assets or provide investment advice.
         </p>
         <p>
-          My background is a slightly unusual mix of physics, technology,
-          business, and financial markets. I have worked with Microsoft, Oracle,
-          Orange, T-Mobile, hedge funds, proprietary trading firms,
-          organisations across the Middle East, and research teams connected to
-          CERN.
-        </p>
-        <p>
-          I have led international teams and served as Head of Innovation for
-          the MEA region, built three award-winning startups, and received two
-          global marketing innovation awards from Microsoft’s CEO.
+          I have led technology and innovation teams across Europe and the Middle East,
+          including as {profile.career.oracleTitle} at Oracle. I have built
+          {` ${profile.career.startups}`} and received {profile.career.microsoftAwards}.
         </p>
       </div>
     </section>
 
     <section class="content-section animate-in" aria-labelledby="working-title">
       <div>
-        <h2 id="working-title">What I am working on</h2>
+        <h2 id="working-title">What I build</h2>
       </div>
       <div class="section-copy item-stack">
         <article class="text-item">
           <h3>QuantJourney</h3>
           <p>
-            QuantJourney is a research and investment technology platform
-            connecting financial data, quantitative research, backtesting,
-            portfolio analytics, risk, and AI workflows.
-          </p>
-          <p>
-            It is built around a simple principle: every important result should
-            be reproducible, explainable, and traceable back to its data,
-            assumptions, model, and execution context.
+            QuantJourney builds investment infrastructure spanning financial data, research,
+            backtesting, portfolio systems, risk, and AI.
           </p>
           <div class="project-links" aria-label="QuantJourney links">
             <a
@@ -183,18 +134,8 @@ const links = [
         <article class="text-item">
           <h3>OneBook</h3>
           <p>
-            OneBook is institutional buy-side investment infrastructure for
-            asset managers, funds, hedge funds, family offices, and proprietary
-            investment teams. It connects research and systematic signals with
-            scenario analysis, IBOR/PMS portfolio state, risk and constraints,
-            approvals, and OMS order workflows.
-          </p>
-          <p>
-            Rather than replacing existing systems of record, it provides a
-            governed decision layer across data, research, PMS, OMS, risk, and
-            execution — preserving point-in-time context, lineage, permissions,
-            and outcomes from thesis and signal generation through post-trade
-            review.
+            OneBook is a buy-side investment operating layer connecting research,
+            portfolio state, risk, decisions, and execution.
           </p>
           <div class="project-links" aria-label="OneBook link">
             <a
@@ -204,31 +145,6 @@ const links = [
               rel="noopener"
             >
               Explore OneBook <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-        <article class="text-item">
-          <h3>Odysseus</h3>
-          <p>
-            Odysseus is a local-first control plane for coding agents, Git
-            worktrees, and tmux sessions. It coordinates agent work through
-            durable queues, isolated branches, review gates, and auditable
-            evidence while keeping the terminal first-class.
-          </p>
-          <p>
-            The goal is to make AI coding agents operationally useful: plan
-            work before spending tokens, run parallel tasks safely, surface only
-            the decisions that need human attention, and preserve enough context
-            to review what happened.
-          </p>
-          <div class="project-links" aria-label="Odysseus link">
-            <a
-              href="https://github.com/jpolec/odysseus"
-              class="project-link"
-              target="_blank"
-              rel="noopener"
-            >
-              View Odysseus on GitHub <span aria-hidden="true">↗</span>
             </a>
           </div>
         </article>
@@ -242,10 +158,7 @@ const links = [
             <h2 id="book-title">Book Quant Interviews</h2>
           </div>
           <div class="book-copy">
-            <p class="book-kicker">
-              I wrote an AI-native book — with a human firmly in the loop.
-            </p>
-            <p class="book-stats">1,600 pages, 192 questions.</p>
+            <p class="book-stats">1,600+ pages · 190+ problems · Python/C++/SQL</p>
             <div class="book-cta">
               <a
                 href="https://quant-interviews.quantjourney.cloud"
@@ -257,10 +170,7 @@ const links = [
               </a>
             </div>
             <p>
-              From Mathematical Foundations to Production-Grade Quant Systems —
-              an implementation edition spanning over 1,600 pages, with worked
-              examples, production-minded code, mathematical derivations,
-              interview questions, and end-to-end system design.
+              From mathematical foundations to production-grade quant systems.
             </p>
           </div>
         </div>
@@ -295,120 +205,6 @@ const links = [
           </article>
         </div>
       </div>
-      <div class="links-grid" aria-label="Social profiles">
-        {links.map((link) => (
-          <a
-            href={link.href}
-            class="link-item"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="link-icon-wrap">
-              {link.icon === 'linkedin' && (
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  role="img"
-                  aria-label="LinkedIn"
-                >
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                  />
-                </svg>
-              )}
-              {link.icon === 'x' && (
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  role="img"
-                  aria-label="X / Twitter"
-                >
-                  <path
-                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                  />
-                </svg>
-              )}
-              {link.icon === 'github' && (
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  role="img"
-                  aria-label="GitHub"
-                >
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                  />
-                </svg>
-              )}
-              {link.icon === 'substack' && (
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  role="img"
-                  aria-label="Substack"
-                >
-                  <path
-                    d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"
-                  />
-                </svg>
-              )}
-              {link.icon === 'medium' && (
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  role="img"
-                  aria-label="Medium"
-                >
-                  <path
-                    d="M0 0v24h24V0H0zm19.938 5.686L18.651 6.92a.376.376 0 00-.143.362v9.067a.376.376 0 00.143.361l1.257 1.234v.271h-6.323v-.271l1.303-1.265c.128-.128.128-.165.128-.36V8.99l-3.62 9.195h-.49L6.69 8.99v6.163a.85.85 0 00.233.707l1.694 2.054v.271H3.815v-.27l1.694-2.055a.82.82 0 00.218-.707V8.026a.623.623 0 00-.203-.514L4.025 5.686v-.27h4.574l3.536 7.76 3.11-7.76h4.693v.27z"
-                  />
-                </svg>
-              )}
-            </div>
-            <div class="link-text">
-              <span class="link-label">{link.label}</span>
-              <span class="link-count">{link.count}</span>
-              <span class="link-detail">{link.detail}</span>
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
-
-    <section class="content-section animate-in" aria-labelledby="thinking-title">
-      <div>
-        <h2 id="thinking-title">What I am thinking about</h2>
-      </div>
-      <div class="section-copy">
-        <p>
-          AI is becoming cheap and plentiful. The hard part is moving from an
-          answer to a useful decision: asking a worthwhile question, using data
-          you can actually trust, and building a workflow that survives contact
-          with reality.
-        </p>
-        <p>
-          In finance, the model is only one piece of the system. The less
-          visible parts — data lineage, point-in-time correctness, validation,
-          portfolio construction, execution, risk, and knowing when to do
-          nothing — usually decide whether the result is useful.
-        </p>
-        <p>
-          The same applies to most serious software. A good system should not
-          merely produce an answer. It should preserve the evidence,
-          assumptions, uncertainty, constraints, and consequences behind the
-          decision.
-        </p>
-      </div>
     </section>
 
     <section class="content-section animate-in" aria-labelledby="collaborate-title">
@@ -423,35 +219,17 @@ const links = [
         </p>
         <div class="item-stack opportunity-list">
           <article class="text-item">
-            <h3>Institutional design partnerships</h3>
+            <h3>Investment infrastructure</h3>
             <p>
-              Working with buy-side teams to design research, signal, scenario,
-              IBOR/PMS, risk, OMS, and AI infrastructure around real operating
-              workflows.
+              Research, data, IBOR/PMS, risk, OMS, and AI systems for real
+              investment operating workflows.
             </p>
           </article>
           <article class="text-item">
-            <h3>Strategic advisory</h3>
+            <h3>Architecture &amp; technical due diligence</h3>
             <p>
-              Advising founders, CIOs, and technology leaders on platform
-              strategy, architecture, operating models, and responsible AI
-              adoption.
-            </p>
-          </article>
-          <article class="text-item">
-            <h3>Technical due diligence</h3>
-            <p>
-              Assessing data foundations, systems architecture, model
-              governance, security, and execution risk for investors, funds,
-              and boards.
-            </p>
-          </article>
-          <article class="text-item">
-            <h3>Selected board or executive engagements</h3>
-            <p>
-              Supporting a small number of organisations where investment
-              judgment, quantitative systems, and technology leadership can
-              create durable value.
+              Platform design, system reviews, and technology strategy for funds,
+              family offices, and investment-technology companies.
             </p>
           </article>
         </div>

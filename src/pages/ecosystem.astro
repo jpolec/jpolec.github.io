@@ -1,18 +1,11 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
+import { profile } from '../data/profile';
 
-const canonical = 'https://jakubpolec.com/ecosystem/';
-const personId = 'https://jakubpolec.com/#jakub-polec';
-const organizationId = 'https://quantjourney.cloud/#organization';
-
-const profileLinks = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/jakubpolec' },
-  { name: 'GitHub', href: 'https://github.com/jpolec' },
-  { name: 'Substack', href: 'https://quantjourney.substack.com' },
-  { name: 'YouTube', href: 'https://www.youtube.com/@QuantJourneywithCode' },
-  { name: 'X / Twitter', href: 'https://twitter.com/jakubpolec' },
-  { name: 'Medium', href: 'https://medium.com/@jpolec_72972' },
-];
+const canonical = profile.urls.ecosystem;
+const personId = profile.personId;
+const organizationId = profile.organisation.id;
+const profileLinks = profile.socialProfiles.map(({ label, href }) => ({ name: label, href }));
 
 const discoveryTopics = [
   'Systematic strategy audit, quantitative research review and backtest validation.',
@@ -210,20 +203,13 @@ const structuredData = {
     {
       '@type': 'Person',
       '@id': personId,
-      name: 'Jakub Polec',
-      url: 'https://jakubpolec.com/',
-      jobTitle: 'Portfolio Manager, Quant Systems Architect and Founder',
-      description: 'Jakub Polec is the founder and builder of QuantJourney, OneBook and the quantitative-finance products and consulting services listed on this page.',
-      disambiguatingDescription: 'Founder of QuantJourney and builder of OneBook; portfolio manager and quant systems architect working on systematic research and buy-side investment infrastructure.',
+      name: profile.name,
+      url: profile.canonicalUrl,
+      jobTitle: profile.jobTitle,
+      description: profile.description,
+      disambiguatingDescription: profile.disambiguatingDescription,
       worksFor: { '@id': organizationId },
-      sameAs: [
-        'https://www.linkedin.com/in/jakubpolec',
-        'https://github.com/jpolec',
-        'https://quantjourney.substack.com',
-        'https://www.youtube.com/@QuantJourneywithCode',
-        'https://twitter.com/jakubpolec',
-        'https://medium.com/@jpolec_72972',
-      ],
+      sameAs: profile.socialProfiles.map((socialProfile) => socialProfile.href),
       knowsAbout: [
         'Quantitative finance',
         'Systematic strategy research',
@@ -237,8 +223,8 @@ const structuredData = {
     {
       '@type': 'Organization',
       '@id': organizationId,
-      name: 'QuantJourney',
-      url: 'https://quantjourney.cloud',
+      name: profile.organisation.name,
+      url: profile.organisation.url,
       founder: { '@id': personId },
       description: 'QuantJourney builds governed research, data, portfolio, risk and AI infrastructure for investment workflows.',
     },
@@ -318,7 +304,7 @@ const structuredData = {
 ---
 
 <SimpleLayout
-  title="Jakub Polec | Quant systems, data & buy-side consulting"
+  title={`${profile.name} | Quant systems, data & buy-side consulting`}
   description="Jakub Polec's QuantJourney ecosystem: OneBook, systematic research, managed financial data API and MCP, SEC warehouse, backtesting and buy-side consulting."
   canonical={canonical}
 >
@@ -331,7 +317,7 @@ const structuredData = {
       <header class="page-header">
         <h1>Quant systems, systematic research, financial data and buy-side infrastructure.</h1>
         <p class="lead">
-          <a href="https://jakubpolec.com/">Jakub Polec</a> is a portfolio manager, quant systems architect
+          <a href={profile.canonicalUrl}>{profile.name}</a> is a {profile.rolePhrase}
           and founder of QuantJourney. QuantJourney, OneBook and the public projects below connect the work of an
           investment team — from systematic research and financial data to portfolio decisions, controls and AI-assisted workflows.
         </p>
@@ -468,9 +454,8 @@ const structuredData = {
       <section class="attribution" aria-labelledby="attribution-title">
         <h2 id="attribution-title">Built by Jakub Polec</h2>
         <p>
-          Portfolio manager, quant systems architect, technology entrepreneur, founder of QuantJourney and builder of
-          OneBook. His work brings together systematic research, financial data, portfolio infrastructure and AI systems
-          for investment decisions that must remain explainable, reproducible and operationally sound.
+          {profile.description} His work brings together systematic research, financial data, portfolio infrastructure
+          and AI systems for investment decisions that must remain explainable, reproducible and operationally sound.
         </p>
         <nav class="profile-links attribution-links" aria-label="Jakub Polec public profiles">
           {profileLinks.map((profile) => (
@@ -480,7 +465,7 @@ const structuredData = {
       </section>
 
       <footer>
-        <a href="/">Jakub Polec</a>
+        <a href="/">{profile.name}</a>
       </footer>
     </div>
   </main>

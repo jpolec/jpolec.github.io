@@ -4,3 +4,11 @@
 /threads/*   /    301
 /startups    /    301
 /startups/*  /    301
+/about       /    301
+/about/*     /    301
+/contact     /    301
+/contact/*   /    301
+/link        /    301
+/link/*      /    301
+/portfolio   /    301
+/portfolio/* /    301
