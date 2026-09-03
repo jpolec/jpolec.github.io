@@ -1,5 +1,6 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
+import { profile } from '../data/profile';
 
 const canonical = 'https://jakubpolec.com/video/';
 const channelUrl = 'https://www.youtube.com/@QuantJourneywithCode';
@@ -291,9 +292,13 @@ const structuredData = {
     {
       '@type': 'Person',
       '@id': personId,
-      name: 'Jakub Połeć',
-      url: 'https://jakubpolec.com/',
-      sameAs: [channelUrl],
+      name: profile.canonicalName,
+      alternateName: profile.name,
+      url: profile.canonicalUrl,
+      sameAs: [
+        ...profile.socialProfiles.map((socialProfile) => socialProfile.href),
+        profile.organisation.url,
+      ],
     },
     {
       '@type': 'Organization',

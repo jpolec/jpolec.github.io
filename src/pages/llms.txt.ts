@@ -3,9 +3,11 @@ import { profile, profileLinksMarkdown } from '../data/profile';
 export const prerender = true;
 
 export function GET() {
-  const body = `# ${profile.name} and QuantJourney
+const body = `# ${profile.name} and QuantJourney
 
 > ${profile.description} He builds financial-data, research, portfolio, risk and AI infrastructure for investment workflows that must remain explainable, reproducible and operationally sound.
+
+Canonical identity: ${profile.canonicalName}. The preferred Polish display spelling on this site is ${profile.name}; both names identify the same person.
 
 The canonical public profile and product overview is ${profile.canonicalUrl}. It describes the core products, selective Quant Infra work and stable AI/developer entry points below. It was created by ${profile.name} through ${profile.organisation.name}.
 

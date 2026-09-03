@@ -1,6 +1,6 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
-import { personStructuredData, profile } from '../data/profile';
+import { profilePageStructuredData, profile } from '../data/profile';
 
 const products = [
   {
@@ -77,7 +77,7 @@ const publicResearch = [
   canonical={profile.canonicalUrl}
 >
   <Fragment slot="head">
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(personStructuredData)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(profilePageStructuredData)}></script>
   </Fragment>
   <main class="page-shell">
     <section class="hero" aria-labelledby="hero-title">
