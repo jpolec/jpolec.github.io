@@ -81,11 +81,9 @@ const productProof = [
 
     <section class="v2-section v2-platform-section" aria-labelledby="platform-title">
       <div class="v2-section-heading v2-platform-heading">
-        <p class="v2-section-kicker">What I build</p>
-        <h2 id="platform-title">Products and proprietary infrastructure for investment work.</h2>
+        <h2 id="platform-title">A few things I am building.</h2>
         <p>
-          A connected body of work around governed research, data, portfolio, risk and AI workflows.
-          These are the systems I spend my time designing, building and operating.
+          A connected body of work around research, data, portfolio, risk and AI workflows.
         </p>
       </div>
       <div class="v2-product-proof">
@@ -112,7 +110,6 @@ const productProof = [
         <figcaption>With Bill Gates, during Jakub’s Microsoft years.</figcaption>
       </figure>
       <div class="v2-background-copy">
-        <p class="v2-section-kicker">Background</p>
         <h2 id="background-title">From high-energy physics to quantitative systems.</h2>
         <p>
           My path runs from high-energy physics through Microsoft, technology entrepreneurship and
@@ -131,8 +128,7 @@ const productProof = [
 
     <section class="v2-section v2-public-work" aria-labelledby="public-title">
       <div class="v2-section-heading">
-        <p class="v2-section-kicker">Public work</p>
-        <h2 id="public-title">Research and working material, openly available.</h2>
+        <h2 id="public-title">Writing, code and Quant Interviews.</h2>
       </div>
       <div class="v2-public-links">
         <a href="https://quant-interviews.quantjourney.cloud" target="_blank" rel="noopener">
@@ -154,8 +150,7 @@ const productProof = [
     </section>
 
     <section class="v2-closing" aria-labelledby="closing-title">
-      <p class="v2-section-kicker">Work with me</p>
-      <h2 id="closing-title">Selective work for investment teams.</h2>
+      <h2 id="closing-title">I also work selectively with investment teams.</h2>
       <p>
         I work selectively with funds, family offices and investment-technology companies on
         infrastructure architecture, technical due diligence, research design and strategy or
@@ -177,16 +172,6 @@ const productProof = [
   .v2-hero {
     max-width: 760px;
     padding: 10px 0 50px;
-  }
-
-  .v2-section-kicker {
-    margin: 0 0 16px;
-    color: #aa0a8b;
-    font-size: 0.72rem;
-    font-weight: 750;
-    letter-spacing: 0.1em;
-    line-height: 1.35;
-    text-transform: uppercase;
   }
 
   .v2-hero h1,
@@ -275,20 +260,19 @@ const productProof = [
 
   .v2-section h2,
   .v2-closing h2 {
-    font-size: clamp(1.75rem, 3vw, 2.65rem);
-    line-height: 1.08;
+    font-size: clamp(1.58rem, 2.5vw, 2.2rem);
+    line-height: 1.14;
   }
 
   .v2-section {
-    padding: clamp(46px, 6vw, 68px) 0;
-    border-bottom: 1px solid var(--line);
+    padding: clamp(34px, 4.5vw, 48px) 0;
   }
 
   .v2-section-heading {
     max-width: 700px;
   }
 
-  .v2-section-heading > p:not(.v2-section-kicker) {
+  .v2-section-heading > p {
     margin: 20px 0 0;
     color: #244366;
     font-size: 1rem;
@@ -296,26 +280,27 @@ const productProof = [
   }
 
   .v2-platform-section {
-    padding-bottom: 0;
+    padding-top: 34px;
   }
 
   .v2-platform-heading {
-    margin-bottom: 34px;
+    margin-bottom: 24px;
   }
 
   .v2-product-proof {
-    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px clamp(28px, 5vw, 60px);
   }
 
   .v2-product-row {
     display: grid;
-    grid-template-columns: minmax(160px, 0.62fr) minmax(0, 2.2fr) auto;
-    gap: 24px;
-    align-items: center;
-    padding: 22px 0;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 5px 10px;
+    align-items: start;
+    padding: 0;
     color: var(--ink);
     text-decoration: none;
-    border-bottom: 1px solid var(--line);
     transition: color 150ms ease;
   }
 
@@ -331,12 +316,15 @@ const productProof = [
   }
 
   .v2-product-row > span:not(.v2-arrow) {
+    grid-column: 1 / 2;
     color: #244366;
-    font-size: 0.91rem;
+    font-size: 0.86rem;
     line-height: 1.5;
   }
 
   .v2-arrow {
+    grid-column: 2;
+    grid-row: 1;
     color: var(--ink);
     font-size: 1rem;
     font-weight: 700;
@@ -345,7 +333,7 @@ const productProof = [
   .v2-background-section {
     display: grid;
     grid-template-columns: minmax(240px, 0.68fr) minmax(0, 1.2fr);
-    gap: clamp(36px, 7vw, 92px);
+    gap: clamp(28px, 5vw, 58px);
     align-items: start;
   }
 
@@ -372,7 +360,7 @@ const productProof = [
     max-width: 660px;
   }
 
-  .v2-background-copy p:not(.v2-section-kicker) {
+  .v2-background-copy p {
     margin: 18px 0 0;
     color: #244366;
     font-size: 1rem;
@@ -382,11 +370,12 @@ const productProof = [
   .v2-public-work {
     display: grid;
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: clamp(36px, 7vw, 92px);
+    gap: clamp(28px, 5vw, 58px);
   }
 
   .v2-public-links {
-    border-top: 1px solid var(--line);
+    display: grid;
+    gap: 15px;
   }
 
   .v2-public-links a {
@@ -394,10 +383,9 @@ const productProof = [
     grid-template-columns: minmax(130px, 0.75fr) minmax(0, 1.55fr) auto;
     gap: 18px;
     align-items: center;
-    padding: 19px 0;
+    padding: 0;
     color: var(--ink);
     text-decoration: none;
-    border-bottom: 1px solid var(--line);
   }
 
   .v2-public-links strong {
@@ -425,10 +413,10 @@ const productProof = [
 
   .v2-closing {
     max-width: 860px;
-    padding: clamp(48px, 6vw, 70px) 0 12px;
+    padding: clamp(38px, 5vw, 52px) 0 12px;
   }
 
-  .v2-closing p:not(.v2-section-kicker) {
+  .v2-closing p {
     max-width: 660px;
     margin: 22px 0 0;
     color: #244366;
@@ -454,6 +442,10 @@ const productProof = [
 
     .v2-background-section,
     .v2-public-work {
+      grid-template-columns: 1fr;
+    }
+
+    .v2-product-proof {
       grid-template-columns: 1fr;
     }
 
