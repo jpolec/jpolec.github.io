@@ -2,6 +2,7 @@
 import VersionTwoPage from './_v2.astro';
 import VersionThreePage from './_v3.astro';
 import VersionFourPage from './_v4.astro';
+import VersionFivePage from './_v5.astro';
 
 /**
  * Astro treats files whose name begins with an underscore as components rather
@@ -9,12 +10,16 @@ import VersionFourPage from './_v4.astro';
  * these explicit, static preview paths.
  */
 export function getStaticPaths() {
-  return ['_v2', '_v3', '_v4'].map((slug) => ({ params: { slug } }));
+  return ['_v2', '_v3', '_v4', '_v5'].map((slug) => ({ params: { slug } }));
 }
 
-const Page = Astro.params.slug === '_v4'
-  ? VersionFourPage
-  : Astro.params.slug === '_v3' ? VersionThreePage : VersionTwoPage;
+const pages = {
+  _v2: VersionTwoPage,
+  _v3: VersionThreePage,
+  _v4: VersionFourPage,
+  _v5: VersionFivePage,
+};
+const Page = pages[Astro.params.slug as keyof typeof pages];
 ---
 
 <Page />
