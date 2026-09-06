@@ -105,20 +105,18 @@ const selectedPosts = [
         <h1 id="hero-title" class="animate-in">{profile.name}</h1>
         <p class="role animate-in">{profile.role}</p>
         <p class="lead animate-in">
-          I design and build research, data, portfolio, risk and AI systems for investment teams.
+          I design and build research, data, portfolio, risk and AI systems for funds,
+          family offices and investment-technology teams.
         </p>
         <div class="hero-about animate-in">
           <p>
-            I can help you develop a new system, improve an existing platform, or review your
-            architecture, strategies and backtests as part of technical due diligence.
+            I can build or improve your platform, review its architecture, validate strategies
+            and backtests, or carry out technical due diligence.
           </p>
           <p>
-            I work with hedge funds, family offices, asset managers and
-            investment-technology companies.
+            My background spans high-energy physics, Microsoft, technology entrepreneurship
+            and Oracle, where I was {profile.career.oracleTitle}.
           </p>
-          <h2 class="bio-title">From physics to quantitative systems</h2>
-          <p>My path runs from high-energy physics through Microsoft, technology entrepreneurship and Oracle to quantitative finance.</p>
-          <p>At Oracle, I was {profile.career.oracleTitle}. Today, my work focuses on quantitative development and investment infrastructure.</p>
           <p>I care about the assumptions inside a model as much as the system around it.</p>
         </div>
 
@@ -299,30 +297,6 @@ const selectedPosts = [
             </div>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section class="content-section work-section animate-in" aria-labelledby="collaborate-title">
-      <div>
-        <h2 id="collaborate-title">How I work</h2>
-      </div>
-      <div class="section-copy">
-        <p>
-          I start with the investment decision or workflow you need to support: who will use
-          the system, what data is available and where the current process breaks down.
-          We agree on the scope, constraints and how to evaluate the result.
-        </p>
-        <p>
-          I review the existing architecture and research assumptions, including data quality,
-          point-in-time history, backtest design and execution costs. The findings determine
-          what needs to change and what can stay.
-        </p>
-        <p>
-          My team and I implement the agreed changes, validate them against the requirements
-          and document the system for handover. The engagement can be a focused review,
-          a specific component or a broader build alongside your team.
-        </p>
-        <p>Send me a brief outline of what you’re building and where you need help.</p>
       </div>
     </section>
 
@@ -538,13 +512,6 @@ const selectedPosts = [
 
   .article-note { margin: 18px 0 0; font-size: 1rem; line-height: 1.62; color: var(--ink); }
   .article-note a { color: inherit; text-underline-offset: 4px; }
-  .hero-about .bio-title {
-    margin: 20px 0 11px;
-    color: var(--ink);
-    font-size: clamp(0.98rem, 1.45vw, 1.12rem);
-    font-weight: 600;
-    line-height: 1.35;
-  }
 
   .platform-note {
     margin: 18px 0 0;
