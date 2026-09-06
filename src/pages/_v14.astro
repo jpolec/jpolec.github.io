@@ -57,25 +57,25 @@ const products = [
 // article pages. These are editorial selections, not a popularity ranking.
 const selectedPosts = [
   {
-    title: 'Designing a Real Portfolio Management System (Not a Positions UI)',
-    description: 'PMS design: keeping positions and cash consistent, with portfolio state that can be rebuilt day by day.',
-    href: 'https://quantjourney.substack.com/p/designing-a-real-portfolio-management',
+    "title": "Designing a Real Portfolio Management System (Not a Positions UI)",
+    "description": "PMS design: keeping positions and cash consistent, with portfolio state that can be rebuilt day by day.",
+    "href": "https://quantjourney.substack.com/p/designing-a-real-portfolio-management"
   },
   {
-    title: 'Investment Memory: Why Most Portfolio Systems Lie to You',
-    description: 'IBOR and portfolio history: reconstructing what was known at the time, including weights, flows and risk state.',
-    href: 'https://quantjourney.substack.com/p/investment-memory-why-most-portfolio',
+    "title": "QuantJourney Backtester Is Now Open Source",
+    "description": "Backtest reliability: tracing when information becomes tradable, how signals become positions, and which execution, cost and validation assumptions shape the results.",
+    "href": "https://quantjourney.substack.com/p/quantjourney-backtester-is-now-open"
   },
   {
-    title: 'The Hidden Problem in Buy-Side Platforms: Which Investment State Is True?',
-    description: 'Data and orchestration: checking that risk, analytics and reporting use consistent investment state when inputs change.',
-    href: 'https://quantjourney.substack.com/p/the-hidden-problem-in-buy-side-platforms',
+    "title": "Moving Beyond Correlation - Hunting Alpha with Lead-Lag & Granger Causality",
+    "description": "Alpha research: distinguishing statistical lead-lag relationships from an economic edge, and examining how those relationships change across market regimes.",
+    "href": "https://quantjourney.substack.com/p/moving-beyond-correlation-hunting"
   },
   {
-    title: 'AI-Agent-Native Investment Infrastructure: MCP Access to IBOR, PMS, Risk and Research',
-    description: 'Applied AI: connecting agents to controlled portfolio, market-data, risk and research infrastructure through MCP.',
-    href: 'https://quantjourney.substack.com/p/ai-agent-native-investment-infrastructure',
-  },
+    "title": "AI-Agent-Native Investment Infrastructure: MCP Access to IBOR, PMS, Risk and Research",
+    "description": "Applied AI: connecting agents to controlled portfolio, market-data, risk and research infrastructure through MCP.",
+    "href": "https://quantjourney.substack.com/p/ai-agent-native-investment-infrastructure"
+  }
 ];
 
 const services = [
@@ -122,10 +122,59 @@ const services = [
       <div class="hero-copy">
         <h1 id="hero-title" class="animate-in">{profile.name}</h1>
         <p class="role animate-in">{profile.role}</p>
-        <p class="lead animate-in">I help funds, family offices and investment teams design, build and independently review quantitative strategies and investment systems. My work spans strategy research, backtest validation and the infrastructure connecting data, portfolio management, risk and execution.</p>
+        <p class="lead animate-in">I help funds, family offices and investment teams design, build and independently review quantitative strategies and investment systems. My work covers strategy research, backtest validation and the infrastructure connecting data, portfolio management, risk and execution.</p>
         <div class="hero-about animate-in">
-          <p>My background spans high-energy physics, Microsoft, technology entrepreneurship and Oracle, where I served as Head of Industry and Innovation, Director, ECEMEA. Today, I lead QuantJourney, building investment technology and working directly with teams on their research and engineering challenges.</p>
-          <p>I care about the assumptions inside a model as much as the system around it.</p>
+          <p>My background spans high-energy physics, Microsoft, technology entrepreneurship and Oracle, where I served as Director and Head of Industry and Innovation for ECEMEA. Today, I lead QuantJourney, building investment technology and working directly with teams on their research and engineering challenges.</p>
+        </div>
+        <div class="social-row" aria-label="Social profiles">
+            <a
+              href="https://linkedin.com/in/jakubpolec"
+              class="social-icon"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn profile"
+              title="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M6.94 8.5A1.72 1.72 0 1 0 6.94 5.06a1.72 1.72 0 0 0 0 3.44ZM5.48 18.94h2.93V10H5.48v8.94ZM10.25 10v8.94h2.92v-4.42c0-1.17.22-2.3 1.67-2.3 1.43 0 1.45 1.34 1.45 2.38v4.34h2.93v-4.93c0-2.42-.52-4.28-3.35-4.28-1.36 0-2.27.74-2.64 1.45h-.04V10h-2.94Z" />
+              </svg>
+            </a>
+            <a
+              href="https://x.com/jakubpolec"
+              class="social-icon"
+              target="_blank"
+              rel="noopener"
+              aria-label="X profile"
+              title="X"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M18.9 2.25h3.68l-8.04 9.19L24 21.75h-7.41l-5.8-7.59-6.64 7.59H.46l8.6-9.83L0 2.25h7.6l5.24 6.93 6.06-6.93Zm-1.29 17.3h2.04L6.49 4.34H4.3L17.61 19.55Z" />
+              </svg>
+            </a>
+            <a
+              href="https://github.com/jpolec"
+              class="social-icon"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub profile"
+              title="GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 .297C5.37.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.806 5.621-5.479 5.918.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+            <a
+              href="https://quantjourney.substack.com"
+              class="social-icon"
+              target="_blank"
+              rel="noopener"
+              aria-label="QuantJourney on Substack"
+              title="Substack"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M22.539 8.242H1.46V5.406h21.08zM1.46 10.813V24L12 18.11 22.54 24V10.813zM22.54 0H1.46v2.836h21.08z" />
+              </svg>
+            </a>
         </div>
       </div>
     </section>
@@ -147,60 +196,6 @@ const services = [
         ))}
       </div>
       <p class="engagement-note">Engagements can take the form of a focused review, a defined project or ongoing advisory support. We agree on the scope and deliverables before work begins.</p>
-      <div class="action-row engagement-actions" aria-label="Project contact links">
-        <a href="https://calendly.com/jpolec/30min" class="button primary" target="_blank" rel="noopener">Discuss your project</a>
-        <a href="mailto:jakub@quantjourney.pro" class="button secondary">Email me</a>
-      </div>
-      <div class="social-row" aria-label="Social profiles">
-          <a
-            href="https://linkedin.com/in/jakubpolec"
-            class="social-icon"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn profile"
-            title="LinkedIn"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M6.94 8.5A1.72 1.72 0 1 0 6.94 5.06a1.72 1.72 0 0 0 0 3.44ZM5.48 18.94h2.93V10H5.48v8.94ZM10.25 10v8.94h2.92v-4.42c0-1.17.22-2.3 1.67-2.3 1.43 0 1.45 1.34 1.45 2.38v4.34h2.93v-4.93c0-2.42-.52-4.28-3.35-4.28-1.36 0-2.27.74-2.64 1.45h-.04V10h-2.94Z" />
-            </svg>
-          </a>
-          <a
-            href="https://x.com/jakubpolec"
-            class="social-icon"
-            target="_blank"
-            rel="noopener"
-            aria-label="X profile"
-            title="X"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M18.9 2.25h3.68l-8.04 9.19L24 21.75h-7.41l-5.8-7.59-6.64 7.59H.46l8.6-9.83L0 2.25h7.6l5.24 6.93 6.06-6.93Zm-1.29 17.3h2.04L6.49 4.34H4.3L17.61 19.55Z" />
-            </svg>
-          </a>
-          <a
-            href="https://github.com/jpolec"
-            class="social-icon"
-            target="_blank"
-            rel="noopener"
-            aria-label="GitHub profile"
-            title="GitHub"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M12 .297C5.37.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.806 5.621-5.479 5.918.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12" />
-            </svg>
-          </a>
-          <a
-            href="https://quantjourney.substack.com"
-            class="social-icon"
-            target="_blank"
-            rel="noopener"
-            aria-label="QuantJourney on Substack"
-            title="Substack"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M22.539 8.242H1.46V5.406h21.08zM1.46 10.813V24L12 18.11 22.54 24V10.813zM22.54 0H1.46v2.836h21.08z" />
-            </svg>
-          </a>
-      </div>
     </section>
 
     <section id="what-i-build" class="build-section animate-in" aria-labelledby="working-title">
@@ -243,7 +238,7 @@ const services = [
     <section class="articles-section animate-in" aria-labelledby="articles-title">
       <div class="build-heading">
         <h2 id="articles-title">What I write</h2>
-        <p>On the QuantJourney blog, my team and I have published 250+ articles — from investment strategies, alpha research and backtesting to portfolio construction, risk, data engineering, execution and applied AI. The four articles below are examples of our work on investment infrastructure.</p>
+        <p>On the QuantJourney blog, I have published 250+ articles covering investment strategies, alpha research, backtesting, portfolio construction, risk, data engineering, execution and applied AI. The four articles below are examples covering portfolio systems, backtesting, alpha research and applied AI.</p>
       </div>
       <div class="build-list">
         {selectedPosts.map((post) => (
