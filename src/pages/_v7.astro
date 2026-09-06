@@ -1,0 +1,155 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import ContactLinks from '../components/V7ContactLinks.astro';
+import { profile } from '../data/profile';
+
+const services = [
+  { name: 'Quantitative development', detail: 'Build research workflows, backtesting tools and diagnostics. Review strategy assumptions and the reproducibility of results.' },
+  { name: 'Data engineering', detail: 'Design financial-data pipelines, API contracts and analytical datasets. Review data quality and integration with existing systems.' },
+  { name: 'Portfolio and risk', detail: 'Develop portfolio-state and risk workflows, including approvals and execution context.' },
+  { name: 'Applied AI', detail: 'Connect AI tools to financial data with scoped access, OAuth and evidence-aware responses.' },
+  { name: 'Technical review', detail: 'Assess architecture, research design and implementation risks before a build or investment-technology decision.' },
+];
+const projects = [
+  { name: 'OneBook', detail: 'Research, portfolio, risk and execution context in one workspace.', href: 'https://onebook.quantjourney.cloud/' },
+  { name: 'Quant API / MCP', detail: 'Financial-data routes for applications and approved AI clients.', href: 'https://api.quantjourney.cloud/' },
+  { name: 'Quant DataLake', detail: 'Market, fundamental and portfolio data for analytical workflows.', href: 'https://data.quantjourney.cloud/' },
+  { name: 'Backtester', detail: 'Python-native strategy research, reproducible backtests and diagnostics.', href: 'https://backtester.quantjourney.cloud/' },
+  { name: 'Agents', detail: 'Financial tools with OAuth, scoped access and MCP.', href: 'https://agents.quantjourney.cloud/' },
+];
+const writing = [
+  { name: 'Quant Interviews', detail: '1,600+ pages and 190+ problems covering mathematical foundations, Python, C++ and SQL.', href: 'https://quant-interviews.quantjourney.cloud' },
+  { name: 'Quant Blog', detail: '200+ posts on quantitative research, markets, infrastructure and applied AI.', href: 'https://quantjourney.substack.com' },
+  { name: 'GitHub', detail: 'Public repositories, working examples and releases.', href: 'https://github.com/jpolec' },
+];
+---
+
+<SimpleLayout
+  title="Jakub Połeć | Quantitative Development & Investment Systems"
+  description="Jakub Połeć, founder of QuantJourney. Quantitative development, data engineering, portfolio and risk systems, applied AI and technical review."
+  canonical="https://jakubpolec.com/_v7/"
+  noindex={true}
+>
+  <main class="v7">
+    <section class="section intro" aria-labelledby="name">
+      <h1 id="name">{profile.name}</h1>
+      <div class="section-content">
+        <p>{profile.role}</p>
+        <p>I design and build research, data, portfolio and risk systems for funds, family offices and investment-technology teams.</p>
+        <p>My work covers architecture, implementation and validation, including AI tools for financial workflows.</p>
+        <ContactLinks />
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="services-title">
+      <h2 id="services-title">What I can help with</h2>
+      <dl class="services section-content">
+        {services.map((service) => (
+          <div class="service">
+            <dt>{service.name}</dt>
+            <dd>{service.detail}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="section" aria-labelledby="projects-title">
+      <h2 id="projects-title">What I’m building</h2>
+      <div class="section-content">
+        <p>Current projects within QuantJourney:</p>
+        <div class="link-list">
+          {projects.map((project) => (
+            <div class="link-row">
+              <a href={project.href} target="_blank" rel="noopener">{project.name}<span aria-hidden="true"> ↗</span></a>
+              <p>{project.detail}</p>
+            </div>
+          ))}
+        </div>
+        <p class="platform-note">QuantJourney builds investment technology. It does not manage client assets or provide investment advice.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="background-title">
+      <h2 id="background-title">Background</h2>
+      <div class="section-content background">
+        <div>
+          <p>My background spans high-energy physics, Microsoft, technology entrepreneurship and Oracle.</p>
+          <p>At Oracle, I was {profile.career.oracleTitle}. Today, I focus on quantitative development and investment infrastructure.</p>
+        </div>
+        <figure>
+          <img src="/jpbg.jpeg" alt="Jakub Połeć with Bill Gates during his Microsoft years" width="800" height="796" loading="lazy" decoding="async" />
+          <figcaption>With Bill Gates, during my Microsoft years.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="writing-title">
+      <h2 id="writing-title">Writing and code</h2>
+      <div class="link-list section-content">
+        {writing.map((item) => (
+          <div class="link-row">
+            <a href={item.href} target="_blank" rel="noopener">{item.name}<span aria-hidden="true"> ↗</span></a>
+            <p>{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Working together</h2>
+      <div class="section-content">
+        <p>I take on selected development and review projects. Send a brief outline of your objective, current system and main constraint. We can then define the scope and next steps.</p>
+        <ContactLinks />
+      </div>
+    </section>
+  </main>
+</SimpleLayout>
+
+<style>
+  .v7 {
+    --text: #102c48;
+    --rule: #d8e1e9;
+    width: min(1000px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 32px 0;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, p, dl, dt, dd, figure, figcaption { margin: 0; color: inherit; font: inherit; }
+  p, dd { text-wrap: pretty; }
+  a { color: inherit; font: inherit; text-underline-offset: 4px; overflow-wrap: anywhere; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  .section { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 32px; padding: 24px 0; border-top: 1px solid var(--rule); }
+  .intro { padding-top: 0; border-top: 0; }
+  .section-content { min-width: 0; }
+  .section-content > p + p, .background p + p { margin-top: 12px; }
+  .section-content > :global(.contact-links) { margin-top: 12px; }
+  .services { display: grid; gap: 16px; }
+  .service dt { margin-bottom: 4px; }
+  .link-list { display: grid; gap: 12px; }
+  .section-content > p + .link-list { margin-top: 16px; }
+  .link-row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; align-items: baseline; }
+  .link-row a { display: inline-block; justify-self: start; padding: 9px 0; margin: -9px 0; }
+  .platform-note { margin-top: 16px; }
+  .background { display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 28px; align-items: start; }
+  figure img { width: 100%; height: auto; }
+  figcaption { margin-top: 8px; }
+
+  @media (max-width: 850px) {
+    .section { grid-template-columns: 150px minmax(0, 1fr); gap: 24px; }
+    .link-row { grid-template-columns: 1fr; gap: 4px; }
+    .link-list { gap: 18px; }
+    .background { grid-template-columns: 1fr; gap: 20px; }
+    figure { max-width: 240px; }
+  }
+
+  @media (max-width: 600px) {
+    .v7 { width: calc(100% - 40px); padding: 24px 0; }
+    .section { grid-template-columns: 1fr; gap: 14px; padding: 20px 0; }
+    .intro { padding-top: 0; }
+  }
+</style>
