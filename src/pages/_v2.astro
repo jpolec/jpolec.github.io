@@ -30,28 +30,11 @@ const productProof = [
   },
 ];
 
-const process = [
-  {
-    number: '01',
-    title: 'Frame the decision',
-    description: 'A short fit call establishes the investment objective, operating constraints and systems in scope.',
-  },
-  {
-    number: '02',
-    title: 'Review the operating reality',
-    description: 'I map the research, data, portfolio, risk and control flow — including the handoffs that create friction or ambiguity.',
-  },
-  {
-    number: '03',
-    title: 'Leave with a usable plan',
-    description: 'You receive an executive-ready findings pack, target architecture and a prioritised 90-day roadmap.',
-  },
-];
 ---
 
 <SimpleLayout
-  title="Investment Decision Infrastructure Review | Jakub Połeć"
-  description="Independent buy-side infrastructure reviews for hedge funds, family offices and investment teams."
+  title="Jakub Połeć | Quant Systems Architect & Founder of QuantJourney"
+  description={profile.description}
   canonical="https://jakubpolec.com/_v2/"
   noindex={true}
 >
@@ -66,84 +49,33 @@ const process = [
     </header>
 
     <section class="v2-hero" aria-labelledby="v2-title">
-      <div class="v2-eyebrow">Independent buy-side infrastructure review</div>
-      <h1 id="v2-title">Investment data and decision infrastructure that can be trusted under pressure.</h1>
+      <p class="v2-personal-kicker">Jakub Połeć</p>
+      <div class="v2-eyebrow">Quant systems architect &amp; founder of QuantJourney</div>
+      <h1 id="v2-title">I build the systems behind investment decisions.</h1>
       <p class="v2-hero-lead">
-        I help hedge funds, family offices and investment teams turn fragmented research, data,
-        portfolio and risk workflows into systems that are clearer to operate, govern and scale.
+        I work across quantitative research, data, portfolio, risk and AI infrastructure for investment teams —
+        and invest proprietary capital independently.
       </p>
-      <div class="v2-hero-actions">
-        <a class="v2-button v2-button--primary" href={profile.urls.calendly} target="_blank" rel="noopener">
-          Book an infrastructure review
-        </a>
-      </div>
-    </section>
-
-    <section class="v2-review" aria-labelledby="review-title">
-      <div class="v2-review-intro">
-        <p class="v2-section-kicker">The engagement</p>
-        <h2 id="review-title">Independent Buy-side Infrastructure Review</h2>
-        <p>
-          A fixed-scope review for a live investment workflow, platform decision or transformation programme.
-          It is designed to create clarity before a costly implementation, vendor commitment or operating change.
-        </p>
-      </div>
-      <div class="v2-review-meta" aria-label="Review details">
-        <div>
-          <span>Typical duration</span>
-          <strong>2–3 weeks</strong>
-        </div>
-        <div>
-          <span>Working format</span>
-          <strong>Focused interviews + system review</strong>
-        </div>
-        <div>
-          <span>Commercial model</span>
-          <strong>Fixed scope, agreed after fit call</strong>
-        </div>
-      </div>
-      <div class="v2-review-output">
-        <p class="v2-output-label">What you leave with</p>
-        <ul>
-          <li>Current-state map of systems, data and decision handoffs</li>
-          <li>Risks, control gaps and avoidable implementation complexity</li>
-          <li>Target architecture and a prioritised 90-day roadmap</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="v2-section" aria-labelledby="how-title">
-      <div class="v2-section-heading">
-        <p class="v2-section-kicker">How it works</p>
-        <h2 id="how-title">A small engagement with a concrete outcome.</h2>
-      </div>
-      <ol class="v2-process-list">
-        {process.map((step) => (
-          <li>
-            <span class="v2-step-number">{step.number}</span>
-            <div>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+      <p class="v2-hero-note">
+        QuantJourney is investment technology: it builds research tools, data infrastructure and
+        portfolio-decision software. It does not manage client assets or provide investment advice.
+      </p>
     </section>
 
     <section class="v2-evidence" aria-label="Selected evidence">
       <span>200+ published research pieces</span>
       <span>Quant Interviews · 1,600+ pages</span>
       <span>Open-source research tooling</span>
-      <span>Private-deployment patterns for investment teams</span>
+      <span>Research, data and decision infrastructure</span>
     </section>
 
     <section class="v2-section v2-platform-section" aria-labelledby="platform-title">
       <div class="v2-section-heading v2-platform-heading">
-        <p class="v2-section-kicker">The work behind the review</p>
-        <h2 id="platform-title">Not slides: operating products and infrastructure.</h2>
+        <p class="v2-section-kicker">What I build</p>
+        <h2 id="platform-title">Products and proprietary infrastructure for investment work.</h2>
         <p>
-          The review is informed by the same systems I build for governed research, data, portfolio
-          and AI workflows. They are evidence of the operating model — not a menu of products to buy.
+          A connected body of work around governed research, data, portfolio, risk and AI workflows.
+          These are the systems I spend my time designing, building and operating.
         </p>
       </div>
       <div class="v2-product-proof">
@@ -170,8 +102,8 @@ const process = [
         <figcaption>With Bill Gates, during Jakub’s Microsoft years.</figcaption>
       </figure>
       <div class="v2-background-copy">
-        <p class="v2-section-kicker">Enterprise context, investment focus</p>
-        <h2 id="background-title">A practical bridge between investment work and complex technology.</h2>
+        <p class="v2-section-kicker">Background</p>
+        <h2 id="background-title">From high-energy physics to quantitative systems.</h2>
         <p>
           My path runs from high-energy physics through Microsoft, technology entrepreneurship and
           Oracle — where I was Head of Industry and Innovation, Director, ECEMEA — to quantitative finance.
@@ -212,14 +144,16 @@ const process = [
     </section>
 
     <section class="v2-closing" aria-labelledby="closing-title">
-      <p class="v2-section-kicker">Start with the decision that matters</p>
-      <h2 id="closing-title">Choosing, replacing or governing investment infrastructure?</h2>
+      <p class="v2-section-kicker">Work with me</p>
+      <h2 id="closing-title">Selective work for investment teams.</h2>
       <p>
-        Start with a focused conversation. If there is a fit, the review can lead into architecture,
-        private-deployment delivery, strategy validation or ongoing technical advisory.
+        I work selectively with funds, family offices and investment-technology companies on
+        infrastructure architecture, technical due diligence, research design and strategy or
+        backtest validation.
       </p>
+      <p class="v2-closing-note">Where useful, work begins with a short, focused review of the decision and operating context.</p>
       <a class="v2-button v2-button--primary" href={profile.urls.calendly} target="_blank" rel="noopener">
-        Book an infrastructure review
+        Start a conversation
       </a>
     </section>
 
@@ -296,9 +230,16 @@ const process = [
     text-transform: uppercase;
   }
 
+  .v2-personal-kicker {
+    margin: 0 0 10px;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 750;
+    letter-spacing: -0.015em;
+  }
+
   .v2-hero h1,
   .v2-section h2,
-  .v2-review h2,
   .v2-closing h2 {
     margin: 0;
     color: var(--ink);
@@ -320,8 +261,12 @@ const process = [
     line-height: 1.55;
   }
 
-  .v2-hero-actions {
-    margin-top: 32px;
+  .v2-hero-note {
+    max-width: 650px;
+    margin: 22px 0 0;
+    color: #64748b;
+    font-size: 0.82rem;
+    line-height: 1.58;
   }
 
   .v2-button {
@@ -352,90 +297,10 @@ const process = [
     transform: translateY(-1px);
   }
 
-  .v2-review {
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
-    gap: 42px 64px;
-    padding: clamp(32px, 5vw, 56px);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    background: #f7f9fb;
-  }
-
-  .v2-review-intro p:not(.v2-section-kicker) {
-    max-width: 650px;
-    margin: 20px 0 0;
-    color: #244366;
-    font-size: 1rem;
-    line-height: 1.65;
-  }
-
-  .v2-review h2,
   .v2-section h2,
   .v2-closing h2 {
     font-size: clamp(1.75rem, 3vw, 2.65rem);
     line-height: 1.08;
-  }
-
-  .v2-review-meta {
-    display: grid;
-    align-content: start;
-    gap: 18px;
-    padding-top: 5px;
-  }
-
-  .v2-review-meta div {
-    display: grid;
-    gap: 4px;
-  }
-
-  .v2-review-meta span,
-  .v2-output-label {
-    color: #64748b;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.075em;
-    text-transform: uppercase;
-  }
-
-  .v2-review-meta strong {
-    color: var(--ink);
-    font-size: 0.93rem;
-    line-height: 1.45;
-  }
-
-  .v2-review-output {
-    grid-column: 1 / -1;
-    padding-top: 24px;
-    border-top: 1px solid var(--line);
-  }
-
-  .v2-output-label {
-    margin: 0 0 12px;
-  }
-
-  .v2-review-output ul {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px 32px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .v2-review-output li {
-    position: relative;
-    padding-left: 17px;
-    color: #244366;
-    font-size: 0.92rem;
-    line-height: 1.55;
-  }
-
-  .v2-review-output li::before {
-    position: absolute;
-    left: 0;
-    color: #aa0a8b;
-    content: '•';
   }
 
   .v2-section {
@@ -452,51 +317,6 @@ const process = [
     color: #244366;
     font-size: 1rem;
     line-height: 1.65;
-  }
-
-  .v2-process-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0;
-    margin: 46px 0 0;
-    padding: 0;
-    list-style: none;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .v2-process-list li {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 16px;
-    min-height: 190px;
-    padding: 27px 28px 28px 0;
-  }
-
-  .v2-process-list li + li {
-    padding-left: 28px;
-    border-left: 1px solid var(--line);
-  }
-
-  .v2-step-number {
-    color: #aa0a8b;
-    font-size: 0.76rem;
-    font-weight: 750;
-    letter-spacing: 0.07em;
-  }
-
-  .v2-process-list h3 {
-    margin: 0 0 10px;
-    color: var(--ink);
-    font-size: 1.02rem;
-    line-height: 1.35;
-  }
-
-  .v2-process-list p {
-    margin: 0;
-    color: #244366;
-    font-size: 0.91rem;
-    line-height: 1.6;
   }
 
   .v2-evidence {
@@ -664,6 +484,12 @@ const process = [
     line-height: 1.65;
   }
 
+  .v2-closing .v2-closing-note {
+    margin-top: 12px;
+    color: #64748b;
+    font-size: 0.87rem;
+  }
+
   .v2-closing .v2-button {
     margin-top: 30px;
   }
@@ -732,38 +558,10 @@ const process = [
       font-size: clamp(2.7rem, 12vw, 4.25rem);
     }
 
-    .v2-review {
-      grid-template-columns: 1fr;
-      gap: 32px;
-      padding: 28px 23px;
-    }
-
-    .v2-review-output ul,
-    .v2-process-list,
     .v2-background-section,
     .v2-public-work,
     .v2-footer {
       grid-template-columns: 1fr;
-    }
-
-    .v2-review-output ul {
-      gap: 13px;
-    }
-
-    .v2-process-list {
-      margin-top: 32px;
-    }
-
-    .v2-process-list li,
-    .v2-process-list li + li {
-      min-height: auto;
-      padding: 22px 0;
-      border-left: 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .v2-process-list li:first-child {
-      border-top: 0;
     }
 
     .v2-evidence {
