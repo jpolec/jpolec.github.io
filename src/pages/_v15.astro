@@ -97,14 +97,13 @@ const selectedPosts = [
           loading="eager"
           decoding="async"
         />
-        <figcaption>With Bill Gates, during my Microsoft years.</figcaption>
       </figure>
 
       <div class="hero-copy">
         <h1 id="hero-title" >Jakub Polec</h1>
         <p class="lead">I review quantitative systems, investment infrastructure, and the research behind them - and put the answer in writing.</p>
         <div class="hero-about">
-          <p>I work with hedge funds, family offices, asset managers, and investors in investment technology. My background is high-energy physics at CERN, then Microsoft and Oracle, then twelve years building quantitative systems. I run QuantJourney, which builds investment infrastructure for buy-side teams.</p>
+          <p>I work with hedge funds, family offices, asset managers, and investors in investment technology. My background is high-energy physics at CERN, then Microsoft and Oracle, then twelve years building quantitative systems. I run QuantJourney, which builds investment infrastructure for buy-side teams. That means I sell to the same firms that hire me to review theirs, so I say up front when the two overlap. I do not manage client capital and do not give investment advice.</p>
         </div>
         <div class="action-row hero-actions" aria-label="Contact links">
           <a href="https://calendly.com/jpolec/30min" class="button primary" target="_blank" rel="noopener">Book a 30-minute call</a>
@@ -196,8 +195,7 @@ const selectedPosts = [
       <div class="build-heading">
         <h2 id="working-title">What I build</h2>
         <p>
-          At QuantJourney, my team and I build products and proprietary infrastructure
-          for research, portfolio workflows, data, and controlled AI access.
+          QuantJourney is my company. This is what we run in production - the same systems the reviews above draw on.
         </p>
       </div>
       <div class="build-list">
@@ -245,7 +243,7 @@ const selectedPosts = [
             </h2>
           </div>
           <div class="book-copy">
-            <p class="book-stats">1,630 pages · 190+ problems · Python/C++/SQL</p>
+            <p class="book-stats">1,630 pages · 194 questions · Python/C++/SQL</p>
             <p>
               From mathematical foundations to production-grade quant systems.
             </p>
@@ -263,7 +261,7 @@ const selectedPosts = [
         <div class="book-volume-grid" aria-label="Quant Interviews volumes">
           <article class="book-volume-card">
             <img
-              src="/quant-interviews-cover.webp"
+              src="/quant-interviews-volume-1.svg"
               alt="Quant Interviews Volume I cover"
               width="540"
               height="763"
@@ -277,7 +275,7 @@ const selectedPosts = [
           </article>
           <article class="book-volume-card">
             <img
-              src="/quant-interviews-cover.webp"
+              src="/quant-interviews-volume-2.svg"
               alt="Quant Interviews Volume II cover"
               width="540"
               height="763"
@@ -317,6 +315,13 @@ const selectedPosts = [
         ))}
       </div>
       <p class="article-note"><a href="https://quantjourney.substack.com" target="_blank" rel="noopener">More on the QuantJourney blog <span aria-hidden="true">↗</span></a></p>
+      <div class="closing-contact">
+        <p>Bring the decision you are facing and whatever material you have. In thirty minutes I will tell you whether I can help, what it would take, and what it would cost.</p>
+        <div class="action-row" aria-label="Discuss your decision">
+          <a href="https://calendly.com/jpolec/30min" class="button primary" target="_blank" rel="noopener">Book a 30-minute call</a>
+          <a href="mailto:jakub@quantjourney.pro" class="button secondary">Email me</a>
+        </div>
+      </div>
     </section>
 
 
@@ -1039,4 +1044,6 @@ const selectedPosts = [
     .situations { grid-template-columns: 1fr; gap: 18px; }
     .situations-section { margin-top: 22px; padding-top: 24px; }
   }
+  .closing-contact { margin-top: 40px; }
+  .closing-contact p { margin: 0; font-size: 1rem; line-height: 1.62; }
 </style>
