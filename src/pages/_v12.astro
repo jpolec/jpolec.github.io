@@ -1,0 +1,138 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import ContactLinks from '../components/V7ContactLinks.astro';
+import { profile } from '../data/profile';
+
+const projects = [
+  { name: 'OneBook', detail: 'Research, portfolio state, risk and execution context in one workspace.', href: 'https://onebook.quantjourney.cloud/' },
+  { name: 'Quant API / MCP', detail: 'Governed financial-data routes for applications and approved AI clients.', href: 'https://api.quantjourney.cloud/' },
+  { name: 'Quant DataLake', detail: 'Market, fundamental and portfolio data for analytical workflows.', href: 'https://data.quantjourney.cloud/' },
+  { name: 'Backtester', detail: 'Python-native strategy research, reproducible workflows and diagnostics.', href: 'https://backtester.quantjourney.cloud/' },
+  { name: 'Agents', detail: 'Controlled financial tools with OAuth, scoped access and MCP.', href: 'https://agents.quantjourney.cloud/' },
+];
+const writing = [
+  { title: 'Quant Interviews', text: '1,600+ pages. 190+ problems. From mathematical foundations to Python, C++ and SQL.', href: 'https://quant-interviews.quantjourney.cloud' },
+  { title: 'Quant Blog', text: '200+ posts on quantitative research, markets, investment infrastructure and applied AI.', href: 'https://quantjourney.substack.com' },
+  { title: 'GitHub', text: 'Public repositories, working examples and release history.', href: 'https://github.com/jpolec' },
+];
+---
+
+<SimpleLayout
+  title="Jakub Połeć | Quantitative Systems & Engineering"
+  description="Quantitative development, research systems and investment infrastructure. Jakub Połeć, founder of QuantJourney."
+  canonical="https://jakubpolec.com/_v12/"
+  noindex={true}
+>
+  <main class="v12">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="name">{profile.name}</p>
+      <p>{profile.role}</p>
+      <h1 id="hero-title"><span>Quantitative thinking.</span><span>Production engineering.</span></h1>
+      <p class="intro">I build QuantJourney — from financial-data pipelines and backtesting to portfolio, risk and AI tools for investment teams.</p>
+      <ContactLinks />
+    </section>
+
+    <section class="section" aria-labelledby="help-title">
+      <h2 id="help-title">Development and technical review</h2>
+      <p>I can design and build a system for your team, implement a specific component, or connect your research tools to existing infrastructure.</p>
+      <p>For an existing platform or strategy, I can review the architecture, data quality and backtest assumptions, then work through the changes with your team.</p>
+      <p>I work with funds, family offices and investment-technology companies.</p>
+    </section>
+
+    <section class="section" aria-labelledby="projects-title">
+      <h2 id="projects-title">QuantJourney projects</h2>
+      <ul class="entries">
+        {projects.map((project) => (
+          <li>
+            <h3><a href={project.href} target="_blank" rel="noopener">{project.name}<span aria-hidden="true"> ↗</span></a></h3>
+            <p>{project.detail}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="background-title">
+      <h2 id="background-title">From physics to quantitative systems</h2>
+      <p>My path runs from high-energy physics through Microsoft, technology entrepreneurship and Oracle to quantitative finance.</p>
+      <p>At Oracle, I was {profile.career.oracleTitle}. Today, my work focuses on quantitative development and investment infrastructure.</p>
+      <p>I care about the assumptions inside a model as much as the system around it.</p>
+      <figure>
+        <img src="/jpbg.jpeg" alt="Jakub Połeć with Bill Gates during his Microsoft years" width="800" height="796" loading="lazy" decoding="async" />
+        <figcaption>With Bill Gates, during my Microsoft years.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="writing-title">
+      <h2 id="writing-title">Writing and code</h2>
+      <ul class="entries">
+        {writing.map((item) => (
+          <li>
+            <h3><a href={item.href} target="_blank" rel="noopener">{item.title}<span aria-hidden="true"> ↗</span></a></h3>
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Working together</h2>
+      <p>Email me a brief outline of what you’re building, what already exists and where you need help. We can agree on the scope, constraints and expected outcome before starting.</p>
+      <ContactLinks />
+    </section>
+  </main>
+</SimpleLayout>
+
+<style>
+  .v12 {
+    --text: #102c48;
+    --rule: #d8e1e9;
+    width: min(880px, calc(100% - 64px));
+    margin-inline: auto;
+    padding: 40px 0 28px;
+    background: #fff;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  h1, h2, h3, p, ul, figure { margin: 0; }
+  h1, h2, h3 { font-weight: 600; }
+  h1, h2 { letter-spacing: -0.05em; text-wrap: balance; }
+  h2 { font-size: clamp(1.625rem, 3.1vw, 2.125rem); line-height: 1.15; margin-bottom: 18px; }
+  h3, figcaption { font-size: inherit; line-height: inherit; color: inherit; }
+  p { text-wrap: pretty; }
+  a { color: inherit; font: inherit; text-underline-offset: 4px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+  /* One reading column at every viewport; hierarchy comes from typography. */
+  .hero { padding-bottom: 30px; }
+  .name { font-weight: 600; margin-bottom: 4px; }
+  h1 { margin-block: 26px 22px; font-size: clamp(2.75rem, 6.8vw, 4.75rem); line-height: 1.04; letter-spacing: -0.06em; }
+  h1 span { display: block; }
+  .intro { max-width: 76ch; }
+  .hero > :global(.contact-links) { margin-top: 12px; }
+  .section { padding-block: 30px; border-top: 1px solid var(--rule); }
+  .section > p + p { margin-top: 12px; }
+  .entries { padding: 0; list-style: none; }
+  .entries li { padding-block: 14px; }
+  .entries li:first-child { padding-top: 0; }
+  .entries li:last-child { padding-bottom: 0; }
+  .entries li + li { border-top: 1px solid var(--rule); }
+  .entries h3 a { display: inline-block; padding-block: 9px; margin-block: -9px; text-decoration: none; }
+  .entries h3 a:hover { text-decoration: underline; }
+  .entries p { margin-top: 4px; }
+  figure { margin-top: 22px; }
+  figure img { width: min(280px, 100%); height: auto; }
+  figcaption { margin-top: 8px; }
+  .contact > :global(.contact-links) { margin-top: 12px; }
+  .contact { padding-bottom: 0; }
+
+  @media (max-width: 600px) {
+    .v12 { width: calc(100% - 40px); padding-top: 24px; }
+    h1 { font-size: clamp(2.625rem, 8.8vw, 3.75rem); margin-top: 24px; }
+    .hero { padding-bottom: 24px; }
+    .section { padding-block: 24px; }
+    .contact { padding-bottom: 0; }
+  }
+</style>
