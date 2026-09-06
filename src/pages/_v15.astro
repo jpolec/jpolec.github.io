@@ -1,6 +1,5 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
-import { profile } from '../data/profile';
 import { services } from '../data/v15-services';
 
 const products = [
@@ -76,8 +75,13 @@ const selectedPosts = [
 ---
 
 <SimpleLayout
-  title={profile.name}
-  description={profile.description}
+  title="Jakub Polec - independent review of quantitative systems"
+  description="Independent review of quantitative research, investment infrastructure, and technology for hedge funds, family offices, and investors in investment technology."
+  ogTitle="Jakub Polec"
+  ogImage="https://jakubpolec.com/og-v15.png"
+  ogImageAlt="Jakub Polec. Independent review of quantitative systems. Research, investment infrastructure and technology."
+  ogImageWidth={1200}
+  ogImageHeight={630}
   canonical="https://jakubpolec.com/_v15/"
   noindex={true}
 >
