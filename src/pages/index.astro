@@ -417,7 +417,7 @@ const services = [
   }
 
   .role {
-    margin-bottom: 5px;
+    margin-bottom: 12px;
     color: var(--ink);
     font-size: clamp(1.05rem, 1.75vw, 1.28rem);
     font-weight: 600;
@@ -519,8 +519,8 @@ const services = [
   }
 
   .engagement-section {
-    margin-top: 38px;
-    padding: 38px 0 4px;
+    margin-top: 26px;
+    padding: 26px 0 4px;
   }
 
   .engagement-section .build-list { border-top: 0; }
@@ -544,12 +544,11 @@ const services = [
 
   @media (max-width: 680px) {
     .build-item.service-row { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-    .engagement-section { margin-top: 26px; padding-top: 32px; }
   }
 
   .articles-section {
-    margin-top: 38px;
-    padding-top: 38px;
+    margin-top: 26px;
+    padding-top: 26px;
   }
 
   .article-note { margin: 18px 0 0; font-size: 1rem; line-height: 1.62; color: var(--ink); }
@@ -557,12 +556,12 @@ const services = [
 
   /* ── What we build ── */
   .build-section {
-    margin-top: 38px;
-    padding: 38px 0 4px;
+    margin-top: 26px;
+    padding: 26px 0 4px;
   }
 
   .build-heading {
-    margin-bottom: 28px;
+    margin-bottom: 8px;
   }
 
   .build-heading h2 {
@@ -725,12 +724,12 @@ const services = [
 
   /* ── Links Section ── */
   .links-section {
-    margin-top: 38px;
-    padding: 38px 0 12px;
+    margin-top: 26px;
+    padding: 26px 0 12px;
   }
 
   .book-feature {
-    margin-bottom: 38px;
+    margin-bottom: 20px;
   }
 
   .book-overview {
@@ -1020,11 +1019,6 @@ const services = [
       padding-top: 32px;
     }
 
-    .build-section {
-      margin-top: 26px;
-      padding-top: 32px;
-    }
-
     .research-section {
       margin-top: 26px;
       padding-top: 32px;
@@ -1052,6 +1046,12 @@ const services = [
 
     .book-volume-card img {
       width: min(100%, 190px);
+    }
+  }
+  @media (max-width: 680px) {
+    .engagement-section, .build-section, .links-section, .articles-section {
+      margin-top: 22px;
+      padding-top: 24px;
     }
   }
 </style>
