@@ -1,0 +1,32 @@
+---
+import SimpleLayout from '../../layouts/SimpleLayout.astro';
+import { services } from '../../data/v15-services';
+export function getStaticPaths() {
+  return services.map(service => ({ params: { preview: '_v15', service: service.slug }, props: { service } }));
+}
+const { service } = Astro.props;
+---
+<SimpleLayout title={`${service.title} | Jakub Polec`} description={service.description} canonical={`https://jakubpolec.com/_v15/${service.slug}/`} noindex={true}>
+  <main>
+    <a class="back" href="/_v15/#work-with-me">← Jakub Polec</a>
+    <h1>{service.title}</h1>
+    <p>{service.description}</p>
+    <p>{service.deliverable}</p>
+    <h2>{service.checkTitle}</h2>
+    <ul>{service.checks.map(item => <li>{item}</li>)}</ul>
+    <p class="scope">Scope: {service.duration}. Fixed fee, quoted after a 30-minute scoping call. {service.note}</p>
+    <a class="button" href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+  </main>
+</SimpleLayout>
+<style>
+  main { width: min(780px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0 80px; }
+  .back { text-underline-offset: 4px; font-size: .94rem; }
+  h1 { margin: 40px 0 24px; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; line-height: 1.12; letter-spacing: -.03em; }
+  p, li { font-size: 1rem; line-height: 1.65; }
+  p { margin: 0 0 20px; }
+  h2 { margin: 40px 0 20px; font-size: 1.4rem; font-weight: 600; }
+  ul { padding-left: 20px; margin: 0; }
+  li { padding-left: 6px; margin-bottom: 14px; }
+  .scope { margin-top: 36px; }
+  .button { display: inline-block; padding: 14px 18px; border-radius: 8px; background: var(--ink); color: white; text-decoration: none; }
+</style>
