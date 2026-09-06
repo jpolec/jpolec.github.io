@@ -78,6 +78,24 @@ const selectedPosts = [
   },
 ];
 
+const services = [
+  {
+    "title": "Strategy & Backtest Review",
+    "description": "Before committing capital or taking a strategy into production, I review the research behind it: data quality, assumptions, portfolio construction, transaction costs and the risks of overfitting or information leakage.",
+    "deliverable": "You receive a written assessment of what the evidence supports, where the results may be misleading and which issues need further testing or correction."
+  },
+  {
+    "title": "Investment Systems Architecture",
+    "description": "When research, data, portfolio management, risk and execution need to work together, I help design the architecture or assess what is already in place. I examine data flows, system boundaries and operational requirements, including how decisions and results can be traced and reproduced.",
+    "deliverable": "You receive an architecture proposal and a practical implementation roadmap, with priorities, dependencies and technical trade-offs made explicit."
+  },
+  {
+    "title": "Technical Due Diligence",
+    "description": "Before investing in a business, selecting a platform or committing to a major technology project, I independently assess the underlying technology, models and engineering practices. I examine whether the system supports its claims and what it will take to operate, maintain and extend it.",
+    "deliverable": "You receive a structured assessment of strengths, material risks, unresolved questions and recommended next steps."
+  }
+];
+
 ---
 
 <SimpleLayout
@@ -104,37 +122,39 @@ const selectedPosts = [
       <div class="hero-copy">
         <h1 id="hero-title" class="animate-in">{profile.name}</h1>
         <p class="role animate-in">{profile.role}</p>
-        <p class="lead animate-in">
-          I combine quantitative finance with a deep technical understanding of fund operations —
-          from strategy research and portfolio construction to risk, execution and the systems behind them.
-        </p>
+        <p class="lead animate-in">I help funds, family offices and investment teams design, build and independently review quantitative strategies and investment systems. My work spans strategy research, backtest validation and the infrastructure connecting data, portfolio management, risk and execution.</p>
         <div class="hero-about animate-in">
-          <p>
-            I design strategies, build investment infrastructure, and provide architecture reviews,
-            backtest validation and technical due diligence for funds, hedge funds, family offices,
-            HNWIs and investment-technology teams.
-          </p>
-          <p>
-            My background spans high-energy physics, Microsoft, technology entrepreneurship
-            and Oracle, where I was {profile.career.oracleTitle}.
-          </p>
+          <p>My background spans high-energy physics, Microsoft, technology entrepreneurship and Oracle, where I served as Head of Industry and Innovation, Director, ECEMEA. Today, I lead QuantJourney, building investment technology and working directly with teams on their research and engineering challenges.</p>
+          <p>I care about the assumptions inside a model as much as the system around it.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="action-row hero-actions animate-in" aria-label="Contact links">
-          <a
-            href="https://calendly.com/jpolec/30min"
-            class="button primary"
-            target="_blank"
-            rel="noopener"
-          >
-            Set up a meeting
-          </a>
-          <a href="mailto:jakub@quantjourney.pro" class="button primary">
-            Email me
-          </a>
+    <section id="work-with-me" class="engagement-section animate-in" aria-labelledby="engagement-title">
+      <div class="build-heading">
+        <h2 id="engagement-title">Work with me</h2>
+        <p>Work with me when you need an independent assessment, a clear technical direction or help turning investment research into a working system.</p>
+      </div>
+      <div class="build-list">
+        {services.map((service) => (
+          <article class="build-item service-row">
+            <div class="build-name"><h3>{service.title}</h3></div>
+            <div class="service-copy">
+              <p class="build-summary">{service.description}</p>
+              <p class="build-summary">{service.deliverable}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="engagement-note">Engagements can take the form of a focused review, a defined project or ongoing advisory support. We agree on the scope and deliverables before work begins.</p>
+      <div class="action-row engagement-actions" aria-label="Project contact links">
+        <a href="https://calendly.com/jpolec/30min" class="button primary" target="_blank" rel="noopener">Discuss your project</a>
+        <a href="mailto:jakub@quantjourney.pro" class="button secondary">Email me</a>
+      </div>
+      <div class="social-row" aria-label="Social profiles">
           <a
             href="https://linkedin.com/in/jakubpolec"
-            class="button primary social-icon"
+            class="social-icon"
             target="_blank"
             rel="noopener"
             aria-label="LinkedIn profile"
@@ -146,7 +166,7 @@ const selectedPosts = [
           </a>
           <a
             href="https://x.com/jakubpolec"
-            class="button primary social-icon"
+            class="social-icon"
             target="_blank"
             rel="noopener"
             aria-label="X profile"
@@ -158,7 +178,7 @@ const selectedPosts = [
           </a>
           <a
             href="https://github.com/jpolec"
-            class="button primary social-icon"
+            class="social-icon"
             target="_blank"
             rel="noopener"
             aria-label="GitHub profile"
@@ -170,7 +190,7 @@ const selectedPosts = [
           </a>
           <a
             href="https://quantjourney.substack.com"
-            class="button primary social-icon"
+            class="social-icon"
             target="_blank"
             rel="noopener"
             aria-label="QuantJourney on Substack"
@@ -180,7 +200,6 @@ const selectedPosts = [
               <path d="M22.539 8.242H1.46V5.406h21.08zM1.46 10.813V24L12 18.11 22.54 24V10.813zM22.54 0H1.46v2.836h21.08z" />
             </svg>
           </a>
-        </div>
       </div>
     </section>
 
@@ -448,21 +467,6 @@ const selectedPosts = [
     margin-bottom: 0;
   }
 
-  .hero-actions {
-    margin-top: 18px;
-  }
-
-  .hero-actions .button {
-    min-height: 42px;
-    padding: 11px 15px;
-    font-size: 0.8rem;
-  }
-
-  .hero-actions .social-icon {
-    width: 42px;
-    padding: 9px;
-  }
-
   .social-icon svg {
     width: 17px;
     height: 17px;
@@ -505,14 +509,61 @@ const selectedPosts = [
   }
 
   .button.primary {
-    background: transparent;
+    background: var(--ink);
+    color: var(--page-bg);
+  }
+
+  .button.secondary {
+    background: var(--page-bg);
     color: var(--ink);
+  }
+
+  .button.secondary:hover {
+    background: var(--ink);
+    color: var(--page-bg);
   }
 
   .button.primary:hover {
     background: var(--ink);
     color: var(--page-bg);
     border-color: var(--ink);
+  }
+
+  .engagement-section {
+    margin-top: 38px;
+    padding: 38px 0 4px;
+    border-top: 1px solid var(--line);
+  }
+
+  .engagement-section .build-list { border-top: 0; }
+  .build-item.service-row {
+    grid-template-columns: minmax(190px, 0.68fr) minmax(0, 2.33fr);
+  }
+  .service-copy { min-width: 0; }
+  .service-copy .build-summary + .build-summary { margin-top: 12px; }
+  .engagement-note {
+    max-width: 790px;
+    margin: 22px 0 0;
+    color: var(--ink);
+    font-size: clamp(0.94rem, 1.18vw, 1rem);
+    line-height: 1.62;
+  }
+  .social-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+  .social-row .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--ink);
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  .social-row .social-icon:hover { outline: 1px solid var(--ink); outline-offset: -4px; }
+
+  @media (max-width: 680px) {
+    .build-item.service-row { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+    .engagement-section { margin-top: 26px; padding-top: 32px; }
   }
 
   .articles-section {
@@ -975,10 +1026,6 @@ const selectedPosts = [
     .action-row,
     .button {
       width: 100%;
-    }
-
-    .hero-actions .social-icon {
-      width: 42px;
     }
 
     .button {
