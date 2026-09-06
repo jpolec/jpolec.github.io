@@ -2,13 +2,14 @@
 import SimpleLayout from '../../layouts/SimpleLayout.astro';
 import { services } from '../../data/v15-services';
 export function getStaticPaths() {
-  return services.map(service => ({ params: { preview: '_v15', service: service.slug }, props: { service } }));
+  return ['_v15', 'services'].flatMap(preview => services.map(service => ({ params: { preview, service: service.slug }, props: { service, preview } })));
 }
-const { service } = Astro.props;
+const { service, preview } = Astro.props;
+const isPreview = preview === '_v15';
 ---
-<SimpleLayout title={`${service.title} | Jakub Polec`} description={service.description} canonical={`https://jakubpolec.com/_v15/${service.slug}/`} noindex={true}>
+<SimpleLayout title={`${service.title} | Jakub Polec`} description={service.description} canonical={`https://jakubpolec.com/${preview}/${service.slug}/`} noindex={isPreview} ogImage="https://jakubpolec.com/og-v15.png">
   <main>
-    <a class="back" href="/_v15/#work-with-me">← Jakub Polec</a>
+    <a class="back" href={isPreview ? "/_v15/#work-with-me" : "/#work-with-me"}>← Jakub Polec</a>
     <h1>{service.title}</h1>
     <p>{service.description}</p>
     <p>{service.deliverable}</p>

@@ -1,6 +1,7 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
-import { profilePageStructuredData, profile } from '../data/profile';
+import { profilePageStructuredData } from '../data/profile';
+import { services } from '../data/v15-services';
 
 const products = [
   {
@@ -70,37 +71,26 @@ const selectedPosts = [
   }
 ];
 
-const services = [
-  {
-    "title": "Strategy & Backtest Review",
-    "description": "Before committing capital or taking a strategy into production, I review the research behind it: data quality, assumptions, portfolio construction, transaction costs and the risks of overfitting or information leakage.",
-    "deliverable": "You receive a written assessment of what the evidence supports, where the results may be misleading and which issues need further testing or correction."
-  },
-  {
-    "title": "Investment Systems Architecture",
-    "description": "When research, data, portfolio management, risk and execution need to work together, I help design the architecture or assess what is already in place. I examine data flows, system boundaries and operational requirements, including how decisions and results can be traced and reproduced.",
-    "deliverable": "You receive an architecture proposal and a practical implementation roadmap, with priorities, dependencies and technical trade-offs made explicit."
-  },
-  {
-    "title": "Quant & Investment Technology Due Diligence",
-    "description": "Before investing in a business, selecting a platform or committing to a major technology project, I independently assess the underlying technology, models and engineering practices. I examine whether the system supports its claims and what it will take to operate, maintain and extend it.",
-    "deliverable": "You receive a structured assessment of strengths, material risks, unresolved questions and recommended next steps."
-  }
-];
+
 
 ---
 
 <SimpleLayout
-  title={profile.name}
-  description={profile.description}
-  canonical={profile.canonicalUrl}
+  title="Jakub Polec - independent review of quantitative systems"
+  description="Independent review of quantitative research, investment infrastructure, and technology for hedge funds, family offices, and investors in investment technology."
+  ogTitle="Jakub Polec"
+  ogImage="https://jakubpolec.com/og-v15.png"
+  ogImageAlt="Jakub Polec. Independent review of quantitative systems. Research, investment infrastructure and technology."
+  ogImageWidth={1200}
+  ogImageHeight={630}
+  canonical="https://jakubpolec.com/"
 >
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={JSON.stringify(profilePageStructuredData)}></script>
   </Fragment>
   <main class="page-shell">
     <section class="hero" aria-labelledby="hero-title">
-      <figure class="hero-image-wrap animate-in">
+      <figure class="hero-image-wrap">
         <img
           src="/jpbg.jpeg"
           alt="Jakub Połeć with Bill Gates during his Microsoft years"
@@ -110,20 +100,18 @@ const services = [
           loading="eager"
           decoding="async"
         />
-        <figcaption>With Bill Gates, during my Microsoft years.</figcaption>
       </figure>
 
       <div class="hero-copy">
-        <h1 id="hero-title" class="animate-in">{profile.name}</h1>
-        <p class="role animate-in">{profile.role}</p>
-        <p class="lead animate-in">I help funds, family offices and investment teams design, build and independently review quantitative strategies and investment systems. My work covers strategy research, backtest validation and the infrastructure connecting data, portfolio management, risk and execution.</p>
-        <div class="hero-about animate-in">
-          <p>My background spans high-energy physics, Microsoft, technology entrepreneurship and Oracle, where I served as Director and Head of Industry and Innovation for ECEMEA. Today, I lead QuantJourney, building investment technology and working directly with teams on their research and engineering challenges.</p>
-          <p>I care about the assumptions inside a model as much as the system around it.</p>
+        <h1 id="hero-title" >Jakub Polec</h1>
+        <p class="lead">I review quantitative systems, investment infrastructure, and the research behind them - and put the answer in writing.</p>
+        <div class="hero-about">
+          <p>I work with hedge funds, family offices, asset managers, and investors in investment technology. My background is high-energy physics at CERN, then Microsoft and Oracle, then twelve years building quantitative systems. I run QuantJourney, which builds investment infrastructure for buy-side teams.</p>
+          <p>That means I sell to the same firms that hire me to review theirs, so I say up front when the two overlap. I do not manage client capital and do not give investment advice.</p>
         </div>
         <div class="action-row hero-actions" aria-label="Contact links">
-          <a href="https://calendly.com/jpolec/30min" class="button primary" target="_blank" rel="noopener">Set up a meeting</a>
-          <a href="mailto:jakub@quantjourney.pro" class="button secondary">Email me</a>
+          <a href="https://calendly.com/jpolec/30min" class="button primary" target="_blank" rel="noopener">Book a 30-minute call</a>
+          <a href="https://quant-interviews.quantjourney.cloud" class="button secondary" target="_blank" rel="noopener">Read the book (free, 1,630 pages)</a>
         </div>
         <div class="social-row" aria-label="Social profiles">
             <a
@@ -178,10 +166,19 @@ const services = [
       </div>
     </section>
 
-    <section id="work-with-me" class="engagement-section animate-in" aria-labelledby="engagement-title">
+    <section class="situations-section" aria-labelledby="situations-title">
+      <div class="build-heading"><h2 id="situations-title">When people call me</h2></div>
+      <div class="situations">
+        <p>Someone claims a system works, and the decision depends on whether that is true.</p>
+        <p>A strategy is about to receive capital, and nobody in the room has independently checked the research behind it.</p>
+        <p>Research, data, portfolio, risk, and execution have grown into something nobody can trace end to end, and a decision has to be made about what to build, buy, or replace.</p>
+      </div>
+    </section>
+
+    <section id="work-with-me" class="engagement-section" aria-labelledby="engagement-title">
       <div class="build-heading">
         <h2 id="engagement-title">Work with me</h2>
-        <p>Contact me when you need an independent assessment, a clear technical direction or help turning investment research into a working system.</p>
+        <p>I take a small number of engagements at a time. Each one is fixed-scope, written up, and delivered on a date agreed in advance.</p>
       </div>
       <div class="build-list">
         {services.map((service) => (
@@ -190,18 +187,19 @@ const services = [
             <div class="service-copy">
               <p class="build-summary">{service.description}</p>
               <p class="build-summary">{service.deliverable}</p>
+              <p class="scope-line">Scope: {service.duration}. Fixed fee from {service.fee} USD. Final scope and fee agreed after a 30-minute scoping call. {service.note}</p>
+              <a class="scope-link" href={`/services/${service.slug}/`}>Full scope <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         ))}
       </div>
     </section>
 
-    <section id="what-i-build" class="build-section animate-in" aria-labelledby="working-title">
+    <section id="what-i-build" class="build-section" aria-labelledby="working-title">
       <div class="build-heading">
         <h2 id="working-title">What I build</h2>
         <p>
-          At QuantJourney, my team and I build products and proprietary infrastructure
-          for research, portfolio workflows, data, and controlled AI access.
+          QuantJourney is my company. This is what we run in production - the same systems the reviews above draw on.
         </p>
       </div>
       <div class="build-list">
@@ -233,7 +231,7 @@ const services = [
       </div>
     </section>
 
-    <section class="links-section animate-in" aria-labelledby="book-title">
+    <section class="links-section" aria-labelledby="book-title">
       <div class="book-feature">
         <div class="book-overview">
           <div class="book-heading">
@@ -249,7 +247,7 @@ const services = [
             </h2>
           </div>
           <div class="book-copy">
-            <p class="book-stats">1,600+ pages · 190+ problems · Python/C++/SQL</p>
+            <p class="book-stats">1,630 pages · 194 questions · Python/C++/SQL</p>
             <p>
               From mathematical foundations to production-grade quant systems.
             </p>
@@ -267,7 +265,7 @@ const services = [
         <div class="book-volume-grid" aria-label="Quant Interviews volumes">
           <article class="book-volume-card">
             <img
-              src="/quant-interviews-cover.webp"
+              src="/quant-interviews-volume-1.svg"
               alt="Quant Interviews Volume I cover"
               width="540"
               height="763"
@@ -281,7 +279,7 @@ const services = [
           </article>
           <article class="book-volume-card">
             <img
-              src="/quant-interviews-cover.webp"
+              src="/quant-interviews-volume-2.svg"
               alt="Quant Interviews Volume II cover"
               width="540"
               height="763"
@@ -297,10 +295,10 @@ const services = [
       </div>
     </section>
 
-    <section class="articles-section animate-in" aria-labelledby="articles-title">
+    <section class="articles-section" aria-labelledby="articles-title">
       <div class="build-heading">
         <h2 id="articles-title">Selected Research</h2>
-        <p>On the QuantJourney blog, I have published 250+ articles covering investment strategies, alpha research, backtesting, portfolio construction, risk, data engineering, execution and applied AI. Four selected articles on portfolio systems, backtesting, alpha research and applied AI.</p>
+        <p>On the QuantJourney blog, I have published 250+ articles covering investment strategies, alpha research, backtesting, portfolio construction, risk, data engineering, execution and applied AI.</p>
       </div>
       <div class="build-list">
         {selectedPosts.map((post) => (
@@ -321,36 +319,20 @@ const services = [
         ))}
       </div>
       <p class="article-note"><a href="https://quantjourney.substack.com" target="_blank" rel="noopener">More on the QuantJourney blog <span aria-hidden="true">↗</span></a></p>
+      <div class="closing-contact">
+        <p>Bring the decision you are facing and whatever material you have. In thirty minutes I will tell you whether I can help, what it would take, and what it would cost.</p>
+        <div class="action-row" aria-label="Discuss your decision">
+          <a href="https://calendly.com/jpolec/30min" class="button primary" target="_blank" rel="noopener">Book a 30-minute call</a>
+          <!--email_off--><a href="mailto:jakub@quantjourney.pro" class="button secondary">Email me</a><!--/email_off-->
+        </div>
+      </div>
     </section>
 
 
   </main>
 </SimpleLayout>
 
-<script>
-  // Scroll-triggered fade-in animations
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    );
 
-    document.querySelectorAll('.animate-in').forEach((el) =>
-      observer.observe(el)
-    );
-  } else {
-    document
-      .querySelectorAll('.animate-in')
-      .forEach((el) => el.classList.add('visible'));
-  }
-</script>
 
 <style>
   .page-shell {
@@ -364,7 +346,7 @@ const services = [
   .hero {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(280px, 440px) minmax(0, 1fr);
+    grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
     gap: clamp(28px, 5vw, 64px);
     align-items: center;
     min-height: auto;
@@ -396,7 +378,7 @@ const services = [
 
   .hero-copy {
     position: relative;
-    top: 20px;
+    top: 0;
     z-index: 1;
   }
 
@@ -1054,4 +1036,18 @@ const services = [
       padding-top: 24px;
     }
   }
+  .lead { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.45; }
+  .hero-actions { gap: 10px; }
+  .hero-actions .button { font-size: .82rem; }
+  .situations-section { margin-top: 26px; padding: 26px 0 4px; }
+  .situations { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding-top: 18px; }
+  .situations p { margin: 0; font-size: 1rem; line-height: 1.62; }
+  .scope-line { margin: 20px 0 12px; font-size: .94rem; line-height: 1.6; }
+  .scope-link { font-size: .94rem; text-underline-offset: 4px; }
+  @media (max-width: 680px) {
+    .situations { grid-template-columns: 1fr; gap: 18px; }
+    .situations-section { margin-top: 22px; padding-top: 24px; }
+  }
+  .closing-contact { margin-top: 40px; }
+  .closing-contact p { margin: 0; font-size: 1rem; line-height: 1.62; }
 </style>
