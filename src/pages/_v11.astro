@@ -1,0 +1,155 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import ContactLinks from '../components/V7ContactLinks.astro';
+import { profile } from '../data/profile';
+
+const projects = [
+  { name: 'OneBook', detail: 'Research, portfolio state, risk and execution context in one workspace.', href: 'https://onebook.quantjourney.cloud/' },
+  { name: 'Quant API / MCP', detail: 'Governed financial-data routes for applications and approved AI clients.', href: 'https://api.quantjourney.cloud/' },
+  { name: 'Quant DataLake', detail: 'Market, fundamental and portfolio data for analytical workflows.', href: 'https://data.quantjourney.cloud/' },
+  { name: 'Backtester', detail: 'Python-native strategy research, reproducible workflows and diagnostics.', href: 'https://backtester.quantjourney.cloud/' },
+  { name: 'Agents', detail: 'Controlled financial tools with OAuth, scoped access and MCP.', href: 'https://agents.quantjourney.cloud/' },
+];
+const writing = [
+  { title: 'Quant Interviews', text: '1,600+ pages. 190+ problems. From mathematical foundations to Python, C++ and SQL.', href: 'https://quant-interviews.quantjourney.cloud' },
+  { title: 'Quant Blog', text: '200+ posts on quantitative research, markets, investment infrastructure and applied AI.', href: 'https://quantjourney.substack.com' },
+  { title: 'GitHub', text: 'Public repositories, working examples and release history.', href: 'https://github.com/jpolec' },
+];
+---
+
+<SimpleLayout
+  title="Jakub Połeć | Quantitative Systems & Engineering"
+  description="Quantitative development, research systems and investment infrastructure. Jakub Połeć, founder of QuantJourney."
+  canonical="https://jakubpolec.com/_v11/"
+  noindex={true}
+>
+  <main class="v11">
+    <section class="section hero" aria-labelledby="hero-title">
+      <div class="section-label">
+        <p class="name">{profile.name}</p>
+        <p>{profile.role}</p>
+        <h1 id="hero-title">Quantitative<br />thinking.<br />Production<br />engineering.</h1>
+      </div>
+      <div class="section-content">
+        <div class="summary">
+          <h2>What I build</h2>
+          <p>I build QuantJourney — from financial-data pipelines and backtesting to portfolio, risk and AI tools for investment teams.</p>
+        </div>
+        <div class="summary">
+          <h2>How I can help</h2>
+          <p>I can design and implement a system for your team, connect it to your existing infrastructure, or review the architecture, data and backtests you already have. I work with funds, family offices and investment-technology companies.</p>
+        </div>
+        <ContactLinks />
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="projects-title">
+      <div class="section-label"><h2 id="projects-title">QuantJourney projects</h2></div>
+      <div class="section-content">
+        <ul class="entries">
+          {projects.map((project) => (
+            <li>
+              <h3><a href={project.href} target="_blank" rel="noopener">{project.name}<span aria-hidden="true"> ↗</span></a></h3>
+              <p>{project.detail}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="note">QuantJourney builds investment technology. It does not manage client assets or provide investment advice.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="background-title">
+      <div class="section-label">
+        <h2 id="background-title">Background</h2>
+        <figure>
+          <img src="/jpbg.jpeg" alt="Jakub Połeć with Bill Gates during his Microsoft years" width="800" height="796" loading="lazy" decoding="async" />
+          <figcaption>With Bill Gates, during my Microsoft years.</figcaption>
+        </figure>
+      </div>
+      <div class="section-content">
+        <p>My path runs from high-energy physics through Microsoft, technology entrepreneurship and Oracle to quantitative finance.</p>
+        <p>At Oracle, I was {profile.career.oracleTitle}. Today, my work focuses on quantitative development and investment infrastructure.</p>
+        <p>I care about the assumptions inside a model as much as the system around it.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="writing-title">
+      <div class="section-label"><h2 id="writing-title">Writing and code</h2></div>
+      <div class="section-content">
+        <ul class="entries">
+          {writing.map((item) => (
+            <li>
+              <h3><a href={item.href} target="_blank" rel="noopener">{item.title}<span aria-hidden="true"> ↗</span></a></h3>
+              <p>{item.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-title">
+      <div class="section-label"><h2 id="contact-title">Working together</h2></div>
+      <div class="section-content">
+        <p>Email me a brief outline of what you’re building, what already exists and where you need help. We can agree on the scope, constraints and expected outcome before starting.</p>
+        <ContactLinks />
+      </div>
+    </section>
+  </main>
+</SimpleLayout>
+
+<style>
+  .v11 {
+    --text: #102c48;
+    --rule: #d8e1e9;
+    width: min(1120px, calc(100% - 64px));
+    margin-inline: auto;
+    padding: 36px 0 20px;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, p, ul, figure { margin: 0; }
+  h1, h2, h3 { font-weight: 600; }
+  h2, h3, figcaption { font-size: inherit; line-height: inherit; color: inherit; }
+  p { text-wrap: pretty; }
+  a { color: inherit; font: inherit; text-underline-offset: 4px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+  /* Every section shares the same two columns and alignment. */
+  .section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+    padding-block: 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .section-label, .section-content { min-width: 0; }
+  .hero { align-items: center; padding-top: 0; padding-bottom: 36px; border-top: 0; }
+  .name { font-weight: 600; margin-bottom: 4px; }
+  h1 { margin-top: 20px; font-size: clamp(3rem, 5.4vw, 4.5rem); line-height: 1.02; letter-spacing: -0.06em; overflow-wrap: anywhere; }
+  .summary + .summary { margin-top: 22px; }
+  .summary p { margin-top: 8px; }
+  .section-content > p + p { margin-top: 14px; }
+  .section-content > :global(.contact-links) { margin-top: 16px; }
+  .entries { padding: 0; list-style: none; }
+  .entries li { padding-block: 15px; }
+  .entries li:first-child { padding-top: 0; }
+  .entries li:last-child { padding-bottom: 0; }
+  .entries li + li { border-top: 1px solid var(--rule); }
+  .entries h3 a { display: inline-block; padding-block: 9px; margin-block: -9px; }
+  .entries p { margin-top: 5px; }
+  .note { margin-top: 18px; }
+  figure { max-width: 240px; margin-top: 18px; }
+  figure img { width: 100%; height: auto; }
+  figcaption { margin-top: 8px; }
+
+  @media (max-width: 760px) {
+    .v11 { width: calc(100% - 40px); padding-top: 24px; }
+    .section { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-block: 24px; }
+    .hero { padding-top: 0; gap: 28px; }
+    h1 { font-size: clamp(2.75rem, 10.5vw, 4rem); }
+  }
+</style>

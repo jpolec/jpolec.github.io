@@ -8,6 +8,7 @@ import VersionSevenPage from './_v7.astro';
 import VersionEightPage from './_v8.astro';
 import VersionNinePage from './_v9.astro';
 import VersionTenPage from './_v10.astro';
+import VersionElevenPage from './_v11.astro';
 
 /**
  * Astro treats files whose name begins with an underscore as components rather
@@ -15,7 +16,7 @@ import VersionTenPage from './_v10.astro';
  * these explicit, static preview paths.
  */
 export function getStaticPaths() {
-  return ['_v2', '_v3', '_v4', '_v5', '_v6', '_v7', '_v8', '_v9', '_v10'].map((slug) => ({ params: { slug } }));
+  return ['_v2', '_v3', '_v4', '_v5', '_v6', '_v7', '_v8', '_v9', '_v10', '_v11'].map((slug) => ({ params: { slug } }));
 }
 
 const pages = {
@@ -28,6 +29,7 @@ const pages = {
   _v8: VersionEightPage,
   _v9: VersionNinePage,
   _v10: VersionTenPage,
+  _v11: VersionElevenPage,
 };
 const Page = pages[Astro.params.slug as keyof typeof pages];
 ---
