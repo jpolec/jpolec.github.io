@@ -1,0 +1,221 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import ContactLinks from '../components/V7ContactLinks.astro';
+import { profile } from '../data/profile';
+
+const projects = [
+  { name: 'OneBook', area: 'Portfolio & decisions', detail: 'Research, portfolio state, risk and execution context in one workspace.', href: 'https://onebook.quantjourney.cloud/' },
+  { name: 'Quant API / MCP', area: 'Data access', detail: 'Governed financial-data routes for applications and approved AI clients.', href: 'https://api.quantjourney.cloud/' },
+  { name: 'Quant DataLake', area: 'Data infrastructure', detail: 'Market, fundamental and portfolio data for analytical workflows.', href: 'https://data.quantjourney.cloud/' },
+  { name: 'Backtester', area: 'Systematic research', detail: 'Python-native strategy research, reproducible workflows and diagnostics.', href: 'https://backtester.quantjourney.cloud/' },
+  { name: 'Agents', area: 'Applied AI', detail: 'Controlled financial tools with OAuth, scoped access and MCP.', href: 'https://agents.quantjourney.cloud/' },
+];
+const writing = [
+  { title: 'Quant Interviews', text: '1,600+ pages. 190+ problems. From mathematical foundations to Python, C++ and SQL.', href: 'https://quant-interviews.quantjourney.cloud' },
+  { title: 'Quant Blog', text: '200+ posts on quantitative research, markets, investment infrastructure and applied AI.', href: 'https://quantjourney.substack.com' },
+  { title: 'GitHub', text: 'Public repositories, working examples and release history.', href: 'https://github.com/jpolec' },
+];
+---
+
+<SimpleLayout
+  title="Jakub Połeć | Quantitative Systems & Engineering"
+  description="Quantitative development, research systems and investment infrastructure. Jakub Połeć, founder of QuantJourney."
+  canonical="https://jakubpolec.com/_v8/"
+  noindex={true}
+>
+  <div class="v8">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="person-name">{profile.name}</p>
+          <p class="eyebrow">Quant systems architect / Founder of QuantJourney</p>
+          <h1 id="hero-title">Quantitative<br />thinking.<br /><span>Production<br />engineering.</span></h1>
+          <p class="intro">I build the systems between a research idea and an investment decision.</p>
+          <p class="hero-description">Data, backtesting, portfolio, risk and AI infrastructure for funds, family offices and investment-technology teams.</p>
+          <div class="hero-actions">
+            <ContactLinks />
+          </div>
+        </div>
+
+        <aside class="collaboration" aria-labelledby="collaboration-title">
+          <h2 id="collaboration-title">Development and technical review</h2>
+          <p>I can help turn a research workflow into a working system: design the architecture, build the data pipeline and implement the research, portfolio or risk tools around it.</p>
+          <p>For an existing platform or strategy, I can review the data quality, backtest design and implementation risks, then work through the changes with your team.</p>
+          <p>The work can be a focused review, a specific component or a broader system build.</p>
+        </aside>
+      </section>
+
+      <section id="work" class="work-section wrap section" aria-labelledby="work-title">
+        <div class="section-heading">
+          <div class="heading-row">
+            <h2 id="work-title">QuantJourney projects</h2>
+            <p>Research, data, portfolio workflows and controlled AI access — built within QuantJourney.</p>
+          </div>
+        </div>
+        <div class="project-list">
+          {projects.map((project) => (
+            <a class="project" href={project.href} target="_blank" rel="noopener">
+              <h3>{project.name}</h3>
+              <span class="project-area">{project.area}</span>
+              <p>{project.detail}</p>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
+        <p class="platform-note">QuantJourney builds investment technology. It does not manage client assets or provide investment advice.</p>
+      </section>
+
+      <section id="background" class="background-section section" aria-labelledby="background-title">
+        <div class="wrap background-grid">
+          <figure>
+            <img src="/jpbg.jpeg" alt="Jakub Połeć with Bill Gates during his Microsoft years" width="800" height="796" loading="lazy" decoding="async" />
+            <figcaption>With Bill Gates, during my Microsoft years.</figcaption>
+          </figure>
+          <div class="background-copy">
+            <h2 id="background-title">From physics to quantitative systems</h2>
+            <p>My path runs from high-energy physics through Microsoft, technology entrepreneurship and Oracle to quantitative finance.</p>
+            <p>At Oracle, I was {profile.career.oracleTitle}. Today, my work focuses on quantitative development and investment infrastructure.</p>
+            <p class="perspective">I care about the assumptions inside a model as much as the system around it.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="approach-section wrap section" aria-labelledby="approach-title">
+        <div class="section-heading">
+          <div class="heading-row">
+            <h2 id="approach-title">How I work</h2>
+            <p>Research objective, operating constraints, data and implementation.</p>
+          </div>
+        </div>
+        <ol class="approach-list">
+          <li><h3>Scope and requirements</h3><p>Establish the research objective, users, data and operating constraints. Define the expected result and how to evaluate it.</p></li>
+          <li><h3>Technical review</h3><p>Inspect assumptions, data quality, backtest design and system boundaries. Make the trade-offs explicit.</p></li>
+          <li><h3>Implementation and validation</h3><p>Turn the findings into an implementation or a focused technical review, with validation and a clear handover.</p></li>
+        </ol>
+      </section>
+
+      <section class="writing-section wrap section" aria-labelledby="writing-title">
+        <div class="section-heading">
+          <h2 id="writing-title">Writing and code</h2>
+        </div>
+        <div class="writing-grid">
+          {writing.map((item) => (
+            <a href={item.href} target="_blank" rel="noopener" class="writing-item">
+              <h3>{item.title}<span aria-hidden="true">↗</span></h3>
+              <p>{item.text}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div class="wrap contact-grid">
+          <div><h2 id="contact-title">Working together</h2></div>
+          <div class="contact-copy">
+            <p>Email me a brief outline of what you’re building, what already exists and where you need help. We can define a useful scope from there.</p>
+            <ContactLinks />
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</SimpleLayout>
+
+<style>
+  .v8 { --navy: #102c48; --body: var(--navy); --quiet: var(--navy); --rule: #d8e1e9; --pink: var(--navy); color: var(--navy); font-size: 1rem; line-height: 1.55; }
+  .wrap { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+  h1, h2, h3, p, figure { margin: 0; }
+  h1, h2, h3 { font-weight: 600; }
+  h1, h2 { letter-spacing: -0.05em; line-height: 1.08; text-wrap: balance; }
+  h2 { font-size: clamp(1.625rem, 2.7vw, 2.125rem); }
+  h3 { font-size: 1rem; line-height: 1.55; }
+  p { text-wrap: pretty; }
+  a { text-decoration: none; }
+  a { -webkit-tap-highlight-color: transparent; }
+  a:focus-visible { outline: 2px solid var(--pink); outline-offset: 5px; }
+  .skip-link { position: absolute; top: 8px; left: 12px; transform: translateY(-200%); z-index: 5; padding: 10px 16px; background: white; }
+  .skip-link:focus { transform: none; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr); gap: clamp(32px, 4.5vw, 56px); align-items: center; padding-block: 36px; }
+  .eyebrow { font-size: 1rem; letter-spacing: 0; font-weight: 500; line-height: 1.65; }
+  .person-name { font-weight: 600; margin-bottom: 4px; }
+  .hero .eyebrow { max-width: 460px; margin-bottom: 18px; color: var(--quiet); }
+  h1 { font-size: clamp(3rem, 5.4vw, 4.5rem); letter-spacing: -0.06em; line-height: 1.02; overflow-wrap: anywhere; }
+  h1 > span { color: var(--pink); }
+  .intro { margin-top: 20px; max-width: 480px; }
+  .hero-description { margin-top: 10px; max-width: 490px; color: var(--body); }
+  .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 26px; margin-top: 18px; }
+  .collaboration { border-left: 1px solid var(--rule); padding-left: clamp(24px, 3vw, 36px); }
+  .collaboration h2 { font-size: 1rem; letter-spacing: 0; line-height: 1.55; }
+  .collaboration p { margin-top: 16px; }
+  .contact-copy > :global(.contact-links) { margin-top: 12px; }
+  .section { padding-block: 36px; scroll-margin-top: 20px; }
+  .work-section { border-top: 1px solid var(--rule); }
+  .section-heading { margin-bottom: 24px; }
+  .heading-row { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 36px; }
+  .heading-row > p { color: var(--body); max-width: 440px; }
+  .project { display: grid; grid-template-columns: minmax(170px, 0.8fr) minmax(170px, 0.8fr) minmax(0, 1.75fr) auto; gap: 20px; padding: 15px 12px; margin-inline: -12px; border-top: 1px solid var(--rule); align-items: baseline; transition: background 160ms ease; }
+  .project:last-child { border-bottom: 1px solid var(--rule); }
+  .project-area { color: var(--quiet); }
+  .project p { color: var(--body); }
+  .project-arrow { color: var(--pink); }
+  .project:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
+  .platform-note { margin-top: 16px; color: var(--quiet); }
+  .background-section { border-block: 1px solid var(--rule); }
+  .background-grid { display: grid; grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+  figure { max-width: 300px; }
+  figure img { width: 100%; height: auto; }
+  figcaption { color: var(--quiet); margin-top: 12px; }
+  .background-copy > p { margin-top: 12px; color: var(--body); }
+  .background-copy > .perspective { color: var(--navy); }
+  .approach-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; list-style: none; padding: 0; margin: 0; }
+  .approach-list li { border-top: 1px solid var(--rule); padding-top: 14px; }
+  .approach-list h3 { margin-top: 0; }
+  .approach-list p { margin-top: 8px; color: var(--body); }
+  .writing-section { padding-top: 0; }
+  .writing-section .section-heading { padding-top: 32px; border-top: 1px solid var(--rule); }
+  .writing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+  .writing-item h3 { display: flex; justify-content: space-between; gap: 16px; }
+  .writing-item h3 span { color: var(--pink); }
+  .writing-item p { margin-top: 8px; color: var(--body); }
+  .writing-item:hover h3 { color: var(--pink); text-decoration: underline; text-underline-offset: 5px; }
+  .contact-section { border-top: 1px solid var(--rule); padding-block: 32px; scroll-margin-top: 24px; }
+  .contact-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 36px; align-items: start; }
+  .contact-copy p { color: var(--body); }
+  .contact-copy p + p { margin-top: 10px; }
+  @media (max-width: 1000px) {
+    .wrap { width: calc(100% - 48px); }
+    .hero { gap: 36px; grid-template-columns: 1.1fr 1fr; }
+    .project { grid-template-columns: minmax(170px, 0.7fr) minmax(0, 1.3fr) auto; gap: 8px 24px; }
+    .project h3 { grid-column: 1; grid-row: 1; }
+    .project-area { grid-column: 1; grid-row: 2; font-size: 1rem; }
+    .project p { grid-column: 2; grid-row: 1 / 3; }
+    .project-arrow { grid-column: 3; grid-row: 1; }
+    .background-grid { gap: 40px; }
+    .heading-row, .contact-grid { gap: 40px; }
+  }
+  @media (max-width: 760px) {
+    .wrap { width: calc(100% - 40px); }
+    .hero { grid-template-columns: 1fr; gap: 28px; padding-block: 28px; }
+    .hero .eyebrow { margin-bottom: 20px; }
+    h1 { font-size: clamp(2.75rem, 10.5vw, 4rem); }
+    .hero-description, .intro { max-width: 550px; }
+    .collaboration { border-left: 0; border-top: 1px solid var(--rule); padding: 24px 0 0; }
+    .section { padding-block: 28px; }
+    .heading-row, .background-grid, .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+    .section-heading { margin-bottom: 20px; }
+    .heading-row > p { max-width: 550px; }
+    .project { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; padding-block: 16px; }
+    .project h3, .project-area, .project p { grid-column: 1; grid-row: auto; }
+    .project p { margin-top: 6px; }
+    .project-arrow { grid-column: 2; grid-row: 1; }
+    .background-grid { gap: 24px; }
+    .approach-list, .writing-grid { grid-template-columns: 1fr; gap: 28px; }
+    .writing-section { padding-top: 0; }
+    .writing-section .section-heading { padding-top: 28px; }
+    .writing-item + .writing-item { padding-top: 24px; border-top: 1px solid var(--rule); }
+    .contact-section { padding-block: 28px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .project { transition: none; } }
+</style>
