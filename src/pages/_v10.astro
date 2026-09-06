@@ -1,0 +1,128 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import ContactLinks from '../components/V7ContactLinks.astro';
+import { profile } from '../data/profile';
+
+const projects = [
+  { name: 'OneBook', detail: 'Research, portfolio state, risk and execution context in one workspace.', href: 'https://onebook.quantjourney.cloud/' },
+  { name: 'Quant API / MCP', detail: 'Governed financial-data routes for applications and approved AI clients.', href: 'https://api.quantjourney.cloud/' },
+  { name: 'Quant DataLake', detail: 'Market, fundamental and portfolio data for analytical workflows.', href: 'https://data.quantjourney.cloud/' },
+  { name: 'Backtester', detail: 'Python-native strategy research, reproducible workflows and diagnostics.', href: 'https://backtester.quantjourney.cloud/' },
+  { name: 'Agents', detail: 'Controlled financial tools with OAuth, scoped access and MCP.', href: 'https://agents.quantjourney.cloud/' },
+];
+const writing = [
+  { title: 'Quant Interviews', text: '1,600+ pages. 190+ problems. From mathematical foundations to Python, C++ and SQL.', href: 'https://quant-interviews.quantjourney.cloud' },
+  { title: 'Quant Blog', text: '200+ posts on quantitative research, markets, investment infrastructure and applied AI.', href: 'https://quantjourney.substack.com' },
+  { title: 'GitHub', text: 'Public repositories, working examples and release history.', href: 'https://github.com/jpolec' },
+];
+---
+
+<SimpleLayout
+  title="Jakub Połeć | Quantitative Systems & Engineering"
+  description="Quantitative development, research systems and investment infrastructure. Jakub Połeć, founder of QuantJourney."
+  canonical="https://jakubpolec.com/_v10/"
+  noindex={true}
+>
+  <main class="v10">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="name">{profile.name}</p>
+      <p>{profile.role}</p>
+      <h1 id="hero-title"><span>Quantitative thinking.</span><span>Production engineering.</span></h1>
+      <div class="intro-block">
+        <h2>What I build</h2>
+        <p>I build QuantJourney — from financial-data pipelines and backtesting to portfolio, risk and AI tools for investment teams.</p>
+      </div>
+      <div class="intro-block">
+        <h2>How I can help</h2>
+        <p>I can design and implement a system for your team, connect it to your existing infrastructure, or review the architecture, data and backtests you already have. I work with funds, family offices and investment-technology companies.</p>
+      </div>
+      <ContactLinks />
+    </section>
+
+    <section class="section" aria-labelledby="projects-title">
+      <h2 id="projects-title">QuantJourney projects</h2>
+      <ul class="linked-list">
+        {projects.map((project) => (
+          <li>
+            <h3><a href={project.href} target="_blank" rel="noopener">{project.name}<span aria-hidden="true"> ↗</span></a></h3>
+            <p>{project.detail}</p>
+          </li>
+        ))}
+      </ul>
+      <p class="note">QuantJourney builds investment technology. It does not manage client assets or provide investment advice.</p>
+    </section>
+
+    <section class="section" aria-labelledby="background-title">
+      <h2 id="background-title">Background</h2>
+      <p>My path runs from high-energy physics through Microsoft, technology entrepreneurship and Oracle to quantitative finance.</p>
+      <p>At Oracle, I was {profile.career.oracleTitle}. Today, my work focuses on quantitative development and investment infrastructure.</p>
+      <figure>
+        <img src="/jpbg.jpeg" alt="Jakub Połeć with Bill Gates during his Microsoft years" width="800" height="796" loading="lazy" decoding="async" />
+        <figcaption>With Bill Gates, during my Microsoft years.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="writing-title">
+      <h2 id="writing-title">Writing and code</h2>
+      <ul class="linked-list">
+        {writing.map((item) => (
+          <li>
+            <h3><a href={item.href} target="_blank" rel="noopener">{item.title}<span aria-hidden="true"> ↗</span></a></h3>
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Working together</h2>
+      <p>Email me a brief outline of what you’re building, what already exists and where you need help. We can agree on the scope, constraints and expected outcome before starting.</p>
+      <ContactLinks />
+    </section>
+  </main>
+</SimpleLayout>
+
+<style>
+  .v10 {
+    --text: #102c48;
+    --rule: #d8e1e9;
+    width: min(760px, calc(100% - 48px));
+    margin-inline: auto;
+    padding: 40px 0 24px;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, p, ul, figure { margin: 0; }
+  h1, h2, h3 { font-weight: 600; }
+  h2, h3, figcaption { font-size: inherit; line-height: inherit; color: inherit; }
+  p { text-wrap: pretty; }
+  a { color: inherit; font: inherit; text-underline-offset: 4px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  .name { font-weight: 600; margin-bottom: 4px; }
+  h1 { font-size: clamp(2.25rem, 6vw, 3.875rem); line-height: 1.08; letter-spacing: -0.055em; margin: 24px 0 28px; overflow-wrap: anywhere; }
+  h1 span { display: block; }
+  .intro-block + .intro-block { margin-top: 20px; }
+  .intro-block > p, .section > p { margin-top: 8px; }
+  .section > p + p { margin-top: 12px; }
+  .hero > :global(.contact-links), .section > :global(.contact-links) { margin-top: 16px; }
+  .hero { padding-bottom: 28px; }
+  .section { padding-block: 28px; border-top: 1px solid var(--rule); }
+  .linked-list { list-style: none; padding: 0; margin-top: 8px; }
+  .linked-list li { padding-block: 14px; }
+  .linked-list li + li { border-top: 1px solid var(--rule); }
+  .linked-list h3 a { display: inline-block; padding-block: 9px; margin-block: -9px; }
+  .linked-list p { margin-top: 4px; }
+  .section > .note { margin-top: 8px; }
+  figure { max-width: 300px; margin-top: 20px; }
+  figure img { width: 100%; height: auto; }
+  figcaption { margin-top: 8px; }
+
+  @media (max-width: 600px) {
+    .v10 { width: calc(100% - 40px); padding-top: 24px; }
+    h1 { margin-block: 20px 24px; }
+    .section { padding-block: 24px; }
+  }
+</style>
