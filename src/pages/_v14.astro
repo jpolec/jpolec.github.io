@@ -242,7 +242,7 @@ const services = [
                 target="_blank"
                 rel="noopener"
               >
-                My book: Quant Interviews
+                My book
               </a>
             </h2>
           </div>
@@ -394,6 +394,7 @@ const services = [
 
   .hero-copy {
     position: relative;
+    top: 20px;
     z-index: 1;
   }
 
@@ -518,7 +519,6 @@ const services = [
   .engagement-section {
     margin-top: 38px;
     padding: 38px 0 4px;
-    border-top: 1px solid var(--line);
   }
 
   .engagement-section .build-list { border-top: 0; }
@@ -557,7 +557,6 @@ const services = [
   .build-section {
     margin-top: 38px;
     padding: 38px 0 4px;
-    border-top: 1px solid var(--line);
   }
 
   .build-heading {
@@ -596,6 +595,10 @@ const services = [
     align-items: start;
     padding: 29px 0 30px;
     border-bottom: 1px solid var(--line);
+  }
+
+  .build-list > .build-item:last-child {
+    border-bottom: 0;
   }
 
   .build-name {
