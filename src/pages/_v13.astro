@@ -1,0 +1,1071 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import { profile } from '../data/profile';
+
+const products = [
+  {
+    name: 'OneBook',
+    destination: 'onebook.quantjourney.cloud',
+    description: 'A buy-side investment operating layer connecting research, portfolio state, risk, decisions, and execution.',
+    href: 'https://onebook.quantjourney.cloud/',
+    action: 'Open OneBook',
+    external: true,
+  },
+  {
+    name: 'Quant API / MCP',
+    destination: 'api.quantjourney.cloud',
+    description: 'Managed financial-data infrastructure with governed routes, normalized contracts, and approved MCP access.',
+    href: 'https://api.quantjourney.cloud',
+    action: 'Open Quant API / MCP',
+    external: true,
+  },
+  {
+    name: 'Quant DataLake',
+    destination: 'data.quantjourney.cloud',
+    description: 'A financial-data workspace for approved market, fundamentals, portfolio, and analytical workflows.',
+    href: 'https://data.quantjourney.cloud',
+    action: 'Open Quant DataLake',
+    external: true,
+  },
+  {
+    name: 'Backtester',
+    destination: 'backtester.quantjourney.cloud',
+    description: 'Python-native strategy research with reproducible workflows, diagnostics, and reviewable outputs.',
+    href: 'https://backtester.quantjourney.cloud',
+    action: 'Open Backtester',
+    external: true,
+  },
+  {
+    name: 'Quant Infra',
+    destination: 'quantjourney.cloud',
+    description: 'Proprietary infrastructure design and delivery for hedge funds, other investment funds, family offices, and investment teams.',
+    href: 'https://quantjourney.cloud',
+    action: 'Open Quant Infra',
+    external: true,
+  },
+  {
+    name: 'Agents',
+    destination: 'agents.quantjourney.cloud',
+    description: 'Controlled tools for approved financial and investment workflows, with OAuth, scoped access, and MCP.',
+    href: 'https://agents.quantjourney.cloud',
+    action: 'Open Agents',
+    external: true,
+  },
+];
+
+const publicResearch = [
+  {
+    name: 'Quant Blog',
+    destination: 'quantjourney.substack.com',
+    description: '200+ long-form posts on quantitative research, markets, investment infrastructure, and applied AI.',
+    href: 'https://quantjourney.substack.com',
+    action: 'Open Quant Blog',
+  },
+  {
+    name: 'GitHub',
+    destination: 'github.com/jpolec',
+    description: 'Public repositories, working examples, and release history behind my quant and infrastructure work.',
+    href: 'https://github.com/jpolec',
+    action: 'Open GitHub',
+  },
+];
+---
+
+<SimpleLayout
+  title={profile.name}
+  description={profile.description}
+  canonical="https://jakubpolec.com/_v13/"
+  noindex={true}
+>
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <figure class="hero-image-wrap animate-in">
+        <img
+          src="/jpbg.jpeg"
+          alt="Jakub Połeć with Bill Gates during his Microsoft years"
+          class="hero-image"
+          width="440"
+          height="550"
+          loading="eager"
+          decoding="async"
+        />
+        <figcaption>With Bill Gates, during my Microsoft years.</figcaption>
+      </figure>
+
+      <div class="hero-copy">
+        <h1 id="hero-title" class="animate-in">{profile.name}</h1>
+        <p class="role animate-in">{profile.role}</p>
+        <p class="lead animate-in">
+          I can help you build research, data, portfolio, risk and AI systems, review your
+          platform architecture, validate your strategies and backtests, or carry out technical due diligence.
+        </p>
+        <div class="hero-about animate-in">
+          <p>
+            I work with hedge funds, family offices, asset managers and
+            investment-technology companies.
+          </p>
+        </div>
+
+        <div class="action-row hero-actions animate-in" aria-label="Contact links">
+          <a
+            href="https://calendly.com/jpolec/30min"
+            class="button primary"
+            target="_blank"
+            rel="noopener"
+          >
+            Set up a meeting
+          </a>
+          <a href="mailto:jakub@quantjourney.pro" class="button primary">
+            Email me
+          </a>
+          <a
+            href="https://linkedin.com/in/jakubpolec"
+            class="button primary social-icon"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn profile"
+            title="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.94 8.5A1.72 1.72 0 1 0 6.94 5.06a1.72 1.72 0 0 0 0 3.44ZM5.48 18.94h2.93V10H5.48v8.94ZM10.25 10v8.94h2.92v-4.42c0-1.17.22-2.3 1.67-2.3 1.43 0 1.45 1.34 1.45 2.38v4.34h2.93v-4.93c0-2.42-.52-4.28-3.35-4.28-1.36 0-2.27.74-2.64 1.45h-.04V10h-2.94Z" />
+            </svg>
+          </a>
+          <a
+            href="https://x.com/jakubpolec"
+            class="button primary social-icon"
+            target="_blank"
+            rel="noopener"
+            aria-label="X profile"
+            title="X"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M18.9 2.25h3.68l-8.04 9.19L24 21.75h-7.41l-5.8-7.59-6.64 7.59H.46l8.6-9.83L0 2.25h7.6l5.24 6.93 6.06-6.93Zm-1.29 17.3h2.04L6.49 4.34H4.3L17.61 19.55Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="what-i-build" class="build-section animate-in" aria-labelledby="working-title">
+      <div class="build-heading">
+        <h2 id="working-title">What we build</h2>
+        <p>
+          Together with my team at QuantJourney, I build products and proprietary infrastructure
+          for research, portfolio workflows, data, and controlled AI access.
+        </p>
+      </div>
+      <div class="build-list">
+        {products.map((product) => (
+          <article class="build-item">
+            <div class="build-name">
+              <a
+                class="build-identity"
+                href={product.href}
+                target={product.external ? '_blank' : undefined}
+                rel={product.external ? 'noopener' : undefined}
+              >
+                <h3>{product.name}</h3>
+                <span class="build-destination">{product.destination}</span>
+              </a>
+            </div>
+            <p class="build-summary">{product.description}</p>
+            <div class="build-action">
+              <a
+                href={product.href}
+                target={product.external ? '_blank' : undefined}
+                rel={product.external ? 'noopener' : undefined}
+              >
+                {product.action} <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="platform-note">QuantJourney builds investment technology. It does not manage client capital or provide investment advice.</p>
+    </section>
+
+    <section class="background-section animate-in" aria-labelledby="background-title">
+      <div class="build-heading">
+        <h2 id="background-title">From physics to quantitative systems</h2>
+        <p>My path runs from high-energy physics through Microsoft, technology entrepreneurship and Oracle to quantitative finance.</p>
+        <p>At Oracle, I was {profile.career.oracleTitle}. Today, my work focuses on quantitative development and investment infrastructure.</p>
+        <p>I care about the assumptions inside a model as much as the system around it.</p>
+      </div>
+    </section>
+
+    <section class="links-section animate-in" aria-labelledby="book-title">
+      <div class="book-feature">
+        <div class="book-overview">
+          <div class="book-heading">
+            <h2 id="book-title">
+              <a
+                class="book-identity"
+                href="https://quant-interviews.quantjourney.cloud"
+                target="_blank"
+                rel="noopener"
+              >
+                Book Quant Interviews
+              </a>
+            </h2>
+          </div>
+          <div class="book-copy">
+            <p class="book-stats">1,600+ pages · 190+ problems · Python/C++/SQL</p>
+            <p>
+              From mathematical foundations to production-grade quant systems.
+            </p>
+          </div>
+          <div class="build-action book-action">
+            <a
+              href="https://quant-interviews.quantjourney.cloud"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Quant Interviews <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+        <div class="book-volume-grid" aria-label="Quant Interviews volumes">
+          <article class="book-volume-card">
+            <img
+              src="/quant-interviews-cover.webp"
+              alt="Quant Interviews Volume I cover"
+              width="540"
+              height="763"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="book-volume-copy">
+              <span class="book-volume-label">Volume I</span>
+              <span class="book-volume-title">Mathematical Foundations</span>
+            </div>
+          </article>
+          <article class="book-volume-card">
+            <img
+              src="/quant-interviews-cover.webp"
+              alt="Quant Interviews Volume II cover"
+              width="540"
+              height="763"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="book-volume-copy">
+              <span class="book-volume-label">Volume II</span>
+              <span class="book-volume-title">Production-Grade Quant Systems</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section animate-in" aria-labelledby="research-title">
+      <div class="build-heading">
+        <h2 id="research-title">Public research</h2>
+        <p>Writing and public code for quantitative practitioners, researchers, and developers.</p>
+      </div>
+      <div class="build-list">
+        {publicResearch.map((resource) => (
+          <article class="build-item">
+            <div class="build-name">
+              <a
+                class="build-identity"
+                href={resource.href}
+                target="_blank"
+                rel="noopener"
+              >
+                <h3>{resource.name}</h3>
+                <span class="build-destination">{resource.destination}</span>
+              </a>
+            </div>
+            <p class="build-summary">{resource.description}</p>
+            <div class="build-action">
+              <a href={resource.href} target="_blank" rel="noopener">
+                {resource.action} <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="content-section work-section animate-in" aria-labelledby="collaborate-title">
+      <div>
+        <h2 id="collaborate-title">Work with me</h2>
+      </div>
+      <div class="section-copy">
+        <p>
+          The work can be a focused technical review, a specific component or a broader system
+          build. My team and I can work alongside yours, from scoping through implementation
+          and handover.
+        </p>
+        <p>
+          Send me a brief outline of what you’re building, what already exists and where you
+          need help. We can agree on the scope, constraints and expected outcome before starting.
+        </p>
+        <div class="action-row" aria-label="Work with me contact links">
+          <a
+            href="https://calendly.com/jpolec/30min"
+            class="button primary"
+            target="_blank"
+            rel="noopener"
+          >
+            Set up a meeting
+          </a>
+          <a href="mailto:jakub@quantjourney.pro" class="button primary">
+            Email me
+          </a>
+          <a
+            href="https://linkedin.com/in/jakubpolec"
+            class="button primary social-icon"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn profile"
+            title="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.94 8.5A1.72 1.72 0 1 0 6.94 5.06a1.72 1.72 0 0 0 0 3.44ZM5.48 18.94h2.93V10H5.48v8.94ZM10.25 10v8.94h2.92v-4.42c0-1.17.22-2.3 1.67-2.3 1.43 0 1.45 1.34 1.45 2.38v4.34h2.93v-4.93c0-2.42-.52-4.28-3.35-4.28-1.36 0-2.27.74-2.64 1.45h-.04V10h-2.94Z" />
+            </svg>
+          </a>
+          <a
+            href="https://x.com/jakubpolec"
+            class="button primary social-icon"
+            target="_blank"
+            rel="noopener"
+            aria-label="X profile"
+            title="X"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M18.9 2.25h3.68l-8.04 9.19L24 21.75h-7.41l-5.8-7.59-6.64 7.59H.46l8.6-9.83L0 2.25h7.6l5.24 6.93 6.06-6.93Zm-1.29 17.3h2.04L6.49 4.34H4.3L17.61 19.55Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</SimpleLayout>
+
+<script>
+  // Scroll-triggered fade-in animations
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('.animate-in').forEach((el) =>
+      observer.observe(el)
+    );
+  } else {
+    document
+      .querySelectorAll('.animate-in')
+      .forEach((el) => el.classList.add('visible'));
+  }
+</script>
+
+<style>
+  .page-shell {
+    width: min(1080px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 42px 0 100px;
+    font-family: inherit;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(280px, 440px) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+    min-height: auto;
+    padding: 28px 0 24px;
+  }
+
+  .hero-image-wrap {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+
+  .hero-image-wrap figcaption {
+    margin: 0;
+    padding: 8px 2px 0;
+    color: var(--muted);
+    font-size: 0.68rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    margin-bottom: 14px;
+    color: var(--ink);
+    font-size: clamp(2.35rem, 5vw, 4.4rem);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+  }
+
+  .role {
+    margin-bottom: 5px;
+    color: var(--ink);
+    font-size: clamp(1.05rem, 1.75vw, 1.28rem);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+  }
+
+  .founder-line {
+    margin-bottom: 22px;
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+
+  .founder-line a {
+    font-weight: 600;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+  }
+
+  .lead {
+    max-width: 560px;
+    margin-bottom: 24px;
+    color: var(--muted);
+    font-size: clamp(0.98rem, 1.45vw, 1.12rem);
+    line-height: 1.58;
+  }
+
+  .hero-about {
+    max-width: 590px;
+  }
+
+  .hero-about p {
+    margin: 0 0 11px;
+    color: var(--muted);
+    font-size: clamp(0.98rem, 1.45vw, 1.12rem);
+    line-height: 1.58;
+  }
+
+  .hero-about p:last-child {
+    margin-bottom: 0;
+  }
+
+  .hero-actions {
+    margin-top: 18px;
+  }
+
+  .hero-actions .button {
+    min-height: 42px;
+    padding: 11px 15px;
+    font-size: 0.8rem;
+  }
+
+  .hero-actions .social-icon {
+    width: 42px;
+    padding: 9px;
+  }
+
+  .social-icon svg {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+  }
+
+  .action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--ink);
+    border-radius: 8px;
+    padding: 13px 18px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: background 160ms ease, color 160ms ease, border-color 160ms ease,
+      transform 150ms ease, box-shadow 160ms ease;
+  }
+
+  .button:hover {
+    background: var(--ink);
+    color: var(--page-bg);
+    border-color: var(--ink);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+  }
+
+  .button:active {
+    transform: translateY(0);
+  }
+
+  .button.primary {
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .button.primary:hover {
+    background: var(--ink);
+    color: var(--page-bg);
+    border-color: var(--ink);
+  }
+
+  .background-section {
+    margin-top: 38px;
+    padding-top: 38px;
+    border-top: 1px solid var(--line);
+  }
+
+  .background-section .build-heading { margin-bottom: 0; }
+  .background-section .build-heading p + p { margin-top: 12px; }
+  .platform-note {
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+
+  /* ── What we build ── */
+  .build-section {
+    margin-top: 38px;
+    padding: 38px 0 4px;
+    border-top: 1px solid var(--line);
+  }
+
+  .research-section {
+    margin-top: 38px;
+    padding: 38px 0 4px;
+    border-top: 1px solid var(--line);
+  }
+
+  .build-heading {
+    max-width: 790px;
+    margin-bottom: 28px;
+  }
+
+  .build-heading h2 {
+    margin: 0 0 10px;
+    color: var(--ink);
+    font-size: clamp(1.55rem, 2.6vw, 2.2rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .build-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(0.94rem, 1.18vw, 1rem);
+    line-height: 1.62;
+  }
+
+  .build-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .build-section .build-list,
+  .research-section .build-list {
+    border-top: 0;
+  }
+
+  .build-item {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.68fr) minmax(0, 1.85fr) minmax(135px, 0.48fr);
+    gap: 28px;
+    align-items: start;
+    padding: 29px 0 30px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .build-name {
+    display: grid;
+    gap: 10px;
+  }
+
+  .build-identity {
+    display: grid;
+    width: fit-content;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .build-name h3 {
+    margin: 0;
+    color: #aa0a8b;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .build-identity:hover h3 {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-underline-offset: 3px;
+  }
+
+  .build-destination {
+    color: var(--ink);
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .build-summary {
+    margin: 0;
+    color: var(--ink);
+    font-size: 0.96rem;
+    font-weight: 600;
+    line-height: 1.58;
+  }
+
+  .build-action {
+    padding-top: 1px;
+  }
+
+  .build-action a {
+    color: var(--ink);
+    font-size: 0.82rem;
+    font-weight: 750;
+    line-height: 1.45;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 160ms ease;
+  }
+
+  .build-action a:hover {
+    border-color: var(--ink);
+  }
+
+  /* ── Content sections ── */
+  .content-section {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.43fr);
+    gap: clamp(24px, 6vw, 90px);
+    margin-top: 38px;
+    padding: 38px 0 4px;
+    border-top: 1px solid var(--line);
+  }
+
+  .content-section h2 {
+    max-width: 260px;
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.55rem, 2.6vw, 2.2rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .work-section {
+    border-top: 0;
+  }
+
+  .section-copy {
+    max-width: 715px;
+  }
+
+  .section-copy > p,
+  .text-item p {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: clamp(0.94rem, 1.18vw, 1rem);
+    line-height: 1.62;
+  }
+
+  .item-stack {
+    display: grid;
+    gap: 26px;
+  }
+
+  .text-item h3 {
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .text-item p:last-child {
+    margin-bottom: 0;
+  }
+
+  .opportunity-list {
+    margin-top: 26px;
+  }
+
+  /* ── Links Section ── */
+  .links-section {
+    margin-top: 38px;
+    padding: 38px 0 12px;
+  }
+
+  .book-feature {
+    margin-bottom: 38px;
+  }
+
+  .book-overview {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.68fr) minmax(0, 1.85fr) minmax(135px, 0.48fr);
+    gap: 28px;
+  }
+
+  .book-kicker {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: clamp(0.94rem, 1.18vw, 1rem);
+    font-weight: 400;
+    line-height: 1.62;
+    letter-spacing: normal;
+  }
+
+  .book-heading h2 {
+    margin-bottom: 5px;
+    color: var(--ink);
+    max-width: 260px;
+    font-size: clamp(1.55rem, 2.6vw, 2.2rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .book-identity {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .book-identity:hover {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-underline-offset: 4px;
+  }
+
+  .book-stats {
+    margin: 0 0 10px;
+    color: var(--ink);
+    font-size: 0.84rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .book-copy > p:not(.book-kicker):not(.book-stats) {
+    max-width: 715px;
+    margin-bottom: 14px;
+    color: var(--muted);
+    font-size: clamp(0.94rem, 1.18vw, 1rem);
+    line-height: 1.62;
+  }
+
+  .book-volume-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    max-width: 600px;
+    margin: 34px auto 20px;
+  }
+
+  .book-volume-card {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .book-volume-card img {
+    display: block;
+    width: min(100%, 220px);
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  }
+
+  .book-volume-copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .book-volume-label {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .book-volume-title {
+    color: var(--ink);
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .link-item {
+    display: flex;
+    min-height: 148px;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    padding: 20px;
+    text-decoration: none;
+    transition: background 200ms ease, border-color 200ms ease,
+      transform 200ms ease, box-shadow 200ms ease;
+    cursor: pointer;
+  }
+
+  .link-item:hover {
+    background: var(--surface-strong);
+    border-color: #b9c6d2;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  }
+
+  .link-item:active {
+    transform: translateY(-1px);
+  }
+
+  .link-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: var(--soft);
+    color: var(--ink);
+    margin-bottom: 14px;
+    transition: background 200ms ease;
+  }
+
+  .link-item:hover .link-icon-wrap {
+    background: var(--surface-strong);
+  }
+
+  .link-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+  }
+
+  .link-label {
+    color: var(--ink);
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .link-count {
+    color: var(--ink);
+    font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .link-detail {
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 860px) {
+    .page-shell {
+      width: min(100% - 28px, 680px);
+      padding-top: 24px;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding-top: 88px;
+      padding-bottom: 34px;
+    }
+
+    .hero-image-wrap {
+      display: none;
+    }
+
+    .hero-copy {
+      transform: none;
+    }
+
+    .content-section {
+      grid-template-columns: 1fr;
+    }
+
+    .content-section {
+      gap: 18px;
+    }
+
+    .build-item {
+      grid-template-columns: minmax(155px, 0.68fr) minmax(0, 1.85fr) minmax(110px, 0.48fr);
+      gap: 20px;
+    }
+
+    .book-overview {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .content-section h2 {
+      max-width: none;
+    }
+
+    .links-grid {
+      display: flex;
+      width: 100%;
+      max-width: 360px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-inline: auto;
+    }
+
+    .links-grid .link-item {
+      flex: 0 0 calc((100% - 16px) / 3);
+      min-height: 104px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 11px 6px;
+    }
+
+    .links-grid .link-icon-wrap {
+      width: 38px;
+      height: 38px;
+      margin: 0;
+    }
+
+    .links-grid .link-icon-wrap svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .links-grid .link-text {
+      align-items: center;
+      margin-top: 0;
+    }
+
+    .links-grid .link-label {
+      margin: 0;
+      font-size: 0.68rem;
+      text-align: center;
+    }
+
+    .links-grid .link-count {
+      margin-top: 2px;
+      font-size: 0.95rem;
+    }
+
+    .links-grid .link-detail {
+      display: none;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .action-row,
+    .button {
+      width: 100%;
+    }
+
+    .hero-actions .social-icon {
+      width: 42px;
+    }
+
+    .button {
+      padding-right: 14px;
+      padding-left: 14px;
+    }
+
+    .content-section {
+      margin-top: 26px;
+      padding-top: 32px;
+    }
+
+    .build-section {
+      margin-top: 26px;
+      padding-top: 32px;
+    }
+
+    .research-section {
+      margin-top: 26px;
+      padding-top: 32px;
+    }
+
+    .build-item {
+      grid-template-columns: 1fr;
+      gap: 9px;
+      padding: 22px 0;
+    }
+
+    .build-name {
+      gap: 4px;
+    }
+
+    .book-copy > p:not(.book-kicker):not(.book-stats) {
+      font-size: 0.86rem;
+      line-height: 1.48;
+    }
+
+    .book-volume-grid {
+      grid-template-columns: 1fr;
+      margin-top: 14px;
+    }
+
+    .book-volume-card img {
+      width: min(100%, 190px);
+    }
+  }
+</style>
