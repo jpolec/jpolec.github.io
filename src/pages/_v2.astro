@@ -1,0 +1,813 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import { profile } from '../data/profile';
+
+const productProof = [
+  {
+    name: 'OneBook',
+    summary: 'Research, portfolio state, risk, approvals and execution context in one operating layer.',
+    href: 'https://onebook.quantjourney.cloud/',
+  },
+  {
+    name: 'Quant API / MCP',
+    summary: 'Governed financial-data routes for applications, SDKs and approved AI clients.',
+    href: 'https://api.quantjourney.cloud/',
+  },
+  {
+    name: 'Quant DataLake',
+    summary: 'Warehouse-backed market, fundamental, portfolio and analytical workflows.',
+    href: 'https://data.quantjourney.cloud/',
+  },
+  {
+    name: 'Backtester',
+    summary: 'Reproducible systematic research, diagnostics and review-ready outputs.',
+    href: 'https://backtester.quantjourney.cloud/',
+  },
+  {
+    name: 'Agents',
+    summary: 'Controlled AI access with OAuth, scoped tools and evidence-aware responses.',
+    href: 'https://agents.quantjourney.cloud/',
+  },
+];
+
+const process = [
+  {
+    number: '01',
+    title: 'Frame the decision',
+    description: 'A short fit call establishes the investment objective, operating constraints and systems in scope.',
+  },
+  {
+    number: '02',
+    title: 'Review the operating reality',
+    description: 'I map the research, data, portfolio, risk and control flow — including the handoffs that create friction or ambiguity.',
+  },
+  {
+    number: '03',
+    title: 'Leave with a usable plan',
+    description: 'You receive an executive-ready findings pack, target architecture and a prioritised 90-day roadmap.',
+  },
+];
+---
+
+<SimpleLayout
+  title="Investment Decision Infrastructure Review | Jakub Połeć"
+  description="Independent buy-side infrastructure reviews for hedge funds, family offices and investment teams."
+  canonical="https://jakubpolec.com/_v2/"
+  noindex={true}
+>
+  <main class="v2-page-shell">
+    <header class="v2-masthead" aria-label="Jakub Połeć">
+      <a class="v2-signature" href="/">
+        <span>Jakub Połeć</span>
+        <span aria-hidden="true">/</span>
+        <span>QuantJourney</span>
+      </a>
+      <span class="v2-preview">Preview · v2</span>
+    </header>
+
+    <section class="v2-hero" aria-labelledby="v2-title">
+      <div class="v2-eyebrow">Independent buy-side infrastructure review</div>
+      <h1 id="v2-title">Investment data and decision infrastructure that can be trusted under pressure.</h1>
+      <p class="v2-hero-lead">
+        I help hedge funds, family offices and investment teams turn fragmented research, data,
+        portfolio and risk workflows into systems that are clearer to operate, govern and scale.
+      </p>
+      <div class="v2-hero-actions">
+        <a class="v2-button v2-button--primary" href={profile.urls.calendly} target="_blank" rel="noopener">
+          Book an infrastructure review
+        </a>
+      </div>
+    </section>
+
+    <section class="v2-review" aria-labelledby="review-title">
+      <div class="v2-review-intro">
+        <p class="v2-section-kicker">The engagement</p>
+        <h2 id="review-title">Independent Buy-side Infrastructure Review</h2>
+        <p>
+          A fixed-scope review for a live investment workflow, platform decision or transformation programme.
+          It is designed to create clarity before a costly implementation, vendor commitment or operating change.
+        </p>
+      </div>
+      <div class="v2-review-meta" aria-label="Review details">
+        <div>
+          <span>Typical duration</span>
+          <strong>2–3 weeks</strong>
+        </div>
+        <div>
+          <span>Working format</span>
+          <strong>Focused interviews + system review</strong>
+        </div>
+        <div>
+          <span>Commercial model</span>
+          <strong>Fixed scope, agreed after fit call</strong>
+        </div>
+      </div>
+      <div class="v2-review-output">
+        <p class="v2-output-label">What you leave with</p>
+        <ul>
+          <li>Current-state map of systems, data and decision handoffs</li>
+          <li>Risks, control gaps and avoidable implementation complexity</li>
+          <li>Target architecture and a prioritised 90-day roadmap</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="v2-section" aria-labelledby="how-title">
+      <div class="v2-section-heading">
+        <p class="v2-section-kicker">How it works</p>
+        <h2 id="how-title">A small engagement with a concrete outcome.</h2>
+      </div>
+      <ol class="v2-process-list">
+        {process.map((step) => (
+          <li>
+            <span class="v2-step-number">{step.number}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="v2-evidence" aria-label="Selected evidence">
+      <span>200+ published research pieces</span>
+      <span>Quant Interviews · 1,600+ pages</span>
+      <span>Open-source research tooling</span>
+      <span>Private-deployment patterns for investment teams</span>
+    </section>
+
+    <section class="v2-section v2-platform-section" aria-labelledby="platform-title">
+      <div class="v2-section-heading v2-platform-heading">
+        <p class="v2-section-kicker">The work behind the review</p>
+        <h2 id="platform-title">Not slides: operating products and infrastructure.</h2>
+        <p>
+          The review is informed by the same systems I build for governed research, data, portfolio
+          and AI workflows. They are evidence of the operating model — not a menu of products to buy.
+        </p>
+      </div>
+      <div class="v2-product-proof">
+        {productProof.map((product) => (
+          <a class="v2-product-row" href={product.href} target="_blank" rel="noopener">
+            <strong>{product.name}</strong>
+            <span>{product.summary}</span>
+            <span class="v2-arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="v2-section v2-background-section" aria-labelledby="background-title">
+      <figure class="v2-background-image">
+        <img
+          src="/jpbg.jpeg"
+          alt="Jakub Połeć with Bill Gates during his Microsoft years"
+          width="440"
+          height="550"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>With Bill Gates, during Jakub’s Microsoft years.</figcaption>
+      </figure>
+      <div class="v2-background-copy">
+        <p class="v2-section-kicker">Enterprise context, investment focus</p>
+        <h2 id="background-title">A practical bridge between investment work and complex technology.</h2>
+        <p>
+          My path runs from high-energy physics through Microsoft, technology entrepreneurship and
+          Oracle — where I was Head of Industry and Innovation, Director, ECEMEA — to quantitative finance.
+        </p>
+        <p>
+          That background matters when an investment team needs more than a conceptual architecture:
+          a system that respects real data, portfolio, risk and operational constraints.
+        </p>
+        <p>
+          Today I build QuantJourney, an investment-technology platform for institutional research,
+          data, portfolio, risk and AI infrastructure.
+        </p>
+      </div>
+    </section>
+
+    <section class="v2-section v2-public-work" aria-labelledby="public-title">
+      <div class="v2-section-heading">
+        <p class="v2-section-kicker">Public work</p>
+        <h2 id="public-title">Research and working material, openly available.</h2>
+      </div>
+      <div class="v2-public-links">
+        <a href="https://quant-interviews.quantjourney.cloud" target="_blank" rel="noopener">
+          <strong>Quant Interviews</strong>
+          <span>1,600+ pages · 190+ problems · Python / C++ / SQL</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://quantjourney.substack.com" target="_blank" rel="noopener">
+          <strong>Quant Blog</strong>
+          <span>200+ posts on quantitative research, markets, infrastructure and applied AI</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://github.com/jpolec" target="_blank" rel="noopener">
+          <strong>GitHub</strong>
+          <span>Public repositories, working examples and release history</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="v2-closing" aria-labelledby="closing-title">
+      <p class="v2-section-kicker">Start with the decision that matters</p>
+      <h2 id="closing-title">Choosing, replacing or governing investment infrastructure?</h2>
+      <p>
+        Start with a focused conversation. If there is a fit, the review can lead into architecture,
+        private-deployment delivery, strategy validation or ongoing technical advisory.
+      </p>
+      <a class="v2-button v2-button--primary" href={profile.urls.calendly} target="_blank" rel="noopener">
+        Book an infrastructure review
+      </a>
+    </section>
+
+    <footer class="v2-footer">
+      <div>
+        <strong>Jakub Połeć</strong>
+        <span>Founder, QuantJourney · Dubai, UAE</span>
+      </div>
+      <p>
+        QuantJourney is investment technology: research tools, data infrastructure and
+        portfolio-decision software. It does not manage client capital or provide investment advice.
+      </p>
+      <div class="v2-footer-links">
+        <a href="https://linkedin.com/in/jakubpolec" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/jpolec" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/jakubpolec" target="_blank" rel="noopener">X</a>
+      </div>
+    </footer>
+  </main>
+</SimpleLayout>
+
+<style>
+  .v2-page-shell {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 28px 0 72px;
+    color: var(--ink);
+  }
+
+  .v2-masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .v2-signature {
+    display: inline-flex;
+    gap: 8px;
+    color: var(--ink);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+
+  .v2-signature span:nth-child(3) {
+    color: #aa0a8b;
+  }
+
+  .v2-preview {
+    color: #64748b;
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .v2-hero {
+    max-width: 940px;
+    padding: clamp(76px, 11vw, 132px) 0 clamp(62px, 9vw, 108px);
+  }
+
+  .v2-eyebrow,
+  .v2-section-kicker {
+    margin: 0 0 16px;
+    color: #aa0a8b;
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .v2-hero h1,
+  .v2-section h2,
+  .v2-review h2,
+  .v2-closing h2 {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 650;
+    letter-spacing: -0.043em;
+  }
+
+  .v2-hero h1 {
+    max-width: 940px;
+    font-size: clamp(3rem, 6.5vw, 5.9rem);
+    line-height: 0.98;
+  }
+
+  .v2-hero-lead {
+    max-width: 690px;
+    margin: 30px 0 0;
+    color: #244366;
+    font-size: clamp(1.13rem, 1.8vw, 1.38rem);
+    line-height: 1.55;
+  }
+
+  .v2-hero-actions {
+    margin-top: 32px;
+  }
+
+  .v2-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    border: 1px solid var(--ink);
+    border-radius: 7px;
+    padding: 14px 20px;
+    color: var(--ink);
+    font-size: 0.88rem;
+    font-weight: 750;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .v2-button--primary {
+    background: var(--ink);
+    color: #ffffff;
+  }
+
+  .v2-button:hover {
+    background: #aa0a8b;
+    border-color: #aa0a8b;
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  .v2-review {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+    gap: 42px 64px;
+    padding: clamp(32px, 5vw, 56px);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #f7f9fb;
+  }
+
+  .v2-review-intro p:not(.v2-section-kicker) {
+    max-width: 650px;
+    margin: 20px 0 0;
+    color: #244366;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .v2-review h2,
+  .v2-section h2,
+  .v2-closing h2 {
+    font-size: clamp(1.75rem, 3vw, 2.65rem);
+    line-height: 1.08;
+  }
+
+  .v2-review-meta {
+    display: grid;
+    align-content: start;
+    gap: 18px;
+    padding-top: 5px;
+  }
+
+  .v2-review-meta div {
+    display: grid;
+    gap: 4px;
+  }
+
+  .v2-review-meta span,
+  .v2-output-label {
+    color: #64748b;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+  }
+
+  .v2-review-meta strong {
+    color: var(--ink);
+    font-size: 0.93rem;
+    line-height: 1.45;
+  }
+
+  .v2-review-output {
+    grid-column: 1 / -1;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  .v2-output-label {
+    margin: 0 0 12px;
+  }
+
+  .v2-review-output ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .v2-review-output li {
+    position: relative;
+    padding-left: 17px;
+    color: #244366;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .v2-review-output li::before {
+    position: absolute;
+    left: 0;
+    color: #aa0a8b;
+    content: '•';
+  }
+
+  .v2-section {
+    padding: clamp(64px, 9vw, 108px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .v2-section-heading {
+    max-width: 700px;
+  }
+
+  .v2-section-heading > p:not(.v2-section-kicker) {
+    margin: 20px 0 0;
+    color: #244366;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .v2-process-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin: 46px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .v2-process-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    min-height: 190px;
+    padding: 27px 28px 28px 0;
+  }
+
+  .v2-process-list li + li {
+    padding-left: 28px;
+    border-left: 1px solid var(--line);
+  }
+
+  .v2-step-number {
+    color: #aa0a8b;
+    font-size: 0.76rem;
+    font-weight: 750;
+    letter-spacing: 0.07em;
+  }
+
+  .v2-process-list h3 {
+    margin: 0 0 10px;
+    color: var(--ink);
+    font-size: 1.02rem;
+    line-height: 1.35;
+  }
+
+  .v2-process-list p {
+    margin: 0;
+    color: #244366;
+    font-size: 0.91rem;
+    line-height: 1.6;
+  }
+
+  .v2-evidence {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 0;
+    padding: 23px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .v2-evidence span {
+    padding: 0 20px;
+    color: #365575;
+    font-size: 0.79rem;
+    font-weight: 650;
+    line-height: 1.4;
+  }
+
+  .v2-evidence span:first-child {
+    padding-left: 0;
+  }
+
+  .v2-evidence span + span {
+    border-left: 1px solid var(--line);
+  }
+
+  .v2-platform-section {
+    padding-bottom: 0;
+  }
+
+  .v2-platform-heading {
+    margin-bottom: 34px;
+  }
+
+  .v2-product-proof {
+    border-top: 1px solid var(--line);
+  }
+
+  .v2-product-row {
+    display: grid;
+    grid-template-columns: minmax(160px, 0.62fr) minmax(0, 2.2fr) auto;
+    gap: 24px;
+    align-items: center;
+    padding: 22px 0;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: color 150ms ease;
+  }
+
+  .v2-product-row:hover strong,
+  .v2-product-row:hover .v2-arrow {
+    color: #aa0a8b;
+  }
+
+  .v2-product-row strong {
+    color: #aa0a8b;
+    font-size: 0.93rem;
+    line-height: 1.35;
+  }
+
+  .v2-product-row > span:not(.v2-arrow) {
+    color: #244366;
+    font-size: 0.91rem;
+    line-height: 1.5;
+  }
+
+  .v2-arrow {
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .v2-background-section {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.68fr) minmax(0, 1.2fr);
+    gap: clamp(36px, 7vw, 92px);
+    align-items: start;
+  }
+
+  .v2-background-image {
+    margin: 0;
+  }
+
+  .v2-background-image img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+
+  .v2-background-image figcaption {
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 0.68rem;
+    line-height: 1.45;
+  }
+
+  .v2-background-copy {
+    max-width: 660px;
+  }
+
+  .v2-background-copy p:not(.v2-section-kicker) {
+    margin: 18px 0 0;
+    color: #244366;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .v2-public-work {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(36px, 7vw, 92px);
+  }
+
+  .v2-public-links {
+    border-top: 1px solid var(--line);
+  }
+
+  .v2-public-links a {
+    display: grid;
+    grid-template-columns: minmax(130px, 0.75fr) minmax(0, 1.55fr) auto;
+    gap: 18px;
+    align-items: center;
+    padding: 19px 0;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .v2-public-links strong {
+    color: #aa0a8b;
+    font-size: 0.89rem;
+    line-height: 1.4;
+  }
+
+  .v2-public-links span {
+    color: #365575;
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+
+  .v2-public-links span:last-child {
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .v2-public-links a:hover strong,
+  .v2-public-links a:hover span:last-child {
+    color: #aa0a8b;
+  }
+
+  .v2-closing {
+    max-width: 860px;
+    padding: clamp(72px, 11vw, 128px) 0;
+  }
+
+  .v2-closing p:not(.v2-section-kicker) {
+    max-width: 660px;
+    margin: 22px 0 0;
+    color: #244366;
+    font-size: 1.04rem;
+    line-height: 1.65;
+  }
+
+  .v2-closing .v2-button {
+    margin-top: 30px;
+  }
+
+  .v2-footer {
+    display: grid;
+    grid-template-columns: minmax(200px, 0.72fr) minmax(0, 1.45fr) auto;
+    gap: 32px;
+    align-items: start;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+  }
+
+  .v2-footer > div:first-child {
+    display: grid;
+    gap: 5px;
+  }
+
+  .v2-footer strong {
+    color: var(--ink);
+    font-size: 0.82rem;
+  }
+
+  .v2-footer span,
+  .v2-footer p,
+  .v2-footer a {
+    color: #64748b;
+    font-size: 0.72rem;
+    line-height: 1.52;
+  }
+
+  .v2-footer p {
+    max-width: 500px;
+    margin: 0;
+  }
+
+  .v2-footer-links {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .v2-footer a {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 760px) {
+    .v2-page-shell {
+      width: min(100% - 32px, 640px);
+      padding-top: 22px;
+    }
+
+    .v2-masthead {
+      padding-bottom: 20px;
+    }
+
+    .v2-hero {
+      padding-top: 68px;
+      padding-bottom: 58px;
+    }
+
+    .v2-hero h1 {
+      font-size: clamp(2.7rem, 12vw, 4.25rem);
+    }
+
+    .v2-review {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 28px 23px;
+    }
+
+    .v2-review-output ul,
+    .v2-process-list,
+    .v2-background-section,
+    .v2-public-work,
+    .v2-footer {
+      grid-template-columns: 1fr;
+    }
+
+    .v2-review-output ul {
+      gap: 13px;
+    }
+
+    .v2-process-list {
+      margin-top: 32px;
+    }
+
+    .v2-process-list li,
+    .v2-process-list li + li {
+      min-height: auto;
+      padding: 22px 0;
+      border-left: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .v2-process-list li:first-child {
+      border-top: 0;
+    }
+
+    .v2-evidence {
+      display: grid;
+      gap: 10px;
+    }
+
+    .v2-evidence span,
+    .v2-evidence span:first-child {
+      padding: 0;
+    }
+
+    .v2-evidence span + span {
+      border-left: 0;
+    }
+
+    .v2-product-row,
+    .v2-public-links a {
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 6px 16px;
+      align-items: start;
+    }
+
+    .v2-product-row > span:not(.v2-arrow),
+    .v2-public-links a > span:not(:last-child) {
+      grid-column: 1 / 2;
+    }
+
+    .v2-arrow,
+    .v2-public-links a > span:last-child {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .v2-background-image {
+      max-width: 340px;
+    }
+
+    .v2-public-work {
+      gap: 36px;
+    }
+
+    .v2-footer {
+      gap: 18px;
+    }
+  }
+</style>
