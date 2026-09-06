@@ -20,14 +20,6 @@ const products = [
     external: true,
   },
   {
-    name: 'Quant DataLake',
-    destination: 'data.quantjourney.cloud',
-    description: 'A financial-data workspace for approved market, fundamentals, portfolio, and analytical workflows.',
-    href: 'https://data.quantjourney.cloud',
-    action: 'Open Quant DataLake',
-    external: true,
-  },
-  {
     name: 'Backtester',
     destination: 'backtester.quantjourney.cloud',
     description: 'Python-native strategy research with reproducible workflows, diagnostics, and reviewable outputs.',
@@ -195,7 +187,6 @@ const services = [
           </article>
         ))}
       </div>
-      <p class="engagement-note">Engagements can take the form of a focused review, a defined project or ongoing advisory support. We agree on the scope and deliverables before work begins.</p>
     </section>
 
     <section id="what-i-build" class="build-section animate-in" aria-labelledby="working-title">
@@ -233,32 +224,6 @@ const services = [
           </article>
         ))}
       </div>
-    </section>
-
-    <section class="articles-section animate-in" aria-labelledby="articles-title">
-      <div class="build-heading">
-        <h2 id="articles-title">What I write</h2>
-        <p>On the QuantJourney blog, I have published 250+ articles covering investment strategies, alpha research, backtesting, portfolio construction, risk, data engineering, execution and applied AI. The four articles below are examples covering portfolio systems, backtesting, alpha research and applied AI.</p>
-      </div>
-      <div class="build-list">
-        {selectedPosts.map((post) => (
-          <article class="build-item">
-            <div class="build-name">
-              <a class="build-identity" href={post.href} target="_blank" rel="noopener">
-                <h3>{post.title}</h3>
-                <span class="build-destination">quantjourney.substack.com</span>
-              </a>
-            </div>
-            <p class="build-summary">{post.description}</p>
-            <div class="build-action">
-              <a href={post.href} target="_blank" rel="noopener" aria-label={`Read ${post.title}`}>
-                Read article <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-      <p class="article-note"><a href="https://quantjourney.substack.com" target="_blank" rel="noopener">More on the QuantJourney blog <span aria-hidden="true">↗</span></a>. Full articles may require a Substack subscription.</p>
     </section>
 
     <section class="links-section animate-in" aria-labelledby="book-title">
@@ -324,6 +289,33 @@ const services = [
         </div>
       </div>
     </section>
+
+    <section class="articles-section animate-in" aria-labelledby="articles-title">
+      <div class="build-heading">
+        <h2 id="articles-title">What I write</h2>
+        <p>On the QuantJourney blog, I have published 250+ articles covering investment strategies, alpha research, backtesting, portfolio construction, risk, data engineering, execution and applied AI. The four articles below are examples covering portfolio systems, backtesting, alpha research and applied AI.</p>
+      </div>
+      <div class="build-list">
+        {selectedPosts.map((post) => (
+          <article class="build-item">
+            <div class="build-name">
+              <a class="build-identity" href={post.href} target="_blank" rel="noopener">
+                <h3>{post.title}</h3>
+                <span class="build-destination">quantjourney.substack.com</span>
+              </a>
+            </div>
+            <p class="build-summary">{post.description}</p>
+            <div class="build-action">
+              <a href={post.href} target="_blank" rel="noopener" aria-label={`Read ${post.title}`}>
+                Read article <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="article-note"><a href="https://quantjourney.substack.com" target="_blank" rel="noopener">More on the QuantJourney blog <span aria-hidden="true">↗</span></a>. Full articles may require a Substack subscription.</p>
+    </section>
+
 
   </main>
 </SimpleLayout>
@@ -398,7 +390,6 @@ const services = [
   .hero-copy {
     position: relative;
     z-index: 1;
-    max-width: 620px;
   }
 
   h1,
@@ -440,15 +431,10 @@ const services = [
   }
 
   .lead {
-    max-width: 560px;
     margin-bottom: 24px;
     color: var(--muted);
     font-size: clamp(0.98rem, 1.45vw, 1.12rem);
     line-height: 1.58;
-  }
-
-  .hero-about {
-    max-width: 590px;
   }
 
   .hero-about p {
@@ -536,13 +522,6 @@ const services = [
   }
   .service-copy { min-width: 0; }
   .service-copy .build-summary + .build-summary { margin-top: 12px; }
-  .engagement-note {
-    max-width: 790px;
-    margin: 22px 0 0;
-    color: var(--ink);
-    font-size: clamp(0.94rem, 1.18vw, 1rem);
-    line-height: 1.62;
-  }
   .social-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
   .social-row .social-icon {
     display: inline-flex;
@@ -577,7 +556,6 @@ const services = [
   }
 
   .build-heading {
-    max-width: 790px;
     margin-bottom: 28px;
   }
 
@@ -790,7 +768,6 @@ const services = [
   }
 
   .book-copy > p:not(.book-kicker):not(.book-stats) {
-    max-width: 715px;
     margin-bottom: 14px;
     color: var(--muted);
     font-size: clamp(0.94rem, 1.18vw, 1rem);
