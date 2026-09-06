@@ -16,7 +16,8 @@ export const services = [
       "Information leakage between research and evaluation, including through feature engineering and hyperparameter choice.",
       "Capacity: the AUM at which the result stops holding."
     ],
-    "note": ""
+    "note": "",
+    "fee": "$7,500"
   },
   {
     "title": "Investment systems architecture",
@@ -34,7 +35,8 @@ export const services = [
       "Operational load: what breaks when one person is on holiday.",
       "Build, buy, or replace, with the cost and risk of each stated explicitly rather than implied."
     ],
-    "note": "Longer delivery engagements by agreement."
+    "note": "Longer delivery engagements by agreement.",
+    "fee": "$18,000"
   },
   {
     "title": "Quant and investment technology due diligence",
@@ -52,6 +54,7 @@ export const services = [
       "What it costs to run today and what it will cost at ten times the current load.",
       "Extension cost: what the next major feature actually requires."
     ],
-    "note": ""
+    "note": "",
+    "fee": "$15,000"
   }
 ];
