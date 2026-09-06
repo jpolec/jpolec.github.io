@@ -1,33 +1,167 @@
 ---
 import SimpleLayout from '../../layouts/SimpleLayout.astro';
 import { services } from '../../data/v15-services';
+import { serviceDetails } from '../../data/service-details';
+
 export function getStaticPaths() {
-  return ['_v15', 'services'].flatMap(preview => services.map(service => ({ params: { preview, service: service.slug }, props: { service, preview } })));
+  return ['_v15', 'services'].flatMap(preview => services.map(service => ({
+    params: { preview, service: service.slug },
+    props: { service, preview },
+  })));
 }
 const { service, preview } = Astro.props;
+const detail = serviceDetails[service.slug];
 const isPreview = preview === '_v15';
+const canonical = `https://jakubpolec.com/${preview}/${service.slug}/`;
+const callUrl = 'https://calendly.com/jpolec/30min';
 ---
-<SimpleLayout title={`${service.title} | Jakub Polec`} description={service.description} canonical={`https://jakubpolec.com/${preview}/${service.slug}/`} noindex={isPreview} ogImage="https://jakubpolec.com/og-v15.png">
+<SimpleLayout
+  title={`${service.title} | Jakub Polec`}
+  description={detail.lead}
+  canonical={canonical}
+  noindex={isPreview}
+  ogImage="https://jakubpolec.com/og-v15.png"
+  ogImageWidth={1200}
+  ogImageHeight={630}
+>
   <main>
-    <a class="back" href={isPreview ? "/_v15/#work-with-me" : "/#work-with-me"}>← Jakub Polec</a>
-    <h1>{service.title}</h1>
-    <p>{service.description}</p>
-    <p>{service.deliverable}</p>
-    <h2>{service.checkTitle}</h2>
-    <ul>{service.checks.map(item => <li>{item}</li>)}</ul>
-    <p class="scope">Scope: {service.duration}. Fixed fee from {service.fee} USD. Final scope and fee agreed after a 30-minute scoping call. {service.note}</p>
-    <a class="button" href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+    <a class="back" href={isPreview ? '/_v15/#work-with-me' : '/#work-with-me'}>← Jakub Polec</a>
+    <header class="service-hero">
+      <h1>{service.title}</h1>
+      <p class="lead">{detail.lead}</p>
+      <p class="audience">{detail.audience}</p>
+      <dl class="engagement-facts" aria-label="Engagement terms">
+        <div><dt>Timeframe</dt><dd>{service.duration}</dd></div>
+        <div><dt>Fixed fee from</dt><dd>{service.fee} USD</dd></div>
+        <div><dt>Led by</dt><dd>Jakub Polec</dd></div>
+      </dl>
+      <p class="starting-scope">{detail.startingScope} Final scope, fee and delivery date are agreed before work begins.</p>
+      <a class="button" href={callUrl} target="_blank" rel="noopener">Book a 30-minute call</a>
+    </header>
+
+    <section class="section" aria-labelledby="decision-title">
+      <h2 id="decision-title">The decision it supports</h2>
+      <p>{detail.decision}</p>
+    </section>
+
+    <section class="section" aria-labelledby="coverage-title">
+      <h2 id="coverage-title">Review coverage</h2>
+      <div class="rows">
+        {detail.areas.map(area => <div class="row"><h3>{area.title}</h3><p>{area.text}</p></div>)}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="method-title">
+      <h2 id="method-title">How the work proceeds</h2>
+      <ol class="method">
+        {detail.method.map(step => <li><h3>{step.title}</h3><p>{step.text}</p></li>)}
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="outputs-title">
+      <h2 id="outputs-title">What you receive</h2>
+      <div class="rows">
+        {detail.outputs.map(output => <div class="row"><h3>{output.title}</h3><p>{output.text}</p></div>)}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="finding-title">
+      <h2 id="finding-title">Inside the assessment</h2>
+      <div>
+        <p class="example-label">Illustrative finding, not a client case.</p>
+        <dl class="finding">
+          <div><dt>Observation</dt><dd>{detail.example.observation}</dd></div>
+          <div><dt>Implication</dt><dd>{detail.example.implication}</dd></div>
+          <div><dt>Next action</dt><dd>{detail.example.action}</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="experience-title">
+      <h2 id="experience-title">The work behind the review</h2>
+      <div>
+        <p>{detail.experience}</p>
+        <ul class="evidence">
+          {detail.evidence.map(item => <li>
+            <a href={item.href} target="_blank" rel="noopener">{item.title} <span aria-hidden="true">↗</span></a>
+            <p>{item.text}</p>
+          </li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="scope-title">
+      <h2 id="scope-title">Access and scope</h2>
+      <div class="scope-copy">
+        <h3>What I need from you</h3>
+        <p>{detail.materials}</p>
+        <h3>How the scope is bounded</h3>
+        <p>{detail.boundary}</p>
+        <p>I identify potential conflicts with QuantJourney before accepting an engagement. Any involvement from my team and the handling of confidential material are agreed with you in advance.</p>
+      </div>
+    </section>
+
+    <section class="section contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Discuss your decision</h2>
+      <div>
+        <p>{detail.contact}</p>
+        <div class="actions">
+          <a class="button" href={callUrl} target="_blank" rel="noopener">Book a 30-minute call</a>
+          <!--email_off--><a class="button secondary" href="mailto:jakub@quantjourney.pro">Email me</a><!--/email_off-->
+        </div>
+      </div>
+    </section>
   </main>
 </SimpleLayout>
 <style>
-  main { width: min(780px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0 80px; }
-  .back { text-underline-offset: 4px; font-size: .94rem; }
-  h1 { margin: 40px 0 24px; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; line-height: 1.12; letter-spacing: -.03em; }
-  p, li { font-size: 1rem; line-height: 1.65; }
-  p { margin: 0 0 20px; }
-  h2 { margin: 40px 0 20px; font-size: 1.4rem; font-weight: 600; }
-  ul { padding-left: 20px; margin: 0; }
-  li { padding-left: 6px; margin-bottom: 14px; }
-  .scope { margin-top: 36px; }
-  .button { display: inline-block; padding: 14px 18px; border-radius: 8px; background: var(--ink); color: white; text-decoration: none; }
+  main { width: min(1000px, calc(100% - 64px)); margin: 0 auto; padding: 40px 0 80px; }
+  .back, .evidence a { text-decoration-thickness: 1px; text-underline-offset: 5px; }
+  .back { font-size: .94rem; }
+  .service-hero { padding: 36px 0 12px; }
+  h1, h2, h3, p, dl, dd { margin: 0; }
+  h1 { max-width: 850px; font-size: clamp(2.15rem, 4.6vw, 3.4rem); font-weight: 600; line-height: 1.08; letter-spacing: -.035em; text-wrap: balance; }
+  .lead { max-width: 880px; margin-top: 22px; font-size: clamp(1.15rem, 2.1vw, 1.4rem); line-height: 1.45; }
+  p, li, dt, dd { font-size: 1rem; line-height: 1.6; }
+  .audience { margin-top: 16px; }
+  .engagement-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 28px; padding: 18px 0; border-block: 1px solid var(--line); }
+  .engagement-facts dt { font-size: .84rem; }
+  .engagement-facts dd { margin-top: 4px; font-size: 1.12rem; font-weight: 500; }
+  .starting-scope { margin: 16px 0 22px; font-size: .94rem; }
+  .section { display: grid; grid-template-columns: 210px minmax(0, 1fr); column-gap: 42px; margin-top: 44px; }
+  h2 { font-size: 1.08rem; font-weight: 600; line-height: 1.45; }
+  h3 { font-size: 1rem; font-weight: 600; line-height: 1.6; }
+  .row + .row { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .row p, .method p { margin-top: 5px; }
+  .method { margin: 0; padding-left: 22px; }
+  .method li { padding-left: 10px; }
+  .method li + li { margin-top: 18px; }
+  .method li::marker { font-weight: 500; }
+  .example-label { font-size: .88rem; margin-bottom: 16px; }
+  .finding { border-left: 2px solid var(--ink); padding-left: 20px; }
+  .finding div + div { margin-top: 12px; }
+  .finding dt { font-weight: 600; }
+  .finding dd { margin-top: 3px; }
+  .evidence { list-style: none; margin: 20px 0 0; padding: 0; }
+  .evidence li + li { margin-top: 18px; }
+  .evidence p { margin-top: 4px; font-size: .94rem; }
+  .scope-copy h3 { margin-bottom: 5px; }
+  .scope-copy p + h3, .scope-copy p + p { margin-top: 18px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+  .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 18px; border: 1px solid var(--ink); border-radius: 6px; background: var(--ink); color: #fff; text-decoration: none; font-size: .94rem; line-height: 1.5; }
+  .button:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .button.secondary { background: #fff; color: var(--ink); }
+  @media (max-width: 760px) {
+    main { width: calc(100% - 36px); padding-top: 28px; }
+    .service-hero { padding-top: 28px; }
+    .section { grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 36px; }
+    h2 { font-size: 1.25rem; }
+    .engagement-facts { gap: 12px; }
+    .engagement-facts dd { font-size: 1rem; }
+  }
+  @media (max-width: 420px) {
+    .engagement-facts { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    .engagement-facts div { display: flex; justify-content: space-between; gap: 12px; }
+    .engagement-facts dd { margin-top: 0; }
+    .actions .button { width: 100%; }
+  }
 </style>
