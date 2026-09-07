@@ -10,7 +10,7 @@ The canonical public profile and product overview is https://jakubpolec.com/. It
 
 - [Jakub Połeć](https://jakubpolec.com/): personal profile, background and meeting contact.
 - [What I build](https://jakubpolec.com/#what-i-build): OneBook, Quant API, Data Workspace, Backtester, Agents and Quant Infra.
-- [QuantJourney with Code — video catalogue](https://jakubpolec.com/video/): public video catalogue covering backtesting, strategy research, market-data workflows, AI-assisted development and local quant setup.
+- [QuantJourney with Code - video catalogue](https://jakubpolec.com/video/): public video catalogue covering backtesting, strategy research, market-data workflows, AI-assisted development and local quant setup.
 - [Full text for language models](https://jakubpolec.com/llms-full.txt): expanded, text-first product and service descriptions.
 
 ## Jakub Połeć public profiles
