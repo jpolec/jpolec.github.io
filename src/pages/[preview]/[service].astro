@@ -56,7 +56,10 @@ const callUrl = 'https://calendly.com/jpolec/30min';
 
     <section class="section" aria-labelledby="outcome-title">
       <h2 id="outcome-title">Outcome</h2>
-      <p>{detail.outcome}</p>
+      <div class="section-copy">
+        <p>{detail.outcome}</p>
+        {detail.recommendations && <p>{detail.recommendations}</p>}
+      </div>
     </section>
 
     <section class="section" aria-labelledby="engagement-title">

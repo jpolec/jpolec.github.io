@@ -15,6 +15,7 @@ interface ServiceDetail {
   additionalSections: ServiceSection[];
   deliverables: string[];
   outcome: string;
+  recommendations?: string;
 }
 
 export const serviceDetails: Record<string, ServiceDetail> = {
@@ -40,6 +41,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     outcome: 'You get a defensible answer to one question: is this edge real, and does it survive contact with execution? Either the strategy holds up and you have third-party evidence to show, or you find out now rather than after a drawdown.',
   },
   'systems-architecture': {
+    recommendations: 'Recommendations are vendor-neutral. If a QuantJourney component is relevant, I disclose the overlap explicitly and treat it as one option alongside external or internal alternatives.',
     description: 'Investment systems architecture: current-state assessment, target design, build/buy decisions and a sequenced 12-month roadmap with cost and headcount implications.',
     positioning: 'Most investment technology problems are not tooling problems. They are sequencing problems - the data layer, the research environment, and the execution path were built at different times, by different people, for a smaller firm than the one that exists now. I design the target architecture and the order in which to get there.',
     coverageTitle: 'What the engagement covers',
@@ -63,6 +65,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     outcome: 'A roadmap your team can execute against and you can budget against - with the reasoning attached, so decisions survive the next hire and the next vendor conversation.',
   },
   'technology-due-diligence': {
+    recommendations: 'Recommendations are vendor-neutral. If a QuantJourney component is relevant, I disclose the overlap explicitly and treat it as one option alongside external or internal alternatives.',
     description: 'Quant and investment technology due diligence for investors, acquirers and allocators. Evidence-backed findings and costed remediation options to inform the transaction.',
     positioning: 'Commissioned by investors, acquirers, and allocators who need to know whether the technology and research behind a firm is what the deck says it is. I assess what exists, what it depends on, and what it would cost to keep running.',
     coverageTitle: 'Diligence areas',
