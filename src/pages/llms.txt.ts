@@ -15,7 +15,7 @@ The canonical public profile and product overview is ${profile.canonicalUrl}. It
 
 - [${profile.name}](${profile.canonicalUrl}): personal profile, background and meeting contact.
 - [What I build](${profile.canonicalUrl}#what-i-build): OneBook, Quant API, Data Workspace, Backtester, Agents and Quant Infra.
-- [QuantJourney with Code — video catalogue](${profile.urls.video}): public video catalogue covering backtesting, strategy research, market-data workflows, AI-assisted development and local quant setup.
+- [QuantJourney with Code - video catalogue](${profile.urls.video}): public video catalogue covering backtesting, strategy research, market-data workflows, AI-assisted development and local quant setup.
 - [Full text for language models](${profile.urls.llmsFull}): expanded, text-first product and service descriptions.
 
 ## ${profile.name} public profiles

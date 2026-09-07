@@ -1,4 +1,4 @@
-# QuantJourney — detailed public reference
+# QuantJourney - detailed public reference
 
 Canonical public profile and product overview: https://jakubpolec.com/#what-i-build
 
