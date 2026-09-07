@@ -26,7 +26,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     areas: [
       { title: 'Data integrity', text: 'Sources, point-in-time correctness, corporate actions, survivorship.', note: 'In practice, this is where most reviews find their first material issue.' },
       { title: 'Lookahead and leakage', text: 'Timestamp alignment, feature construction, restatement handling.' },
-      { title: 'Cost and execution model', text: 'Spread, impact, borrow, fill assumptions against realistic venues.', note: 'Strategies that survive a review usually die here first, at realistic size.' },
+      { title: 'Cost and execution model', text: 'Spread, impact, borrow, fill assumptions against realistic venues.', note: 'Many otherwise convincing backtests fail here first, at realistic size.' },
       { title: 'Statistical robustness', text: 'Parameter sensitivity, multiple-testing burden, out-of-sample discipline.' },
       { title: 'Capacity and liquidity', text: 'The AUM level at which the edge stops paying for itself.' },
       { title: 'Research-to-production parity', text: 'Whether the live system computes what the backtest computed.', note: 'Divergence between research and production code is common and rarely instrumented.' },
