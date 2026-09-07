@@ -176,6 +176,7 @@ const selectedPosts = [
       <div class="build-heading">
         <h2 id="engagement-title">Work with me</h2>
         <p>I take a small number of engagements at a time. Each one is fixed-scope, written up, and delivered on a date agreed in advance.</p>
+        <p>Over the past three years, my work has included 3 hedge funds, 2 family offices and 2 insurers across the US, India, Japan and the Middle East.</p>
       </div>
       <div class="build-list">
         {services.map((service) => (
@@ -198,6 +199,7 @@ const selectedPosts = [
         <p>
           QuantJourney is my company. We build and operate the investment systems shown below.
         </p>
+        <p>QuantJourney has served 100+ paying customers across its API and investment infrastructure products.</p>
       </div>
       <div class="build-list">
         {products.map((product) => (
@@ -558,6 +560,8 @@ const selectedPosts = [
     font-size: clamp(0.94rem, 1.18vw, 1rem);
     line-height: 1.62;
   }
+
+  .build-heading p + p { margin-top: 12px; }
 
   .build-list {
     border-top: 1px solid var(--line);
