@@ -13,7 +13,7 @@ export const profile = {
   name: 'Jakub Połeć',
   canonicalUrl: 'https://jakubpolec.com/',
   personId: 'https://jakubpolec.com/#jakub-polec',
-  imageUrl: 'https://jakubpolec.com/jpbg.jpeg',
+  imageUrl: 'https://jakubpolec.com/jakub-polec-portrait.webp',
   role: 'Quant Systems Architect & Founder of QuantJourney',
   rolePhrase: 'quant systems architect and founder of QuantJourney',
   jobTitle: 'Quant Systems Architect and Founder of QuantJourney',

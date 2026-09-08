@@ -92,11 +92,11 @@ const selectedPosts = [
     <section class="hero" aria-labelledby="hero-title">
       <figure class="hero-image-wrap">
         <img
-          src="/jpbg.jpeg"
-          alt="Jakub Połeć with Bill Gates during his Microsoft years"
+          src="/jakub-polec-portrait.webp"
+          alt="Portrait of Jakub Połeć"
           class="hero-image"
-          width="440"
-          height="550"
+          width="560"
+          height="700"
           loading="eager"
           decoding="async"
         />
@@ -345,7 +345,7 @@ const selectedPosts = [
   .hero {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
     gap: clamp(28px, 5vw, 64px);
     align-items: center;
     min-height: auto;
@@ -359,7 +359,9 @@ const selectedPosts = [
   }
 
   .hero-image {
+    display: block;
     width: 100%;
+    height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     border: 1px solid var(--line);
