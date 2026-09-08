@@ -355,7 +355,12 @@ const selectedPosts = [
   .hero-image-wrap {
     position: relative;
     z-index: 1;
+    overflow: hidden;
+    isolation: isolate;
     margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--ink);
   }
 
   .hero-image {
@@ -364,8 +369,8 @@ const selectedPosts = [
     height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    border: 1px solid var(--line);
-    border-radius: 8px;
+    filter: grayscale(1) contrast(1.04);
+    mix-blend-mode: screen;
   }
 
   .hero-image-wrap figcaption {
