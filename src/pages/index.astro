@@ -176,6 +176,19 @@ const selectedPosts = [
       </div>
     </section>
 
+    <section class="personal-section" aria-labelledby="personal-title">
+      <h2 id="personal-title">Personal side</h2>
+      <ul class="personal-interests" aria-label="Personal interests">
+        <li>Padel</li>
+        <li>Diving</li>
+        <li>Biohacking</li>
+        <li>Puzzles</li>
+        <li>Foodie</li>
+        <li>Travel</li>
+        <li><button type="button" class="cocker-trigger" aria-haspopup="dialog" aria-controls="cocker-dialog">My cocker spaniel</button></li>
+      </ul>
+    </section>
+
     <section id="work-with-me" class="engagement-section" aria-labelledby="engagement-title">
       <div class="build-heading">
         <h2 id="engagement-title">Work with me</h2>
@@ -330,6 +343,70 @@ const selectedPosts = [
 
 
   </main>
+
+  <dialog id="cocker-dialog" class="cocker-dialog" aria-label="My cocker spaniel">
+    <button type="button" class="cocker-dialog-close" aria-label="Close photo">&times;</button>
+    <figure>
+      <img
+        src="/cocker-spaniel.webp"
+        alt="Jakub's black cocker spaniel resting on a sofa"
+        width="1200"
+        height="1600"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  </dialog>
+
+  <script>
+    const cockerDialog = document.querySelector<HTMLDialogElement>('#cocker-dialog');
+    const cockerTrigger = document.querySelector<HTMLButtonElement>('.cocker-trigger');
+    const cockerClose = document.querySelector<HTMLButtonElement>('.cocker-dialog-close');
+
+    if (cockerDialog && cockerTrigger && cockerClose) {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let closeTimer: number | undefined;
+
+      const finishClose = () => {
+        window.clearTimeout(closeTimer);
+        cockerDialog.close();
+        cockerDialog.classList.remove('is-closing');
+      };
+
+      const closeDialog = () => {
+        if (!cockerDialog.open || cockerDialog.classList.contains('is-closing')) return;
+
+        if (reducedMotion.matches) {
+          finishClose();
+          return;
+        }
+
+        cockerDialog.classList.add('is-closing');
+        closeTimer = window.setTimeout(finishClose, 180);
+      };
+
+      cockerTrigger.addEventListener('click', () => {
+        window.clearTimeout(closeTimer);
+        cockerDialog.classList.remove('is-closing');
+        cockerDialog.showModal();
+        document.documentElement.classList.add('dialog-open');
+      });
+
+      cockerClose.addEventListener('click', closeDialog);
+      cockerDialog.addEventListener('cancel', (event) => {
+        event.preventDefault();
+        closeDialog();
+      });
+      cockerDialog.addEventListener('click', (event) => {
+        if (event.target === cockerDialog) closeDialog();
+      });
+      cockerDialog.addEventListener('close', () => {
+        window.clearTimeout(closeTimer);
+        cockerDialog.classList.remove('is-closing');
+        document.documentElement.classList.remove('dialog-open');
+      });
+    }
+  </script>
 </SimpleLayout>
 
 
@@ -512,6 +589,173 @@ const selectedPosts = [
     padding: 26px 0 4px;
   }
 
+  .personal-section {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.68fr) minmax(0, 2.33fr);
+    gap: 28px;
+    align-items: center;
+    margin-top: 34px;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .personal-section h2 {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .personal-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 0;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--ink);
+    font-size: clamp(0.8rem, 1.2vw, 0.92rem);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+  }
+
+  .personal-interests li {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .personal-interests li + li::before {
+    margin: 0 10px;
+    color: var(--muted);
+    content: '/';
+    font-weight: 400;
+  }
+
+  .cocker-trigger {
+    border: 0;
+    padding: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: color 160ms ease, text-decoration-color 160ms ease;
+  }
+
+  .cocker-trigger:hover,
+  .cocker-trigger:focus-visible {
+    color: var(--accent);
+    text-decoration-color: currentColor;
+  }
+
+  :global(html.dialog-open) {
+    overflow: hidden;
+  }
+
+  .cocker-dialog {
+    max-width: min(760px, calc(100vw - 32px));
+    max-height: calc(100vh - 32px);
+    overflow: visible;
+    border: 0;
+    border-radius: 12px;
+    padding: 0;
+    background: transparent;
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+
+  .cocker-dialog[open] {
+    animation: cocker-dialog-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  .cocker-dialog.is-closing {
+    animation: cocker-dialog-out 180ms ease forwards;
+  }
+
+  .cocker-dialog::backdrop {
+    background: rgba(4, 24, 48, 0.76);
+    backdrop-filter: blur(5px);
+    animation: cocker-backdrop-in 220ms ease both;
+  }
+
+  .cocker-dialog.is-closing::backdrop {
+    animation: cocker-backdrop-out 180ms ease forwards;
+  }
+
+  .cocker-dialog figure {
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 12px;
+    background: #050505;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+  }
+
+  .cocker-dialog img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100vh - 32px);
+    object-fit: contain;
+  }
+
+  .cocker-dialog-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 1.55rem;
+    line-height: 1;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: background 160ms ease, transform 160ms ease;
+  }
+
+  .cocker-dialog-close:hover,
+  .cocker-dialog-close:focus-visible {
+    background: rgba(0, 0, 0, 0.78);
+    transform: scale(1.06);
+  }
+
+  @keyframes cocker-dialog-in {
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes cocker-dialog-out {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(8px) scale(0.98); }
+  }
+
+  @keyframes cocker-backdrop-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes cocker-backdrop-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
   .engagement-section .build-list { border-top: 0; }
   .build-item.service-row {
     grid-template-columns: minmax(190px, 0.68fr) minmax(0, 2.33fr);
@@ -533,6 +777,17 @@ const selectedPosts = [
 
   @media (max-width: 680px) {
     .build-item.service-row { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+
+    .personal-section {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 28px;
+      padding: 20px 0;
+    }
+
+    .personal-interests {
+      font-size: 0.78rem;
+    }
   }
 
   .articles-section {
@@ -1056,6 +1311,19 @@ const selectedPosts = [
   @media (max-width: 680px) {
     .situations { grid-template-columns: 1fr; gap: 18px; }
     .situations-section { margin-top: 22px; padding-top: 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cocker-dialog[open],
+    .cocker-dialog.is-closing,
+    .cocker-dialog::backdrop,
+    .cocker-dialog.is-closing::backdrop {
+      animation: none;
+    }
+
+    .cocker-dialog[open] {
+      opacity: 1;
+      transform: none;
+    }
   }
   .closing-contact { margin-top: 40px; }
   .closing-contact p { margin: 0; font-size: 1rem; line-height: 1.62; }
