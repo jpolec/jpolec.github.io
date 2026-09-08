@@ -11,7 +11,7 @@ test('personal side lists the selected interests before the engagement section',
   assert.ok(personal >= 0);
   assert.ok(personal < engagement);
 
-  for (const interest of ['Padel', 'Diving', 'Biohacking', 'Puzzles', 'Foodie', 'Travel', 'My cocker spaniel']) {
+  for (const interest of ['Padel', 'Diving', 'Action movies', 'Puzzles', 'Foodie', 'Travel', 'My cocker spaniel']) {
     assert.match(page, new RegExp(`>${interest}<`, 'i'));
   }
 });
