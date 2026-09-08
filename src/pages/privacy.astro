@@ -1,0 +1,39 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+---
+
+<SimpleLayout
+  title="Privacy | Jakub Polec"
+  description="Privacy information for jakubpolec.com."
+  canonical="https://jakubpolec.com/privacy/"
+>
+  <main>
+    <a href="/">← Back to jakubpolec.com</a>
+    <h1>Privacy</h1>
+    <p>
+      This website uses Google Analytics for limited site-usage measurement only after you accept analytics.
+      Advertising storage remains disabled. Page locations are sent without query strings or fragments.
+    </p>
+    <p>
+      Your choice is stored in the first-party <code>qj_analytics_consent</code> cookie for up to 180 days.
+      To change a denied choice, clear that cookie in your browser and reload the page.
+    </p>
+    <p>
+      Hosting and security providers may process request information needed to deliver and protect the site.
+      For privacy questions, contact <a href="mailto:jakub@quantjourney.cloud">jakub@quantjourney.cloud</a>.
+    </p>
+  </main>
+</SimpleLayout>
+
+<style>
+  main {
+    width: min(720px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 64px 0;
+    line-height: 1.7;
+  }
+  h1 { margin: 44px 0 20px; font-size: clamp(2.2rem, 6vw, 4rem); }
+  p { color: var(--muted); }
+  a { color: var(--accent); }
+  code { font-size: 0.9em; }
+</style>
