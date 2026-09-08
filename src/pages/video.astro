@@ -292,8 +292,8 @@ const structuredData = {
     {
       '@type': 'Person',
       '@id': personId,
-      name: profile.canonicalName,
-      alternateName: profile.name,
+      name: profile.name,
+      alternateName: profile.asciiName,
       url: profile.canonicalUrl,
       sameAs: [
         ...profile.socialProfiles.map((socialProfile) => socialProfile.href),

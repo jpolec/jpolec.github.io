@@ -6,11 +6,10 @@
  * rather than maintaining competing versions of the same biography.
  */
 export const profile = {
-  // Use the spelling shared by the public handles and official profiles as the
-  // canonical entity name. The preferred Polish spelling remains the display
-  // name throughout the site.
-  canonicalName: 'Jakub Polec',
   name: 'Jakub Połeć',
+  // ASCII spelling used by public handles and platforms without Polish
+  // diacritics. Keep it as the alternate identity for search matching.
+  asciiName: 'Jakub Polec',
   canonicalUrl: 'https://jakubpolec.com/',
   personId: 'https://jakubpolec.com/#jakub-polec',
   imageUrl: 'https://jakubpolec.com/jakub-polec-seated.webp',
@@ -18,7 +17,7 @@ export const profile = {
   rolePhrase: 'quant systems architect and founder of QuantJourney',
   jobTitle: 'Quant Systems Architect and Founder of QuantJourney',
   description:
-    'Jakub Polec (Jakub Połeć) is a quant systems architect and founder of QuantJourney, working with investment teams on quantitative systems and investment-decision infrastructure.',
+    'Jakub Połeć (also written Jakub Polec) is a quant systems architect and founder of QuantJourney, working with investment teams on quantitative systems and investment-decision infrastructure.',
   disambiguatingDescription:
     'Founder of QuantJourney and builder of OneBook; quant systems architect working on research, data, portfolio, risk, and AI infrastructure for investment teams.',
   location: 'Dubai, UAE',
@@ -74,10 +73,10 @@ export const profileLinksMarkdown = profile.socialProfiles
 const personEntity = {
   '@type': 'Person',
   '@id': profile.personId,
-  name: profile.canonicalName,
-  alternateName: profile.name,
+  name: profile.name,
+  alternateName: profile.asciiName,
   givenName: 'Jakub',
-  familyName: 'Polec',
+  familyName: 'Połeć',
   url: profile.canonicalUrl,
   image: profile.imageUrl,
   jobTitle: profile.jobTitle,
