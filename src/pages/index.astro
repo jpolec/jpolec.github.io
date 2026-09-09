@@ -370,7 +370,8 @@ const selectedPosts = [
   .personal-section h2 { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 15px; margin: 30px auto 0; font-size: clamp(1.4rem, 3.5vw, 2.8rem); line-height: 1.45; letter-spacing: .04em; }
   .personal-section i { color: var(--muted); font-style: normal; }
   .cocker-trigger { border: 0; padding: 0; background: none; color: var(--ink); font: inherit; text-transform: uppercase; text-decoration: none; cursor: pointer; }
-  .cocker-heart { display: inline-block; margin-left: .1em; color: var(--footer); font-size: .62em; transform: translateY(-.08em); }
+  .cocker-heart { display: inline-grid; width: 1.45em; height: 1.45em; place-items: center; margin-left: .08em; border: 1px solid transparent; border-radius: 50%; color: #c83232; font-size: .62em; line-height: 1; transform: translateY(-.08em); transition: border-color 150ms ease, background 150ms ease; }
+  .cocker-trigger:hover .cocker-heart { border-color: currentColor; background: rgba(200, 50, 50, .06); }
 
   .closing-section { margin: 0 calc(50% - 50vw); padding: 78px max(24px, calc((100vw - 1180px) / 2)); background: var(--footer); color: #fff; text-align: center; }
   .closing-section .section-label { color: #c5ded6 !important; }
