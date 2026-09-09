@@ -157,7 +157,6 @@ const selectedPosts = [
           </article>
         ))}
       </div>
-      <p class="service-note">Extended implementation support available separately.</p>
     </section>
 
     <section class="large-section build-section" aria-labelledby="build-title">
@@ -304,13 +303,13 @@ const selectedPosts = [
   .outline-button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; margin-top: 28px; border: 1px solid var(--ink); border-radius: 999px; padding: 10px 23px; color: var(--ink); font-size: .8rem; text-decoration: none; }
   .outline-button:hover { background: var(--ink); color: var(--paper); }
 
-  .proof-band { display: grid; grid-template-columns: repeat(4, 1fr); padding: 32px 0 34px; border-bottom: 1px solid var(--line); }
+  .proof-band { display: grid; grid-template-columns: repeat(4, 1fr); padding: 32px 0 34px; }
   .proof-band > div { padding: 0 24px; text-align: center; }
   .proof-band > div + div { border-left: 1px solid var(--line); }
   .proof-band strong { display: block; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; }
   .proof-band span { display: block; max-width: 235px; margin: 7px auto 0; color: var(--muted); font-size: .76rem; line-height: 1.4; text-transform: uppercase; }
 
-  .large-section { padding: clamp(72px, 10vw, 130px) 0; border-bottom: 1px solid var(--line); }
+  .large-section { padding: clamp(72px, 10vw, 130px) 0; }
   .centered-heading { max-width: 760px; margin: 0 auto 54px; text-align: center; }
   .centered-heading h2 { margin-top: 16px; font-size: clamp(1.9rem, 4vw, 3.3rem); line-height: 1.2; letter-spacing: .04em; }
   .centered-heading > p:not(.section-label) { margin-top: 19px; font-family: Georgia, 'Times New Roman', serif; font-size: 1.06rem; line-height: 1.65; }
@@ -342,7 +341,7 @@ const selectedPosts = [
   .book-feature { display: grid; grid-template-columns: 1.05fr .95fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .book-image { display: flex; align-items: center; justify-content: center; gap: 20px; overflow: hidden; min-height: 520px; border-right: 1px solid var(--line); padding: 34px 20px; }
   .book-cover { position: relative; width: min(46%, 270px); }
-  .book-cover::before { position: absolute; z-index: 0; inset: 10px -9px -9px 9px; border-radius: 2px; background: #e66a32; content: ''; }
+  .book-cover::before { position: absolute; z-index: 0; inset: 6px -5px -5px 5px; border-radius: 2px; background: #d9d7d1; content: ''; }
   .book-cover img { position: relative; z-index: 1; display: block; width: 100%; height: auto; border: 1px solid var(--line); box-shadow: 0 12px 24px rgba(0, 0, 0, .11); }
   .book-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(36px, 6vw, 78px); }
   .book-copy h3 { margin-top: 30px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.55rem, 3vw, 2.45rem); font-weight: 400; line-height: 1.25; }
@@ -364,8 +363,8 @@ const selectedPosts = [
   .personal-section h2 { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 15px; margin: 30px auto 0; font-size: clamp(1.4rem, 3.5vw, 2.8rem); line-height: 1.45; letter-spacing: .04em; }
   .personal-section i { color: var(--muted); font-style: normal; }
   .cocker-trigger { border: 0; padding: 0; background: none; color: var(--ink); font: inherit; text-transform: uppercase; text-decoration: none; cursor: pointer; }
-  .cocker-heart { display: inline-grid; width: 1.45em; height: 1.45em; place-items: center; margin-left: .08em; border: 1px solid transparent; border-radius: 50%; color: #c83232; font-size: .62em; line-height: 1; transform: translateY(-.08em); transition: border-color 150ms ease, background 150ms ease; }
-  .cocker-trigger:hover .cocker-heart { border-color: currentColor; background: rgba(200, 50, 50, .06); }
+  .cocker-heart { display: inline-block; margin-left: .08em; color: #c83232; font-size: .62em; line-height: 1; transform: translateY(-.08em); transition: text-shadow 150ms ease; }
+  .cocker-trigger:hover .cocker-heart { text-shadow: -1px 0 #9f2424, 0 1px #9f2424, 1px 0 #9f2424, 0 -1px #9f2424; }
 
   .closing-section { margin: 0 calc(50% - 50vw); padding: 78px max(24px, calc((100vw - 1180px) / 2)); background: var(--footer); color: #fff; text-align: center; }
   .closing-section .section-label { color: #c5ded6 !important; }
