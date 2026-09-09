@@ -136,7 +136,7 @@ const selectedPosts = [
         <p class="section-label">Work with me</p>
         <h2 id="services-title">Independent review, architecture and due diligence</h2>
         <p>I take a small number of engagements at a time. Each one is fixed-scope, written up, and delivered on a date agreed in advance.</p>
-        <p>Over the past three years, my work has included engagements with 3 hedge funds, 2 family offices, and 2 insurers across the US, India, Japan, and the Middle East.</p>
+        <p>Recent work spans quantitative research, investment systems and technology review for buy-side and financial institutions across the US, India, Japan and the Middle East.</p>
       </header>
       <div class="service-table">
         <div class="table-head" aria-hidden="true">
@@ -153,11 +153,11 @@ const selectedPosts = [
             <div class="service-scope">
               <span>{service.duration}</span>
               <strong>{service.fee}</strong>
-              {service.note && <small>{service.note}</small>}
             </div>
           </article>
         ))}
       </div>
+      <p class="service-note">Extended implementation support available separately.</p>
     </section>
 
     <section class="large-section build-section" aria-labelledby="build-title">
@@ -327,7 +327,7 @@ const selectedPosts = [
   .service-description a { display: inline-block; margin-top: 15px; color: var(--ink); font-size: .8rem; }
   .service-scope { display: flex; flex-direction: column; gap: 7px; font-size: .84rem; }
   .service-scope strong { font-weight: 600; }
-  .service-scope small { margin-top: 5px; color: var(--muted); line-height: 1.45; }
+  .service-note { margin-top: 18px !important; color: var(--muted); font-size: .76rem; text-align: right; }
 
   .product-head, .product-row { display: grid; grid-template-columns: minmax(180px, .75fr) minmax(360px, 1.6fr) 40px; gap: 32px; }
   .product-head { padding: 10px 0; border-bottom: 1px solid var(--ink); font-size: .72rem; letter-spacing: .07em; text-transform: uppercase; }
