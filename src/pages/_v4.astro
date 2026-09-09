@@ -216,7 +216,7 @@ const selectedPosts = [
     <section class="personal-section" aria-labelledby="personal-title">
       <p class="section-label">Personal side</p>
       <h2 id="personal-title">
-        <span>Padel</span><i>/</i><span>Diving</span><i>/</i><span>Action movies</span><i>/</i><span>Puzzles</span><i>/</i><span>Foodie</span><i>/</i><span>Travel</span><i>/</i><button type="button" class="cocker-trigger">My cocker spaniel</button>
+        <span>Padel</span><i>/</i><span>Diving</span><i>/</i><span>Action movies</span><i>/</i><span>Puzzles</span><i>/</i><span>Foodie</span><i>/</i><span>Travel</span><i>/</i><button type="button" class="cocker-trigger">My cocker spaniel <span class="cocker-heart" aria-hidden="true">♥</span></button>
       </h2>
     </section>
 
@@ -226,7 +226,7 @@ const selectedPosts = [
       <p>In thirty minutes, I will tell you whether I can help, what it would take, and what it would cost.</p>
       <div>
         <a class="outline-button light-button" href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
-        <!--email_off--><a class="text-contact" href="mailto:jakub@quantjourney.pro">jakub@quantjourney.pro</a><!--/email_off-->
+        <!--email_off--><a class="text-contact" href="mailto:jakub@quantjourney.pro">Email me</a><!--/email_off-->
       </div>
     </section>
   </main>
@@ -281,7 +281,7 @@ const selectedPosts = [
 
   .profile-header { padding: 70px 0 32px; text-align: center; }
   .profile-header h1 { font-size: clamp(3.2rem, 8.5vw, 7.6rem); line-height: .96; letter-spacing: .08em; }
-  .profile-discipline { margin-top: 24px; color: var(--ink) !important; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(.96rem, 1.7vw, 1.4rem); letter-spacing: .08em; text-transform: uppercase; }
+  .profile-discipline { margin-top: 38px; color: var(--ink) !important; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(.96rem, 1.7vw, 1.4rem); letter-spacing: .08em; text-transform: uppercase; }
   .profile-header nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; margin-top: 32px; }
   .profile-header nav a { color: var(--ink); font-size: .8rem; text-transform: uppercase; }
 
@@ -361,7 +361,8 @@ const selectedPosts = [
   .personal-section { padding: 76px 0 84px; text-align: center; }
   .personal-section h2 { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 15px; margin: 30px auto 0; font-size: clamp(1.4rem, 3.5vw, 2.8rem); line-height: 1.45; letter-spacing: .04em; }
   .personal-section i { color: var(--muted); font-style: normal; }
-  .cocker-trigger { border: 0; padding: 0; background: none; color: inherit; font: inherit; text-transform: uppercase; text-decoration: underline; text-underline-offset: 6px; cursor: pointer; }
+  .cocker-trigger { border: 0; padding: 0; background: none; color: var(--footer); font: inherit; text-transform: uppercase; text-decoration: none; cursor: pointer; }
+  .cocker-heart { display: inline-block; margin-left: .18em; font-size: .62em; transform: translateY(-.08em); }
 
   .closing-section { margin: 0 calc(50% - 50vw); padding: 78px max(24px, calc((100vw - 1180px) / 2)); background: var(--footer); color: #fff; text-align: center; }
   .closing-section .section-label { color: #c5ded6 !important; }
