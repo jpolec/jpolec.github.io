@@ -1,94 +1,74 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
-
-const proof = [
-  { value: '3', label: 'startups co-founded and led' },
-  { value: 'VC', label: 'funding raised' },
-  { value: '1', label: 'exit' },
-  { value: '100+', label: 'paying customers' },
-];
+import { services } from '../data/v15-services';
 
 const situations = [
   {
-    title: 'Validate a strategy',
-    copy: 'Determine whether the research supports its claims before the strategy receives capital or goes into production.',
+    title: 'Validate a system',
+    text: 'Someone claims a system works, and the decision depends on whether that is true.',
   },
   {
     title: 'Check before allocating capital',
-    copy: 'Get an independent assessment before investing in a strategy, platform, or investment technology business.',
+    text: 'A strategy is about to receive capital, and nobody in the room has independently checked the research behind it.',
   },
   {
-    title: 'Untangle an investment system',
-    copy: 'Trace research, data, portfolio, risk, and execution end to end—and decide what to build, buy, or replace.',
-  },
-];
-
-const services = [
-  {
-    title: 'Strategy and backtest review',
-    summary: 'I independently review the data, assumptions, portfolio construction, costs, and overfitting risk before capital is committed or a strategy goes live.',
-    deliverable: 'A written assessment of what the evidence supports, what may be misleading, and what requires further testing.',
-    duration: '2–3 weeks',
-    fee: 'From $7,500',
-    href: '/services/strategy-review/',
-  },
-  {
-    title: 'Investment systems architecture',
-    summary: 'I assess or design how research, data, portfolio management, risk, and execution work together.',
-    deliverable: 'An architecture proposal and implementation roadmap with priorities, dependencies, and trade-offs.',
-    duration: '4–6 weeks',
-    fee: 'From $18,000',
-    href: '/services/systems-architecture/',
-  },
-  {
-    title: 'Quant and investment technology due diligence',
-    summary: 'I independently assess the technology, models, and engineering behind an investment product, platform, or business.',
-    deliverable: 'A structured assessment of strengths, material risks, unresolved questions, and recommended next steps.',
-    duration: '2–4 weeks',
-    fee: 'From $15,000',
-    href: '/services/technology-due-diligence/',
+    title: 'Untangle the infrastructure',
+    text: 'Research, data, portfolio, risk, and execution have grown into something nobody can trace end to end, and a decision has to be made about what to build, buy, or replace.',
   },
 ];
 
 const products = [
   {
     name: 'OneBook',
-    description: 'A buy-side operating layer connecting research, portfolio state, risk, decisions, and execution.',
+    destination: 'onebook.quantjourney.cloud',
+    description: 'A buy-side investment operating layer connecting research, portfolio state, risk, decisions, and execution.',
     href: 'https://onebook.quantjourney.cloud/',
   },
   {
     name: 'Quant API / MCP',
-    description: 'Managed financial-data infrastructure with governed routes and approved MCP access.',
+    destination: 'api.quantjourney.cloud',
+    description: 'Managed financial-data infrastructure with governed routes, normalized contracts, and approved MCP access.',
     href: 'https://api.quantjourney.cloud/',
   },
   {
     name: 'Backtester',
-    description: 'Python-native strategy research with reproducible workflows and reviewable outputs.',
+    destination: 'backtester.quantjourney.cloud',
+    description: 'Python-native strategy research with reproducible workflows, diagnostics, and reviewable outputs.',
     href: 'https://backtester.quantjourney.cloud/',
   },
   {
     name: 'Quant Infra',
-    description: 'Infrastructure design and delivery for funds, family offices, and investment teams.',
+    destination: 'quantjourney.cloud',
+    description: 'Proprietary infrastructure design and delivery for hedge funds, other investment funds, family offices, and investment teams.',
     href: 'https://quantjourney.cloud/',
   },
   {
     name: 'Agents',
-    description: 'Controlled tools for approved financial and investment workflows.',
+    destination: 'agents.quantjourney.cloud',
+    description: 'Controlled tools for approved financial and investment workflows, with OAuth, scoped access, and MCP.',
     href: 'https://agents.quantjourney.cloud/',
   },
 ];
 
-const research = [
+const selectedPosts = [
   {
     title: 'Designing a Real Portfolio Management System',
+    description: 'PMS design: keeping positions and cash consistent, with portfolio state that can be rebuilt day by day.',
     href: 'https://quantjourney.substack.com/p/designing-a-real-portfolio-management',
   },
   {
     title: 'QuantJourney Backtester Is Now Open Source',
+    description: 'Backtest reliability: tracing when information becomes tradable, how signals become positions, and which execution, cost and validation assumptions shape the results.',
     href: 'https://quantjourney.substack.com/p/quantjourney-backtester-is-now-open',
   },
   {
+    title: 'Moving Beyond Correlation — Hunting Alpha with Lead-Lag & Granger Causality',
+    description: 'Alpha research: distinguishing statistical lead-lag relationships from an economic edge, and examining how those relationships change across market regimes.',
+    href: 'https://quantjourney.substack.com/p/moving-beyond-correlation-hunting',
+  },
+  {
     title: 'AI-Agent-Native Investment Infrastructure',
+    description: 'Applied AI: connecting agents to controlled portfolio, market-data, risk, and research infrastructure through MCP.',
     href: 'https://quantjourney.substack.com/p/ai-agent-native-investment-infrastructure',
   },
 ];
@@ -100,157 +80,166 @@ const research = [
   canonical="https://jakubpolec.com/_v2/"
   noindex={true}
 >
-  <main class="v2-shell">
-    <section class="v2-hero" aria-labelledby="v2-title">
-      <div class="v2-hero-copy">
-        <p class="v2-eyebrow">Independent quant systems review</p>
-        <h1 id="v2-title">Jakub Połeć</h1>
-        <p class="v2-lead">I review and design quantitative systems, investment infrastructure, and the research behind them—and put the answer in writing.</p>
-        <p class="v2-bio">I work with hedge funds, family offices, asset managers, and investors in investment technology. My background spans CERN, Microsoft, Oracle, and more than a decade building quantitative, AI, and data-intensive systems. I now run QuantJourney.</p>
-        <div class="v2-actions" aria-label="Contact links">
-          <a class="v2-button v2-button-primary" href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
-          <!--email_off--><a class="v2-button" href="mailto:jakub@quantjourney.pro">Email me</a><!--/email_off-->
-        </div>
-        <p class="v2-meta">Dubai, UAE · I do not manage client capital or give investment advice.</p>
-      </div>
-      <figure class="v2-portrait">
+  <main class="editorial-shell">
+    <header class="profile-header">
+      <h1>Jakub Połeć</h1>
+      <p>Quantitative systems / investment infrastructure</p>
+      <nav aria-label="Contact and profiles">
+        <a href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Book a call</a>
+        <!--email_off--><a href="mailto:jakub@quantjourney.pro">Email</a><!--/email_off-->
+        <a href="https://linkedin.com/in/jakubpolec" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/jpolec" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="portrait-statement" aria-label="Introduction">
+      <figure>
         <img src="/jakub-polec-seated.webp" alt="Portrait of Jakub Połeć" width="600" height="750" loading="eager" decoding="async" />
       </figure>
-    </section>
-
-    <section class="v2-proof" aria-label="Selected experience">
-      {proof.map((item) => (
-        <div class="v2-proof-item">
-          <strong>{item.value}</strong>
-          <span>{item.label}</span>
-        </div>
-      ))}
-    </section>
-
-    <section class="v2-section v2-situations" aria-labelledby="v2-situations-title">
-      <header class="v2-section-heading">
-        <p class="v2-kicker">When people call me</p>
-        <h2 id="v2-situations-title">Decisions that need an independent answer.</h2>
-      </header>
-      <div class="v2-situation-grid">
-        {situations.map((situation, index) => (
-          <article class="v2-situation-card">
-            <span class="v2-card-number" aria-hidden="true">0{index + 1}</span>
-            <h3>{situation.title}</h3>
-            <p>{situation.copy}</p>
-          </article>
-        ))}
+      <div class="statement">
+        <blockquote>“The decision depends on whether the system actually works.”</blockquote>
+        <a href="#work-with-me">How I help <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
-    <section class="v2-section" aria-labelledby="v2-work-title">
-      <header class="v2-section-heading v2-heading-split">
-        <div>
-          <p class="v2-kicker">Work with me</p>
-          <h2 id="v2-work-title">Fixed scope. Written output. Agreed date.</h2>
+    <section class="profile-columns" aria-label="Background and reasons to work together">
+      <article>
+        <p class="section-label">Background</p>
+        <p>I review and design quantitative systems, investment infrastructure, and the research behind them—and put the answer in writing.</p>
+        <p>I work with hedge funds, family offices, asset managers, and investors in investment technology. My background spans high-energy physics at CERN, Microsoft, Oracle, and more than a decade building data-intensive, AI, and quantitative systems.</p>
+        <p>I co-founded and led three technology startups, raised VC funding, and completed one exit. I now run QuantJourney, which builds investment infrastructure for buy-side teams.</p>
+        <p class="small-note">Based in Dubai, UAE. I do not manage client capital and do not give investment advice.</p>
+      </article>
+      <article>
+        <p class="section-label">When people call me</p>
+        <div class="situation-list">
+          {situations.map((situation) => (
+            <div>
+              <h2>{situation.title}</h2>
+              <p>{situation.text}</p>
+            </div>
+          ))}
         </div>
-        <p>I take a small number of engagements at a time. Recent work includes 3 hedge funds, 2 family offices, and 2 insurers across the US, India, Japan, and the Middle East.</p>
+        <a class="outline-button" href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Get in touch with Jakub</a>
+      </article>
+    </section>
+
+    <section class="proof-band" aria-label="Selected experience">
+      <div><strong>3</strong><span>startups co-founded and led</span></div>
+      <div><strong>VC</strong><span>funding raised</span></div>
+      <div><strong>1</strong><span>exit</span></div>
+      <div><strong>100+</strong><span>paying customers</span></div>
+    </section>
+
+    <section id="work-with-me" class="large-section services-section" aria-labelledby="services-title">
+      <header class="centered-heading">
+        <p class="section-label">Work with me</p>
+        <h2 id="services-title">Independent review and architecture</h2>
+        <p>I take a small number of engagements at a time. Each one is fixed-scope, written up, and delivered on a date agreed in advance.</p>
+        <p>Over the past three years, my work has included engagements with 3 hedge funds, 2 family offices, and 2 insurers across the US, India, Japan, and the Middle East.</p>
       </header>
-      <div class="v2-service-list">
+      <div class="service-table">
+        <div class="table-head" aria-hidden="true">
+          <span>Engagement</span><span>Scope and output</span><span>Timing / fee</span>
+        </div>
         {services.map((service) => (
-          <article class="v2-service">
-            <div class="v2-service-title">
-              <h3>{service.title}</h3>
-              <div class="v2-service-meta"><span>{service.duration}</span><span>{service.fee}</span></div>
+          <article class="service-row">
+            <h3>{service.title}</h3>
+            <div class="service-description">
+              <p>{service.description}</p>
+              <p><strong>You receive:</strong> {service.deliverable.replace('You receive ', '')}</p>
+              <a href={`/services/${service.slug}/`}>Full scope <span aria-hidden="true">↗</span></a>
             </div>
-            <div class="v2-service-copy">
-              <p>{service.summary}</p>
-              <p><strong>Deliverable:</strong> {service.deliverable}</p>
-              <a href={service.href}>Full scope <span aria-hidden="true">↗</span></a>
+            <div class="service-scope">
+              <span>{service.duration}</span>
+              <strong>{service.fee}</strong>
+              {service.note && <small>{service.note}</small>}
             </div>
           </article>
         ))}
       </div>
     </section>
 
-    <section class="v2-section" aria-labelledby="v2-build-title">
-      <header class="v2-section-heading v2-heading-split">
-        <div>
-          <p class="v2-kicker">What I build</p>
-          <h2 id="v2-build-title">Investment systems in production.</h2>
-        </div>
-        <p>QuantJourney builds and operates the infrastructure behind research, portfolio decisions, risk, and investment operations.</p>
+    <section class="large-section build-section" aria-labelledby="build-title">
+      <header class="centered-heading compact-heading">
+        <p class="section-label">What I build</p>
+        <h2 id="build-title">QuantJourney systems</h2>
+        <p>QuantJourney is my company. We build and operate investment systems used across research, portfolio management, risk, data, execution, and applied AI.</p>
       </header>
-      <div class="v2-product-grid">
+      <div class="product-table">
+        <div class="product-head" aria-hidden="true"><span>System</span><span>What it does</span><span>Open</span></div>
         {products.map((product) => (
-          <a class="v2-product" href={product.href} target="_blank" rel="noopener">
-            <span><strong>{product.name}</strong><span aria-hidden="true">↗</span></span>
-            <p>{product.description}</p>
+          <a class="product-row" href={product.href} target="_blank" rel="noopener">
+            <span class="product-name"><strong>{product.name}</strong><small>{product.destination}</small></span>
+            <span class="product-description">{product.description}</span>
+            <span aria-hidden="true">↗</span>
           </a>
         ))}
       </div>
     </section>
 
-    <section class="v2-section v2-evidence" aria-labelledby="v2-evidence-title">
-      <header class="v2-section-heading">
-        <p class="v2-kicker">Published work</p>
-        <h2 id="v2-evidence-title">The work is open to inspection.</h2>
+    <section class="large-section published-section" aria-labelledby="published-title">
+      <header class="centered-heading compact-heading">
+        <p class="section-label">Published work</p>
+        <h2 id="published-title">Book and selected research</h2>
       </header>
-      <div class="v2-evidence-grid">
-        <a class="v2-book" href="https://quant-interviews.quantjourney.cloud" target="_blank" rel="noopener">
-          <div class="v2-book-copy">
-            <p class="v2-small-label">Quant Interviews</p>
-            <h3>From mathematical foundations to production-grade quant systems.</h3>
-            <p>1,630 pages · 194 questions · Python / C++ / SQL</p>
-            <span class="v2-text-link">Open the book <span aria-hidden="true">↗</span></span>
-          </div>
+      <div class="book-feature">
+        <div class="book-image" aria-label="Quant Interviews volumes">
           <img src="/quant-interviews-volume-1.svg" alt="Quant Interviews Volume I cover" width="540" height="763" loading="lazy" decoding="async" />
-        </a>
-        <div class="v2-research">
-          <div class="v2-research-intro">
-            <p class="v2-small-label">Selected research</p>
-            <p>250+ articles on investment systems, strategy research, backtesting, risk, data engineering, execution, and applied AI.</p>
-          </div>
-          <div class="v2-research-links">
-            {research.map((article) => (
-              <a href={article.href} target="_blank" rel="noopener">
-                <span>{article.title}</span><span aria-hidden="true">↗</span>
-              </a>
-            ))}
-          </div>
-          <a class="v2-text-link" href="https://quantjourney.substack.com" target="_blank" rel="noopener">More on the QuantJourney blog <span aria-hidden="true">↗</span></a>
+          <img src="/quant-interviews-volume-2.svg" alt="Quant Interviews Volume II cover" width="540" height="763" loading="lazy" decoding="async" />
+        </div>
+        <div class="book-copy">
+          <p class="section-label">Quant Interviews</p>
+          <h3>From mathematical foundations to production-grade quant systems.</h3>
+          <p>1,630 pages · 194 questions · Python / C++ / SQL</p>
+          <a class="outline-button" href="https://quant-interviews.quantjourney.cloud" target="_blank" rel="noopener">Open the book</a>
         </div>
       </div>
+
+      <div class="research-heading">
+        <h3>Selected Research</h3>
+        <p>On the QuantJourney blog, I have published 250+ articles covering investment strategies, alpha research, backtesting, portfolio construction, risk, data engineering, execution, and applied AI.</p>
+      </div>
+      <div class="research-grid">
+        {selectedPosts.map((post) => (
+          <a href={post.href} target="_blank" rel="noopener">
+            <span class="section-label">Research</span>
+            <h3>{post.title}</h3>
+            <p>{post.description}</p>
+            <span class="read-link">Read <span aria-hidden="true">↗</span></span>
+          </a>
+        ))}
+      </div>
+      <p class="more-link"><a href="https://quantjourney.substack.com" target="_blank" rel="noopener">More on the QuantJourney blog <span aria-hidden="true">↗</span></a></p>
     </section>
 
-    <section class="v2-section v2-personal" aria-labelledby="v2-personal-title">
-      <div>
-        <p class="v2-kicker">Personal side</p>
-        <h2 id="v2-personal-title">Outside the systems.</h2>
-      </div>
-      <ul>
-        <li>Padel</li><li>Diving</li><li>Action movies</li><li>Puzzles</li><li>Foodie</li><li>Travel</li>
-        <li><button type="button" class="v2-cocker-trigger">My cocker spaniel</button></li>
-      </ul>
+    <section class="personal-section" aria-labelledby="personal-title">
+      <p class="section-label">Personal side</p>
+      <h2 id="personal-title">
+        <span>Padel</span><i>/</i><span>Diving</span><i>/</i><span>Action movies</span><i>/</i><span>Puzzles</span><i>/</i><span>Foodie</span><i>/</i><span>Travel</span><i>/</i><button type="button" class="cocker-trigger">My cocker spaniel</button>
+      </h2>
     </section>
 
-    <section class="v2-closing" aria-labelledby="v2-closing-title">
+    <section class="closing-section" aria-labelledby="closing-title">
+      <p class="section-label">Get in touch</p>
+      <h2 id="closing-title">Bring the decision you are facing and whatever material you have.</h2>
+      <p>In thirty minutes, I will tell you whether I can help, what it would take, and what it would cost.</p>
       <div>
-        <p class="v2-kicker">Start with the decision</p>
-        <h2 id="v2-closing-title">Bring the decision and the available material.</h2>
-        <p>In 30 minutes, I’ll tell you whether I can help, the scope, and the fee.</p>
-      </div>
-      <div class="v2-actions">
-        <a class="v2-button v2-button-light" href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
-        <!--email_off--><a class="v2-button v2-button-ghost" href="mailto:jakub@quantjourney.pro">Email me</a><!--/email_off-->
+        <a class="outline-button light-button" href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+        <!--email_off--><a class="text-contact" href="mailto:jakub@quantjourney.pro">jakub@quantjourney.pro</a><!--/email_off-->
       </div>
     </section>
   </main>
 
-  <dialog class="v2-cocker-dialog" aria-label="My cocker spaniel">
-    <button type="button" class="v2-cocker-close" aria-label="Close photo">×</button>
+  <dialog class="cocker-dialog" aria-label="My cocker spaniel">
+    <button type="button" class="cocker-close" aria-label="Close photo">×</button>
     <img src="/cocker-spaniel.webp" alt="Jakub's black cocker spaniel resting on a sofa" width="1200" height="1600" loading="lazy" decoding="async" />
   </dialog>
 
   <script>
-    const dialog = document.querySelector<HTMLDialogElement>('.v2-cocker-dialog');
-    const trigger = document.querySelector<HTMLButtonElement>('.v2-cocker-trigger');
-    const close = document.querySelector<HTMLButtonElement>('.v2-cocker-close');
+    const dialog = document.querySelector<HTMLDialogElement>('.cocker-dialog');
+    const trigger = document.querySelector<HTMLButtonElement>('.cocker-trigger');
+    const close = document.querySelector<HTMLButtonElement>('.cocker-close');
     trigger?.addEventListener('click', () => dialog?.showModal());
     close?.addEventListener('click', () => dialog?.close());
     dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
@@ -258,141 +247,171 @@ const research = [
 </SimpleLayout>
 
 <style>
-  .v2-shell {
-    --v2-ink: #052d57;
-    --v2-muted: #49647f;
-    --v2-line: #dce4ec;
-    --v2-soft: #f4f7fa;
-    --v2-accent: #0d6efd;
-    width: min(1120px, calc(100% - 48px));
+  :global(body) { background: #f4f0e8; }
+
+  .editorial-shell {
+    --paper: #f4f0e8;
+    --ink: #171918;
+    --muted: #555a57;
+    --line: #c8c5bd;
+    --accent: #0d624a;
+    width: min(1180px, calc(100% - 48px));
     margin: 0 auto;
-    padding: 48px 0 80px;
-    color: var(--v2-ink);
+    padding: 28px 0 0;
+    color: var(--ink);
   }
 
-  .v2-shell h1, .v2-shell h2, .v2-shell h3, .v2-shell p { margin: 0; }
-  .v2-shell h1, .v2-shell h2, .v2-shell h3 { text-wrap: balance; }
-  .v2-shell p { color: var(--v2-muted); text-wrap: pretty; }
-
-  .v2-eyebrow, .v2-kicker, .v2-small-label {
-    color: var(--v2-accent) !important;
-    font-size: .72rem;
-    font-weight: 700;
-    letter-spacing: .13em;
+  .editorial-shell h1, .editorial-shell h2, .editorial-shell h3, .editorial-shell p, .editorial-shell figure, .editorial-shell blockquote { margin: 0; }
+  .editorial-shell p { color: var(--muted); }
+  .editorial-shell a { text-underline-offset: 4px; }
+  .editorial-shell h1, .editorial-shell h2, .centered-heading h2, .personal-section h2 {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 400;
     text-transform: uppercase;
   }
 
-  .v2-hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1.65fr) minmax(220px, .68fr);
-    gap: clamp(40px, 7vw, 88px);
-    align-items: center;
-    padding: 24px 0 54px;
+  .section-label {
+    color: var(--muted) !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: .66rem !important;
+    letter-spacing: .08em;
+    text-transform: uppercase;
   }
 
-  .v2-hero-copy { max-width: 760px; }
-  .v2-hero h1 { margin-top: 15px; font-size: clamp(3rem, 7vw, 6.1rem); font-weight: 600; line-height: .94; letter-spacing: -.055em; }
-  .v2-lead { max-width: 720px; margin-top: 28px !important; color: var(--v2-ink) !important; font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.45; letter-spacing: -.018em; }
-  .v2-bio { max-width: 710px; margin-top: 24px !important; font-size: 1rem; line-height: 1.7; }
+  .profile-header { padding: 70px 0 32px; text-align: center; }
+  .profile-header h1 { font-size: clamp(3.2rem, 8.5vw, 7.6rem); line-height: .96; letter-spacing: .08em; }
+  .profile-header > p { margin-top: 14px; color: var(--ink); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(.92rem, 1.7vw, 1.35rem); letter-spacing: .08em; text-transform: uppercase; }
+  .profile-header nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; margin-top: 28px; }
+  .profile-header nav a { color: var(--ink); font-size: .72rem; text-transform: uppercase; }
 
-  .v2-portrait { overflow: hidden; margin: 0; border-radius: 12px; background: var(--v2-ink); }
-  .v2-portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1) contrast(1.03); mix-blend-mode: screen; }
+  .portrait-statement { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .portrait-statement figure { height: clamp(420px, 52vw, 630px); border-right: 1px solid var(--line); padding: 12px 12px 12px 0; }
+  .portrait-statement img { width: 100%; height: 100%; object-fit: cover; object-position: center 33%; }
+  .statement { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: clamp(30px, 7vw, 90px); text-align: center; }
+  .statement blockquote { max-width: 440px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.35rem, 2.5vw, 2.15rem); font-style: italic; line-height: 1.4; }
+  .statement a { margin-top: 42px; color: var(--ink); font-size: .72rem; text-transform: uppercase; }
 
-  .v2-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-  .v2-button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; border: 1px solid var(--v2-ink); border-radius: 7px; padding: 11px 18px; color: var(--v2-ink); font-size: .88rem; font-weight: 650; text-decoration: none; transition: transform 150ms ease, background 150ms ease, color 150ms ease; }
-  .v2-button:hover { transform: translateY(-1px); }
-  .v2-button-primary { background: var(--v2-ink); color: #fff; }
-  .v2-meta { margin-top: 17px !important; font-size: .76rem; line-height: 1.5; }
+  .profile-columns { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
+  .profile-columns > article { padding: 24px clamp(20px, 3.5vw, 48px) 46px 12px; }
+  .profile-columns > article + article { border-left: 1px solid var(--line); padding-right: 12px; padding-left: clamp(20px, 3.5vw, 48px); }
+  .profile-columns article > p:not(.section-label) { margin-top: 22px; font-family: Georgia, 'Times New Roman', serif; font-size: .98rem; line-height: 1.68; }
+  .profile-columns article > .small-note { font-family: inherit !important; font-size: .72rem !important; }
+  .situation-list > div { margin-top: 22px; }
+  .situation-list h2 { font-family: inherit; font-size: .95rem; font-weight: 600; line-height: 1.4; text-transform: none; }
+  .situation-list p { margin-top: 7px; font-family: Georgia, 'Times New Roman', serif; font-size: .96rem; line-height: 1.6; }
 
-  .v2-proof { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--v2-line); border-bottom: 1px solid var(--v2-line); }
-  .v2-proof-item { min-width: 0; padding: 24px clamp(12px, 2.4vw, 28px); }
-  .v2-proof-item:first-child { padding-left: 0; }
-  .v2-proof-item + .v2-proof-item { border-left: 1px solid var(--v2-line); }
-  .v2-proof-item strong { display: block; font-size: clamp(1.65rem, 3vw, 2.4rem); line-height: 1; letter-spacing: -.04em; }
-  .v2-proof-item span { display: block; max-width: 150px; margin-top: 8px; color: var(--v2-muted); font-size: .77rem; line-height: 1.35; }
+  .outline-button { display: inline-flex; min-height: 42px; align-items: center; justify-content: center; margin-top: 28px; border: 1px solid var(--ink); border-radius: 999px; padding: 9px 22px; color: var(--ink); font-size: .73rem; text-decoration: none; }
+  .outline-button:hover { background: var(--ink); color: var(--paper); }
 
-  .v2-section { padding: clamp(58px, 8vw, 94px) 0; border-bottom: 1px solid var(--v2-line); }
-  .v2-section-heading { max-width: 690px; margin-bottom: 34px; }
-  .v2-section-heading h2, .v2-personal h2, .v2-closing h2 { margin-top: 10px; font-size: clamp(1.85rem, 3.5vw, 3rem); font-weight: 600; line-height: 1.12; letter-spacing: -.035em; }
-  .v2-heading-split { display: grid; grid-template-columns: minmax(0, .85fr) minmax(280px, 1fr); gap: clamp(30px, 7vw, 90px); align-items: end; max-width: none; }
-  .v2-heading-split > p { font-size: .94rem; line-height: 1.65; }
+  .proof-band { display: grid; grid-template-columns: repeat(4, 1fr); padding: 32px 0 34px; border-bottom: 1px solid var(--line); }
+  .proof-band > div { padding: 0 24px; text-align: center; }
+  .proof-band > div + div { border-left: 1px solid var(--line); }
+  .proof-band strong { display: block; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; }
+  .proof-band span { display: block; margin-top: 7px; color: var(--muted); font-size: .68rem; text-transform: uppercase; }
 
-  .v2-situation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .v2-situation-card { min-height: 230px; padding: 24px; border: 1px solid var(--v2-line); border-radius: 10px; background: var(--v2-soft); }
-  .v2-card-number { color: var(--v2-accent); font-size: .7rem; font-weight: 700; letter-spacing: .12em; }
-  .v2-situation-card h3 { margin-top: 42px; font-size: 1.1rem; line-height: 1.35; }
-  .v2-situation-card p { margin-top: 12px; font-size: .88rem; line-height: 1.65; }
+  .large-section { padding: clamp(72px, 10vw, 130px) 0; border-bottom: 1px solid var(--line); }
+  .centered-heading { max-width: 760px; margin: 0 auto 54px; text-align: center; }
+  .centered-heading h2 { margin-top: 16px; font-size: clamp(1.9rem, 4vw, 3.3rem); line-height: 1.2; letter-spacing: .04em; }
+  .centered-heading > p:not(.section-label) { margin-top: 19px; font-family: Georgia, 'Times New Roman', serif; font-size: .96rem; line-height: 1.65; }
+  .compact-heading { margin-bottom: 46px; }
 
-  .v2-service-list { border-top: 1px solid var(--v2-line); }
-  .v2-service { display: grid; grid-template-columns: minmax(220px, .75fr) minmax(0, 1.25fr); gap: clamp(32px, 7vw, 92px); padding: 30px 0; border-bottom: 1px solid var(--v2-line); }
-  .v2-service-title h3 { max-width: 310px; font-size: 1.1rem; line-height: 1.35; }
-  .v2-service-meta { display: flex; gap: 8px 18px; flex-wrap: wrap; margin-top: 14px; color: var(--v2-muted); font-size: .74rem; }
-  .v2-service-copy p { font-size: .9rem; line-height: 1.65; }
-  .v2-service-copy p + p { margin-top: 12px; }
-  .v2-service-copy strong { color: var(--v2-ink); }
-  .v2-service-copy a, .v2-text-link { display: inline-block; margin-top: 15px; color: var(--v2-ink); font-size: .82rem; font-weight: 650; text-underline-offset: 4px; }
+  .table-head, .service-row { display: grid; grid-template-columns: minmax(180px, .72fr) minmax(340px, 1.45fr) minmax(130px, .45fr); gap: clamp(25px, 4vw, 58px); }
+  .table-head { padding: 9px 0; border-bottom: 1px solid var(--ink); font-size: .6rem; letter-spacing: .07em; text-transform: uppercase; }
+  .service-row { padding: 29px 0; border-bottom: 1px solid var(--line); }
+  .service-row h3 { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: .94rem; font-weight: 400; line-height: 1.4; text-transform: uppercase; }
+  .service-description p { font-family: Georgia, 'Times New Roman', serif; font-size: .86rem; line-height: 1.62; }
+  .service-description p + p { margin-top: 13px; }
+  .service-description strong { color: var(--ink); }
+  .service-description a { display: inline-block; margin-top: 15px; color: var(--ink); font-size: .7rem; }
+  .service-scope { display: flex; flex-direction: column; gap: 7px; font-size: .74rem; }
+  .service-scope strong { font-weight: 600; }
+  .service-scope small { margin-top: 5px; color: var(--muted); line-height: 1.45; }
 
-  .v2-product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .v2-product { min-height: 150px; padding: 22px; border: 1px solid var(--v2-line); border-radius: 9px; color: var(--v2-ink); text-decoration: none; transition: border-color 150ms ease, transform 150ms ease; }
-  .v2-product:hover { border-color: var(--v2-accent); transform: translateY(-1px); }
-  .v2-product:last-child { grid-column: 1 / -1; min-height: 120px; }
-  .v2-product > span { display: flex; justify-content: space-between; gap: 20px; }
-  .v2-product p { max-width: 430px; margin-top: 27px; font-size: .84rem; line-height: 1.55; }
+  .product-head, .product-row { display: grid; grid-template-columns: minmax(180px, .75fr) minmax(360px, 1.6fr) 40px; gap: 32px; }
+  .product-head { padding: 9px 0; border-bottom: 1px solid var(--ink); font-size: .6rem; letter-spacing: .07em; text-transform: uppercase; }
+  .product-row { align-items: center; padding: 23px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+  .product-name { display: flex; flex-direction: column; gap: 5px; }
+  .product-name strong { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: .9rem; font-weight: 400; text-transform: uppercase; }
+  .product-name small { color: var(--muted); font-size: .6rem; }
+  .product-description { color: var(--muted); font-family: Georgia, 'Times New Roman', serif; font-size: .84rem; line-height: 1.55; }
+  .product-row:hover .product-name strong { text-decoration: underline; text-underline-offset: 4px; }
 
-  .v2-evidence-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 14px; }
-  .v2-book, .v2-research { min-height: 380px; border: 1px solid var(--v2-line); border-radius: 10px; background: var(--v2-soft); }
-  .v2-book { display: grid; grid-template-columns: minmax(0, 1fr) minmax(130px, .45fr); gap: 24px; overflow: hidden; padding: 28px 28px 0; color: var(--v2-ink); text-decoration: none; }
-  .v2-book-copy h3 { margin-top: 30px; font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.3; }
-  .v2-book-copy > p:not(.v2-small-label) { margin-top: 16px; font-size: .82rem; line-height: 1.5; }
-  .v2-book img { align-self: end; width: 100%; max-height: 315px; object-fit: contain; object-position: bottom; }
-  .v2-research { padding: 28px; }
-  .v2-research-intro > p:last-child { margin-top: 26px; font-size: .88rem; line-height: 1.6; }
-  .v2-research-links { margin-top: 22px; border-top: 1px solid var(--v2-line); }
-  .v2-research-links a { display: flex; justify-content: space-between; gap: 20px; padding: 13px 0; border-bottom: 1px solid var(--v2-line); color: var(--v2-ink); font-size: .82rem; line-height: 1.4; text-decoration: none; }
-  .v2-research-links a:hover span:first-child { text-decoration: underline; text-underline-offset: 4px; }
+  .book-feature { display: grid; grid-template-columns: 1.05fr .95fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .book-image { display: flex; align-items: end; justify-content: center; gap: 18px; overflow: hidden; min-height: 470px; border-right: 1px solid var(--line); padding: 34px 34px 0; background: #e9e4d9; }
+  .book-image img { width: min(43%, 210px); box-shadow: 0 12px 24px rgba(0, 0, 0, .11); }
+  .book-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(36px, 6vw, 78px); }
+  .book-copy h3 { margin-top: 30px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.55rem, 3vw, 2.45rem); font-weight: 400; line-height: 1.25; }
+  .book-copy > p:not(.section-label) { margin-top: 20px; font-size: .78rem; }
+  .book-copy .outline-button { align-self: flex-start; }
 
-  .v2-personal { display: grid; grid-template-columns: minmax(200px, .7fr) minmax(0, 1.3fr); gap: 50px; align-items: center; }
-  .v2-personal ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
-  .v2-personal li { border: 1px solid var(--v2-line); border-radius: 999px; padding: 8px 12px; color: var(--v2-muted); font-size: .76rem; }
-  .v2-cocker-trigger { border: 0; padding: 0; background: none; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .research-heading { display: grid; grid-template-columns: .7fr 1.3fr; gap: 48px; margin-top: 74px; align-items: start; }
+  .research-heading h3 { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 1.25rem; font-weight: 400; text-transform: uppercase; }
+  .research-heading p { max-width: 650px; font-family: Georgia, 'Times New Roman', serif; font-size: .9rem; line-height: 1.6; }
+  .research-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 34px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .research-grid > a { display: flex; min-height: 300px; flex-direction: column; padding: 22px; color: var(--ink); text-decoration: none; }
+  .research-grid > a + a { border-left: 1px solid var(--line); }
+  .research-grid h3 { margin-top: 44px; font-family: Georgia, 'Times New Roman', serif; font-size: 1.02rem; font-weight: 400; line-height: 1.35; }
+  .research-grid p { margin-top: 14px; font-size: .74rem; line-height: 1.55; }
+  .read-link { margin-top: auto; padding-top: 24px; font-size: .7rem; text-decoration: underline; }
+  .more-link { margin-top: 18px !important; text-align: right; font-size: .72rem; }
 
-  .v2-closing { display: grid; grid-template-columns: minmax(0, 1.25fr) auto; gap: 44px; align-items: end; margin-top: 72px; border-radius: 12px; padding: clamp(32px, 5vw, 54px); background: var(--v2-ink); color: #fff; }
-  .v2-closing .v2-kicker { color: #83b8ff !important; }
-  .v2-closing h2 { max-width: 650px; }
-  .v2-closing p:not(.v2-kicker) { margin-top: 16px; color: #c3d1df; }
-  .v2-closing .v2-actions { justify-content: flex-end; }
-  .v2-button-light { border-color: #fff; background: #fff; color: var(--v2-ink); }
-  .v2-button-ghost { border-color: #718aa3; color: #fff; }
+  .personal-section { padding: 76px 0 84px; text-align: center; }
+  .personal-section h2 { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 15px; margin: 30px auto 0; font-size: clamp(1.4rem, 3.5vw, 2.8rem); line-height: 1.45; letter-spacing: .04em; }
+  .personal-section i { color: var(--muted); font-style: normal; }
+  .cocker-trigger { border: 0; padding: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 6px; cursor: pointer; }
 
-  .v2-cocker-dialog { max-width: min(650px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: visible; border: 0; border-radius: 12px; padding: 0; background: #000; }
-  .v2-cocker-dialog::backdrop { background: rgba(5, 24, 44, .78); backdrop-filter: blur(5px); }
-  .v2-cocker-dialog img { max-height: calc(100vh - 32px); border-radius: 12px; object-fit: contain; }
-  .v2-cocker-close { position: absolute; top: 10px; right: 10px; display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-size: 1.4rem; cursor: pointer; }
+  .closing-section { margin: 0 calc(50% - 50vw); padding: 78px max(24px, calc((100vw - 1180px) / 2)); background: var(--accent); color: #fff; text-align: center; }
+  .closing-section .section-label { color: #c5ded6 !important; }
+  .closing-section h2 { max-width: 900px; margin: 24px auto 0; font-size: clamp(1.8rem, 4vw, 3.5rem); line-height: 1.2; letter-spacing: .04em; }
+  .closing-section > p:not(.section-label) { margin-top: 22px; color: #d9e8e3; font-family: Georgia, 'Times New Roman', serif; }
+  .closing-section > div { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 28px; align-items: center; margin-top: 30px; }
+  .light-button { margin-top: 0; border-color: #fff; color: #fff; }
+  .light-button:hover { background: #fff; color: var(--accent); }
+  .text-contact { color: #fff; font-size: .75rem; }
 
-  @media (max-width: 780px) {
-    .v2-shell { width: min(100% - 32px, 620px); padding-top: 24px; }
-    .v2-hero { grid-template-columns: 1fr; gap: 34px; padding-top: 20px; }
-    .v2-portrait { width: min(58vw, 260px); }
-    .v2-proof { grid-template-columns: repeat(2, 1fr); }
-    .v2-proof-item:first-child { padding-left: 16px; }
-    .v2-proof-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--v2-line); }
-    .v2-proof-item:nth-child(4) { border-top: 1px solid var(--v2-line); }
-    .v2-situation-grid, .v2-product-grid, .v2-evidence-grid, .v2-heading-split, .v2-service, .v2-personal, .v2-closing { grid-template-columns: 1fr; }
-    .v2-product:last-child { grid-column: auto; min-height: 150px; }
-    .v2-situation-card { min-height: 190px; }
-    .v2-situation-card h3 { margin-top: 26px; }
-    .v2-heading-split { align-items: start; }
-    .v2-closing { align-items: start; }
-    .v2-closing .v2-actions { justify-content: flex-start; }
+  .cocker-dialog { max-width: min(650px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: visible; border: 0; padding: 0; background: #000; }
+  .cocker-dialog::backdrop { background: rgba(0, 0, 0, .76); }
+  .cocker-dialog img { max-height: calc(100vh - 32px); object-fit: contain; }
+  .cocker-close { position: absolute; top: 10px; right: 10px; width: 38px; height: 38px; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-size: 1.4rem; cursor: pointer; }
+
+  @media (max-width: 820px) {
+    .profile-header { padding-top: 46px; }
+    .portrait-statement, .profile-columns, .book-feature { grid-template-columns: 1fr; }
+    .portrait-statement figure { border-right: 0; border-bottom: 1px solid var(--line); padding-right: 0; }
+    .statement { min-height: 300px; }
+    .profile-columns > article + article { border-top: 1px solid var(--line); border-left: 0; padding-left: 12px; }
+    .proof-band { grid-template-columns: repeat(2, 1fr); }
+    .proof-band > div { padding: 20px 12px; }
+    .proof-band > div:nth-child(3) { border-top: 1px solid var(--line); border-left: 0; }
+    .proof-band > div:nth-child(4) { border-top: 1px solid var(--line); }
+    .table-head, .product-head { display: none; }
+    .service-row { grid-template-columns: 1fr; gap: 20px; }
+    .service-scope { flex-direction: row; flex-wrap: wrap; gap: 8px 20px; }
+    .service-scope small { flex-basis: 100%; }
+    .product-row { grid-template-columns: minmax(130px, .7fr) minmax(0, 1.3fr) 20px; gap: 18px; }
+    .book-image { min-height: 390px; border-right: 0; border-bottom: 1px solid var(--line); }
+    .research-heading { grid-template-columns: 1fr; gap: 20px; }
+    .research-grid { grid-template-columns: repeat(2, 1fr); }
+    .research-grid > a:nth-child(3) { border-top: 1px solid var(--line); border-left: 0; }
+    .research-grid > a:nth-child(4) { border-top: 1px solid var(--line); }
   }
 
-  @media (max-width: 440px) {
-    .v2-book { grid-template-columns: 1fr; padding-bottom: 0; }
-    .v2-book img { max-width: 170px; }
-    .v2-button { width: 100%; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .v2-shell * { transition: none !important; }
+  @media (max-width: 520px) {
+    .editorial-shell { width: calc(100% - 28px); padding-top: 12px; }
+    .profile-header h1 { font-size: clamp(2.65rem, 14vw, 4.2rem); letter-spacing: .025em; }
+    .profile-header > p { font-size: .8rem; }
+    .portrait-statement figure { height: 430px; padding-left: 0; }
+    .statement { min-height: 270px; padding: 36px 20px; }
+    .profile-columns > article, .profile-columns > article + article { padding: 22px 4px 38px; }
+    .large-section { padding: 78px 0; }
+    .centered-heading { text-align: left; }
+    .product-row { grid-template-columns: 1fr 20px; }
+    .product-description { grid-column: 1 / -1; }
+    .research-grid { grid-template-columns: 1fr; }
+    .research-grid > a + a { border-top: 1px solid var(--line); border-left: 0; }
+    .research-grid > a { min-height: 260px; padding: 20px 4px; }
+    .book-image { min-height: 330px; padding: 24px 18px 0; }
+    .book-copy { padding: 42px 4px; }
+    .closing-section { margin-right: calc(50% - 50vw); margin-left: calc(50% - 50vw); }
   }
 </style>
