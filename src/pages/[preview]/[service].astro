@@ -11,10 +11,11 @@ export function getStaticPaths() {
 }
 const { service, preview } = Astro.props;
 const detail = serviceDetails[service.slug];
-const isEditorialPreview = preview === '_v4';
-const isPreview = preview === '_v15' || isEditorialPreview;
+const isEditorialLayout = preview === '_v4' || preview === 'services';
+const isPreview = preview === '_v15' || preview === '_v4';
 const canonical = `https://jakubpolec.com/${preview}/${service.slug}/`;
 const callUrl = 'https://calendly.com/jpolec/30min';
+const profileHref = preview === '_v4' ? '/_v4/#work-with-me' : '/#work-with-me';
 const howItWorks = [
   {
     title: 'Scope the decision',
@@ -39,10 +40,10 @@ const howItWorks = [
   ogImageWidth={1200}
   ogImageHeight={630}
 >
-  {isEditorialPreview ? (
+  {isEditorialLayout ? (
     <main class="editorial-detail">
       <nav class="editorial-nav" aria-label="Back to profile">
-        <a href="/_v4/#work-with-me">← Jakub Połeć</a>
+        <a href={profileHref}>← Jakub Połeć</a>
         <span>Independent review / Full scope</span>
       </nav>
 
