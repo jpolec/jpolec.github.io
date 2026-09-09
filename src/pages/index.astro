@@ -223,7 +223,7 @@ const selectedPosts = [
     <section class="personal-section" aria-labelledby="personal-title">
       <p class="section-label">Personal side</p>
       <h2 id="personal-title">
-        <span>Padel</span><i>/</i><span>Diving</span><i>/</i><span>Action movies</span><i>/</i><span>Puzzles</span><i>/</i><span>Foodie</span><i>/</i><span>Travel</span><i>/</i><button type="button" class="cocker-trigger">My cocker spaniel<span class="cocker-heart" aria-hidden="true">♥</span></button>
+        <span>Padel</span><i>/</i><span>Diving</span><i>/</i><span>Action movies</span><i>/</i><span>Puzzles</span><i>/</i><span>Foodie</span><i>/</i><span>Travel</span><i>/</i><button type="button" class="cocker-trigger">My cocker spaniel<span class="cocker-heart" aria-hidden="true"><span class="cocker-heart-fill">♥</span></span></button>
       </h2>
     </section>
 
@@ -371,9 +371,12 @@ const selectedPosts = [
   .personal-section h2 { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 15px; margin: 30px auto 0; font-size: clamp(1.4rem, 3.5vw, 2.8rem); line-height: 1.45; letter-spacing: .04em; }
   .personal-section i { color: var(--muted); font-style: normal; }
   .cocker-trigger { border: 0; padding: 0; background: none; color: var(--ink); font: inherit; text-transform: uppercase; text-decoration: none; cursor: pointer; }
-  .cocker-heart { position: relative; display: inline-grid; width: 1.35em; height: 1.35em; place-items: center; margin-left: .04em; color: #c83232; font-size: .62em; line-height: 1; transform: translateY(-.08em); }
-  .cocker-heart::before { position: absolute; top: 50%; left: 50%; color: #c83232; content: '♡'; font-size: 1.85em; line-height: 1; opacity: 0; transform: translate(-50%, -50%); transition: opacity 150ms ease; }
+  .cocker-heart { position: relative; display: inline-grid; width: 1.45em; height: 1.45em; place-items: center; margin-left: .04em; color: #c83232; font-size: .62em; line-height: 1; transform: translateY(-.08em); }
+  .cocker-heart::before { position: absolute; top: 50%; left: 50%; color: transparent; content: '♥'; font-size: 1em; line-height: 1; opacity: 0; transform: translate(-50%, -50%) scale(1.55); -webkit-text-stroke: .075em #c83232; transition: opacity 150ms ease; }
+  .cocker-heart-fill { position: relative; z-index: 1; display: block; transform-origin: center; }
+  .cocker-trigger:hover .cocker-heart-fill { animation: cocker-heart-pulse 420ms ease; }
   .cocker-trigger:hover .cocker-heart::before { opacity: 1; }
+  @keyframes cocker-heart-pulse { 0%, 100% { transform: translateY(0) scale(1); } 45% { transform: translateY(-.09em) scale(1.12); } }
 
   .closing-section { margin: 0 calc(50% - 50vw); padding: 78px max(24px, calc((100vw - 1180px) / 2)); background: var(--footer); color: #fff; text-align: center; }
   .closing-section .section-label { color: #c5ded6 !important; }
