@@ -219,11 +219,14 @@ const selectedPosts = [
       </div>
       <p class="more-link"><a href="https://quantjourney.substack.com" target="_blank" rel="noopener">More on the QuantJourney blog <span aria-hidden="true">↗</span></a></p>
       <aside class="newsletter-strip" aria-label="Subscribe to the QuantJourney Journal">
-        <form class="newsletter-form" action="https://quantjourney.substack.com/api/v1/free?nojs=true" method="post" target="_blank">
+        <form class="newsletter-form" action="https://quantjourney.substack.com/api/v1/free?nojs=true" method="post" target="newsletter-result" novalidate>
           <input type="hidden" name="source" value="embed" />
           <input type="email" name="email" placeholder="Type your email..." autocomplete="email" aria-label="Email address" required />
           <button type="submit">Subscribe</button>
         </form>
+        <p class="newsletter-error" role="alert" hidden>Please enter a valid email address.</p>
+        <p class="newsletter-success" role="status" hidden>Thanks — check your inbox.</p>
+        <iframe class="newsletter-result" name="newsletter-result" title="Newsletter signup response" hidden></iframe>
       </aside>
     </section>
 
@@ -257,6 +260,30 @@ const selectedPosts = [
     trigger?.addEventListener('click', () => dialog?.showModal());
     close?.addEventListener('click', () => dialog?.close());
     dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+
+    const newsletterForm = document.querySelector<HTMLFormElement>('.newsletter-form');
+    const newsletterEmail = newsletterForm?.querySelector<HTMLInputElement>('input[type="email"]');
+    const newsletterError = document.querySelector<HTMLElement>('.newsletter-error');
+    const newsletterSuccess = document.querySelector<HTMLElement>('.newsletter-success');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    newsletterForm?.addEventListener('submit', (event) => {
+      if (!newsletterEmail || !emailPattern.test(newsletterEmail.value.trim())) {
+        event.preventDefault();
+        newsletterEmail?.setAttribute('aria-invalid', 'true');
+        if (newsletterError) newsletterError.hidden = false;
+        if (newsletterSuccess) newsletterSuccess.hidden = true;
+        newsletterEmail?.focus();
+        return;
+      }
+      newsletterEmail.removeAttribute('aria-invalid');
+      if (newsletterError) newsletterError.hidden = true;
+      if (newsletterSuccess) newsletterSuccess.hidden = false;
+    });
+    newsletterEmail?.addEventListener('input', () => {
+      newsletterEmail.removeAttribute('aria-invalid');
+      if (newsletterError) newsletterError.hidden = true;
+      if (newsletterSuccess) newsletterSuccess.hidden = true;
+    });
   </script>
 </SimpleLayout>
 
@@ -378,8 +405,11 @@ const selectedPosts = [
   .newsletter-form:focus-within { box-shadow: 0 0 0 2px rgba(5, 45, 87, .16); }
   .newsletter-form input[type='email'] { min-width: 0; flex: 1; border: 0; padding: 0 12px; outline: 0; background: transparent; color: var(--ink); font: 14px system-ui, -apple-system, 'Segoe UI', sans-serif; }
   .newsletter-form input[type='email']::placeholder { color: #a2a2a2; }
+  .newsletter-form input[aria-invalid='true'] { background: rgba(177, 74, 74, .035); }
   .newsletter-form button { width: 120px; flex: 0 0 120px; border: 0; background: var(--ink); color: #fff; font: 14px system-ui, -apple-system, 'Segoe UI', sans-serif; cursor: pointer; }
   .newsletter-form button:hover { background: #0b416f; }
+  .newsletter-error { margin-top: 7px !important; color: #b14a4a !important; font-size: .72rem; line-height: 1.35; text-align: left; }
+  .newsletter-success { margin-top: 7px !important; color: var(--muted) !important; font-size: .72rem; line-height: 1.35; text-align: left; }
 
   .personal-section { padding: 76px 0 84px; text-align: center; }
   .personal-section h2 { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 15px; margin: 30px auto 0; font-size: clamp(1.4rem, 3.5vw, 2.8rem); line-height: 1.45; letter-spacing: .04em; }
