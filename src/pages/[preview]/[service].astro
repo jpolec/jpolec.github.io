@@ -4,16 +4,31 @@ import { services } from '../../data/v15-services';
 import { serviceDetails } from '../../data/service-details';
 
 export function getStaticPaths() {
-  return ['_v15', 'services'].flatMap(preview => services.map(service => ({
+  return ['_v4', '_v15', 'services'].flatMap(preview => services.map(service => ({
     params: { preview, service: service.slug },
     props: { service, preview },
   })));
 }
 const { service, preview } = Astro.props;
 const detail = serviceDetails[service.slug];
-const isPreview = preview === '_v15';
+const isEditorialPreview = preview === '_v4';
+const isPreview = preview === '_v15' || isEditorialPreview;
 const canonical = `https://jakubpolec.com/${preview}/${service.slug}/`;
 const callUrl = 'https://calendly.com/jpolec/30min';
+const howItWorks = [
+  {
+    title: 'Scope the decision',
+    text: 'We agree the decision to be made, the evidence required, access, and the people involved before the engagement begins.',
+  },
+  {
+    title: 'Review the evidence',
+    text: 'I work through the research, data, code, systems, and claims relevant to the agreed scope.',
+  },
+  {
+    title: 'Put the answer in writing',
+    text: 'Findings, supporting evidence, priorities, and unresolved questions are delivered in writing and discussed with your team.',
+  },
+];
 ---
 <SimpleLayout
   title={`${service.title} | Jakub Połeć`}
@@ -24,56 +39,154 @@ const callUrl = 'https://calendly.com/jpolec/30min';
   ogImageWidth={1200}
   ogImageHeight={630}
 >
-  <main>
-    <a class="back" href={isPreview ? '/_v15/#work-with-me' : '/#work-with-me'}>← Jakub Połeć</a>
-    <header class="service-hero">
-      <h1>{service.title}</h1>
-      <p class="lead">{detail.positioning}</p>
-    </header>
+  {isEditorialPreview ? (
+    <main class="editorial-detail">
+      <nav class="editorial-nav" aria-label="Back to profile">
+        <a href="/_v4/#work-with-me">← Jakub Połeć</a>
+        <span>Independent review / Full scope</span>
+      </nav>
 
-    <section class="section" aria-labelledby="coverage-title">
-      <h2 id="coverage-title">{detail.coverageTitle}</h2>
-      <div class="rows">
-        {detail.areas.map(area => <div class="row">
-          <h3>{area.title}</h3>
-          <p>{area.text}</p>
-          {area.note && <p class="review-note">{area.note}</p>}
-        </div>)}
-      </div>
-    </section>
-
-    {detail.additionalSections.map((section, index) => <section class="section" aria-labelledby={`detail-title-${index}`}>
-      <h2 id={`detail-title-${index}`}>{section.title}</h2>
-      <div class="section-copy">{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
-    </section>)}
-
-    <section class="section" aria-labelledby="deliverables-title">
-      <h2 id="deliverables-title">Deliverables</h2>
-      <ul class="deliverables">
-        {detail.deliverables.map(deliverable => <li>{deliverable}</li>)}
-      </ul>
-    </section>
-
-    <section class="section" aria-labelledby="outcome-title">
-      <h2 id="outcome-title">Outcome</h2>
-      <div class="section-copy">
-        <p>{detail.outcome}</p>
-        {detail.recommendations && <p>{detail.recommendations}</p>}
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="engagement-title">
-      <h2 id="engagement-title">Engagement</h2>
-      <div>
-        <p class="terms">{service.duration}. From {service.fee}.</p>
-        <p>Final scope and fee confirmed after a 30-minute call.</p>
-        <div class="actions">
-          <a class="button" href={callUrl} target="_blank" rel="noopener">Book a 30-minute scoping call <span aria-hidden="true">→</span></a>
-          <!--email_off--><a class="button secondary" href="mailto:jakub@quantjourney.pro">Email me</a><!--/email_off-->
+      <header class="editorial-hero">
+        <p class="editorial-label">Engagement</p>
+        <h1>{service.title}</h1>
+        <p>{detail.positioning}</p>
+        <div class="editorial-terms">
+          <span><small>Timing</small>{service.duration}</span>
+          <span><small>Fee</small>From {service.fee}</span>
+          <a href={callUrl} target="_blank" rel="noopener">Book a 30-minute scoping call</a>
         </div>
-      </div>
-    </section>
-  </main>
+      </header>
+
+      <section class="editorial-block how-block" aria-labelledby="how-title">
+        <header>
+          <p class="editorial-label">How it works</p>
+          <h2 id="how-title">A focused review, from the decision to a written answer.</h2>
+        </header>
+        <div class="how-steps">
+          {howItWorks.map((step, index) => (
+            <article>
+              <span>0{index + 1}</span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="editorial-block coverage-block" aria-labelledby="editorial-coverage-title">
+        <header>
+          <p class="editorial-label">Scope</p>
+          <h2 id="editorial-coverage-title">{detail.coverageTitle}</h2>
+        </header>
+        <div class="editorial-rows">
+          {detail.areas.map((area, index) => (
+            <article>
+              <span>0{index + 1}</span>
+              <div>
+                <h3>{area.title}</h3>
+                <p>{area.text}</p>
+                {area.note && <p class="editorial-note">{area.note}</p>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {detail.additionalSections.map((section, index) => (
+        <section class="editorial-block narrative-block" aria-labelledby={`editorial-detail-${index}`}>
+          <header>
+            <p class="editorial-label">Further detail</p>
+            <h2 id={`editorial-detail-${index}`}>{section.title}</h2>
+          </header>
+          <div>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+        </section>
+      ))}
+
+      <section class="editorial-block deliverable-block" aria-labelledby="editorial-deliverables-title">
+        <header>
+          <p class="editorial-label">Output</p>
+          <h2 id="editorial-deliverables-title">Deliverables</h2>
+        </header>
+        <ol>
+          {detail.deliverables.map((deliverable, index) => (
+            <li><span>0{index + 1}</span><p>{deliverable}</p></li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="editorial-block outcome-block" aria-labelledby="editorial-outcome-title">
+        <header>
+          <p class="editorial-label">Decision</p>
+          <h2 id="editorial-outcome-title">Outcome</h2>
+        </header>
+        <div>
+          <p>{detail.outcome}</p>
+          {detail.recommendations && <p class="editorial-note">{detail.recommendations}</p>}
+        </div>
+      </section>
+
+      <section class="editorial-closing" aria-labelledby="editorial-engagement-title">
+        <p class="editorial-label">Engagement</p>
+        <h2 id="editorial-engagement-title">Start with the decision you need to make.</h2>
+        <p>{service.duration}. From {service.fee}. Final scope and fee are confirmed after a 30-minute call.</p>
+        <div>
+          <a class="editorial-button" href={callUrl} target="_blank" rel="noopener">Book a 30-minute scoping call</a>
+          <!--email_off--><a href="mailto:jakub@quantjourney.pro">jakub@quantjourney.pro</a><!--/email_off-->
+        </div>
+      </section>
+    </main>
+  ) : (
+    <main>
+      <a class="back" href={isPreview ? '/_v15/#work-with-me' : '/#work-with-me'}>← Jakub Połeć</a>
+      <header class="service-hero">
+        <h1>{service.title}</h1>
+        <p class="lead">{detail.positioning}</p>
+      </header>
+
+      <section class="section" aria-labelledby="coverage-title">
+        <h2 id="coverage-title">{detail.coverageTitle}</h2>
+        <div class="rows">
+          {detail.areas.map(area => <div class="row">
+            <h3>{area.title}</h3>
+            <p>{area.text}</p>
+            {area.note && <p class="review-note">{area.note}</p>}
+          </div>)}
+        </div>
+      </section>
+
+      {detail.additionalSections.map((section, index) => <section class="section" aria-labelledby={`detail-title-${index}`}>
+        <h2 id={`detail-title-${index}`}>{section.title}</h2>
+        <div class="section-copy">{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+      </section>)}
+
+      <section class="section" aria-labelledby="deliverables-title">
+        <h2 id="deliverables-title">Deliverables</h2>
+        <ul class="deliverables">
+          {detail.deliverables.map(deliverable => <li>{deliverable}</li>)}
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="outcome-title">
+        <h2 id="outcome-title">Outcome</h2>
+        <div class="section-copy">
+          <p>{detail.outcome}</p>
+          {detail.recommendations && <p>{detail.recommendations}</p>}
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="engagement-title">
+        <h2 id="engagement-title">Engagement</h2>
+        <div>
+          <p class="terms">{service.duration}. From {service.fee}.</p>
+          <p>Final scope and fee confirmed after a 30-minute call.</p>
+          <div class="actions">
+            <a class="button" href={callUrl} target="_blank" rel="noopener">Book a 30-minute scoping call <span aria-hidden="true">→</span></a>
+            <!--email_off--><a class="button secondary" href="mailto:jakub@quantjourney.pro">Email me</a><!--/email_off-->
+          </div>
+        </div>
+      </section>
+    </main>
+  )}
 </SimpleLayout>
 <style>
   main { width: min(1000px, calc(100% - 64px)); margin: 0 auto; padding: 40px 0 80px; }
@@ -106,5 +219,136 @@ const callUrl = 'https://calendly.com/jpolec/30min';
   }
   @media (max-width: 420px) {
     .actions .button { width: 100%; }
+  }
+
+  :global(body:has(.editorial-detail)) { background: #f4f0e8; }
+
+  .editorial-detail {
+    --editorial-paper: #f4f0e8;
+    --editorial-ink: #052d57;
+    --editorial-muted: #36516e;
+    --editorial-line: #c9d2dc;
+    --editorial-green: #0d624a;
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 30px 0 0;
+    color: var(--editorial-ink);
+  }
+
+  .editorial-detail h1,
+  .editorial-detail h2,
+  .editorial-detail h3,
+  .editorial-detail p { margin: 0; }
+
+  .editorial-detail h1,
+  .editorial-detail h2,
+  .editorial-detail h3 {
+    color: var(--editorial-ink);
+    text-wrap: balance;
+  }
+
+  .editorial-detail p { color: var(--editorial-muted); }
+
+  .editorial-label {
+    color: var(--editorial-muted) !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: .78rem !important;
+    letter-spacing: .08em;
+    line-height: 1.4 !important;
+    text-transform: uppercase;
+  }
+
+  .editorial-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--editorial-line);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: .72rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .editorial-nav a { color: var(--editorial-ink); }
+  .editorial-nav span { color: var(--editorial-muted); text-align: right; }
+
+  .editorial-hero { padding: clamp(70px, 10vw, 125px) 0 58px; border-bottom: 1px solid var(--editorial-line); }
+  .editorial-hero h1 {
+    max-width: 960px;
+    margin-top: 24px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: clamp(2.6rem, 7vw, 6.7rem);
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: -.035em;
+    text-transform: uppercase;
+  }
+  .editorial-hero > p:not(.editorial-label) {
+    max-width: 780px;
+    margin-top: 38px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.12rem, 1.8vw, 1.4rem);
+    line-height: 1.65;
+  }
+  .editorial-terms { display: grid; grid-template-columns: 140px 160px minmax(220px, auto); gap: 22px; align-items: end; width: fit-content; margin-top: 42px; }
+  .editorial-terms > span { color: var(--editorial-ink); font-size: .9rem; }
+  .editorial-terms small { display: block; margin-bottom: 7px; color: var(--editorial-muted); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; }
+  .editorial-terms a, .editorial-button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; border: 1px solid var(--editorial-ink); border-radius: 999px; padding: 10px 22px; color: var(--editorial-ink); font-size: .8rem; text-decoration: none; }
+
+  .editorial-block { display: grid; grid-template-columns: minmax(240px, .75fr) minmax(0, 1.5fr); gap: clamp(40px, 8vw, 110px); padding: clamp(64px, 9vw, 110px) 0; border-bottom: 1px solid var(--editorial-line); }
+  .editorial-block > header h2 { margin-top: 17px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(1.5rem, 2.8vw, 2.35rem); font-weight: 400; line-height: 1.25; letter-spacing: .025em; text-transform: uppercase; }
+
+  .how-steps { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--editorial-ink); }
+  .how-steps article { min-height: 265px; padding: 20px 20px 24px; }
+  .how-steps article + article { border-left: 1px solid var(--editorial-line); }
+  .how-steps article > span, .editorial-rows article > span, .deliverable-block li > span { color: var(--editorial-muted); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: .7rem; }
+  .how-steps h3 { margin-top: 58px; font-size: 1.05rem; line-height: 1.4; }
+  .how-steps p { margin-top: 13px; font-family: Georgia, 'Times New Roman', serif; font-size: .95rem; line-height: 1.6; }
+
+  .editorial-rows { border-top: 1px solid var(--editorial-ink); }
+  .editorial-rows article { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--editorial-line); }
+  .editorial-rows article:last-child { border-bottom: 0; }
+  .editorial-rows h3 { font-size: 1rem; line-height: 1.45; }
+  .editorial-rows p { margin-top: 5px; font-family: Georgia, 'Times New Roman', serif; font-size: .98rem; line-height: 1.58; }
+  .editorial-note { margin-top: 11px !important; padding-left: 14px; border-left: 2px solid var(--editorial-green); font-family: inherit !important; font-size: .82rem !important; }
+
+  .narrative-block > div p, .outcome-block > div > p { font-family: Georgia, 'Times New Roman', serif; font-size: 1.03rem; line-height: 1.72; }
+  .narrative-block > div p + p, .outcome-block > div > p + p { margin-top: 20px; }
+
+  .deliverable-block ol { margin: 0; padding: 0; border-top: 1px solid var(--editorial-ink); list-style: none; }
+  .deliverable-block li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 18px; padding: 19px 0; border-bottom: 1px solid var(--editorial-line); }
+  .deliverable-block li:last-child { border-bottom: 0; }
+  .deliverable-block li p { font-family: Georgia, 'Times New Roman', serif; font-size: .98rem; line-height: 1.55; }
+
+  .editorial-closing { margin: 0 calc(50% - 50vw); padding: clamp(68px, 9vw, 100px) max(24px, calc((100vw - 1120px) / 2)); background: var(--editorial-green); color: #fff; text-align: center; }
+  .editorial-closing .editorial-label { color: #c5ded6 !important; }
+  .editorial-closing h2 { max-width: 850px; margin: 22px auto 0; color: #fff; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(2rem, 4.8vw, 4rem); font-weight: 400; line-height: 1.15; text-transform: uppercase; }
+  .editorial-closing > p:not(.editorial-label) { margin-top: 22px; color: #d9e8e3; font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; }
+  .editorial-closing > div { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 28px; align-items: center; margin-top: 30px; }
+  .editorial-closing a { color: #fff; font-size: .82rem; }
+  .editorial-closing .editorial-button { border-color: #fff; }
+  .editorial-closing .editorial-button:hover { background: #fff; color: var(--editorial-green); }
+
+  @media (max-width: 800px) {
+    .editorial-detail { width: min(680px, calc(100% - 34px)); padding-top: 18px; }
+    .editorial-hero { padding-top: 62px; }
+    .editorial-terms { grid-template-columns: 1fr 1fr; width: 100%; }
+    .editorial-terms a { grid-column: 1 / -1; justify-self: start; }
+    .editorial-block { grid-template-columns: 1fr; gap: 34px; }
+    .how-steps { grid-template-columns: 1fr; }
+    .how-steps article { min-height: 0; padding: 20px 4px 25px; }
+    .how-steps article + article { border-top: 1px solid var(--editorial-line); border-left: 0; }
+    .how-steps h3 { margin-top: 28px; }
+  }
+
+  @media (max-width: 440px) {
+    .editorial-nav span { display: none; }
+    .editorial-hero h1 { font-size: clamp(2.25rem, 13vw, 3.8rem); }
+    .editorial-hero > p:not(.editorial-label) { font-size: 1.06rem; }
+    .editorial-terms { gap: 22px 14px; }
+    .editorial-terms a { width: 100%; }
+    .editorial-block { padding: 68px 0; }
+    .editorial-block > header h2 { font-size: 1.65rem; }
   }
 </style>
