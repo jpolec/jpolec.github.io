@@ -38,11 +38,11 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       'Prioritised remediation list - what to fix before capital, what can wait',
       '90-minute walkthrough with your team',
     ],
-    outcome: 'You get a defensible answer to one question: is this edge real, and does it survive contact with execution? Either the strategy holds up and you have third-party evidence to show, or you find out now rather than after a drawdown.',
+    outcome: 'You get a defensible answer to one question: does the available evidence support deploying capital, and under what assumptions? The review either provides independent evidence for proceeding within defined limits or identifies material weaknesses before they surface in live trading.',
   },
   'systems-architecture': {
     recommendations: 'Recommendations are vendor-neutral. If a QuantJourney component is relevant, I disclose the overlap explicitly and treat it as one option alongside external or internal alternatives.',
-    description: 'Investment systems architecture: current-state assessment, target design, build/buy decisions and a sequenced 12-month roadmap with cost and headcount implications.',
+    description: 'Investment systems architecture: current-state assessment, target design, build/buy decisions and a sequenced implementation roadmap with cost and headcount implications.',
     positioning: 'Most investment technology problems are not tooling problems. They are sequencing problems - the data layer, the research environment, and the execution path were built at different times, by different people, for a smaller firm than the one that exists now. I design the target architecture and the order in which to get there.',
     coverageTitle: 'What the engagement covers',
     areas: [
@@ -58,7 +58,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     deliverables: [
       'Target architecture document with component-level decisions and rationale',
       'Current-state assessment and gap analysis',
-      'Sequenced 12-month roadmap: what to build first and what it unblocks',
+      'Sequenced implementation roadmap: what to build first, what it unblocks, and what can wait',
       'Build/buy recommendations with indicative cost and headcount implications',
       'Two working sessions with your team plus one review round',
     ],
