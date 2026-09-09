@@ -218,13 +218,8 @@ const selectedPosts = [
         ))}
       </div>
       <p class="more-link"><a href="https://quantjourney.substack.com" target="_blank" rel="noopener">More on the QuantJourney blog <span aria-hidden="true">↗</span></a></p>
-      <aside class="newsletter-strip" aria-labelledby="newsletter-title">
-        <div>
-          <p class="section-label">QuantJourney Journal</p>
-          <h3 id="newsletter-title">QuantJourney research, by email.</h3>
-          <p>Quantitative research, investment systems and applied AI.</p>
-        </div>
-        <iframe src="https://quantjourney.substack.com/embed?simple=true" title="Subscribe to the QuantJourney Journal" width="480" height="185" loading="lazy"></iframe>
+      <aside class="newsletter-strip" aria-label="Subscribe to the QuantJourney Journal">
+        <iframe src="https://quantjourney.substack.com/embed?simple=true" title="Subscribe to the QuantJourney Journal" width="900" height="185" loading="lazy"></iframe>
       </aside>
     </section>
 
@@ -374,10 +369,8 @@ const selectedPosts = [
   .research-grid p { margin-top: 14px; font-size: .84rem; line-height: 1.55; }
   .read-link { margin-top: auto; padding-top: 24px; font-size: .8rem; text-decoration: underline; }
   .more-link { margin-top: 18px !important; text-align: right; font-size: .82rem; }
-  .newsletter-strip { display: grid; grid-template-columns: minmax(260px, .9fr) minmax(420px, 1.1fr); gap: 34px; align-items: center; margin-top: 44px; padding: 22px 28px; background: #faf9f6; }
-  .newsletter-strip h3 { margin-top: 13px; font-family: Georgia, 'Times New Roman', serif; font-size: 1.35rem; font-weight: 400; line-height: 1.3; }
-  .newsletter-strip > div > p:not(.section-label) { margin-top: 9px; color: var(--muted); font-family: Georgia, 'Times New Roman', serif; font-size: .9rem; line-height: 1.5; }
-  .newsletter-strip iframe { display: block; width: 100%; height: 185px; border: 0; background: #faf9f6; }
+  .newsletter-strip { height: 60px; overflow: hidden; margin-top: 34px; background: #faf9f6; }
+  .newsletter-strip iframe { position: relative; top: -68px; display: block; width: 100%; height: 185px; border: 0; background: #faf9f6; }
 
   .personal-section { padding: 76px 0 84px; text-align: center; }
   .personal-section h2 { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 15px; margin: 30px auto 0; font-size: clamp(1.4rem, 3.5vw, 2.8rem); line-height: 1.45; letter-spacing: .04em; }
@@ -423,7 +416,6 @@ const selectedPosts = [
     .book-image { min-height: 390px; border-right: 0; border-bottom: 1px solid var(--line); }
     .research-heading { grid-template-columns: 1fr; gap: 20px; }
     .research-grid { grid-template-columns: repeat(2, 1fr); }
-    .newsletter-strip { grid-template-columns: 1fr; gap: 8px; }
     .research-grid > a:nth-child(3) { border-top: 1px solid var(--line); border-left: 0; }
     .research-grid > a:nth-child(4) { border-top: 1px solid var(--line); }
   }
@@ -442,7 +434,7 @@ const selectedPosts = [
     .research-grid { grid-template-columns: 1fr; }
     .research-grid > a + a { border-top: 1px solid var(--line); border-left: 0; }
     .research-grid > a { min-height: 260px; padding: 20px 4px; }
-    .newsletter-strip { margin-top: 34px; padding: 24px 18px 18px; }
+    .newsletter-strip { margin-top: 28px; }
     .book-image { min-height: 330px; padding: 24px 18px; }
     .book-copy { padding: 42px 4px; }
     .closing-section { margin-right: calc(50% - 50vw); margin-left: calc(50% - 50vw); }
