@@ -1,347 +1,398 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
-import { profile } from '../data/profile';
 
-const productProof = [
+const proof = [
+  { value: '3', label: 'startups co-founded and led' },
+  { value: 'VC', label: 'funding raised' },
+  { value: '1', label: 'exit' },
+  { value: '100+', label: 'paying customers' },
+];
+
+const situations = [
+  {
+    title: 'Validate a strategy',
+    copy: 'Determine whether the research supports its claims before the strategy receives capital or goes into production.',
+  },
+  {
+    title: 'Check before allocating capital',
+    copy: 'Get an independent assessment before investing in a strategy, platform, or investment technology business.',
+  },
+  {
+    title: 'Untangle an investment system',
+    copy: 'Trace research, data, portfolio, risk, and execution end to end—and decide what to build, buy, or replace.',
+  },
+];
+
+const services = [
+  {
+    title: 'Strategy and backtest review',
+    summary: 'I independently review the data, assumptions, portfolio construction, costs, and overfitting risk before capital is committed or a strategy goes live.',
+    deliverable: 'A written assessment of what the evidence supports, what may be misleading, and what requires further testing.',
+    duration: '2–3 weeks',
+    fee: 'From $7,500',
+    href: '/services/strategy-review/',
+  },
+  {
+    title: 'Investment systems architecture',
+    summary: 'I assess or design how research, data, portfolio management, risk, and execution work together.',
+    deliverable: 'An architecture proposal and implementation roadmap with priorities, dependencies, and trade-offs.',
+    duration: '4–6 weeks',
+    fee: 'From $18,000',
+    href: '/services/systems-architecture/',
+  },
+  {
+    title: 'Quant and investment technology due diligence',
+    summary: 'I independently assess the technology, models, and engineering behind an investment product, platform, or business.',
+    deliverable: 'A structured assessment of strengths, material risks, unresolved questions, and recommended next steps.',
+    duration: '2–4 weeks',
+    fee: 'From $15,000',
+    href: '/services/technology-due-diligence/',
+  },
+];
+
+const products = [
   {
     name: 'OneBook',
-    summary: 'Research, portfolio, risk and execution context in one workspace.',
+    description: 'A buy-side operating layer connecting research, portfolio state, risk, decisions, and execution.',
     href: 'https://onebook.quantjourney.cloud/',
   },
   {
     name: 'Quant API / MCP',
-    summary: 'Financial data for applications, research and approved AI clients.',
+    description: 'Managed financial-data infrastructure with governed routes and approved MCP access.',
     href: 'https://api.quantjourney.cloud/',
   },
   {
-    name: 'Quant DataLake',
-    summary: 'Market, fundamental and portfolio data for analytical workflows.',
-    href: 'https://data.quantjourney.cloud/',
-  },
-  {
     name: 'Backtester',
-    summary: 'Reproducible strategy research, diagnostics and backtest results.',
+    description: 'Python-native strategy research with reproducible workflows and reviewable outputs.',
     href: 'https://backtester.quantjourney.cloud/',
   },
   {
+    name: 'Quant Infra',
+    description: 'Infrastructure design and delivery for funds, family offices, and investment teams.',
+    href: 'https://quantjourney.cloud/',
+  },
+  {
     name: 'Agents',
-    summary: 'AI tools with scoped access and responses grounded in evidence.',
+    description: 'Controlled tools for approved financial and investment workflows.',
     href: 'https://agents.quantjourney.cloud/',
   },
 ];
 
+const research = [
+  {
+    title: 'Designing a Real Portfolio Management System',
+    href: 'https://quantjourney.substack.com/p/designing-a-real-portfolio-management',
+  },
+  {
+    title: 'QuantJourney Backtester Is Now Open Source',
+    href: 'https://quantjourney.substack.com/p/quantjourney-backtester-is-now-open',
+  },
+  {
+    title: 'AI-Agent-Native Investment Infrastructure',
+    href: 'https://quantjourney.substack.com/p/ai-agent-native-investment-infrastructure',
+  },
+];
 ---
 
 <SimpleLayout
-  title="Jakub Połeć | Quant Systems Architect & Founder of QuantJourney"
-  description={profile.description}
+  title="Jakub Połeć — independent review of quantitative systems"
+  description="Independent review of quantitative research, investment infrastructure, and technology for hedge funds, family offices, and investors in investment technology."
   canonical="https://jakubpolec.com/_v2/"
   noindex={true}
 >
-  <main class="v2-page-shell">
+  <main class="v2-shell">
     <section class="v2-hero" aria-labelledby="v2-title">
-      <h1 id="v2-title">{profile.name}</h1>
-      <p class="v2-role">{profile.role}</p>
-      <p class="v2-hero-copy">
-        I design and build quantitative research and investment systems for funds,
-        family offices and investment-technology teams.
-      </p>
-      <p class="v2-hero-copy">
-        My work connects data pipelines, backtesting, portfolio and risk analytics, and AI tooling -
-        from research design to implementation and validation.
-      </p>
-      <div class="v2-contact-row" aria-label="Contact links">
-        <a class="v2-button" href={profile.urls.email}>Email me <span aria-hidden="true">↗</span></a>
-        <a
-          class="v2-social-link"
-          href="https://linkedin.com/in/jakubpolec"
-          target="_blank"
-          rel="noopener"
-          aria-label="LinkedIn profile"
-          title="LinkedIn"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M6.94 8.5A1.72 1.72 0 1 0 6.94 5.06a1.72 1.72 0 0 0 0 3.44ZM5.48 18.94h2.93V10H5.48v8.94ZM10.25 10v8.94h2.92v-4.42c0-1.17.22-2.3 1.67-2.3 1.43 0 1.45 1.34 1.45 2.38v4.34h2.93v-4.93c0-2.42-.52-4.28-3.35-4.28-1.36 0-2.27.74-2.64 1.45h-.04V10h-2.94Z" />
-          </svg>
-        </a>
-        <a
-          class="v2-social-link"
-          href="https://x.com/jakubpolec"
-          target="_blank"
-          rel="noopener"
-          aria-label="X profile"
-          title="X"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M18.9 2.25h3.68l-8.04 9.19L24 21.75h-7.41l-5.8-7.59-6.64 7.59H.46l8.6-9.83L0 2.25h7.6l5.24 6.93 6.06-6.93Zm-1.29 17.3h2.04L6.49 4.34H4.3L17.61 19.55Z" />
-          </svg>
-        </a>
+      <div class="v2-hero-copy">
+        <p class="v2-eyebrow">Independent quant systems review</p>
+        <h1 id="v2-title">Jakub Połeć</h1>
+        <p class="v2-lead">I review and design quantitative systems, investment infrastructure, and the research behind them—and put the answer in writing.</p>
+        <p class="v2-bio">I work with hedge funds, family offices, asset managers, and investors in investment technology. My background spans CERN, Microsoft, Oracle, and more than a decade building quantitative, AI, and data-intensive systems. I now run QuantJourney.</p>
+        <div class="v2-actions" aria-label="Contact links">
+          <a class="v2-button v2-button-primary" href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+          <!--email_off--><a class="v2-button" href="mailto:jakub@quantjourney.pro">Email me</a><!--/email_off-->
+        </div>
+        <p class="v2-meta">Dubai, UAE · I do not manage client capital or give investment advice.</p>
+      </div>
+      <figure class="v2-portrait">
+        <img src="/jakub-polec-seated.webp" alt="Portrait of Jakub Połeć" width="600" height="750" loading="eager" decoding="async" />
+      </figure>
+    </section>
+
+    <section class="v2-proof" aria-label="Selected experience">
+      {proof.map((item) => (
+        <div class="v2-proof-item">
+          <strong>{item.value}</strong>
+          <span>{item.label}</span>
+        </div>
+      ))}
+    </section>
+
+    <section class="v2-section v2-situations" aria-labelledby="v2-situations-title">
+      <header class="v2-section-heading">
+        <p class="v2-kicker">When people call me</p>
+        <h2 id="v2-situations-title">Decisions that need an independent answer.</h2>
+      </header>
+      <div class="v2-situation-grid">
+        {situations.map((situation, index) => (
+          <article class="v2-situation-card">
+            <span class="v2-card-number" aria-hidden="true">0{index + 1}</span>
+            <h3>{situation.title}</h3>
+            <p>{situation.copy}</p>
+          </article>
+        ))}
       </div>
     </section>
 
-    <section class="v2-section v2-platform-section" aria-labelledby="platform-title">
-      <div class="v2-section-heading v2-platform-heading">
-        <h2 id="platform-title">Systems I’m building.</h2>
-        <p>
-          At QuantJourney, I build the tools behind research, portfolio decisions and investment operations.
-        </p>
+    <section class="v2-section" aria-labelledby="v2-work-title">
+      <header class="v2-section-heading v2-heading-split">
+        <div>
+          <p class="v2-kicker">Work with me</p>
+          <h2 id="v2-work-title">Fixed scope. Written output. Agreed date.</h2>
+        </div>
+        <p>I take a small number of engagements at a time. Recent work includes 3 hedge funds, 2 family offices, and 2 insurers across the US, India, Japan, and the Middle East.</p>
+      </header>
+      <div class="v2-service-list">
+        {services.map((service) => (
+          <article class="v2-service">
+            <div class="v2-service-title">
+              <h3>{service.title}</h3>
+              <div class="v2-service-meta"><span>{service.duration}</span><span>{service.fee}</span></div>
+            </div>
+            <div class="v2-service-copy">
+              <p>{service.summary}</p>
+              <p><strong>Deliverable:</strong> {service.deliverable}</p>
+              <a href={service.href}>Full scope <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        ))}
       </div>
-      <div class="v2-product-proof">
-        {productProof.map((product) => (
-          <a class="v2-product-row" href={product.href} target="_blank" rel="noopener">
-            <strong>{product.name}</strong>
-            <span>{product.summary}</span>
-            <span class="v2-arrow" aria-hidden="true">↗</span>
+    </section>
+
+    <section class="v2-section" aria-labelledby="v2-build-title">
+      <header class="v2-section-heading v2-heading-split">
+        <div>
+          <p class="v2-kicker">What I build</p>
+          <h2 id="v2-build-title">Investment systems in production.</h2>
+        </div>
+        <p>QuantJourney builds and operates the infrastructure behind research, portfolio decisions, risk, and investment operations.</p>
+      </header>
+      <div class="v2-product-grid">
+        {products.map((product) => (
+          <a class="v2-product" href={product.href} target="_blank" rel="noopener">
+            <span><strong>{product.name}</strong><span aria-hidden="true">↗</span></span>
+            <p>{product.description}</p>
           </a>
         ))}
       </div>
-      <p class="v2-platform-note">
-        QuantJourney builds investment technology. It does not manage client assets or provide investment advice.
-      </p>
     </section>
 
-    <section class="v2-section v2-background-section" aria-labelledby="background-title">
-      <figure class="v2-background-image">
-        <img
-          src="/jpbg.jpeg"
-          alt="Jakub Połeć with Bill Gates during his Microsoft years"
-          width="800"
-          height="796"
-          loading="lazy"
-          decoding="async"
-        />
-        <figcaption>With Bill Gates, during my Microsoft years.</figcaption>
-      </figure>
-      <div class="v2-background-copy">
-        <h2 id="background-title">From high-energy physics to quantitative systems.</h2>
-        <p>
-          My path has taken me from high-energy physics through Microsoft, technology entrepreneurship
-          and Oracle to quantitative finance. At Oracle, I was {profile.career.oracleTitle}.
-        </p>
-        <p>
-          I bring that background to the engineering details that matter in quantitative work:
-          data quality, reproducible research, portfolio constraints and systems that can be maintained.
-        </p>
+    <section class="v2-section v2-evidence" aria-labelledby="v2-evidence-title">
+      <header class="v2-section-heading">
+        <p class="v2-kicker">Published work</p>
+        <h2 id="v2-evidence-title">The work is open to inspection.</h2>
+      </header>
+      <div class="v2-evidence-grid">
+        <a class="v2-book" href="https://quant-interviews.quantjourney.cloud" target="_blank" rel="noopener">
+          <div class="v2-book-copy">
+            <p class="v2-small-label">Quant Interviews</p>
+            <h3>From mathematical foundations to production-grade quant systems.</h3>
+            <p>1,630 pages · 194 questions · Python / C++ / SQL</p>
+            <span class="v2-text-link">Open the book <span aria-hidden="true">↗</span></span>
+          </div>
+          <img src="/quant-interviews-volume-1.svg" alt="Quant Interviews Volume I cover" width="540" height="763" loading="lazy" decoding="async" />
+        </a>
+        <div class="v2-research">
+          <div class="v2-research-intro">
+            <p class="v2-small-label">Selected research</p>
+            <p>250+ articles on investment systems, strategy research, backtesting, risk, data engineering, execution, and applied AI.</p>
+          </div>
+          <div class="v2-research-links">
+            {research.map((article) => (
+              <a href={article.href} target="_blank" rel="noopener">
+                <span>{article.title}</span><span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+          <a class="v2-text-link" href="https://quantjourney.substack.com" target="_blank" rel="noopener">More on the QuantJourney blog <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </section>
 
-    <section class="v2-section v2-public-work" aria-labelledby="public-title">
-      <div class="v2-section-heading">
-        <h2 id="public-title">Writing and code.</h2>
-        <p>Research notes, technical examples and resources for quantitative developers.</p>
+    <section class="v2-section v2-personal" aria-labelledby="v2-personal-title">
+      <div>
+        <p class="v2-kicker">Personal side</p>
+        <h2 id="v2-personal-title">Outside the systems.</h2>
       </div>
-      <div class="v2-public-links">
-        <a href="https://quant-interviews.quantjourney.cloud" target="_blank" rel="noopener">
-          <strong>Quant Interviews</strong>
-          <span>1,600+ pages · 190+ problems · Python / C++ / SQL</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-        <a href="https://quantjourney.substack.com" target="_blank" rel="noopener">
-          <strong>Quant Blog</strong>
-          <span>200+ posts on research, markets, infrastructure and applied AI</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-        <a href="https://github.com/jpolec" target="_blank" rel="noopener">
-          <strong>GitHub</strong>
-          <span>Public repositories, working examples and releases</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-      </div>
+      <ul>
+        <li>Padel</li><li>Diving</li><li>Action movies</li><li>Puzzles</li><li>Foodie</li><li>Travel</li>
+        <li><button type="button" class="v2-cocker-trigger">My cocker spaniel</button></li>
+      </ul>
     </section>
 
-    <section class="v2-closing" aria-labelledby="closing-title">
-      <h2 id="closing-title">Work with me.</h2>
-      <p>
-        I take on selected projects in quantitative development, data and platform architecture,
-        research and backtest validation, and technical due diligence.
-      </p>
-      <p class="v2-closing-note">
-        Share your objective, current system and main constraint.
-        We can start with a focused technical review and define a practical scope of work.
-      </p>
-      <a class="v2-closing-contact" href={profile.urls.email}>Discuss a project <span aria-hidden="true">↗</span></a>
+    <section class="v2-closing" aria-labelledby="v2-closing-title">
+      <div>
+        <p class="v2-kicker">Start with the decision</p>
+        <h2 id="v2-closing-title">Bring the decision and the available material.</h2>
+        <p>In 30 minutes, I’ll tell you whether I can help, the scope, and the fee.</p>
+      </div>
+      <div class="v2-actions">
+        <a class="v2-button v2-button-light" href="https://calendly.com/jpolec/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+        <!--email_off--><a class="v2-button v2-button-ghost" href="mailto:jakub@quantjourney.pro">Email me</a><!--/email_off-->
+      </div>
     </section>
   </main>
+
+  <dialog class="v2-cocker-dialog" aria-label="My cocker spaniel">
+    <button type="button" class="v2-cocker-close" aria-label="Close photo">×</button>
+    <img src="/cocker-spaniel.webp" alt="Jakub's black cocker spaniel resting on a sofa" width="1200" height="1600" loading="lazy" decoding="async" />
+  </dialog>
+
+  <script>
+    const dialog = document.querySelector<HTMLDialogElement>('.v2-cocker-dialog');
+    const trigger = document.querySelector<HTMLButtonElement>('.v2-cocker-trigger');
+    const close = document.querySelector<HTMLButtonElement>('.v2-cocker-close');
+    trigger?.addEventListener('click', () => dialog?.showModal());
+    close?.addEventListener('click', () => dialog?.close());
+    dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  </script>
 </SimpleLayout>
 
 <style>
-  .v2-page-shell {
-    --v2-accent: #aa0a8b;
-    --v2-body: #36516e;
-    width: min(1020px, calc(100% - 64px));
+  .v2-shell {
+    --v2-ink: #052d57;
+    --v2-muted: #49647f;
+    --v2-line: #dce4ec;
+    --v2-soft: #f4f7fa;
+    --v2-accent: #0d6efd;
+    width: min(1120px, calc(100% - 48px));
     margin: 0 auto;
-    padding: clamp(40px, 6vw, 64px) 0 48px;
-    color: var(--ink);
-    font-size: 1rem;
-    line-height: 1.65;
+    padding: 48px 0 80px;
+    color: var(--v2-ink);
   }
 
-  h1, h2, p { margin: 0; }
-  h1, h2, strong { font-weight: 600; }
-  h1, h2 { color: var(--ink); text-wrap: balance; }
+  .v2-shell h1, .v2-shell h2, .v2-shell h3, .v2-shell p { margin: 0; }
+  .v2-shell h1, .v2-shell h2, .v2-shell h3 { text-wrap: balance; }
+  .v2-shell p { color: var(--v2-muted); text-wrap: pretty; }
 
-  .v2-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    letter-spacing: -0.045em;
-    line-height: 1.15;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    letter-spacing: -0.025em;
-    line-height: 1.35;
-  }
-
-  p, figcaption { color: var(--v2-body); text-wrap: pretty; }
-  .v2-page-shell a { font: inherit; }
-
-  .v2-page-shell a:focus-visible {
-    outline: 2px solid var(--v2-accent);
-    outline-offset: 5px;
+  .v2-eyebrow, .v2-kicker, .v2-small-label {
+    color: var(--v2-accent) !important;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
   }
 
   .v2-hero {
-    max-width: 760px;
-    padding-bottom: clamp(36px, 5vw, 48px);
-  }
-
-  .v2-role { margin-top: 14px; color: var(--ink); font-weight: 600; }
-  .v2-hero-copy { max-width: 720px; margin-top: 18px; }
-  .v2-hero-copy + .v2-hero-copy { margin-top: 12px; }
-
-  .v2-contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-    margin-top: 24px;
-  }
-
-  .v2-button, .v2-social-link {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
-  }
-
-  .v2-button {
-    gap: 24px;
-    padding: 8px 18px;
-    background: var(--ink);
-    border-color: var(--ink);
-    color: #fff;
-  }
-
-  .v2-social-link { width: 44px; height: 44px; }
-  .v2-social-link svg { width: 18px; height: 18px; fill: currentColor; }
-
-  .v2-button:hover, .v2-social-link:hover {
-    border-color: var(--v2-accent);
-    background: var(--v2-accent);
-    color: #fff;
-  }
-
-  .v2-section, .v2-closing {
-    padding: clamp(32px, 4vw, 44px) 0;
-    border-top: 1px solid var(--line);
-  }
-
-  .v2-section-heading > p { margin-top: 12px; }
-  .v2-platform-heading { max-width: 720px; margin-bottom: 24px; }
-
-  .v2-product-proof { display: grid; }
-
-  .v2-product-row {
     display: grid;
-    grid-template-columns: minmax(150px, 0.4fr) minmax(0, 1fr) auto;
-    gap: 24px;
-    align-items: baseline;
-    min-width: 0;
-    padding: 16px 0;
-    border-top: 1px solid var(--line);
-    color: var(--ink);
-    text-decoration: none;
-  }
-
-  .v2-product-row strong, .v2-public-links strong {
-    color: var(--v2-accent);
-  }
-
-  .v2-product-row > span:not(.v2-arrow), .v2-public-links span {
-    color: var(--v2-body);
-    text-wrap: pretty;
-  }
-
-  .v2-arrow { color: var(--ink); }
-
-  .v2-product-row:hover strong, .v2-public-links a:hover strong {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    text-decoration-thickness: 1px;
-  }
-
-  .v2-platform-note { margin-top: 16px; max-width: 850px; }
-
-  .v2-background-section, .v2-public-work {
-    display: grid;
-    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
-    gap: clamp(28px, 5vw, 58px);
-  }
-
-  .v2-background-section { align-items: center; }
-  .v2-background-image { margin: 0; }
-  .v2-background-image img { width: 100%; height: auto; border-radius: 6px; }
-  .v2-background-image figcaption { margin-top: 10px; }
-  .v2-background-copy p { margin-top: 18px; }
-  .v2-public-links { min-width: 0; }
-
-  .v2-public-links a {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 5px 24px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--line);
-    color: var(--ink);
-    text-decoration: none;
-  }
-
-  .v2-public-links a:first-child { padding-top: 0; }
-  .v2-public-links a:last-child { border-bottom: 0; padding-bottom: 0; }
-  .v2-public-links span { grid-column: 1; }
-  .v2-public-links span:last-child { grid-column: 2; grid-row: 1; color: var(--ink); }
-
-  .v2-closing { padding-bottom: 0; }
-  .v2-closing p { max-width: 760px; margin-top: 18px; }
-  .v2-closing .v2-closing-note { margin-top: 12px; }
-
-  .v2-closing-contact {
-    display: inline-flex;
+    grid-template-columns: minmax(0, 1.65fr) minmax(220px, .68fr);
+    gap: clamp(40px, 7vw, 88px);
     align-items: center;
-    gap: 24px;
-    min-height: 44px;
-    margin-top: 16px;
-    color: var(--v2-accent);
-    text-decoration: underline;
-    text-underline-offset: 5px;
+    padding: 24px 0 54px;
   }
 
-  .v2-closing-contact:hover { color: var(--ink); }
+  .v2-hero-copy { max-width: 760px; }
+  .v2-hero h1 { margin-top: 15px; font-size: clamp(3rem, 7vw, 6.1rem); font-weight: 600; line-height: .94; letter-spacing: -.055em; }
+  .v2-lead { max-width: 720px; margin-top: 28px !important; color: var(--v2-ink) !important; font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.45; letter-spacing: -.018em; }
+  .v2-bio { max-width: 710px; margin-top: 24px !important; font-size: 1rem; line-height: 1.7; }
 
-  @media (max-width: 760px) {
-    .v2-page-shell { width: calc(100% - 40px); padding: 36px 0 24px; }
-    .v2-background-section, .v2-public-work { grid-template-columns: 1fr; }
+  .v2-portrait { overflow: hidden; margin: 0; border-radius: 12px; background: var(--v2-ink); }
+  .v2-portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1) contrast(1.03); mix-blend-mode: screen; }
 
-    .v2-product-row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; }
-    .v2-product-row > span:not(.v2-arrow) { grid-column: 1; }
-    .v2-arrow { grid-column: 2; grid-row: 1; }
-    .v2-background-image { max-width: 360px; }
+  .v2-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .v2-button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; border: 1px solid var(--v2-ink); border-radius: 7px; padding: 11px 18px; color: var(--v2-ink); font-size: .88rem; font-weight: 650; text-decoration: none; transition: transform 150ms ease, background 150ms ease, color 150ms ease; }
+  .v2-button:hover { transform: translateY(-1px); }
+  .v2-button-primary { background: var(--v2-ink); color: #fff; }
+  .v2-meta { margin-top: 17px !important; font-size: .76rem; line-height: 1.5; }
+
+  .v2-proof { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--v2-line); border-bottom: 1px solid var(--v2-line); }
+  .v2-proof-item { min-width: 0; padding: 24px clamp(12px, 2.4vw, 28px); }
+  .v2-proof-item:first-child { padding-left: 0; }
+  .v2-proof-item + .v2-proof-item { border-left: 1px solid var(--v2-line); }
+  .v2-proof-item strong { display: block; font-size: clamp(1.65rem, 3vw, 2.4rem); line-height: 1; letter-spacing: -.04em; }
+  .v2-proof-item span { display: block; max-width: 150px; margin-top: 8px; color: var(--v2-muted); font-size: .77rem; line-height: 1.35; }
+
+  .v2-section { padding: clamp(58px, 8vw, 94px) 0; border-bottom: 1px solid var(--v2-line); }
+  .v2-section-heading { max-width: 690px; margin-bottom: 34px; }
+  .v2-section-heading h2, .v2-personal h2, .v2-closing h2 { margin-top: 10px; font-size: clamp(1.85rem, 3.5vw, 3rem); font-weight: 600; line-height: 1.12; letter-spacing: -.035em; }
+  .v2-heading-split { display: grid; grid-template-columns: minmax(0, .85fr) minmax(280px, 1fr); gap: clamp(30px, 7vw, 90px); align-items: end; max-width: none; }
+  .v2-heading-split > p { font-size: .94rem; line-height: 1.65; }
+
+  .v2-situation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .v2-situation-card { min-height: 230px; padding: 24px; border: 1px solid var(--v2-line); border-radius: 10px; background: var(--v2-soft); }
+  .v2-card-number { color: var(--v2-accent); font-size: .7rem; font-weight: 700; letter-spacing: .12em; }
+  .v2-situation-card h3 { margin-top: 42px; font-size: 1.1rem; line-height: 1.35; }
+  .v2-situation-card p { margin-top: 12px; font-size: .88rem; line-height: 1.65; }
+
+  .v2-service-list { border-top: 1px solid var(--v2-line); }
+  .v2-service { display: grid; grid-template-columns: minmax(220px, .75fr) minmax(0, 1.25fr); gap: clamp(32px, 7vw, 92px); padding: 30px 0; border-bottom: 1px solid var(--v2-line); }
+  .v2-service-title h3 { max-width: 310px; font-size: 1.1rem; line-height: 1.35; }
+  .v2-service-meta { display: flex; gap: 8px 18px; flex-wrap: wrap; margin-top: 14px; color: var(--v2-muted); font-size: .74rem; }
+  .v2-service-copy p { font-size: .9rem; line-height: 1.65; }
+  .v2-service-copy p + p { margin-top: 12px; }
+  .v2-service-copy strong { color: var(--v2-ink); }
+  .v2-service-copy a, .v2-text-link { display: inline-block; margin-top: 15px; color: var(--v2-ink); font-size: .82rem; font-weight: 650; text-underline-offset: 4px; }
+
+  .v2-product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .v2-product { min-height: 150px; padding: 22px; border: 1px solid var(--v2-line); border-radius: 9px; color: var(--v2-ink); text-decoration: none; transition: border-color 150ms ease, transform 150ms ease; }
+  .v2-product:hover { border-color: var(--v2-accent); transform: translateY(-1px); }
+  .v2-product:last-child { grid-column: 1 / -1; min-height: 120px; }
+  .v2-product > span { display: flex; justify-content: space-between; gap: 20px; }
+  .v2-product p { max-width: 430px; margin-top: 27px; font-size: .84rem; line-height: 1.55; }
+
+  .v2-evidence-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 14px; }
+  .v2-book, .v2-research { min-height: 380px; border: 1px solid var(--v2-line); border-radius: 10px; background: var(--v2-soft); }
+  .v2-book { display: grid; grid-template-columns: minmax(0, 1fr) minmax(130px, .45fr); gap: 24px; overflow: hidden; padding: 28px 28px 0; color: var(--v2-ink); text-decoration: none; }
+  .v2-book-copy h3 { margin-top: 30px; font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.3; }
+  .v2-book-copy > p:not(.v2-small-label) { margin-top: 16px; font-size: .82rem; line-height: 1.5; }
+  .v2-book img { align-self: end; width: 100%; max-height: 315px; object-fit: contain; object-position: bottom; }
+  .v2-research { padding: 28px; }
+  .v2-research-intro > p:last-child { margin-top: 26px; font-size: .88rem; line-height: 1.6; }
+  .v2-research-links { margin-top: 22px; border-top: 1px solid var(--v2-line); }
+  .v2-research-links a { display: flex; justify-content: space-between; gap: 20px; padding: 13px 0; border-bottom: 1px solid var(--v2-line); color: var(--v2-ink); font-size: .82rem; line-height: 1.4; text-decoration: none; }
+  .v2-research-links a:hover span:first-child { text-decoration: underline; text-underline-offset: 4px; }
+
+  .v2-personal { display: grid; grid-template-columns: minmax(200px, .7fr) minmax(0, 1.3fr); gap: 50px; align-items: center; }
+  .v2-personal ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .v2-personal li { border: 1px solid var(--v2-line); border-radius: 999px; padding: 8px 12px; color: var(--v2-muted); font-size: .76rem; }
+  .v2-cocker-trigger { border: 0; padding: 0; background: none; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+  .v2-closing { display: grid; grid-template-columns: minmax(0, 1.25fr) auto; gap: 44px; align-items: end; margin-top: 72px; border-radius: 12px; padding: clamp(32px, 5vw, 54px); background: var(--v2-ink); color: #fff; }
+  .v2-closing .v2-kicker { color: #83b8ff !important; }
+  .v2-closing h2 { max-width: 650px; }
+  .v2-closing p:not(.v2-kicker) { margin-top: 16px; color: #c3d1df; }
+  .v2-closing .v2-actions { justify-content: flex-end; }
+  .v2-button-light { border-color: #fff; background: #fff; color: var(--v2-ink); }
+  .v2-button-ghost { border-color: #718aa3; color: #fff; }
+
+  .v2-cocker-dialog { max-width: min(650px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: visible; border: 0; border-radius: 12px; padding: 0; background: #000; }
+  .v2-cocker-dialog::backdrop { background: rgba(5, 24, 44, .78); backdrop-filter: blur(5px); }
+  .v2-cocker-dialog img { max-height: calc(100vh - 32px); border-radius: 12px; object-fit: contain; }
+  .v2-cocker-close { position: absolute; top: 10px; right: 10px; display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-size: 1.4rem; cursor: pointer; }
+
+  @media (max-width: 780px) {
+    .v2-shell { width: min(100% - 32px, 620px); padding-top: 24px; }
+    .v2-hero { grid-template-columns: 1fr; gap: 34px; padding-top: 20px; }
+    .v2-portrait { width: min(58vw, 260px); }
+    .v2-proof { grid-template-columns: repeat(2, 1fr); }
+    .v2-proof-item:first-child { padding-left: 16px; }
+    .v2-proof-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--v2-line); }
+    .v2-proof-item:nth-child(4) { border-top: 1px solid var(--v2-line); }
+    .v2-situation-grid, .v2-product-grid, .v2-evidence-grid, .v2-heading-split, .v2-service, .v2-personal, .v2-closing { grid-template-columns: 1fr; }
+    .v2-product:last-child { grid-column: auto; min-height: 150px; }
+    .v2-situation-card { min-height: 190px; }
+    .v2-situation-card h3 { margin-top: 26px; }
+    .v2-heading-split { align-items: start; }
+    .v2-closing { align-items: start; }
+    .v2-closing .v2-actions { justify-content: flex-start; }
+  }
+
+  @media (max-width: 440px) {
+    .v2-book { grid-template-columns: 1fr; padding-bottom: 0; }
+    .v2-book img { max-width: 170px; }
+    .v2-button { width: 100%; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .v2-page-shell a { transition: none; }
+    .v2-shell * { transition: none !important; }
   }
 </style>
