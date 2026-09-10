@@ -9,11 +9,30 @@
   if (!/^G-[A-Z0-9]+$/.test(measurementId)) return;
   window.__qjAnalyticsLoaded = true;
 
-  const consentCookie = "qj_analytics_consent";
   const cookieDomain = config.dataset.cookieDomain || "";
-  const privacyUrl = config.dataset.privacyUrl || "https://quantjourney.cloud/privacy-policy/";
   let active = false;
   let lastPage = "";
+
+  // Remove cookies left by the former opt-in implementation. The Google tag
+  // remains permanently in denied-storage mode and must not create a visitor ID.
+  const expireCookie = (name, domain = "") => {
+    const domainAttribute = domain ? `; Domain=${domain}` : "";
+    document.cookie = `${name}=; Path=/; Max-Age=0; SameSite=Lax; Secure${domainAttribute}`;
+  };
+  const legacyCookies = document.cookie
+    .split(";")
+    .map((item) => item.split("=")[0].trim())
+    .filter((name) =>
+      name === "qj_analytics_consent" ||
+      name === "_ga" ||
+      name.startsWith("_ga_") ||
+      name === "_gid" ||
+      name.startsWith("_gat"),
+    );
+  for (const name of new Set(legacyCookies)) {
+    expireCookie(name);
+    if (cookieDomain) expireCookie(name, cookieDomain);
+  }
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -22,21 +41,14 @@
     ad_user_data: "denied",
     ad_personalization: "denied",
     analytics_storage: "denied",
-    functionality_storage: "granted",
-    security_storage: "granted",
+    functionality_storage: "denied",
+    personalization_storage: "denied",
+    security_storage: "denied",
   });
+  window.gtag("set", "ads_data_redaction", true);
+  window.gtag("set", "url_passthrough", false);
 
   if (navigator.doNotTrack === "1") return;
-
-  const readConsent = () => {
-    const match = document.cookie.split("; ").find((item) => item.startsWith(`${consentCookie}=`));
-    return match ? decodeURIComponent(match.split("=").slice(1).join("=")) : "";
-  };
-
-  const writeConsent = (value) => {
-    const domain = cookieDomain ? `; Domain=${cookieDomain}` : "";
-    document.cookie = `${consentCookie}=${encodeURIComponent(value)}; Path=/; Max-Age=15552000; SameSite=Lax; Secure${domain}`;
-  };
 
   const safeUrl = (value) => {
     try {
@@ -53,16 +65,17 @@
     const key = `${pageLocation}|${document.title}`;
     if (key === lastPage) return;
     lastPage = key;
-    const pageReferrer = document.referrer ? safeUrl(document.referrer) : undefined;
     window.gtag("config", measurementId, {
       send_page_view: false,
       page_location: pageLocation,
-      page_referrer: pageReferrer,
+      page_referrer: "",
       page_title: document.title,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
     });
     window.gtag("event", "page_view", {
       page_location: pageLocation,
-      page_referrer: pageReferrer,
+      page_referrer: "",
       page_title: document.title,
     });
   };
@@ -70,7 +83,6 @@
   const startAnalytics = () => {
     if (active) return;
     active = true;
-    window.gtag("consent", "update", { analytics_storage: "granted" });
     window.gtag("js", new Date());
     const loader = document.createElement("script");
     loader.async = true;
@@ -79,56 +91,7 @@
     trackPage();
   };
 
-  const closePrompt = () => document.getElementById("qj-analytics-consent")?.remove();
-
-  const renderPrompt = () => {
-    if (document.getElementById("qj-analytics-consent")) return;
-    const prompt = document.createElement("section");
-    prompt.id = "qj-analytics-consent";
-    prompt.className = "qj-analytics-consent";
-    prompt.setAttribute("role", "dialog");
-    prompt.setAttribute("aria-label", "Analytics preference");
-
-    const copy = document.createElement("p");
-    copy.append("We use Google Analytics to understand how this site is used. Analytics starts only if you accept. ");
-    const privacy = document.createElement("a");
-    privacy.href = privacyUrl;
-    privacy.textContent = "Privacy";
-    copy.appendChild(privacy);
-
-    const actions = document.createElement("div");
-    const decline = document.createElement("button");
-    decline.type = "button";
-    decline.className = "qj-analytics-consent__secondary";
-    decline.textContent = "Decline";
-    const accept = document.createElement("button");
-    accept.type = "button";
-    accept.className = "qj-analytics-consent__primary";
-    accept.textContent = "Accept analytics";
-    actions.append(decline, accept);
-    prompt.append(copy, actions);
-    document.body.appendChild(prompt);
-
-    decline.addEventListener("click", () => {
-      writeConsent("denied");
-      window.gtag("consent", "update", { analytics_storage: "denied" });
-      closePrompt();
-    });
-    accept.addEventListener("click", () => {
-      writeConsent("granted");
-      closePrompt();
-      startAnalytics();
-    });
-  };
-
-  window.qjOpenAnalyticsSettings = renderPrompt;
   window.trackPageView = trackPage;
   document.addEventListener("astro:page-load", trackPage);
-
-  const consent = readConsent();
-  if (consent === "granted") startAnalytics();
-  else if (consent !== "denied") {
-    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", renderPrompt, { once: true });
-    else renderPrompt();
-  }
+  startAnalytics();
 })();

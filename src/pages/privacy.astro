@@ -11,12 +11,14 @@ import SimpleLayout from '../layouts/SimpleLayout.astro';
     <a href="/">← Back to jakubpolec.com</a>
     <h1>Privacy</h1>
     <p>
-      This website uses Google Analytics for limited site-usage measurement only after you accept analytics.
-      Advertising storage remains disabled. Page locations are sent without query strings or fragments.
+      This website uses Google Analytics in cookieless mode for limited site-usage measurement. Analytics and advertising
+      storage remain denied, advertising signals are disabled, and the tag does not read or write an analytics cookie or
+      persistent visitor identifier.
     </p>
     <p>
-      Your choice is stored in the first-party <code>qj_analytics_consent</code> cookie for up to 180 days.
-      To change a denied choice, clear that cookie in your browser and reload the page.
+      Cookieless measurements are sent to Google with the page path but without query strings, URL fragments or the
+      referring page. Browser and network metadata may accompany the request. The tag is not loaded when your browser
+      sends a Do Not Track signal.
     </p>
     <p>
       Hosting and security providers may process request information needed to deliver and protect the site.
@@ -35,5 +37,4 @@ import SimpleLayout from '../layouts/SimpleLayout.astro';
   h1 { margin: 44px 0 20px; font-size: clamp(2.2rem, 6vw, 4rem); }
   p { color: var(--muted); }
   a { color: var(--accent); }
-  code { font-size: 0.9em; }
 </style>
