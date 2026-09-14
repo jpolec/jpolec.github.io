@@ -1,0 +1,14 @@
+{
+  "name": "jakubpolec-private",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-09-14",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {"pattern": "jakubpolec.com/private*", "zone_name": "jakubpolec.com"},
+    {"pattern": "www.jakubpolec.com/private*", "zone_name": "jakubpolec.com"}
+  ],
+  "ratelimits": [
+    {"name": "AUTH_LIMITER", "namespace_id": "2026091401", "simple": {"limit": 10, "period": 60}}
+  ]
+}
