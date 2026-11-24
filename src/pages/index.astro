@@ -139,6 +139,19 @@ const selectedPosts = [
       <div><strong>3</strong><span>companies co-founded &amp; led</span></div>
     </section>
 
+    <section class="recent-talk" aria-labelledby="recent-talks-title">
+      <figure>
+        <img src="/abu-dhabi-corniche.jpg" alt="Abu Dhabi’s Corniche waterfront and skyline" width="320" height="240" loading="lazy" decoding="async" />
+      </figure>
+      <div>
+        <h2 class="section-label" id="recent-talks-title">Recent talks &amp; conferences</h2>
+        <h3>Investor EQD — Abu Dhabi</h3>
+        <p class="talk-date"><time datetime="2026-11-18">18</time>–<time datetime="2026-11-19">19 November 2026</time> · The St. Regis Abu Dhabi</p>
+        <p>I joined a panel on AI infrastructure with Thomas Schmelzer (<a href="https://www.adia.ae/">ADIA</a>) and Golam Sakline (Wealth Management, CIO Office, <a href="https://www.emiratesnbd.com/en">Emirates NBD</a>).</p>
+        <a class="outline-button" href="https://eqderivatives.com/event/investor-eqd-abu-dhabi-2026">View the EQD event ↗</a>
+      </div>
+    </section>
+
     <section id="work-with-me" class="large-section services-section" aria-labelledby="services-title">
       <header class="centered-heading">
         <p class="section-label">Work with me</p>
@@ -317,6 +330,15 @@ const selectedPosts = [
   .proof-band > div + div { border-left: 1px solid var(--line); }
   .proof-band strong { display: block; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; }
   .proof-band span { display: block; max-width: 235px; margin: 7px auto 0; color: var(--muted); font-size: .76rem; line-height: 1.4; text-transform: uppercase; }
+
+  .recent-talk { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(24px, 5vw, 72px); border-block: 1px solid var(--line); padding: clamp(28px, 5vw, 60px) 0; }
+  .recent-talk figure { width: min(100%, 320px); }
+  .recent-talk img { display: block; width: 100%; height: auto; }
+  .recent-talk > div { flex: 1 1 320px; }
+  .recent-talk h3 { margin-top: 12px; font: 400 clamp(1.65rem, 3vw, 2.5rem)/1.2 Georgia, serif; }
+  .recent-talk .talk-date { margin: 12px 0; font-size: .85rem; }
+  .recent-talk p + p { max-width: 55ch; font: 1.05rem/1.6 Georgia, serif; }
+  .recent-talk .outline-button { margin-top: 18px; }
 
   .large-section { padding: clamp(72px, 10vw, 130px) 0; }
   .centered-heading { max-width: 760px; margin: 0 auto 54px; text-align: center; }
