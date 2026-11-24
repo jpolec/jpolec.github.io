@@ -242,14 +242,6 @@ const selectedPosts = [
 
   </main>
 
-  <a class="aloca-badge" href="https://aloca.io/" target="_blank" rel="noopener">
-    <img src="/aloca-astronaut.webp" alt="" width="240" height="251" decoding="async" />
-    <span class="aloca-badge-card">
-      <span class="aloca-logo"><span aria-hidden="true"></span>ALOCA</span>
-      <span class="aloca-badge-text">One connected memory for your AI.</span>
-    </span>
-  </a>
-
   <dialog class="cocker-dialog" aria-label="My cocker spaniel">
     <button type="button" class="cocker-close" aria-label="Close photo">×</button>
     <img src="/cocker-spaniel.webp" alt="Jakub's black cocker spaniel resting on a sofa" width="1200" height="1600" loading="lazy" decoding="async" />
@@ -331,13 +323,12 @@ const selectedPosts = [
   .proof-band strong { display: block; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; }
   .proof-band span { display: block; max-width: 235px; margin: 7px auto 0; color: var(--muted); font-size: .76rem; line-height: 1.4; text-transform: uppercase; }
 
-  .recent-talk { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(24px, 5vw, 72px); border-block: 1px solid var(--line); padding: clamp(28px, 5vw, 60px) 0; }
+  .recent-talk { display: grid; justify-items: center; gap: 24px; text-align: center; border-block: 1px solid var(--line); padding: clamp(28px, 5vw, 60px) 0; }
   .recent-talk figure { width: min(100%, 320px); }
   .recent-talk img { display: block; width: 100%; height: auto; }
-  .recent-talk > div { flex: 1 1 320px; }
   .recent-talk h3 { margin-top: 12px; font: 400 clamp(1.65rem, 3vw, 2.5rem)/1.2 Georgia, serif; }
   .recent-talk .talk-date { margin: 12px 0; font-size: .85rem; }
-  .recent-talk p + p { max-width: 55ch; font: 1.05rem/1.6 Georgia, serif; }
+  .recent-talk p + p { max-width: 55ch; margin-inline: auto; font: 1.05rem/1.6 Georgia, serif; }
   .recent-talk .outline-button { margin-top: 18px; }
 
   .large-section { padding: clamp(72px, 10vw, 130px) 0; }
@@ -407,17 +398,6 @@ const selectedPosts = [
   .cocker-dialog img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.2); transform-origin: center; }
   .cocker-close { position: absolute; z-index: 2; top: 10px; right: 10px; width: 38px; height: 38px; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-size: 1.4rem; cursor: pointer; }
 
-  /* Stays in the corner while the page scrolls; the aloca.io astronaut peeks over the card. */
-  .aloca-badge { position: fixed; z-index: 40; right: 20px; bottom: max(20px, env(safe-area-inset-bottom)); display: block; padding-top: 74px; color: #202b3b; text-decoration: none; }
-  .aloca-badge img { position: absolute; z-index: 0; top: 0; right: 0; width: 150px; height: auto; pointer-events: none; }
-  .aloca-badge-card { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 9px; padding: 14px 20px 15px; border: 1px solid #c9d2dc; border-radius: 14px; background: #fff; box-shadow: 0 10px 28px rgba(5, 45, 87, .14); }
-  .aloca-badge:hover .aloca-badge-card { border-color: #052d57; }
-  .aloca-badge:focus-visible { outline: none; }
-  .aloca-badge:focus-visible .aloca-badge-card { outline: 2px solid #052d57; outline-offset: 3px; }
-  /* Same mark as the aloca.io waiting-list page (.waitlist-brand), scaled in em. */
-  .aloca-logo { display: inline-flex; align-items: center; gap: .57em; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Inter, system-ui, sans-serif; font-size: 1.05rem; font-weight: 650; letter-spacing: .14em; line-height: 1; }
-  .aloca-logo span { width: .62em; height: .62em; border-radius: 50%; background: #cc5d26; }
-  .aloca-badge-text { color: #052d57; font-family: Georgia, 'Times New Roman', serif; font-size: .95rem; line-height: 1.35; white-space: nowrap; }
 
   @media (max-width: 820px) {
     .profile-header { padding-top: 46px; }
@@ -457,10 +437,5 @@ const selectedPosts = [
     .research-grid > a { min-height: 260px; padding: 20px 4px; }
     .book-image { min-height: 330px; padding: 24px 18px; }
     .book-copy { padding: 42px 4px; }
-    .aloca-badge { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); padding-top: 50px; }
-    .aloca-badge img { width: 104px; }
-    .aloca-badge-card { gap: 6px; padding: 10px 14px 11px; border-radius: 12px; }
-    .aloca-logo { font-size: .9rem; }
-    .aloca-badge-text { font-size: .8rem; }
   }
 </style>
