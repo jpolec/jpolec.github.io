@@ -323,12 +323,12 @@ const selectedPosts = [
   .proof-band strong { display: block; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; }
   .proof-band span { display: block; max-width: 235px; margin: 7px auto 0; color: var(--muted); font-size: .76rem; line-height: 1.4; text-transform: uppercase; }
 
-  .recent-talk { display: grid; justify-items: center; gap: 24px; text-align: center; border-block: 1px solid var(--line); padding: clamp(28px, 5vw, 60px) 0; }
+  .recent-talk { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 55ch); justify-content: center; align-items: center; gap: clamp(24px, 4vw, 56px); border-block: 1px solid var(--line); padding: clamp(28px, 5vw, 60px) 0; }
   .recent-talk figure { width: min(100%, 320px); }
   .recent-talk img { display: block; width: 100%; height: auto; }
   .recent-talk h3 { margin-top: 12px; font: 400 clamp(1.65rem, 3vw, 2.5rem)/1.2 Georgia, serif; }
   .recent-talk .talk-date { margin: 12px 0; font-size: .85rem; }
-  .recent-talk p + p { max-width: 55ch; margin-inline: auto; font: 1.05rem/1.6 Georgia, serif; }
+  .recent-talk p + p { max-width: 55ch; font: 1.05rem/1.6 Georgia, serif; }
   .recent-talk .outline-button { margin-top: 18px; }
 
   .large-section { padding: clamp(72px, 10vw, 130px) 0; }
@@ -422,6 +422,8 @@ const selectedPosts = [
   }
 
   @media (max-width: 520px) {
+    .recent-talk { grid-template-columns: minmax(0, 1fr); }
+    .recent-talk figure { justify-self: center; }
     .editorial-shell { width: calc(100% - 28px); padding-top: 12px; }
     .profile-header h1 { font-size: clamp(2.65rem, 14vw, 4.2rem); letter-spacing: .025em; }
     .profile-header .profile-discipline { font-size: .84rem; }
