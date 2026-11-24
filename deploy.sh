@@ -28,7 +28,9 @@ deploy_worktree=""
 
 cleanup() {
   if [[ -n "${deploy_worktree}" && -d "${deploy_worktree}" ]]; then
-    git -C "${repo_root}" worktree remove --force "${deploy_worktree}" >/dev/null 2>&1 || true
+    if ! git -C "${repo_root}" worktree remove "${deploy_worktree}"; then
+      echo "Deployment worktree retained at ${deploy_worktree}" >&2
+    fi
   fi
 }
 trap cleanup EXIT
